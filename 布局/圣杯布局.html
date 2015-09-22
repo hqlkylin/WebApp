@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css 布局</title>
+
+<style type="text/css">
+	body{
+		min-width: 988px; 	
+	}
+	
+	#head{
+		text-align: center;	
+	}
+	#container{
+		padding-left: 200px; /*left column width*/	
+		padding-right: 150px; /*right column width*/
+		overflow: hidden;
+		
+	}
+	#container .column{
+		position: relative;
+		float: left;
+	}
+	
+	#center{
+		
+		background:#eee;
+		padding: 10px 20px; 
+		margin: 0 15px;
+		width: 100%;
+		min-height: 300px;
+		overflow:visible;
+	}
+	
+	#left{
+		width:180px;
+		background:green;
+		margin-left:-100%;
+		right: 270px; /*180+60(padding total)+ 30(margin)*/
+		padding:0 10px; /* LC fullwidth + CC padding */
+		min-height: 300px;
+	}
+	
+	#right{
+		width: 130px;
+		background:yellow;
+		padding: 0 10px;
+		margin-right: -240px; /*fullwidth  + center column padding 尽量大一点，chrome浏览器下，这个div浮动不上来*/
+		
+		min-height: 300px;
+	}
+	
+	#footer{
+		clear:  both;	
+		text-align: center;
+	}
+	
+	/*IE6 fix*/
+	
+	* html #left {
+		left:100px;  	
+	}
+</style>
+</head>
+
+<body>
+	<div id="head">
+    	<h1>head</h1>
+    </div>
+    
+    <div id="container">
+    	<div id="center" class="column">
+			center
+        </div>
+        
+		<div id="left" class="column">
+        	left
+        </div>
+        
+        <div id="right" class="column">
+            right
+        </div>	
+    </div>
+    
+    <div id="footer">
+    	<h1>footer</h1>
+    </div>
+</body>
+</html>

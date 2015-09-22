@@ -1,0 +1,148 @@
+/*头部start*/
+.header{border-bottom: 2px solid #6D3885;background-color: #F0F0F0;height: 35px;line-height: 35px;}
+.wrap{width:1200px;margin:0 auto;text-align:right;font-size: 14px;font-family: "microsoft yahei";}
+.wrap a{color: #000;}
+.wrap .change{margin-right: 43px;margin-left: 16px;}
+.wrap .quit{margin-left: 20px;}
+/*头部end*/
+.clearfix:after{display: block;height: 0;content: '';clear: both;}
+/*支付成功 页面--内容部分start*/
+.cont{width: 1200px;margin: 0 auto;}
+.cont .main{width: 325px;margin: 0 auto;text-align: center;padding-top: 116px;}
+.cont .main .tit{color: #80B616;font-size: 19px;margin-bottom: 24px;}
+.cont .main .tit i{max-width:100%;vertical-align:text-bottom;margin-right:2px;background: url(../images/ticket/pay-success.png) no-repeat center center;width:46px;height: 37px;display: inline-block;}
+.cont .main .font{font-size: 14px;margin-bottom: 10px;color: #000;}
+/*支付成功 页面--内容部分end*/
+
+/*抢购失败页面  start*/
+.cont .main .tit-buy{color: #898989;font-size: 40px;margin-bottom: 20px;height: 43px;line-height: 43px;}
+.cont .main .tit-buy i{margin-right:10px;vertical-align:middle;max-width: 100%;background: url(../images/ticket/buy-fail.png) no-repeat center center;width: 39px;height: 39px;display: inline-block;}
+/*抢购失败页面  end*/
+
+
+/*订单详情页面start*/
+.cont .order-tit{padding-top: 47px;padding-bottom: 44px;}
+.cont .order-tit .order-f1{font-size: 18px;margin-bottom: 11px;}
+.cont .order-tit .order-f2{font-size: 14px;}
+.cont .order-tit .order-f2 span{color: #C02125;margin-left: 10px;}
+
+.cont .order-cont{margin-bottom: 36px;}
+.cont .order-cont table{border-collapse: collapse;}
+.cont .order-cont tr td{width: 600px;height: 35px;line-height: 35px;font-size: 14px;text-align: center;}
+.cont .order-cont .order-t1{background-color: #F0F0F0;}
+/*.cont .order-cont .order-t1 td{padding-left: 150px;}
+.cont .order-cont .order-t2 td{padding-left: 120px;}
+.cont .order-cont .order-t2 td.order-pl{padding-left: 158px;}*/
+
+.order-pay .flat{border-bottom: 1px solid #69247D;}
+.order-pay .flat div{width: 130px;height: 46px;line-height:46px;text-align:center;background-color: #69247D;color: #fff;font-size: 18px;}
+.order-pay .zf{margin-top: 40px;margin-left: 23px;display: inline-block;}
+/*.order-pay .wxzf{float: left;}*/
+.order-pay .zf .zf-img{margin-left:14px;display: inline-block;width: 140px;height: 50px;border: 1px solid #69247D;}
+.order-pay .zf .zf-img img{vertical-align: middle;margin-top: 5px;margin-left: 15px;}
+
+.order-pay .zf .wxzf-img{border: 1px solid #C9CACB;}
+.order-pay .zf .wxzf-img img{vertical-align: middle;margin-top: 10px;margin-left: 10px;}
+.order-pay .zf .wxzf-s{position: relative;top: 4px;}
+.order-pay .wxzf{margin-left: 50px;position: relative;top: -5px;}
+.order-pay .qd{width: 170px;height: 45px;line-height:45px;margin:0 auto;margin-top:18px;cursor:pointer;background-color: #69247D;color: #fff;font-size: 15px;text-align: center;}
+
+/*.b{border-color: #69247D;}*/
+/*订单详情页面end*/
+
+/*提交订单start*/
+.cont .subor1{border-bottom: 1px dashed #E3E3E3;margin-top: 36px;}
+.cont .subor1 table{border-collapse: collapse;text-align: center;}
+.cont .subor1 .tr1{border: 1px solid #DDDDDE;background-color: #EEEEEE;height: 40px;font-size: 16px;}
+.cont .subor1 .tr1 .td1{width: 560px;}
+.cont .subor1 .tr1 .td2{width: 240px;}
+.cont .subor1 .tr1 .td3{width: 234px;}
+.cont .subor1 .tr1 .td4{width: 164px;}
+.cont .subor1 .tr2{height: 77px;line-height: 77px;font-size: 14px;}
+.cont .subor1 .tr2 .fontr{color: #C02125;}
+.cont  .td23 span{position:relative;display:inline-block;vertical-align:middle;width: 82px;height:23px;border: 1px solid #DDDDDD;}
+.cont  .td23 span span.w{cursor:pointer;border:0;display: inline-block;width: 23px;height: 23px;background-color: #EEEEEE;position: absolute;}
+.cont  .td23 span span.wl{top: 0;left: 0;}
+.cont  .td23 span span.wr{top: 0;right: 0;}
+.cont  .td23 span a{position:absolute;display: inline-block;background: url(../images/ticket/subor-icon.png) no-repeat;}
+.cont  .td23 span .amin{background-position: 0 0;top: 10px;left: 6px;width: 6px;height: 2px;}
+.cont  .td23 span .amax{background-position: 0 -2px;top: 8px;left: 7px;width: 9px;height: 8px;}
+.cont  .td23 span input{position:absolute;display: inline-block;width: 38px;height: 23px;top: 0px;left: 21px;border: 0;text-align: center;}
+
+/*手机端表格start*/
+.cont .subor11{display: none;border-bottom: 1px dashed #E3E3E3;margin-top: 36px;}
+.cont .subor11 table{border-collapse: collapse;text-align: center;width: 80%;margin: 0 auto;margin-bottom: 20px;}
+.cont .subor11 .tr11 .td11{border: 1px solid #DDDDDE;background-color: #EEEEEE;font-size: 18px;height: 40px;line-height: 40px;width: 25%;}
+.cont .subor11 .tr11 .td22{border: 1px solid #ddddde;border-bottom: 0;border-left: 0;font-size: 16px;}
+.cont .subor11 .tr11 .td21{border-bottom: 1px solid #DDDDDE;color: #C02125;}
+
+
+/*手机端表格end*/
+
+.cont .borbot{height: 77px;border-bottom: 1px dashed #E3E3E3;box-sizing: border-box;}
+.cont .subor2{font-size: 12px;color: #686767;text-align: right;padding-right: 66px;}
+.cont .subor2 .s21{margin-top: 16px;}
+.cont .subor2 .s22{margin-top: 8px;}
+
+.cont .subor3{font-size: 17px;padding-right: 66px;text-align: right;padding-top: 30px;}
+.cont .subor3 label{color: #595757;font-size: 14px;}
+.cont .subor3 span{color: #C02125;}
+
+.subor4{margin-right:66px;margin-top:30px;width: 147px;height: 46px;line-height:46px;text-align:center;float:right;background-color: #69247D;color: #fff;font-size: 15px;font-family: "microsoft yahei";}
+/*提交订单end*/
+/*支付成功 页面--内容部分start*/
+@media screen and (max-width:1000px){
+	.header{display: none;}
+	.cont{width: 100%;}
+	.cont .main{width: 90%;}
+	.cont .main .tit{font-size: 21px;margin-bottom: 26px;height: 45px;line-height: 45px;}
+	.cont .main .tit i{vertical-align: middle;}
+	.cont .main .font{font-size: 16px;margin-bottom: 23px;height: 28px;line-height: 28px;}
+	
+	.cont .main .tit-buy{font-size: 42px;height: 50px;line-height: 50px;margin-bottom: 25px;}
+	
+	/*订单详情页面*/
+	.cont .order-wrap{width: 90%;margin: 0 auto;}
+	.cont .order-tit{padding-top: ;padding-bottom: ;}
+	.cont .order-tit .order-f1{font-size: 20px;margin-bottom: 11px;}
+    .cont .order-tit .order-f2{font-size: 16px;}   
+	.cont .order-cont tr td{font-size: 16px;}
+	.order-pay .flat div{font-size: 20px;}
+	.order-pay .qd{font-size: 17px;margin-top: 44px;}
+	.order-pay .zf .zf-img img{max-width: 100%;}
+	
+	.order-pay .zf{display: block;}
+    .order-pay .wxzf{margin-left: 23px;}
+	
+	/*提交订单start*/	
+	.cont .subor2{font-size: 14px;}
+	.cont .subor3{font-size: 19px;}
+	.cont .subor3 label{font-size: 16px;}
+	.subor4{font-size: 17px;}
+	
+	.cont .subor1{display: none;}
+	.cont .subor11{display: block;}
+	
+}
+/*支付成功 页面--内容部分end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

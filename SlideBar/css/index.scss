@@ -1,0 +1,64 @@
+@import "mixin";
+
+$toolbar-size: 52px;
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  width: $toolbar-size;
+  margin-left: $toolbar-size / 2;
+}
+
+.toolbar-item, .toolbar-layer {
+  background: url(../img/toolbar.png) no-repeat;
+}
+
+.toolbar-item {
+  width: $toolbar-size;
+  height: $toolbar-size;
+  display: block;
+  margin-top: 1px;
+  position: relative;
+  @include transition(all 1s);
+  &:hover {
+    .toolbar-layer {
+      @include transform(scale(1));
+      @include opacity(1);
+    }
+  }
+}
+
+.toolbar-item-weixin {
+  @include toolbarItem(-798px, -860px);
+  .toolbar-layer {
+    height: 212px;
+    background-position: 0 0;
+  }
+}
+
+.toolbar-item-feedback {
+  @include toolbarItem(-426px, -488px);
+}
+
+.toolbar-item-app {
+  @include toolbarItem(-550px, -612px);
+  .toolbar-layer {
+    height: 194px;
+    background-position: 0 -222px;
+  }
+}
+
+.toolbar-item-top {
+  @include toolbarItem(-674px, -736px);
+}
+
+.toolbar-layer {
+  position: absolute;
+  width: 172px;
+  right: $toolbar-size - 6;
+  bottom: -10px;
+  @include opacity(0);
+  @include transform(scale(0.001));
+  @include transform-origin(95% 95%);
+  @include transition(all 1s);
+}

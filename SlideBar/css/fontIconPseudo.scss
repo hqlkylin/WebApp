@@ -1,0 +1,166 @@
+/*@charset "utf-8";*/
+@import "mixin";
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?-w8ghmt');
+  src: url('../fonts/icomoon.eot?#iefix-w8ghmt') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?-w8ghmt') format('truetype'),
+  url('../fonts/icomoon.woff?-w8ghmt') format('woff'),
+  url('../fonts/icomoon.svg?-w8ghmt#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$toolbar-size: 52px;
+.toolbar {
+  position: fixed;
+  left: 50%;
+  margin-left: -$toolbar-size / 2;
+  bottom: 5px;
+}
+
+.toolbar-item {
+  display: block;
+  position: relative;
+  width: $toolbar-size;
+  height: $toolbar-size;
+  margin-top: 1px;
+
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:hover {
+    .toolbar-btn {
+      &:before {
+        top: -$toolbar-size;
+      }
+      &:after {
+        top: 0;
+      }
+    }
+    &:after{
+      @include  opacity(1);
+      @include  transform(scale(1))
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: $toolbar-size - 6;
+    bottom: -10px;
+    width: 172px;
+    background: url("../img/toolbar.png") no-repeat;
+    @include opacity(0);
+    @include transform(scale(0.01));
+    @include transform-origin(95% 95%);
+    @include transition(all 1s);
+  }
+}
+
+.toolbar-item-weixin {
+  &:after {
+    content: '';
+    height: 212px;
+    background-position: 0 0;
+
+  }
+  .toolbar-btn {
+    &:before {
+      content: "\e603";
+    }
+    &:after {
+      content: '公众\A账号';
+    }
+  }
+}
+
+.toolbar-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $toolbar-size;
+  height: $toolbar-size;
+  overflow: hidden;
+  &:before {
+    //icon
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $toolbar-size;
+    height: $toolbar-size;
+    background-color: #d0d6d9;
+    font-size: 30px;
+    color: #FFF;
+    text-align: center;
+    line-height: $toolbar-size;
+    @include transition(top 1s);
+  }
+  &:after {
+    //文字
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $toolbar-size;
+    width: $toolbar-size;
+    height: $toolbar-size;
+    background-color: #98a1a6;
+    font-size: 12px;
+    color: #FFF;
+    text-align: center;
+    padding-top: 12px;
+    line-height: 1.2;
+    @include transition(top 1s);
+    white-space: pre;
+  }
+}
+
+.toolbar-item-feedback {
+
+  .toolbar-btn {
+    &:before {
+      content: "\e600";
+    }
+    &:after {
+      content: '意见\A反馈';
+    }
+  }
+}
+
+.toolbar-item-app {
+  &:after {
+    content: "";
+    height: 194px;
+    background-position: 0 -222px;
+  }
+  .toolbar-btn {
+    &:before {
+      content: "\e601";
+    }
+    &:after {
+      content: 'APP\A下载';
+    }
+  }
+}
+
+.toolbar-item-top {
+  .toolbar-btn {
+    &:before {
+      content: "\e602";
+    }
+    &:after {
+      content: '返回顶部';
+    }
+  }
+}
+

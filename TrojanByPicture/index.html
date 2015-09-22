@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function () {
+
+            Carousel.init($(".poster-main"));
+        });
+
+    </script>
+</head>
+<body>
+
+<div class="poster-main" data-setting='{
+                "width":1600,
+                "height":270,
+                "posterWidth":640,
+                "posterHeight":270,
+                "verticalAlign":"middle",
+                "autoPlay":true,
+                "delay":2000,
+                "scale":0.9,
+                "speed":100
+            }'>
+    <div class="poster-btn poster-prev-btn"></div>
+    <ul class="poster-list">
+        <li class="poster-item"><img src="img/1.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/2.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/3.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/4.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/5.jpg" alt="" width="100%"/></li>
+    </ul>
+    <div class="poster-btn poster-next-btn"></div>
+</div>
+
+<div class="poster-main" data-setting='{
+                "width":1200,
+                "height":270,
+                "posterWidth":640,
+                "posterHeight":270,
+                "verticalAlign":"bottom",
+                "scale":0.9,
+                "speed":500
+            }'>
+    <div class="poster-btn poster-prev-btn"></div>
+    <ul class="poster-list">
+        <li class="poster-item"><img src="img/1.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/2.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/3.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/4.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/5.jpg" alt="" width="100%"/></li>
+    </ul>
+    <div class="poster-btn poster-next-btn"></div>
+</div>
+
+
+<div class="poster-main" data-setting='{
+                "width":700,
+                "height":270,
+                "posterWidth":320,
+                "posterHeight":270,
+                "verticalAlign":"bottom",
+                "scale":0.9,
+                "speed":500
+            }'>
+    <div class="poster-btn poster-prev-btn"></div>
+    <ul class="poster-list">
+        <li class="poster-item"><img src="img/1.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/2.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/3.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/4.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/5.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/1.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/2.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/3.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/4.jpg" alt="" width="100%"/></li>
+        <li class="poster-item"><img src="img/5.jpg" alt="" width="100%"/></li>
+    </ul>
+    <div class="poster-btn poster-next-btn"></div>
+</div>
+
+</body>
+</html>

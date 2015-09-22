@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*@import "rest_nec";*/
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.slider {
+  border: 3px solid #333;
+  overflow: hidden;
+  position: relative; }
+  .slider .list {
+    position: absolute;
+    z-index: 1;
+    left: 0; }
+    .slider .list img {
+      float: left;
+      position: relative; }
+  .slider .buttons {
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    text-align: center;
+    width: 100%; }
+    .slider .buttons span {
+      cursor: pointer;
+      border: 1px solid #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #333;
+      margin-right: 5px;
+      display: inline-block; }
+    .slider .buttons .on {
+      background: orangered; }
+  .slider .arrow {
+    cursor: pointer;
+    display: none;
+    line-height: 39px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    background-color: RGBA(0, 0, 0, 0.3);
+    color: #fff; }
+    .slider .arrow:hover {
+      background-color: RGBA(0, 0, 0, 0.7); }
+  .slider .prev {
+    left: 5%; }
+  .slider .next {
+    right: 5%; }
+  .slider:hover .arrow {
+    display: block; }
+
+.absolute {
+  position: absolute;
+  position: relative; }
+
+/*# sourceMappingURL=index.css.map */

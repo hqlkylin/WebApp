@@ -1,0 +1,79 @@
+#content{ background: #efeff0; overflow: hidden; padding-bottom: 100px;}
+.crumb{ border: none;}
+.crumb p{ float:right;}
+.wap-pic{ display: none;}
+.detail{ border: 1px solid #e1e1e1; background: #ffffff; padding: 25px;}
+.detail .title{ height: 124px;}
+.detail .title h3{ font-size: 16px; font-weight: normal; line-height: 32px; padding-top: 18px;}
+.detail .title span{ font-size: 14px;}
+.detail .price{ padding-top: 10px;}
+.detail .right{ width: 490px;}
+.detail .right .htop{ height: 40px;}
+.detail .parameter{ height: 85px;}
+.detail .parameter .shop{ padding-top: 17px;}
+.detail .parameter .shop,.detail .parameter .shop p{ height: 30px;}
+.detail .parameter .shop span{ color: #c02125;}
+.detail .parameter .shop span .info{ color: #595757;}
+.detail .parameter .num{ position: absolute; top:47px; left: 300px;}
+.detail .parameter .num span{ color: #ffffff; background: #99CC33; padding: 0 5px; margin: 0 5px;}
+.detail .timebox{ height: 153px; background: #eeeeee; border: 1px solid #cdcece; margin-top: 38px; position: relative;}
+.detail .timebox .bg{background: url(../images/grab.png) no-repeat;}
+.detail .timebox .time{ font-size: 16px; margin-top: 31px; margin-left: 25px; padding-left: 25px; }
+.detail .timebox .time.current{background-position: 0 6px;}/*即将开始，进行中*/
+.detail .timebox .time.current span{font-size: 13px; color: #595757;}
+.detail .timebox .time.current strong{ color: #c02125; font-size: 26px; padding: 0 9px;}
+.detail .timebox .time.closure{background-position: 0 -78px;}/*结束*/
+.detail .timebox .time.closure span{font-size: 13px;  color: #595757;}
+.detail .timebox .time.closure strong{ color: #898989;font-size: 26px; padding: 0 9px;}
+.detail .timebox .btnbox{ width: 469px; height: 74px; background-position: 0 -248px; position: absolute; left: -4px; top:74px; color: #FFFFFF;}
+.detail .timebox .btnbox .pprice{ font-size: 36px; position: absolute; top: 20px; left: 29px; font-weight: bold;}/*现价*/
+.detail .timebox .btnbox .pprice span{ font-size: 45px;}
+.detail .timebox .btnbox .pprice s{font-size: 17px; font-weight: normal; padding-left: 15px;}
+.detail .timebox .btnbox a{ width: 118px; height: 34px; line-height: 34px; font-size: 16px; color: #FFFFFF; display: block; position: absolute; top: 17px; right: 45px; text-align: center; text-decoration: none;}
+.detail .timebox .btnbox a.nostar{ background: #99cc33;}
+.detail .timebox .btnbox a.star{ background: #fee97d; color: #c02125;}
+.detail .timebox .btnbox a.overdue{ background: #898989;}
+
+.introduce{ width: 100%; background: #FFFFFF; border: 1px solid #e1e1e1; padding: 45px; box-sizing: border-box;}
+.grab-title{ font-size: 16px; height: 30px;border-bottom: 1px solid #e1e1e1; color: #69247d;}
+.grab-title span{ border-bottom: 2px solid #69247d; padding-bottom: 3px; position: relative; top: 5px;}
+.detail-txt{ color: #727171; font-size: 14px; padding: 40px 0;}
+
+@media screen and (max-width:565px){
+	#header{ display:none;}
+	.wap-pic{ display: block;}	
+	.wap-pic img{ width: 100%;}
+	.wrapper{ width:96%; padding: 0 2%;}
+	.detail .left{ display: none;}
+	.crumb { font-size: 20px;}
+	.detail{ height: 440px;}
+	.detail .title { height: auto;}
+	.detail .title h3{ font-size: 30px; padding: 0; line-height: 50px;}
+	.detail .title span{ font-size: 16px;}
+	.detail .right .htop{ display: none;}
+	.detail .price{ height: 54px;}
+	.detail .price strong{ font-size: 16px; width: auto; padding: 3px 6px;}
+	.detail .parameter p{ font-size: 22px; width: auto;}
+	.detail .parameter span{font-size: 22px;}
+	.detail .parameter .num{ left: auto; top: 57px; right: 10px;font-size: 22px;}
+	.detail .parameter .shop .info{ width: 330px; top: 29px;}
+	.detail .parameter .shop .info p{ width: 180px; line-height: 26px;}	
+	.detail .parameter .shop .info em{ font-size: 22px; padding-left: 30px; background-size: 30px; line-height: 30px;}
+	.detail .parameter .shop .info .icon1{ background-position: -3px -21px;}
+	.detail .parameter .shop .info .icon2{ background-position: -3px -54px;}
+	.detail .parameter .shop .info .icon3{ background-position: -3px -80px;}
+	.detail .timebox .time.current span{ font-size: 20px;}
+	.detail .timebox .time{ font-size: 24px;}
+	.detail .timebox .time.current{ background-position: 0 8px;}
+	.detail .timebox .time.current strong{ font-size:36px;}
+	.detail .timebox .btnbox .oprice{ font-size: 20px;}
+	.detail .timebox .btnbox a{ font-size: 24px; height: 44px; line-height: 44px; width: 130px; top: 10px;}
+	.detail .parameter .shop, .detail .parameter .shop p{ height: 40px;}
+	.grab-title span{ font-size: 28px; top: -3px;}
+	.detail-txt{ font-size: 18px; line-height: 36px;}
+	.introduce .parameter ul{ width: 100%; margin-left: -4%;}
+	.introduce .parameter ul li{ width: 46%; font-size: 20px; padding-left: 4%; margin: 0; line-height: 36px;}
+	.introduce .info img{ width: 90%;}
+	
+}
+

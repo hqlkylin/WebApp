@@ -1,0 +1,635 @@
+body {
+	background: #f4f4f4;
+}
+.screen {
+	border: 2px solid #dfdfdf;
+	border-bottom: none;
+	margin-top: 14px;
+	background: url(../images/screen-bg.png) repeat-y;
+	overflow: hidden;
+}
+.screen .genre {
+	line-height: 37px;
+	color: #6d3885;
+	overflow: hidden;
+	zoom: 1;
+}
+.screen .genre h3 {
+	width: 104px;
+	margin-left: 36px;
+	float: left;
+	font-size: 14px;
+	overflow: hidden;
+}
+.screen .genre ul {
+	float: left;
+	width: 1000px;
+	margin-top: 9px;
+	margin-left: 50px;
+}
+.screen .genre ul li {
+	float: left;	
+	margin-left: 4px;
+	margin-bottom: 10px;
+	font-family: simsun;
+}
+.screen .genre ul li a {
+	line-height:21px ;
+	display: block;
+	width:84px;
+	height: 21px;
+	color: #6d3885;
+	font-weight: bold;
+	padding: 0 4px;
+	border: 1px solid #FFFFFF;
+}
+.screen .genre ul li a.active{background:#e1f1c2; border: 1px solid #99cc33; color: #5a7b17;}
+.screen .line {
+	height: 0px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #ffffff;
+}
+.screen .box {
+	width: 1174px;
+	margin: 0 auto;
+	border-bottom: 1px dotted #e8e8e8;
+	overflow: hidden;
+	position: relative;
+	zoom: 1;
+}
+.screen .box dt h3 {
+	width: 104px;
+	margin-left: 27px;
+	line-height: 48px;
+	float: left;
+	font-size: 13px;
+	color: #838383;
+	font-weight: normal;
+}
+.screen .box dt h3.brand {
+	padding-top: 36px;
+}
+.screen .box dd {
+	width: 1040px;
+	height: 44px;
+	overflow: hidden;
+}
+.screen .box dd.brand {
+	height: 114px;
+	margin-bottom: 10px;
+}
+.screen .box .kay {
+	height: 17px;
+	padding-top: 9px;
+	display: none;
+}
+.screen .box .kay.show {
+	display: block;
+}
+.screen .box .kay ol {
+	overflow: hidden;
+}
+.screen .box .kay li {
+	float: left;
+	margin-left: 10px;
+}
+.screen .box .kay li a {
+	color: #6d3885;
+	line-height: 14px;
+	width: 21px;
+	height: 17px;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+}
+.screen .box .kay li a.all {
+	width: 54px;
+}
+.screen .box .kay li a:hover {
+	color: #ffffff;
+	background: url(../images/products-list-kay.png) no-repeat center top;
+}
+.screen .box .kay li a.ac {
+	color: #ffffff;
+	background: url(../images/products-list-kay.png) no-repeat center top;
+}
+.screen .box .logo {
+	width: 940px;
+	height: 157px;
+	margin-left: 6px;
+	padding-top: 8px;
+	padding-left: 5px;
+	overflow: hidden;
+	border: 1px solid #e7e7e7;
+}
+.screen .box .logo.initial {
+	border: 1px solid #ffffff;
+}
+/********改变属性*******/
+
+.screen .box .logo ul {
+	width: 927px;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+.screen .box .logo ul li {
+	float: left;
+}
+.screen .box .logo ul li a {
+	display: block;
+	width: 102px;
+	height: 51px;
+	position: relative;
+	border-right: 1px solid #ffffff;
+	border-top: 1px solid #ffffff;
+	color: #5a7b17;
+	text-decoration: none;
+}
+.screen .box .logo ul li a.active .mask {
+	display: block;
+}
+.screen .box .logo ul li img {
+	width: 102px;
+	height: 51px;
+	display: block;
+}
+.screen .box .logo ul li .mask {
+	width: 102px;
+	height: 51px;
+	line-height: 50px;
+	text-align: center;
+	background: #e1f1c2;
+	border: 1px solid #99cc33;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	z-index: 500;
+	display: none;
+}
+.screen .box .btngroup {
+	width: 120px;
+	overflow: hidden;
+	margin-left: 425px;
+	padding: 22px 0;
+}
+.screen .box .btngroup a {
+	width: 50px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	display: block;
+	float: left;
+	margin: 0 4px;
+}
+.screen .box .btngroup a.sure {
+	background: #6d3885;
+	border: 1px solid #6d3885;
+	color: #ffffff;
+}
+.screen .box .btngroup a.cancel {
+	background: #f1f1f1;
+	border: 1px solid #dad7d7;
+	color: #666666;
+}
+.screen .box .depict {
+	width: 893px;
+	margin-left: 50px;
+	margin-top: 13px;
+	overflow: hidden;
+}
+.screen .box .depict li {
+	float: left;
+	margin-left: 4px;
+	margin-bottom: 10px;
+}
+.screen .box .depict li a {
+	width: 130px;
+	height: 19px;
+	display: block;
+	background: #ffffff;
+	border: 1px solid #ffffff;
+	color: #8f8f8f;
+	line-height: 19px;
+	padding-left: 4px;
+}
+.screen .box .depict li a.active {
+	background: #e1f1c2!important;
+	border: 1px solid #99cc33!important;
+	color: #5a7b17!important;
+}
+.screen .box .depict li a.normol {
+	background: #f5f5f5;
+	border: 1px solid #d3d3d3;
+	color: #8f8f8f;
+}
+.screen .box .more {
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+.screen .box .more p {
+	width: 43px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+	margin-left: 2px;
+	color: #585858;
+}
+.screen .box .more p.multiple {
+	background: #e1f1c2;
+}
+.screen .box .more p.multiple span {
+	padding-left: 13px;
+	background-position: 1px 4px;
+}
+.screen .box .more p.switch span.down {
+	padding-right: 13px;
+	background-position: 26px -26px!important;
+}
+.screen .box .more p.switch span.up {
+	padding-right: 13px;
+	background-position: 26px -60px;
+}
+.bg {
+	background: url(../images/products-list-icon.png) no-repeat;
+}
+.more-option {
+	border-top: 5px solid #e1f1c2;
+	height: 33px;
+	overflow: hidden;
+}
+.more-option p {
+	width: 103px;
+	height: 33px;
+	line-height: 33px;
+	cursor: pointer;
+	font-size: 13px;
+	float: right;
+	background: #e1f1c2;
+	text-align: center;
+	color: #5a7b17;
+}
+.more-option p span.down {
+	padding-right: 15px;
+	background-position: 57px -89px!important;
+}
+.more-option p span {
+	padding-right: 15px;
+	background-position: 57px -122px;
+}
+.chose {
+	padding: 16px 0;
+	border: 1px solid #e6e6e6;
+	background: url(../images/screen-bg.png) repeat-y;
+	overflow: hidden;
+	zoom: 1;
+	margin-top: 12px;
+	box-shadow: 2px 2px 8px #888888;
+	position: relative;
+	font-family: simsun;
+}
+.chose h3 {
+	width: 104px;
+	margin-left: 36px;
+	float: left;
+	font-size: 13px;
+	color: #838383;
+	font-weight: normal;
+	font-family: "microsoft yahei";
+}
+.chose .box {
+	width: 590px;
+	overflow: hidden;
+	float: left;
+}
+.chose ul {
+	float: left;
+}
+.chose ul li {
+	float: left;
+	margin-left: 6px;
+	margin-top: 6px;
+}
+.chose ul li a {
+	height: 19px;
+	line-height: 19px;
+	font-size: 13px;
+	padding-left: 8px;
+	padding-right: 20px;
+	color: #6d3885;
+	background: #efefef;
+	border: 1px solid #efefef;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+}
+.chose ul li a span {
+	background: url(../images/chose-bg.png) no-repeat;
+	background-position: 0px 0px;
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+.chose ul li a:hover {
+	border: 1px dotted #6d3885;
+}
+.chose ul li a:hover span {
+	background-position: 0px -42px;
+}
+.chose .about {
+	position: absolute;
+	top: 24px;
+	left: 816px;
+	color: #666666;
+}
+.chose .about strong {
+	color: #c02125;
+	font-weight: normal;
+	padding-left: 5px;
+}
+.chose .reset {
+	position: absolute;
+	top: 24px;
+	right: 25px;
+	padding-left: 15px;
+	background-position: 0px -162px;
+	color: #2591cf;
+	text-decoration: none;
+}
+/*产品列表相关*/
+
+.list {
+	background: #ffffff;
+}
+.list .main {
+	width: 1164px;
+	margin: 24px auto;
+	padding: 23px 0;
+}
+/*排序*/
+
+.list .sortbar {
+	height: 24px;
+	padding-bottom: 17px;
+	overflow: hidden;
+	zoom: 1;
+	color: #666666;
+}
+.list .sortbar .sort ul {
+	float: left;
+	border-top: 1px solid #ededed;
+	border-left: 1px solid #ededed;
+}
+.list .sortbar .sort ul li {
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	border-bottom: 1px solid #ededed;
+	border-right: 1px solid #ededed;
+}
+.list .sortbar .sort ul li a {
+	color: #666666;
+	display: block;
+	text-decoration: none;
+	padding-right: 6px;
+}
+.list .sortbar .sort ul li a:hover {
+	color: #ffffff;
+	background: #c02125;
+}
+.list .sortbar .sort ul li a span {
+	padding-left: 6px;
+	padding-right: 10px;
+	background: url(../images/plist-sortbg.png) no-repeat;
+	background-position: right 5px;
+}
+.list .sortbar .sort ul li a:hover span {
+	background-position: right -37px;
+}
+.list .sortbar .sort ul li a.active {
+	color: #ffffff;
+	background: #c02125;
+}
+.list .sortbar .sort ul li a.active span {
+	background-position: right -37px;
+}
+.list .sortbar .sort ul li a.sortprice span {
+	background: none;
+	position: relative;
+}
+.list .sortbar .sort ul li a.sortprice span i {
+	position: absolute;
+}
+.list .sortbar .sort ul li a.sortprice span .triangle-down {
+	border-top: 4px solid #5d5d5d;
+	bottom: 3px;
+	right: 0px;
+}
+.list .sortbar .sort ul li a.sortprice span .triangle-up {
+	border-bottom: 4px solid #5d5d5d;
+	top: 3px;
+	right: 0px;
+}
+.list .sortbar .sort ul li a.sortprice:hover span .triangle-down {
+	border-top: 4px solid #ffffff;
+}
+.list .sortbar .sort ul li a.sortprice:hover span .triangle-up {
+	border-bottom: 4px solid #ffffff;
+}
+.list .sortbar .price {
+	float: left;
+	margin-left: 19px;
+}
+.list .sortbar .price input {
+	width: 47px;
+	height: 22px;
+	border: 1px solid #ededed;
+}
+/*分页*/
+
+.list .sortbar .pager {
+	margin-right: 225px;
+}
+.list .sortbar .pager .pagerbtn {
+	border-top: 1px solid #ededed;
+	border-left: 1px solid #ededed;
+	line-height: 22px;
+	margin-left: 15px;
+}
+.list .sortbar .pager .pagerbtn a {
+	border-bottom: 1px solid #ededed;
+	border-right: 1px solid #ededed;
+	display: block;
+	float: left;
+	padding: 0 6px;
+	text-decoration: none;
+	color: #666666;
+}
+.list .sortbar .pager .pagerbtn a:hover {
+	background: #e93b39;
+	color: #ffffff;
+}
+.list .sortbar .pager p span {
+	color: #e93b39;
+}
+/*左侧列表*/
+
+.list .left {
+	width: 963px;
+	border-right: 1px solid #f4f4f4;
+	overflow: hidden;
+}
+.list .left ul li {
+	width: 218px;
+	height: 325px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #f2f2f2;
+	background: #f7f6f6;
+}
+.list .left ul li:hover {
+	border: 1px solid #99CC33;
+}
+.list .left ul li .box {
+	border: 2px solid #f7f6f6;
+	width: 214px;
+	height: 321px;
+}
+.list .left ul li:hover .box {
+	border-color: #99CC33;
+}
+.list .left ul li a img {
+	width: 210px;
+	height: 210px;
+	display: block;
+	margin: 2px auto;
+}
+.list .left ul li .info {
+	width: 194px;
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 20px;
+}
+.list .left ul li .info .price {
+	color: #999999;
+	overflow: hidden;
+	padding: 5px 0;
+}
+.list .left ul li .info .price strong {
+	color: #c02125;
+	font-weight: normal;
+}
+.list .left ul li .info .price p {
+	color: #c02125;
+}
+.list .left ul li .info .price p strong {
+	font-size: 19px;
+}
+.list .left ul li .info .name {
+	font-family: simsun;
+	line-height: 18px;
+}
+.list .left ul li .info .name p a {
+	color: #000000;
+	text-decoration: none;
+}
+.list .left ul li .info .name p a:hover{ color: #6d3885;}
+.list .left ul li .info .name span {
+	text-decoration: underline;
+	color: #999999;
+}
+.list .left ul li .info .data {
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	height: 27px;
+	line-height: 27px;
+	margin-top: 5px;
+	font-family: simsun;
+}
+.list .left ul li .info .data span {
+	width: 49%;
+	border-right: 1px solid #eeeeee;
+	color: #999999;
+	line-height: 27px;
+	display: block;
+	float: left;
+	text-indent: 2px;
+}
+.list .left ul li .info .data span.noborder {
+	border: none;
+}
+.list .left ul li .info .data span a {
+	color: #2591cf;
+}
+/*右侧列表片*/
+
+.list .right {
+	width: 183px;
+}
+.list .right .title {
+	font-size: 13px;
+	height: 23px;
+	line-height: 23px;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: simsun;
+	background: url(../images/p-list-rbg.png) no-repeat;
+}
+.list .right ul {
+	padding-top: 3px;
+}
+.list .right ul li {
+	position: relative;
+	background: #f4f4f4;
+	margin-bottom: 10px;
+}
+.list .right ul li .photo {
+	width: 183px;
+	height: 183px;
+	display: block;
+}
+.list .right ul li .logo {
+	width: 80px;
+	height: 32px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.list .right ul li .info {
+	border: 1px solid #f2f2f2;
+	border-top: none;
+	padding-bottom: 5px;
+}
+.list .right ul li .info .price {
+	color: #c02125;
+	padding: 3px 12px;
+}
+.list .right ul li .info .price strong {
+	font-size: 19px;
+	font-weight: normal;
+}
+.list .right ul li .info .name {
+	font-family: simsun;
+	line-height: 18px;
+	padding: 0 12px;
+}
+.list .right ul li .info .name span {
+	text-decoration: underline;
+	color: #999999;
+}
+.screen .box .logo ul li .mask.active {
+	display: block;
+}
+.logo {
+	display: none;
+}
+.logo.ac {
+	display: block;
+}

@@ -1,0 +1,97 @@
+@import "../../publicCss/mixin";
+
+.container, .box, .pop, .buddy, .pop img {
+  @include opacity(0);
+}
+
+.container {
+  width: 320px;
+  height: 430px;
+  border: 1px solid #ddd;
+  background: #FFF;
+  margin: 10px auto;
+  position: relative;
+}
+
+.box {
+  position: relative;
+  z-index: 2;
+  img {
+    width: 100%;
+  }
+  .buddy {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    border-radius: 50%;
+    // @include transform(translate(-50%, 0));
+    margin-left: -48px;
+  }
+  .inner {
+    margin-top: 66px;
+    text-align: center;
+    h3 {
+      font-size: 18px;
+    }
+    span {
+      font-size: 14px;
+      color: #b4b4b4;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    .btn {
+      width: 90%;
+      line-height: 45px;
+      height: 45px;
+      font-size: 20px;
+      background: #5677fc;
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-block;
+      @include transition(all .2s);
+      margin-top: 15px;
+      &:hover {
+        background-color: #3b50ce;
+      }
+    }
+  }
+}
+
+.pop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  img {
+    width: 125px;
+    display: inline-block;
+    height: 125px;
+    margin: 10px;
+  }
+  .close {
+    position: absolute;
+    right: 10px;
+    color: #111;
+    font-size: 24px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+  }
+  h3 {
+    margin-top: 15px;
+
+  }
+  span {
+    margin-top: 20px;
+    color: #999;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+

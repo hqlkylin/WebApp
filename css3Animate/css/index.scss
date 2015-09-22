@@ -1,0 +1,301 @@
+@import "mixin";
+
+$height-size: 350px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  position: relative;
+  width: 33.33%;
+  float: left;
+  overflow: hidden;
+  height: 350px;
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "微软雅黑";
+    color: #FFF;
+  }
+  img {
+    vertical-align: middle;
+    @include opacity(0.8);
+
+  }
+}
+
+figure figcaption p, figure img, figure h2, figure div, figure span {
+  @include transition(all .35s);
+}
+
+.test1 {
+  background-color: #2F0000;
+  figcaption {
+    padding: 20px;
+  }
+  figcaption p {
+    background: #fff;
+    color: #333;
+    margin: 3px;
+    text-align: center;
+    @include transform(translate(-120px, 0px));
+  }
+  &:hover {
+    figcaption p {
+      @include transform(translate(0px, 0px));
+    }
+    img {
+      @include transform(translate(0px, 0px));
+      @include opacity(0.5);
+    }
+  }
+  img {
+    @include transform(translate(-50px, 0px));
+  }
+  figcaption p:nth-of-type(1) {
+    @include transition-delay(0.05s);
+  }
+  figcaption p:nth-of-type(2) {
+    @include transition-delay(0.1s);
+  }
+  figcaption p:nth-of-type(3) {
+    @include transition-delay(0.15s);
+  }
+}
+
+.test2 {
+  background-color: #b6230f;
+  figcaption {
+    height: 100%;
+    width: 100%;
+    div {
+      border: 2px solid #fff;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      @include transform(translate(0px, -350px) rotate(0deg));
+    }
+    h2 {
+      margin-left: 15%;
+      margin-top: 15%;
+    }
+    p {
+      margin-left: 15%;
+      @include transform(translate(0px, 50px));
+      @include opacity(0);
+    }
+  }
+  &:hover {
+    div {
+      @include transform(translate(0px, 0px) rotate(360deg));
+    }
+    img {
+      @include opacity(0.5);
+    }
+    p {
+      @include transform(translate(0px, 0px));
+      @include opacity(1);
+    }
+  }
+}
+
+.test3 {
+  background-color: #0000cc;
+  figcaption {
+    height: 100%;
+    width: 100%;
+    top: 30%;
+    left: 15%;
+    h2 {
+      @include transform(skew(90deg))
+    }
+    p {
+      @include transform(skew(90deg));
+      @include transition-delay(0.2s);
+    }
+    img {
+      @include opacity(0.5);
+    }
+  }
+  &:hover {
+    img {
+      @include opacity(1);
+    }
+    p {
+      @include transform(skew(0deg))
+    }
+    h2 {
+      @include transform(skew(0deg))
+    }
+  }
+}
+
+.test4 {
+  background-color: #FFF;
+  figcaption {
+    height: 100%;
+    width: 100%;
+    div {
+      border: 2px solid #fff;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      @include transform(scale(1.2, 1.2));
+      @include opacity(0)
+    }
+    h2 {
+      margin-left: 15%;
+      margin-top: 15%;
+      @include transform(scale(1.2, 1.2));
+      @include opacity(0);
+    }
+    p {
+      margin-top: 5px;
+      margin-left: 15%;
+      @include transform(scale(1.2, 1.2));
+      @include opacity(0);
+    }
+  }
+  &:hover {
+    div {
+      @include transform(scale(1, 1));
+      @include opacity(1)
+    }
+    img {
+      @include opacity(0.5);
+      @include transform(scale(1.2, 1.2))
+    }
+    p {
+      @include opacity(1);
+      @include transform(scale(1, 1));
+    }
+    h2 {
+      @include transform(scale(1, 1));
+      @include opacity(1);
+    }
+  }
+}
+
+.test5 {
+  background-color: #FFF;
+  figcaption {
+    height: 100%;
+    width: 100%;
+    div {
+      position: absolute;
+      top: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      height: 100%;
+      width: 120%;
+      @include transform(rotate(25deg));
+      @include transform-origin(top left);
+
+      h2 {
+        position: absolute;
+        right: 20%;
+        color: #b6230f;
+        top: 15%;
+        @include transform(rotate(18deg));
+      }
+    }
+  }
+  &:hover {
+    div {
+      @include transform(rotate(-18deg));
+    }
+  }
+}
+
+.test6 {
+
+  figcaption {
+    height: 100%;
+    width: 100%;
+    div {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0);
+      height: 80%;
+      width: 80%;
+      left: 10%;
+      top: 10%;
+      border: 1px solid #FFF;
+    }
+    div:first-child {
+      @include transform(scale(1, 0));
+      border-top: 0px;
+      border-bottom: 0px;
+    }
+    div:last-child {
+      @include transform(scale(0, 1));
+      border-left: 0px;
+      border-right: 0px;
+    }
+  }
+  &:hover {
+    div:first-child, div:last-child {
+      @include transform(scale(1, 1));
+    }
+  }
+}
+
+.test7 {
+  position: relative;
+  background: rgba(234, 248, 10, 0.5);
+  img {
+    height: $height-size * 0.8;
+    width: $height-size * 0.8;
+    border-radius: 50% 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -$height-size * 0.8 / 2;
+    margin-top: -$height-size * 0.8 / 2;
+    position: absolute;
+  }
+  div {
+    border: 10px solid #00cc00;
+    border-right: 10px solid #7d37e4;
+    border-top: 10px solid #7d37e4;
+    height: $height-size * 0.8;
+    width: $height-size * 0.8;
+    border-radius: 50% 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -$height-size * 0.8 / 2 - 10;
+    margin-top: -$height-size * 0.8 / 2 - 10;
+    position: absolute;
+  }
+  &:hover {
+    div {
+      @include transform(rotate(180deg));
+    }
+    background: rgba(234, 248, 10, 0.8);
+    img{
+      @include opacity(1);
+    }
+  }
+}
+
+@media screen and(min-width: 1001px) {
+  figure {
+    width: 33.33%;
+  }
+}
+
+@media screen and(max-width: 1000px) and(min-width: 601px) {
+  figure {
+    width: 50%;
+  }
+}
+
+@media screen and(max-width: 600px) {
+  figure {
+    width: 100%;
+  }
+}

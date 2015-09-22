@@ -1,0 +1,109 @@
+body{ background: #99CC33;}
+/*登录页面样式start*/
+.user_content{width: 100%;padding-top:28px;}
+.user_content .user_wrap{background-color:#F1F1F1;}
+.user_content .user_wrap .user_container{width: 300px;margin: 0 auto;padding-top:49px;padding-bottom:125px;font-family: "microsoft yahei";font-size: 13px;border: 0 none;}
+.user_content .user_wrap .user_container .user_tip{color: #6D3885;font-size: 25px;margin-bottom: 27px;text-align: center;}
+.user_content .user_wrap .user_container input{height: 42px;border: 0 none;}
+.user_content .user_wrap .user_login .user_form input.user_b{width: 292px;border: 1px solid #C6C6C6;margin-bottom: 20px;text-indent: 1em;}
+.user_content .user_wrap .user_container input.user_sbtn{ font-family: "microsoft yahei"; cursor:pointer;width: 294px;background-color: #6D3885;color: #fff;font-size: 18px;margin-bottom: 7px;}
+.user_content .user_wrap .user_login .user_ta{text-align: right;}
+.user_content .user_wrap .user_login .mt{margin-top: 35px;}
+.user_content .user_wrap .user_login .user_ta a{color: #020202;text-decoration: underline;}
+/*登录页面样式end*/
+
+
+/*找回密码1页面样式start*/
+.user_psd_recovery1{padding-bottom: 204px!important;}
+.user_psd_recovery1 .user_form input.user_psd_b{margin-bottom: 20px;text-indent: 1em;border: 1px solid #C6C6C6!important;}
+.user_psd_recovery1 .user_form input.user_rp{width: 292px;}
+.user_psd_recovery1 .user_form p{float: right;}
+/*找回密码1页面样式end*/
+
+/*找回密码2页面样式start*/
+.user_psd_recovery2{padding-bottom: 205px!important;}
+.user_psd_recovery2 .user_tip_2{margin-bottom: 39px!important;}
+.user_psd_recovery2 .r_f1{font-size: 15px;margin-bottom: 9px;}
+.user_psd_recovery2 .r_f2{font-size: 15px;color: #7B7B7B;line-height: 1.7;margin-bottom: 34px;}
+.user_psd_recovery2 .r_f2 span{color: #6D3885;}
+/*找回密码2页面样式end*/
+
+
+/*找回密码3页面样式start*/
+.user_psd_recovery3{padding-bottom: 198px!important;}
+.user_psd_recovery3 .user_tip_3{margin-bottom: 39px!important;}
+.user_psd_recovery3 .psd3_f1{font-size: 15px;margin-bottom: 16px;}
+.user_psd_recovery3 .psd3_f1 span{color: #6D3885;}
+.user_psd_recovery3 .psd3_yzm{border: 1px solid #C6C6C6!important;width: 175px;text-indent: 1em;margin-right: 2px;}
+.user_psd_recovery3 .psd3_angin{cursor:pointer;width:110px;background-color: #E1F1C2;border: 1px solid #A0CF42!important;color: #5A7B17;}
+.user_psd_recovery3 .psd3_p{font-size: 15px;color: #6D3885;margin: 1px 0 16px 10px;}
+.user_psd_recovery3 .psd3_p i{background:url(../images/user/user-psd3-icon.png) no-repeat;display: inline-block;width: 15px;height: 15px;vertical-align: middle;margin-right: 5px;}
+/*找回密码3页面样式end*/
+
+/*找回密码4页面样式start*/
+.user_psd_recovery4{padding-bottom: 134px!important;}
+.user_psd_recovery4 .user_tip_4{margin-bottom: 37px!important;}
+.user_psd_recovery4 .psd4_f1{font-size: 15px;margin-bottom: 15px;}
+.user_psd_recovery4 .psd4_btn{width: 292px;border: 1px solid #C6C6C6!important;text-indent: 1em;}
+.user_psd_recovery4 .psd4_mb{margin-bottom: 20px;}
+.user_psd_recovery4 .psd4_info{margin-top: 5px;margin-bottom: 15px;color: #858585;}
+/*找回密码4页面样式end*/
+
+/*找回密码5页面样式start*/
+.user_psd_recovery5{padding-bottom: 199px!important;}
+.user_psd_recovery5 .user_tip_5{margin-bottom: 22px!important;}
+.user_psd_recovery5 .psd5_img{text-align: center;}
+.user_psd_recovery5 .psd5_f{text-align: center;margin-top: 12px;margin-bottom: 15px;}
+/*找回密码5页面样式end*/
+
+/*注册页面样式start*/
+.user_register{padding-bottom: 75px!important;}
+.user_register .user_rg_b{border: 1px solid #C6C6C6!important;text-indent: 1em;margin-bottom: 20px;}
+.user_register .user_rg_w{width: 292px;}
+.user_register .user_rg_yzm_w{width: 173px;}
+.user_register .user_rg_yzm{float:right;width: 118px;height:44px!important;background-color: #E1F1C2;border: 1px solid #A0CF42!important;color: #5A7B17;}
+/*注册页面样式end*/
+
+/*弹窗1页面样式start*/
+.popup{position: fixed;top: 55%;left: 50%;z-index: 2000;visibility: hidden;-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);-ms-transform: translateX(-50%) translateY(-50%);transform: translateX(-50%) translateY(-50%);}
+.popup .popup_wrap{width: 470px;height: 244px;line-height:244px;background-color: #F1F1F1;color: #75468C;font-size:25px;text-align: center;}
+.popup_overlay{position: fixed;width: 100%;height: 100%;visibility: hidden;top: 0;left: 0;z-index: 1000;
+	opacity: 0;background: rgba(0,0,0,0.8);}
+.popup_overlay_show{opacity: 1;visibility: visible;}
+.popup_show{visibility: visible;}
+/*弹窗1页面样式end*/
+/*弹窗23页面样式start*/
+.popup .popup_wrap1{width: 470px;height: 244px;background-color: #F1F1F1;text-align: center;}
+.popup .popup_wrap1 p{color: #7B7B7B;font-size: 20px;}
+.popup .popup_wrap1 p.f1{padding-top: 46px;margin-bottom: 10px;}
+.popup .popup_wrap1 input{width: 118px;height: 40px;background-color: #E1F1C2;border: 1px solid #A0CF42;color: #5A7B17;font-size: 15px;margin-top: 60px;}
+/*弹窗23页面样式end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

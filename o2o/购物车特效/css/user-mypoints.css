@@ -1,0 +1,28 @@
+/*我的积分页面样式start*/
+.user_per_points{margin-top: 31px;font-size: 15px;font-family: "microsoft yahei";margin-bottom: 150px;}
+.user_per_points .point_info p{color: #474747;}
+.user_per_points .point_info p .point_cardnum{margin-right: 35px;}
+.user_per_points .point_available{margin-top:19px;margin-bottom: 27px;overflow: hidden;zoom: 1;}
+.user_per_points .point_available > div{float: left;}
+.user_per_points .point_available .point_same_tit{margin-right: 8px;}
+.user_per_points .point_available .point_same_tit .point_tit{height: 40px;line-height:40px;background-color: #E6E6E6;color: #000;text-indent: 1em;}
+.user_per_points .point_available .point_same_tit .point_cont{height: 115px;line-height:115px;background-color: #F1F1F1;text-align: center;font-size: 29px;}
+.user_per_points .point_available .point_same_tit .point_c01{color: #C02125;font-weight: bold;}
+.user_per_points .point_available .point_same_tit .point_c02{color: #C02125;}
+.user_per_points .point_available .point_same_tit .point_c03{color: #656565;}
+
+.user_per_points .point_available .point_avai{width: 227px;}
+.user_per_points .point_available .point_cordstore{width: 227px;}
+.user_per_points .point_available .point_valid{width: 280px;}
+.user_per_points .point_available .point_purchase{width: 140px;height:155px;background-color: #6D3885;color: #fff;}
+.user_per_points .point_available .point_purchase .purch1{margin-top: 64px;margin-left: 17px;font-size: 22px;margin-bottom: 10px;}
+.user_per_points .point_available .point_purchase .purch2 a{color: #fff;text-decoration: underline;margin-left: 96px;font-size: 13px;}
+
+.user_per_points .point_payment{border: 1px solid #DAD7D7;height: 280px;}
+.user_per_points .point_payment .pay_tit{height: 35px;line-height:35px;background-color: #F1F1F1;color: #6A6A6A;}
+.user_per_points .point_payment .pay_tit .pay_tit_s1{margin-left: 67px;margin-right: 155px;}
+.user_per_points .point_payment .pay_tit .pay_tit_s3{margin-left: 155px;margin-right: 170px;}
+.user_per_points .point_payment .pay_cont{font-size: 18px;color: #B1B1B1;text-align: center;height: 245px;line-height: 245px;}
+/*我的积分页面样式end*/
+
+

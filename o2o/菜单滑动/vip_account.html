@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>会员中心-账户信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/vip.css"/>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/menuPlugin.js"></script>
+    <script>
+        $(function () {
+            $(".tabs").menuSlide({itemClassName: ".vip_info", dir: "vertical"});
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <!--头部导航star-->
+    <div class="header">
+        <div class="wrapper wrap">
+            <h1><a href="#"><img src="images/logo.png" alt="集美家居"/></a></h1>
+
+            <div class="vip_font">个人中心</div>
+            <div class="vip_iss">
+                欢迎 <a href="#">某某某会员</a> , <a href="#">[退出]</a>
+						<span class="vip_iss_icon">
+							<a href="#" class="vip_iss_icon1">消息</a>
+							<a href="#" class="vip_iss_icon2">积分商城</a>
+							<a href="#" class="vip_iss_icon3">客服</a>
+						</span>
+            </div>
+        </div>
+    </div>
+    <!--头部导航end-->
+    <div class="clear"></div>
+    <div class="wrapper container">
+        <div class="left">
+            <div class="facebg">
+                <div class="face"><img src="images/vip/face.png"/></div>
+                <p>nimolala_zln</p>
+            </div>
+            <div class="tabs">
+                <div class="moving_bg">
+                    <div class="moving_content">
+                        <div class="moving1"></div>
+                        <span class="moving2"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_1"></i>账户信息</a></div>
+                    <div class="vip_info active"><a href="#"><i class="vip_left_icon_2"></i>个性信息</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_3"></i>收货地址</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_4"></i>修改密码</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_5"></i>安全中心</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_6"></i>我的会员</a></div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="tabs">
+                <div class="moving_bg">
+                    <div class="moving_content">
+                        <div class="moving1"></div>
+                        <span class="moving2"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="vip_info "><a href="#"><i class="vip_left_icon_1"></i>账户信息</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_2"></i>个性信息</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_3"></i>收货地址</a></div>
+                    <div class="vip_info active"><a href="#"><i class="vip_left_icon_4"></i>修改密码</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_5"></i>安全中心</a></div>
+                    <div class="vip_info"><a href="#"><i class="vip_left_icon_6"></i>我的会员</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <style>
+                ul li {
+                    float: left;
+                    padding: 20px;
+                    border: 1px solid red;
+                    position: relative;
+                }
+            </style>
+            <div style="position: relative" id="tabs">
+                <span class="moving_bg"
+                      style="overflow: hidden;height: 20px; position: absolute; left: 0;top: 0; padding: 20px; background-color: #000000; border:  1px solid red;">遮盖</span>
+                <ul>
+                    <li class="active">111</li>
+                    <li>222</li>
+                    <li>333</li>
+                    <li>444</li>
+                    <li>555</li>
+                </ul>
+            </div>
+            <script>
+                $("#tabs").menuSlide({itemClassName: "ul li", dir: "horizontal"});
+
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

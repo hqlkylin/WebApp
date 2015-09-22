@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #Grid{
+            text-align: justify;
+            font-size: 0.1px; /*hide whitespace between elements*/
+        }
+
+        #Grid li{
+            display: inline-block;
+            width: 23%;
+            border: 1px solid #0000cc;
+
+
+        }
+
+        #Grid .break{
+            width: 100%;
+            height: 0;
+
+        }
+        #Grid:after{
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul id="Grid">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li class="break"></li>
+</ul>
+</body>
+</html>

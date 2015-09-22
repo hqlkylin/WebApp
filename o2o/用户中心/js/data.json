@@ -1,0 +1,45 @@
+
+[
+    {
+        "active_day": "2015-08-26",
+        "active_list": [
+            {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state":"current","startEnd":"8.25-28","title":"集美家具的"},
+            {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"}],
+        "active_state": "current"
+    },
+  {
+    "active_day": "2015-08-10",
+    "active_list": [
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "future","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "future","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"}],
+    "active_state": "over"
+  },
+    {
+        "active_day": "2015-09-01",
+        "active_list": [
+            {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"},
+            {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"}],
+        "active_state": "future"
+    },
+    {
+        "active_day": "2015-07-29",
+        "active_list": [
+            {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"},
+            {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"}],
+        "active_state": "over"
+    }
+,
+  {
+    "active_day": "2015-08-24",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "current","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state":"current","startEnd":"8.25-28","title":"集美家具的"}],
+    "active_state": "over"
+  }
+]
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="jquery.mousewheel.js"></script>
+    <script src="index.js"></script>
+    <script>
+        $(function(){
+           $("#container").switchPage({loop:false,direction:'vertical'});
+        })
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="section0"  class="section"></div>
+    <div id="section1"  class="section"></div>
+    <div id="section2"  class="section"></div>
+    <div id="section3"  class="section"></div>
+    <div id="section4"  class="section"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/*@import "rest_nec";*/
+
+@mixin transition-delay($transition) {
+  -webkit-transition-delay: $transition;
+  -moz-transition-delay: $transition;
+  -ms-transition-delay: $transition;
+  -o-transition-delay: $transition;
+  transition-delay: $transition;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-origin($transform-origin) {
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+}
+
+@mixin background($linear-gradient) {
+
+  background: -webkit-linear-gradient($linear-gradient);
+  background: -moz-linear-gradient($linear-gradient);
+  background: -ms-linear-gradient($linear-gradient);
+  background: -o-linear-gradient($linear-gradient);
+  background: linear-gradient($linear-gradient);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity * 100);
+}
+
+/* keyframes.scss */
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+/* animation.scss */
+@mixin animation($name, $duration:0s, $function: ease, $delay: 0s, $count: infinite) {
+  -webkit-animation: $name $duration $function $delay $count;
+  -moz-animation: $name $duration $function $delay $count;
+  -ms-animation: $name $duration $function $delay $count;
+  -o-animation: $name $duration $function $delay $count;
+  animation: $name $duration $function $delay $count;
+}
+
+/*动画暂停*/
+//running
+@mixin animation-play-state($state:paused) {
+  -webkit-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -ms-animation-play-state: $state;
+  -o-animation-play-state: $state;
+  animation-play-state: $state;
+}
+
+@mixin animation-duration($time:0s) {
+  -webkit-animation-duration: $time;
+  -moz-animation-duration: $time;
+  -ms-animation-duration: $time;
+  -o-animation-duration: $time;
+  animation-duration: $time;
+}

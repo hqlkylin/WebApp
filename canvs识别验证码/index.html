@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		var st="2015/04/23 18:47:00";
+		jQuery.getScript("http://zt.jimei.com.cn/kylin.js").done(function() {var mykylin=new Kylin();});
+	
+	
+		<script type="text/javascript">
+
+		var st="2015/04/23 18:51:00";
+
+		var mykylin=new Kylin();
+	
+		function Kylin() {
+				this.init = function() {
+					qiangGou();
+					setTimeout(this.proc, 1000)
+				}
+				this.proc = function() {
+					
+					
+					var image = document.querySelector("#imgCode"); //如果要用在greasemonkey脚本里,可以把下面的代码放在image的onload事件里          
+					var canvas = document.createElement('canvas');
+					var ctx = canvas.getContext("2d");
+					var numbers = [ //模板,依次是0-9十个数字对应的明暗值字符串
+						"110000001100111100100111100001111110001111110001111110001111110001111110001111110100111100100111100110000001111000011111111111111111111111111111",
+						"100000111100000111111100111111100111111100111111100111111100111111100111111100111111100111111100111100000000100000000111111111111111111111111111",
+						"000000001011111000111111100111111100111111001111110011111100111111001111110011111100111111001111111000000000000000000111111111111111111111111111",
+						"100000001101111000111111100111111100111111001110000111110000001111111000111111100111111100101111000100000001110000011111111111111111111111111111",
+						"111110001111100001111001001111001001110011001100111001100111001000000000000000000111111001111111001111111001111111001111111111111111111111111111",
+						"100000000100111111100111111100111111100000111100000001111111000111111100111111100111111100101111000100000001110000011111111111111111111111111111",
+						"110000000100011110100111111001111111001000001000000000000111100001111110001111110001111110100111100110000000111000011111111111111111111111111111",
+						"100000001111111110111111101111111101111111001111110011111110011111100111111100111111001111111001111110011111110011111111111111111111111111111111",
+						"110000001100111100100111100100111100110001001111000011100010000100111100001111110001111110000111100100000000110000001111111111111111111111111111",
+						"100000001100111100001111110001111110001111110100111100100000000110000010111111110111111100101111000100000001110000111111111111111111111111111111"
+					];
+					var captcha = ""; //存放识别后的验证码
+					canvas.width = image.width;
+					canvas.height = image.height;
+					document.body.appendChild(canvas);
+					ctx.drawImage(image, 0, 0);
+					for (var i = 0; i < 4; i++) {
+						var pixels = ctx.getImageData(13 * i + 7, 3, 9, 16).data;
+						var ldString = "";
+						for (var j = 0, length = pixels.length; j < length; j += 4) {
+							ldString = ldString + (+(pixels[j] * 0.3 + pixels[j + 1] * 0.59 + pixels[j + 2] * 0.11 >= 140));
+						}
+						var comms = numbers.map(function(value) { //为了100%识别率,这里不能直接判断是否和模板字符串相等,因为可能有个别0被计算成1,或者相反
+							return ldString.split("").filter(function(v, index) {
+								return value[index] === v
+							}).length
+						});
+						captcha += comms.indexOf(Math.max.apply(null, comms)); //添加到识别好的验证码中
+					}
+					document.querySelector("input[name=code]").value = captcha; //写入目标文本框
+					
+					var timer = setInterval(function(){
+						var EndTime = new Date(st);
+						var NowTime = new Date();
+						var t = EndTime - NowTime.getTime();
+						if (t >= 0) {
+							console.log("等待：" + t)
+						} else {
+							$('#codeHidden').val(captcha);
+							$('#form').attr("target", "_blank").submit();
+							clearInterval(timer);
+						}
+					}, 500);
+					
+				}
+				
+		
+			this.init();
+		}
+		
+			
+			
+			
+			
+			
+			//var startime = 0;
+			qiangGou();
+			setTimeout(proc, 1000)
+
+			function proc() {
+				var image = document.querySelector("#imgCode"); //如果要用在greasemonkey脚本里,可以把下面的代码放在image的onload事件里          
+				var canvas = document.createElement('canvas');
+				var ctx = canvas.getContext("2d");
+				var numbers = [ //模板,依次是0-9十个数字对应的明暗值字符串
+					"110000001100111100100111100001111110001111110001111110001111110001111110001111110100111100100111100110000001111000011111111111111111111111111111",
+					"100000111100000111111100111111100111111100111111100111111100111111100111111100111111100111111100111100000000100000000111111111111111111111111111",
+					"000000001011111000111111100111111100111111001111110011111100111111001111110011111100111111001111111000000000000000000111111111111111111111111111",
+					"100000001101111000111111100111111100111111001110000111110000001111111000111111100111111100101111000100000001110000011111111111111111111111111111",
+					"111110001111100001111001001111001001110011001100111001100111001000000000000000000111111001111111001111111001111111001111111111111111111111111111",
+					"100000000100111111100111111100111111100000111100000001111111000111111100111111100111111100101111000100000001110000011111111111111111111111111111",
+					"110000000100011110100111111001111111001000001000000000000111100001111110001111110001111110100111100110000000111000011111111111111111111111111111",
+					"100000001111111110111111101111111101111111001111110011111110011111100111111100111111001111111001111110011111110011111111111111111111111111111111",
+					"110000001100111100100111100100111100110001001111000011100010000100111100001111110001111110000111100100000000110000001111111111111111111111111111",
+					"100000001100111100001111110001111110001111110100111100100000000110000010111111110111111100101111000100000001110000111111111111111111111111111111"
+				];
+				var captcha = ""; //存放识别后的验证码
+				canvas.width = image.width;
+				canvas.height = image.height;
+				document.body.appendChild(canvas);
+				ctx.drawImage(image, 0, 0);
+				for (var i = 0; i < 4; i++) {
+					var pixels = ctx.getImageData(13 * i + 7, 3, 9, 16).data;
+					var ldString = "";
+					for (var j = 0, length = pixels.length; j < length; j += 4) {
+						ldString = ldString + (+(pixels[j] * 0.3 + pixels[j + 1] * 0.59 + pixels[j + 2] * 0.11 >= 140));
+					}
+					var comms = numbers.map(function(value) { //为了100%识别率,这里不能直接判断是否和模板字符串相等,因为可能有个别0被计算成1,或者相反
+						return ldString.split("").filter(function(v, index) {
+							return value[index] === v
+						}).length
+					});
+					captcha += comms.indexOf(Math.max.apply(null, comms)); //添加到识别好的验证码中
+				}
+				document.querySelector("input[name=code]").value = captcha; //写入目标文本框
+				function GetRTime() {
+					var EndTime = new Date('2015/04/23 18:09:00');
+					var NowTime = new Date();
+					var t = EndTime - NowTime.getTime();
+					if (t >= 0) {
+						console.log("等待：" + t)
+					} else {
+						$('#codeHidden').val(captcha);
+						$('#form').attr("target", "_blank").submit();
+						clearInterval(timer);
+					}
+				}
+				var timer = setInterval(GetRTime, 500);
+			}
+		</script>
+
+		<script type="text/javascript">
+			var image = document.querySelector("#imgCode"); //获取到验证码图片
+			var canvas = document.createElement('canvas'); //新建一个canvas
+			var ctx = canvas.getContext("2d"); //获取2D上下文
+			var numbers = []; //存储数字模板的数组
+			canvas.width = image.width; //设置canvas的宽度
+			canvas.height = image.height; //设置canvas的高度
+			document.body.appendChild(canvas); //将canvas添加进文档
+			ctx.drawImage(image, 0, 0); //将验证码绘制到canvas上
+			for (var i = 0; i < 4; i++) { //循环四次,识别四个数字
+				var pixels = ctx.getImageData(13 * i + 7, 3, 9, 16).data; //按照公式获取到每个数字上的像素点
+				var ldString = ""; //用来存储明暗值的字符串
+				for (var j = 0, length = pixels.length; j < length; j += 4) { //每次循环取四个值,分别是一个像素点的r,g,b,a值
+					ldString = ldString + (+(pixels[j] * 0.3 + pixels[j + 1] * 0.59 + pixels[j + 2] * 0.11 >= 128)); //灰度化+二值化,但我们并没有真正的处理图像
+				}
+				console.log(ldString); //输出存储着明暗值的字符串
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<form action="" method="post" target="_blank">
+
+			<input type="submit" value="" />
+		</form>
+	</body>
+//		var timer = setInterval(function() {
+//
+//			if (startime > 0) {
+//				console.log("等待：" + startime + "秒后活动开始");
+//			} else {
+//
+//				$('#codeHidden').val(captcha);
+//				$('#form').submit();
+//				clearInterval(timer);
+//			}
+//		}, 500);
+</html>

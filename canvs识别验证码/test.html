@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Kylin(obj) {
+				this.name = obj.name;
+				this.pwd = obj.pwd;
+				this.dt = obj.dt;
+				this.proc = function() {
+					var that = this;
+					console.log(this);
+					return function() {
+						that.timer = setInterval(function() {
+							var EndTime = new Date(that.dt);
+							var NowTime = new Date();
+							var t = EndTime - NowTime.getTime();
+							if (t >= 0) {
+								console.log("等待：" + t)
+							} else {
+								clearInterval(this.timer);
+								console.log(1);
+							}
+						}, 1000);
+					}
+				};
+				this.init = function() {
+					setTimeout(this.proc(), 5000);//当前对象调用 所以 this是Kylin
+					//this.proc();
+				};
+				this.init();
+			}
+			new Kylin({
+				name: 'kylin',
+				pwd: '123123',
+				dt: '2015/04/24 10:50:00'
+			});
+			
+			$("body").append($("<iframe src='http://hd.jimei.com.cn/order/orderAction!saveOrder51300.html?codeHidden=9737&id=ff8080814cc11a35014cc6800e0f1f47'></iframe>"))
+		</script>
+	</head>
+
+	<body>
+	
+	<iframe src="" style="position: fixed;left: 0%; top: 50%; height: 300px; width: 300px;"></iframe>
+	</body>
+
+</html>

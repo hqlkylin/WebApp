@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#container {
+    height: 100%;
+    position: relative;
+}
+#container .section{
+
+    height: 100%;
+    background-position: 50% 50%;
+    background-size:cover;
+
+}
+#section0{
+    background-image: url("img/pic1.jpg");
+}
+#section1{
+    background-image: url("img/pic2.jpg");
+}
+#section2{
+    background-image: url("img/pic3.jpg");
+}
+#section3{
+    background-image: url("img/pic4.jpg");
+}
+#section4{
+    background-image: url("img/1_02.jpg");
+}
+.left {
+    float: left;
+}
+#pages{
+    position: fixed;
+    right: 5%;
+    top:50%;
+}
+#pages li{
+    width: 20px;
+    height: 20px;
+
+}
+#pages li.active{
+    list-style: square;
+}
+

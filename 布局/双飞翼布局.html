@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset='utf-8' />
+		<title>双飞翼布局实例</title>
+		<meta name='author' content='独行冰海' />
+		<style>
+			.main {
+				float: left;
+				width: 100%;
+				background: #09c;
+				height: 300px;
+			
+			}
+			.sub {
+				float: left;
+				width: 480px;
+				margin-left: -100%;
+				background: #f60;
+				height: 300px;
+			}
+			.extra {
+				float: left;
+				width: 190px;
+				margin-left: -190px;
+				background: #666;
+				height: 300px;
+			}
+			.main-wrap {
+				margin-left: 500px;
+				/*与col-sub产生10像素距离*/
+				
+				margin-right: 210px;
+				/*与col-extra产生10像素距离*/
+				
+				background: #0f0;
+				min-height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="page">
+			<div id="hd"></div>
+			<div id="bd">
+				<div class="main">
+					<div class="main-wrap">
+						我是主列，出来吧！
+					</div>
+				</div>
+				<div class="sub">3333</div>
+				<div class="extra">4444</div>
+			</div>
+			<div id="ft"></div>
+		</div>
+	</body>
+
+</html>

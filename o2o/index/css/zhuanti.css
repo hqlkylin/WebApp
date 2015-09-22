@@ -1,0 +1,43 @@
+/*次级导航*/
+.subnav{ padding-top: 13px; font-size: 14px; overflow: hidden;}
+.subnav a{ color: #3e3a39; padding: 3px 16px; text-decoration: none; float: left;}
+.subnav a:hover{ background: #793a8b; color: #ffffff;}
+.subnav a.active{ background: #793a8b; color: #ffffff;}
+.subnav span{ padding: 3px; float: left;}
+/*专题列表*/
+.zt-list{ padding-top: 2px; padding-bottom: 34px;}
+.zt-list ul{ margin-left: -15px;}
+.zt-list ul li{ width: 288px; height: 271px; float: left; margin-left: 15px; margin-top: 30px;}
+.zt-list ul li .bg{ background: url(../images/zhuanti-icon.png) no-repeat;}
+.zt-list ul li .photo{  width: 288px; height: 134px; position: relative; color: #ffffff;}
+.zt-list ul li .photo img{ width: 288px; height: 134px; display: block;}
+.zt-list ul li .photo .state{ width:75px; height: 29px;top: 3px; right: -6px;}
+.zt-list ul li .photo .state p{ width: 71px; line-height: 23px;  text-align: center;}
+.zt-list ul li .photo .state.icon1{background-position: 0 0;}/*进行中*/
+.zt-list ul li .photo .state.icon2{background-position: 0 -38px;}/*未开始*/
+.zt-list ul li .photo .state.icon3{background-position: 0 -76px;}/*结束*/
+.zt-list ul li .photo .act{ width: 50px; height: 37px;  top: 102px; left: -6px;}
+.zt-list ul li .photo .act p{ width: 44px; padding-left: 4px; text-align: center; line-height: 32px; font-size: 14px;}
+.zt-list ul li .photo .act.icon1{background-position: 0 -137px;}/*促销*/
+.zt-list ul li .photo .act.icon2{background-position: 0 -208px;}/*抢购*/
+.zt-list ul li .photo .act.icon3{background-position: 0 -278px;}/*秒杀*/
+.zt-list ul li .box{ width: 256px; height: 106px; border: 1px solid #c4c3c3; border-top:none; overflow: hidden; padding: 15px; position: relative;}
+.zt-list ul li .box h3{ font-size: 16px; color: #6d3885; line-height: 23px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zt-list ul li .box p{ font-size: 15px; color: #727171; line-height: 23px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zt-list ul li .box dl{ margin-left: -5px; padding-top: 20px; padding-bottom: 12px; overflow: hidden;}
+.zt-list ul li .box dl dd{ margin-left: 5px; float: left;  width: 47px; height: 14px;line-height: 14px; font-family: 12px;text-align: center; color: #ffffff; background: #99cc33; }
+.zt-list ul li .price{ width:87px;}
+.zt-list ul li .time{width:168px ;}
+.zt-list ul li span{ color: #9fa0a0; padding-left: 16px;}
+.zt-list ul li span.icon1{ background-position: 3px -356px;}
+.zt-list ul li span.icon2{background-position: 0 -406px;}
+.zt-list ul li .box .profile{ position: absolute; top: 138px; left: 0; right: 0; bottom: 0; background: url(../images/zhuanti-bg.png) repeat; padding: 20px;}
+.zt-list ul li .box .profile h4,.zt-list ul li .box .profile p,.zt-list ul li .box .profile span{ color: #ffffff;}
+.zt-list ul li .box .profile h4{ font-size: 17px; line-height: 17px;}
+.zt-list ul li .box .profile p{ font-size: 12px; line-height: 24px; padding: 10px 0; white-space: normal;}
+.zt-list ul li .box .profile span{ font-size: 14px; float: right;}
+.page{ padding-bottom: 100px;;}
+
+
+
+

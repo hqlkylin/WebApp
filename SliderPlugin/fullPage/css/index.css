@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/*@import "rest_nec";*/
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.promo-box {
+  height: 440px;
+  overflow: hidden;
+  position: relative;
+  background: #333;
+  _zoom: 1; }
+  .promo-box:hover .controls .btn {
+    opacity: 0.5;
+    filter: alpha(opacity=50); }
+    .promo-box:hover .controls .btn:hover {
+      opacity: 1;
+      filter: alpha(opacity=100); }
+  .promo-box ul {
+    position: relative; }
+    .promo-box ul li {
+      float: left;
+      position: relative; }
+      .promo-box ul li a {
+        width: 100%;
+        height: 440px;
+        display: block;
+        background: no-repeat center top; }
+  .promo-box .pager {
+    height: 5px;
+    position: absolute;
+    bottom: 24px;
+    right: 14%;
+    overflow: hidden; }
+    .promo-box .pager a {
+      width: 54px;
+      height: 5px;
+      display: block;
+      float: left;
+      margin-left: 8px;
+      background: #7a7a7a;
+      overflow: hidden;
+      border-radius: 5px;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      .promo-box .pager a:hover {
+        background: #6d3885; }
+    .promo-box .pager a.hot {
+      background: #6d3885; }
+
+.controls .btn {
+  width: 60px;
+  height: 140px;
+  position: absolute;
+  top: 50%;
+  margin-top: -70px;
+  background: url(../images/controls.png) no-repeat;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+.controls .prev {
+  left: 150px;
+  background-position: 18px 32px; }
+.controls .next {
+  right: 150px;
+  background-position: 18px -196px; }
+
+/*频道title*/
+.channel {
+  height: 34px;
+  border-bottom: 1px solid #6d3885;
+  margin-top: 40px;
+  overflow: hidden; }
+
+.channel h3 {
+  font-size: 20px;
+  height: 24px;
+  line-height: 24px;
+  border-left: 5px solid #6d3885;
+  float: left;
+  padding-left: 9px; }
+
+.channel h3 i {
+  font-size: 16px;
+  font-family: Aparajita;
+  color: #727171;
+  text-transform: Uppercase;
+  padding-left: 12px;
+  letter-spacing: -1px; }
+
+.channel .perfect a {
+  line-height: 34px;
+  font-size: 14px;
+  color: #6d3885;
+  padding-left: 25px;
+  padding-bottom: 1px;
+  background: url(../images/index-user.png) no-repeat; }
+
+/*# sourceMappingURL=index.css.map */

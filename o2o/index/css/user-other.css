@@ -1,0 +1,143 @@
+/*收货地址页面样式start*/
+.vip_per_info{padding-bottom: 324px;}
+.vip_per_address{margin-left: -25px!important;}
+.vip_per_info .vip_address_wrap{padding-top: 22px;padding-left: 36px;}
+.vip_per_info .vip_address_wrap .vip_address_tip .vip_address_font{color: #989898;margin-top: 3px;}
+.vip_per_info .vip_address_wrap .vip_address_tip .vip_address_font a{color: #989898;}
+.vip_per_info .vip_address_wrap .vip_address_info{margin-top: 22px;font-size: 12px;overflow: hidden;zoom: 1;}
+.vip_per_info .vip_address_wrap .vip_address_info > div{float: left;margin-right: 8px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info1{background: url(../images/user/user-address-info1bg.png) no-repeat;width: 286px;height: 123px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info2{background: url(../images/user/user-address-info2bg.png) no-repeat;width: 287px;height: 124px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info3{background-color:#fff;width: 286px;height: 123px;border: 1px solid #EDEDED;}
+
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap{width: 238px;height: 105px;margin-top:14px;margin-left: 25px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .vip_address_info_font{
+	margin-top:8px;margin-bottom: 2px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .c80{color: #808080;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .cbb{border-bottom: 1px solid #F2F2F2;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .c97{color: #009EE7;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info3 .vip_address_infowrap3 .c80{color: #808080;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .trc{position: relative;left: 96px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info0 .vip_address_infowrap .trd{position: relative;left: 102px;}
+
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info3 .vip_address_infowrap3{width: 147px;height: 63px;margin-top: 34px;margin-left: 45px;}
+.vip_per_info .vip_address_wrap .vip_address_info .vip_address_info3 .vip_address_infowrap3 .addpr{position: relative;top: -25px;font-size: 13px;}
+
+/*收货地址页面样式end*/
+
+/*个性信息页面样式start*/
+/*.right .vip_per_info{margin-top:-10px;font-size: 13px;font-family: "microsoft yahei";}
+.right .vip_per_pers{padding-bottom:0;width: 832px;margin: 0 auto;}
+.right .vip_per_info .vip_person_box{width: 832px;border-bottom: 1px solid #ECECEC;/*padding: 40px 78px 10px 213px;margin-left: 63px;*/}
+/*.right .vip_per_info .vip_person_box span.vip_no{margin-left: -180px;margin-right: 90px;}
+.right .vip_per_info .vip_person_box span.vip_nom{margin-left: -155px;margin-right: 91px;}
+.right .vip_per_info .vip_person_box span.vip_noc{margin-left: -155px;margin-right: 91px;}
+.right .vip_per_info .vip_person_box span.vip_nos{margin-left: -206px;margin-right: 90px;}
+.right .vip_per_info .vip_style span{margin-right: 24px;}
+
+.right .vip_per_info .vip_material span{margin-right: 50px;}
+.right .vip_per_info .vip_material span.vip_material1{margin-left: 13px;margin-right: 51px;}
+.right .vip_per_info .vip_color{width:515px;}
+.right .vip_per_info .vip_color span{margin-right: 37px;white-space: nowrap;}
+.right .vip_per_info .vip_color span.vip_color1{margin-right: 39px;margin-left: 13px;}
+.right .vip_per_info .vip_color span.vip_color2{margin-left: -34px;}
+.right .vip_per_info .vip_color span.vip_color3{margin-left: -1px;}
+.right .vip_per_info .vip_color span.vip_color4{margin-left: 1px;}
+.right .vip_per_info .vip_spec span{margin-right: 22px;}
+.right .vip_per_info .vip_spec span.vip_spec1{margin-right: 40px;margin-left: 5px;}
+.right .save .sub{margin-top: 26px;margin-left: 164px;}*/*/
+.right .vip_per_info{margin-top:-10px;font-size: 13px;font-family: "microsoft yahei";}
+.right .vip_per_pers{padding-bottom:0;width: 832px;margin: 0 auto;}
+.right .vip_per_info .vip_person_box{width: 832px;border-bottom: 1px solid #ECECEC;padding-top: 39px;padding-bottom: 6px;padding-left: 22px;}
+
+.right .vip_per_info .vip_style .vip_spans{margin-right: 33px;}
+.right .vip_per_info .vip_style .vip_no{padding-right: 80px;}
+
+.right .vip_per_info .vip_material .vip_spanm{margin-right: 60px;}
+.right .vip_per_info .vip_material .vip_material1{margin-right: 58px;margin-left: 12px;}
+.right .vip_per_info .vip_material .vip_nom{padding-right: 81px;padding-left: 25px;}
+
+.right .vip_per_info .vip_color .vip_noc{margin-right: 82px;padding-left: 24px;}
+.right .vip_per_info .vip_color .vip_spanc{margin-right: 46px;white-space: nowrap;}
+.right .vip_per_info .vip_color .vip_color1{margin-right: 45px;margin-left: 14px;}
+.right .vip_per_info .vip_color .vip_color2{margin-right: 47px;margin-left: 135px;}
+.right .vip_per_info .vip_color .vip_color4{margin-left: -1px;}
+
+
+.right .vip_per_info .vip_spec .vip_nos{margin-right: 81px;margin-left: -26px;}
+.right .vip_per_info .vip_spec .vip_spansp{margin-right: 30px;}
+.right .vip_per_info .vip_spec .vip_spec1{margin-left: 6px;margin-right: 50px;}
+
+.right .save .sub{margin-top: 26px;margin-left: 197px;}
+/*个性信息页面样式end*/
+
+/*修改密码页面样式start*/
+.vip_per_mpsd{padding-bottom: 145px;}
+.vip_mpsd{padding-top: 127px;padding-left: 217px;width:800px;}
+.vip_mpsd .vip_mpsd_box{padding-bottom: 20px;padding-left: 105px;margin-left: -107px;}
+.vip_mpsd .vip_pt{padding-top: 24px;}
+.vip_mpsd .vip_bb{border-bottom: 1px solid #ECECEC;}
+.vip_mpsd .vip_mpsd_box .vip_mpsd_tip{margin-right: 39px;}
+.vip_mpsd .vip_mpsd_box .vip_q{margin-left: -13px;}
+.vip_mpsd .vip_mpsd_box .vip_f{margin-left: 15px;color: #009EE7;}
+.vip_mpsd .vip_mpsd_box .vip_f1{color: #E64B4D;}
+.vip_mpsd .vip_mpsd_box input{width: 236px;height: 24px;}
+.vip_mpsd .vip_mpsd_save{margin-left: 82px;margin-top: 24px;}
+.vip_mpsd .vip_mpsd_save .vip_save{width: 140px;height: 37px;background-color: #69247D;border: 0 none;color: #fff;font-size: 13px;font-family: "microsoft yahei";cursor: pointer;}
+.vip_mpsd .vip_mpsd_t{color: #989898;margin-top: 13px;margin-left: 82px;}
+/*修改密码页面样式end*/
+
+
+/*安全中心页面样式start*/
+.vip_per_safe{padding-bottom: 133px;margin-top: 40px;font-size: 13px;}
+.vip_per_safe .c989898{color: #989898;}
+.vip_per_safe .vip_safe_top{margin-left: 174px;overflow: hidden;zoom: 1;}
+.vip_per_safe .vip_safe_top > div{float: left;}
+.vip_per_safe .vip_safe_top .vip_s_right{margin-top: 18px;margin-left: 18px;}
+.vip_per_safe .vip_safe_top .vip_s_right .c98{background-color: #989898;padding:0 16px;color: #fff;}
+.vip_per_safe .vip_safe_top .vip_s_right .srs{margin-right: 24px;}
+.vip_per_safe .vip_safe_top .vip_s_right .vip_jy{margin-left: 36px;}
+.vip_per_safe .vip_safe_top .vip_s_right .vip_z{background-color: #B5E15E;}
+/*.vip_per_safe .vip_safe_top .vip_s_right .vip_d{background-color: #D0E99F;}
+.vip_per_safe .vip_safe_top .vip_s_right .vip_g{background-color: #99CC33;}*/
+
+.vip_per_safe .vip_safe_content{margin-top: 22px;margin-left: 128px;width: 816px;}
+.vip_per_safe .vip_safe_content .vip_safe_box{border-bottom: 1px solid #ECECEC;padding-top:34px;padding-bottom: 20px;padding-left: 93px;margin-left: -90px;}
+.vip_per_safe .vip_safe_content .vip_safe_box .vip_smr{margin-right: 37px;}
+.vip_per_safe .vip_safe_content .vip_safe_box .vip_sml{margin-left: 100px;}
+.vip_per_safe .vip_safe_content .vip_safe_box .vip_sml .c97{color: #009EE7;}
+/*安全中心页面样式end*/
+
+/*我的会员页面样式start*/
+.vip_per_myvip{padding-bottom:100px;margin-top: 10px;font-size: 13px;}
+.vip_per_myvip .vip_my_box{padding-top: 40px;padding-left: 40px;overflow: hidden;zoom: 1;}
+.vip_per_myvip .vip_my_box .vip_myl{float: left;padding-right: 119px;}
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_t{margin-bottom: 46px;text-align: left;}
+.vip_per_myvip .vip_my_box .bang{margin-bottom: 18px;font-size: 20px;}
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_t .vip_myl_tc p{color: #898989;margin-bottom: 3px;}
+
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_b .bph{margin-top: 20px;margin-bottom: 33px;}
+.vip_per_myvip .vip_my_box .vip_myl  .bangding input{width: 140px;height: 37px;background-color: #C2C2C2;border: 0 none;color: #fff;font-size: 13px;font-family: "microsoft yahei";cursor: pointer;margin-left: 51px;margin-top: 107px;}
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_b .vip_b_tip{margin-right: 14px;color:#898989;}
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_b .bml{margin-left: 26px;}
+.vip_per_myvip .vip_my_box .vip_myl .vip_myl_b .wh{width: 162px;height: 24px;}
+
+.vip_per_myvip .vip_my_box .vip_myr{float: left;border-left: 1px solid #ECECEC;padding-left: 73px;padding-bottom: 134px;}
+.vip_per_myvip .vip_my_box .vip_myr .vip_myr_tc p{color: #898989;margin-bottom: 3px;}
+.vip_per_myvip .vip_my_box .vip_myr .bangding1 input{width: 140px;height: 37px;background-color: #C2C2C2;border: 0 none;color: #fff;font-size: 13px;font-family: "microsoft yahei";cursor: pointer;margin-top:199px;margin-left: 140px;}
+/*我的会员页面样式end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

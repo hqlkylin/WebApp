@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        (function ($) {
+            var methods={
+                init: function (options) {
+                    return this.each(function () {
+                        var $this = $(this);
+                        var defaults = {
+                            propertyName: 'value',
+                            onSomeEvent: function() {},
+                            html:'init'
+                        }
+                        var settings= $.extend({},defaults,options);
+                        $this.html(settings.html);
+                        console.log($this);
+                        console.log(this);
+
+
+                    })
+                },
+                destroy: function () {
+                    return this.each(function () {
+                        var $this = $(this);
+
+                    })
+                },
+                val: function () {
+                    var someValue = this.eq(0).html();
+                    return someValue;
+                }
+            }
+            $.fn.kylinPlugin= function () {
+                var method = arguments[0];
+                if(methods[method]){
+                    method=methods[method]
+                }else if( typeof(method) == 'object' || !method ) {
+                    method = methods.init;
+                }else{
+                    $.error( 'Method ' +  method + ' does not exist on jQuery.pluginName' );
+                    return this;
+                }
+                return method.apply(this, arguments);
+            }
+        })(jQuery);
+        $(function () {
+            console.log( $('div').kylinPlugin());
+        })
+    </script>
+</head>
+<body>
+        <div>123</div>
+</body>
+</html>

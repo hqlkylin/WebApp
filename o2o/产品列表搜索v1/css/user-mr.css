@@ -1,0 +1,81 @@
+/*导航start*/
+.right ul{overflow: hidden;zoom: 1;border-bottom: 2px solid #F1F1F1;margin-top: 33px;margin-bottom: 32px;}
+.right ul li{float: left;}
+.right ul li a{display: inline-block;font-size: 18px;color: #000;width: 104px;border-right:1px solid #F1F1F1 ;text-align: center;}
+.right ul li a.active{border-bottom: 2px solid #6D3885;color: #6D3885;text-decoration: none;}
+.right ul li a:hover{text-decoration: none;}
+/*导航end*/
+
+/*我的留言页面样式start*/
+.user_per_mr{font-size: 13px;font-family: "microsoft yahei";}
+.user_per_mr .mr_top .mr_checkbox{margin-right: 15px;color: #666;}
+
+.user_per_mr  .mr_btn input{cursor:pointer;padding:5px 10px;background-color: #F1F1F1;border: 1px solid #DAD7D7;border-radius: 4px;color: #666666;}
+.user_per_mr .mr_top .mr_select{float: right;}
+/*.user_per_mr .mr_top .mr_select .mr_s_btn{border: 1px solid #CCCCCC;}*/
+.user_per_mr .mr_top .mr_select .mr_s_btn span{border: 1px solid #ccc;padding: 3px 31px 4px 7px;color: #8A8A8A;}
+.user_per_mr .mr_top .mr_select .mr_s_btn b{border: 1px solid #DDDDDD;border-left:0;background-color: #F7F7F7;
+display: inline-block;width: 23px;height: 25px;line-height: 25px;margin-top: -2.5px;
+background:url("../images/user/user-mr-mb.png") no-repeat  center center;margin-left: -4px;vertical-align: middle;}
+
+
+.user_per_mr .mr_cont{border: 1px solid #DAD7D7;margin-top: 13px;margin-bottom: 50px;}
+.user_per_mr .mr_cont .mr_container{width: 834px;margin: 0 auto;border-bottom: 1px solid #F1F1F1;overflow: hidden;zoom: 1;}
+.user_per_mr .mr_cont .mr_last{border-bottom: 0;margin-bottom: 27px;}
+.user_per_mr .mr_cont .mr_container .mr_l{float: left;width: 720px;padding-top: 16px;padding-bottom: 5px;}
+.user_per_mr .mr_cont .mr_container .mr_l .mr_l_ft{color: #666666;font-size: 14px;}
+.user_per_mr .mr_cont .mr_container .mr_l .mr_l_date{color: #CCCCCC;margin-top: 7px;}
+.user_per_mr .mr_cont .mr_container .mr_l .mr_l_date .mr_ml{margin-left: 10px;}
+.user_per_mr .mr_cont .mr_container .mr_l .mr_l_date .mr_ml input{padding: 5px 13px;}
+
+.user_per_mr .mr_cont .mr_container .mr_r{float: right;padding-top: 16px;padding-bottom: 5px;}
+/*我的留言页面样式end*/
+
+/*我的吐槽页面样式start*/
+.mr_cont{overflow: hidden;zoom: 1;}
+.mr_cont .mrl{float: left;border-right: 1px solid #F1F1F1;}
+.mr_cont .mrl .mrl_w{width: 447px;border-bottom: 1px solid #F1F1F1;}
+.mr_cont .mrl .mrl_w_last{border:0;}
+.mr_cont .mrr{float: right;}
+.mr_cont .mrr .mrr_w{width: 448px;border-bottom: 1px solid #F1F1F1;}
+.mr_cont .mrr .mrr_w_last{border:0;}
+
+.mr_cont .mr_r_container{width: 378px!important;}
+.mr_cont .mr_r_container .mr_l_ro{width: 280px!important;}
+
+
+
+
+
+/*我的吐槽页面样式end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+@import "../../../publicCss/mixin";
+
+.slider {
+
+  border: 3px solid #333;
+  overflow: hidden;
+  position: relative;
+  .list {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    img {
+      float: left;
+      position: relative;
+    }
+  }
+  .buttons {
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    text-align: center;
+    width: 100%;
+    span {
+      cursor: pointer;
+      border: 1px solid #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #333;
+      margin-right: 5px;
+      display: inline-block;
+    }
+
+    .on {
+      background: orangered;
+    }
+  }
+  .arrow {
+    cursor: pointer;
+    display: none;
+    line-height: 39px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    background-color: RGBA(0, 0, 0, .3);
+    color: #fff;
+
+    &:hover {
+      background-color: RGBA(0, 0, 0, .7);
+    }
+  }
+  .prev {
+    left: 5%;
+  }
+  .next {
+    right: 5%;
+  }
+
+  &:hover .arrow {
+    display: block;
+  }
+}
+
+.absolute {
+  position: absolute;
+  position: relative;
+}
+
+

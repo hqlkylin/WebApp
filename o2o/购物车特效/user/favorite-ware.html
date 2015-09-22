@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>收藏的商品</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/zhuanti.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <script src="../js/jquery-11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/fly.js"></script>
+    <script src="../js/add.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../js/requestAnimationFrame.js"></script>
+    <![endif]-->
+    <style>
+        .ware li .box a.active {
+            border-radius: 50% 50%;
+            overflow: hidden;
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+<!--头部star-->
+<div id="header">
+    <div class="wrapper">
+        <div class="box">
+            <h1><a href="#"><img src="../images/user/user-logo.png" alt="集美家居个人中心"/></a></h1>
+
+            <div class="members"><span>|</span>欢迎<strong>某某某会员</strong><a href="#">[退出]</a></div>
+            <div class="manage">
+                <a href="#" class="first">首页</a>
+                <dl>
+                    <dt class="bg icon1">账户管理</dt>
+                    <dd class="active">
+                        <a href="#" target="_blank" class="bg icon3">账户设置</a>
+                        <a href="#" target="_blank" class="bg icon3">个人信息</a>
+                        <a href="#" target="_blank" class="bg icon3">收货地址</a>
+                        <a href="#" target="_blank" class="bg icon3">修改密码</a>
+                        <a href="#" target="_blank" class="bg icon3">安全中心</a>
+                        <a href="#" target="_blank" class="bg icon3">我的会员</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="seach">
+                <form action="">
+                    <input type="text" class="text" value="" placeholder="爱依瑞斯 双人床 爱依瑞斯 双人床"/>
+                    <input type="submit" class="sunmit" value="搜索"/>
+                </form>
+            </div>
+            <a href="#" class="home">返回集美首页</a>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!--头部end-->
+<div class="wrapper user">
+    <!--左侧star-->
+    <div class="FL user-nav">
+        <dl>
+            <dt>
+                <span class="icon1"></span>
+            <p class="pointer"><strong>关注中心</strong></p>
+            </dt>
+            <dd>
+                <p>
+                    <a href="#"><span>关注品牌</span></a>
+                    <a href="#"><span>关注活动</span></a>
+                    <a href="#"><span>浏览历史</span></a>
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon2"></span>
+            <p class="pointer"><strong>我的收藏</strong></p>
+            </dt>
+            <dd>
+                <p>
+                    <a href="#"><span>商品</span></a>
+                    <a href="#"><span>购买行程</span></a>
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon3"></span>
+            <p><strong>订单中心</strong></p>
+            </dt>
+            <dd>
+                <p>
+                    <a href="#"><span>我的订单</span></a>
+                    <a href="#"><span>取消订单记录</span></a>
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon4"></span>
+            <p class="pointer"><strong>我的互动</strong></p>
+            </dt>
+            <dd>
+                <p>
+                    <a href="#"><span>我的报名</span></a>
+                    <a href="#"><span>我的抢购</span></a>
+                    <a href="#"><span>获奖记录</span></a>
+                </p>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon5"></span>
+            <p class="pointer"><a href="#"><strong>我的优惠券</strong></a></p>
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon6"></span>
+            <p class="pointer"><a href="#"><strong>我的积分</strong></a></p>
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon7"></span>
+            <p class="pointer"><a href="#"><strong>我的留言/吐槽</strong></a></p>
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                <span class="icon8"></span>
+            <p class="pointer"><strong>账户管理</strong></p>
+            </dt>
+            <dd>
+                <p>
+                    <a href="#"><span>账户设置</span></a>
+                    <a href="#"><span>个性信息</span></a>
+                    <a href="#"><span>收货地址</span></a>
+                    <a href="#"><span>修改密码</span></a>
+                    <a href="#"><span>安全中心</span></a>
+                    <a href="#"><span>集美VIP</span></a>
+                </p>
+            </dd>
+        </dl>
+    </div>
+    <!--左侧end-->
+    <!--右侧star-->
+    <div class="FR wrap" id="user-index">
+        <div class="main favorite">
+            <h2>收藏的商品</h2>
+
+            <div class="user-t"></div>
+            <div class="user-sort">
+                <ul>
+                    <li>
+                        <p>门店分类</p>
+
+                        <div class="box">
+                            <a href="#" class="active">大红门店(2)</a>
+                            <a href="#">定慧桥(8)</a>
+                            <a href="#">北苑(0)</a>
+                            <a href="#">大红门店(2)</a>
+                            <a href="#">定慧桥(8)</a>
+                            <a href="#">北苑(0)</a>
+                            <a href="#">大红门店(2)</a>
+                        </div>
+                    </li>
+                    <li>
+                        <p>品　　类</p>
+
+                        <div class="box">
+                            <a href="#">家具(12)</a>
+                            <a href="#" class="active">建材(2)</a>
+                            <a href="#">家饰(8)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ware">
+                <ul>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床东方百盛双人床东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="../images/ac/pic1.jpg" alt=""/></a>
+
+                        <div class="box">
+                            <h4>东方百盛双人床</h4>
+
+                            <p>¥16000</p>
+                            <a href="#" class="remove">移出收藏</a>
+                            <a href="#" class="add">加入购买行程</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--右侧浮动star-->
+            <div class="fixed-fload">
+                <div class="box">
+                    <p>行程中添加<span class="count">0</span>件产品</p>
+                    <a href="#">去看看</a>
+                </div>
+                <a href="#user-index">
+                    <div class="up"></div>
+                </a>
+            </div>
+            <!--右侧浮动end-->
+            <!--弹出对话框star-->
+            <div class="favorite-pop hidden">
+                <div class="dialog">
+                    <p>确定移除吗？</p>
+                    <a href="#" class="sure">确定</a>
+                    <a href="#" class="cancel">取消</a>
+                </div>
+                <div class="mask"></div>
+            </div>
+            <!--弹出对话框end-->
+        </div>
+    </div>
+    <!--右侧end-->
+</div>
+
+</body>
+</html>

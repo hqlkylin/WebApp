@@ -1,0 +1,53 @@
+body{ background: #99cc33;}
+.content{ width: 1200px; height: 430px; margin: 28px auto; padding-top:50px; background: #f1f1f1;}
+.main{ width: 292px; margin: 0 auto;}
+.main h2{ font-size: 24px; font-weight: normal; color: #6d3885; text-align: center; line-height: 30px;}
+.main input{ font-size: 14px; height: 42px; line-height: 42px;  font-family:"microsoft yahei"; margin-top: 20px; display: block; }
+.main .text{ border: 1px solid #c6c6c6;text-indent: 14px; width: 100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;box-sizing:border-box;}
+.main .text.yzm-text{ width: 55%;}
+.main .btn{ width: 100%; display: block; border: 0 none; cursor: pointer;}
+.main .btn.submit{ font-size: 18px; color: #FFFFFF; background: #6d3885;}
+.main .btn.yzm-btn{ width: 43%; background: #99cc33; color: #ffffff;}
+.main p{ font-size:14px ;}
+.main p.register{ padding-top: 42px; padding-bottom: 48px;}
+.main p.hint1{ padding-top: 40px;}
+.main p.hint2{ padding-top: 12px; color: #7b7b7b; margin-bottom: 40px;}
+.main p.hint3{padding-left: 25px; color: #6d3885; margin-top: 10px; margin-bottom: 24px; background: url(../images/member/reset-icon1.png) no-repeat; line-height: 18px; background-size:15px; background-position: 0 2px;}
+.main p.hint4{ font-size: 12px; color: #7b7b7b; padding-top: 6px;}
+.main p.hint5{ text-align: center; line-height: 50px;}
+.main p span{ color: #6d3885;}
+.main p a{ color: #000000; text-decoration: underline;}
+.main .success{ width: 40%; margin: 0 auto; padding-top: 30px;}
+.main .success img{ width: 100%;}
+.main .btn-send{ width: 100%; height: 42px; line-height: 42px; font-size: 18px; display: block; text-align: center; text-decoration: none; background: #6d3885; color: #FFFFFF;}
+.main .yzm-img{width: 43%; height: 42px; margin-top: 20px;}
+.main .yzm-img img{ width: 100%; height: 42px;}
+.prompt{ display: none;}
+.prompt .mask{ position: fixed; top: 0; left: 0; bottom: 0; right: 0; background:rgba(0,0,0,0.8); z-index: 999; background: #000000\9; filter:Alpha(opacity=80)\9;}
+.prompt .dialog{ width: 388px; padding: 30px 40px 56px 40px; font-weight: normal;  background: #ffffff; position: fixed; left: 50%; top: 30%; margin-left: -234px; z-index: 1000;}
+.prompt .dialog p{ line-height: 24px; padding:36px 0; text-align: center;}
+.prompt .dialog p.success{ font-size:24px; color: #6d3885;}
+.prompt .dialog p.failure{ font-size: 18px; color: #7b7b7b;}
+.prompt .dialog .sure{ width: 120px; line-height: 42px; margin: 0 auto; display: block; background: #99cc33; color: #ffffff; text-align: center; font-size: 16px; text-decoration: none;}
+.prompt .dialog i{ background: url(../images/p-dialog.png) no-repeat; padding-top: 30px; padding-left: 51px; background-position: 0 24px;}
+
+@media screen and (max-width:1000px){
+	body{ background: #f1f1f1;}
+	#header{ display:none;}
+	.content{ width: 100%; margin: 0; padding-bottom: 0;}
+	.main { width: 90%; height: auto;}
+	.main h2{ font-size: 26px;}
+	.main input{ font-size: 18px; height: 54px; line-height: 54px; margin-top: 24px;}
+	.main p{ font-size: 18px;}
+	.main p.rect{ padding-top: 40px;}
+	.main p.register{ padding-top: 40px; padding-bottom: 0;}
+	.main p.hint2{ line-height: 34px;}
+	.main p.hint3{margin-top: 24px; line-height: 20px; margin-bottom: 30px; background-size:20px; background-position: 0 0px;}
+	.main p.hint4{ font-size: 16px;}
+	.main p.hint5{ line-height: 100px;}
+	.main .btn-send{ height: 54px; line-height: 54px; font-size: 20px;}
+	.main .yzm-img{width: 43%; height: 54px; margin-top: 24px;}
+	.main .yzm-img img{ width: 100%; height: 54px; display: block;}
+	.prompt .dialog{ width: 60%; padding:30px 10%; margin-left: -40%;}
+	.prompt .dialog .sure{ width: 80%;}
+}

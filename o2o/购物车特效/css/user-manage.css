@@ -1,0 +1,64 @@
+/*右侧内容start*/
+.right{padding-bottom: 100px;}
+.rp{padding-bottom: 200px;}
+/*导航start*/
+.right ul{overflow: hidden;zoom: 1;border-bottom: 2px solid #F1F1F1;margin-top: 33px;margin-bottom: 32px;}
+.right ul li{float: left;}
+.right ul li a{display: inline-block;font-size: 18px;color: #000;width: 104px;border-right:1px solid #F1F1F1 ;text-align: center;}
+.right ul li a.active{border-bottom: 2px solid #6D3885;color: #6D3885;text-decoration: none;}
+.right ul li a:hover{text-decoration: none;}
+/*导航end*/
+/*account 表单start*/
+.right .bgbg{height: 628px;position: absolute;width: 166px;top: -10px;left: 33px;z-index: 0;
+background-color:#f5f5f5;z-index:0;}
+.right .bgbgz{position: relative;z-index: 999;}
+.right .bgbgp{height: 500px;position: absolute;width: 167px;top: -10px;left: -34px;z-index: 0;
+background-color:#f5f5f5;z-index:0;}
+.right .bgbgpz{position: relative;z-index: 999;}
+.right .vip_per_info{margin-top: 15px;font-size: 13px;margin-left: -34px;position: relative;}
+.right .vip_per_info .vip_box{width: 80%;margin:0 auto;border-bottom: 1px solid #ECECEC;padding: 25px 0 20px 55px;}
+.right .vip_per_info .vip_box_nb{border-bottom:0 none;}
+.right .vip_per_info .vip_box_pt{padding-top: 5px;}
+.right .vip_per_info .vip_box_sex input.man{margin-left: 15px;}
+.right .vip_per_info .vip_box .vip_tip{padding-right: 120px;}
+.right .vip_per_info .vip_box .vip_tip_head{margin-left: -26px;position: relative;top: -30px;}
+.right .vip_per_info .vip_box .vip_change a{color: #3F99D2;}
+.right .vip_per_info .vip_box .vip_change1{padding-left: 277px;position: relative;top: -30px;}
+.right .vip_per_info .vip_box .vip_change2{padding-left: 198px;}
+.right .vip_per_info .vip_box .vip_change3{padding-left: 323px;}
+.right .vip_per_info .vip_box .vip_change4{padding-left: 285px;}
+.right .vip_per_info .vip_box .mid_font{color: #858585;}
+/*account 表单end*/
+.right .save{margin-top: 20px;margin-left: 390px;}
+.right .save input{width: 140px;height: 37px;background-color: #69247D;border: 0 none;color: #fff;font-size: 13px;font-family: "microsoft yahei";cursor: pointer;}
+/*右侧内容end*/
+/*内容部分end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

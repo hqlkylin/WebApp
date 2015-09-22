@@ -1,0 +1,57 @@
+* {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+body, html {
+  height: 100%;
+  position: relative;
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #242424;
+  opacity: 0.5;
+  display: none;
+}
+
+.pop {
+  position: fixed;
+  width: 30%;
+  height: 30%;
+  border: 1px solid #00a3ff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  //margin-left: -15%;
+  //margin-top: -15%; margin-top margin-bottom  百分比都是根据宽度 计算的
+  background: #fff;
+  display: none;
+  a{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #009EE7;
+    box-sizing:border-box;
+  }
+}
+
+.pop::before {
+  content: "标题";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: #0000cc;
+  border-bottom: 1px salmon solid;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="keywords" content="your keywords">
+    <meta name="description" content="your description">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script src="js/jquery-11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.transit.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function () {
+            Slider.init($(".promo-box"));
+        })
+    </script>
+</head>
+<body>
+<!--头部-->
+<div id="header">
+    <!--顶部小导航star-->
+    <div class="site-nav">
+        <div class="wrapper">
+            <div class="FL">
+                <a href="#" class="bg sc">收藏本站</a>
+            </div>
+            <div class="FR">
+                <a href="#" target="_blank">请登陆</a>
+                <a href="#" target="_blank">免费注册</a>
+                <i>|</i>
+                <a href="#" target="_blank">班车查询</a>
+                <i>|</i>
+                <span class="bg tel">400-006-5858</span>
+            </div>
+        </div>
+    </div>
+    <!--顶部小导航end-->
+    <div class="wrapper rect">
+        <h1><a href="#"><img src="images/logo1.png" alt="集美家居"/></a></h1>
+
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">活动专区</a></li>
+                <li><a href="#">集美班车</a></li>
+                <li><a href="#">积分超市</a></li>
+            </ul>
+        </div>
+        <div class="seach">
+            <form action="">
+                <input type="text" class="text" value="" placeholder="爱依瑞斯 双人床 爱依瑞斯 双人床"/>
+                <input type="submit" class="sunmit" value="搜　索"/>
+            </form>
+        </div>
+        <div class="center">
+            <a href="#"><span class="icon1">用户中心</span></a>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!--头部end-->
+<!--幻灯片-->
+<div class="promo-box"
+     data-setting='{
+    "data": [
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150818174200845.jpg", "link": "http://www.baidu.com"},
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150901102112273.jpg", "link": "http://www.google.com"},
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150828095550020.jpg", "link": "http://www.sina.com"}],
+    "autoPlay":false,
+    "speed":400
+    }'>
+
+</div>
+
+<div class="promo-box"
+     data-setting='{
+    "data": [
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150408151427783.jpg", "link": "http://www.baidu.com"},
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150604151620678.jpg", "link": "http://www.google.com"},
+    {"imgUrl": "http://public.jimei.com.cn//FileUpload/Setting/20150617112125747.jpg", "link": "http://www.sina.com"}],
+    "autoPlay":true,
+    "speed":600
+    }'>
+
+</div>
+
+<!--幻灯片end-->
+<div class="wrapper">
+    <!--家居馆-->
+    <div class="channel">
+        <h3>家居馆<i>Household&nbsp;&nbsp;pavilion</i></h3>
+
+        <p class="FR perfect"><a href="#" target="_blank">去完善个性信息</a></p>
+    </div>
+    <!--家居馆end-->
+    <!--建材馆-->
+    <div class="channel">
+        <h3>建材馆<i>Building&nbsp;&nbsp;materials&nbsp;&nbsp;pavilion</i></h3>
+    </div>
+    <!--建材馆end-->
+    <!--自由空间-->
+    <div class="channel">
+        <h3>自由空间<i>Free&nbsp;&nbsp;space</i></h3>
+    </div>
+    <!--自由空间end-->
+    <!--今日促销-->
+    <div class="channel">
+        <h3>今日促销<span>促销HOT</span></h3>
+    </div>
+    <!--今日促销end-->
+    <!--家居风尚馆-->
+    <div class="channel">
+        <h3>家居风尚馆<i>Household&nbsp;&nbsp;style&nbsp;&nbsp;pavilion</i></h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+    <!--家居风尚馆end-->
+    <!--集美班车-->
+    <div class="channel">
+        <h3>集美班车<i>Shuttle&nbsp;&nbsp;bus</i></h3>
+    </div>
+    <!--集美班车end-->
+</div>
+</body>
+</html>

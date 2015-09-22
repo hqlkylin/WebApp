@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+		<style type="text/css">
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			#t {
+				width: 300px;
+				height: 300px;
+				background-color: #0099FF;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -150px;
+				margin-left: -150px;
+				line-height: 300px;
+				text-align: center;
+			}
+			#div1 {
+				border: 1px solid #FF0000;
+				width: 150px;
+				height: 150px;
+				position: absolute;
+			}
+			.tl {
+				animation: twinkling 1s infinite ease-in-out;
+				-webkit-animation: twinkling 1s infinite ease-in-out;
+				-moz-animation: twinkling 1s infinite ease-in-out;
+				-ms-animation: twinkling 1s infinite ease-in-out;
+			}
+			@keyframes twinkling {
+				/*透明度由0到1*/
+				
+				0% {
+					opacity: 1;
+				}
+				20% {
+					opacity: 0;
+				}
+				40.01% {
+					opacity: 1;
+				}
+				/* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+				
+				100% {
+					opacity: 0;
+				}
+			}
+			/* 添加兼容性前缀 */
+			
+			@-webkit-keyframes twinkling {
+				0% {
+					opacity: 1;
+				}
+				20% {
+					opacity: 0;
+				}
+				40.01% {
+					opacity: 1;
+				}
+				/* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+				
+				100% {
+					opacity: 0;
+				}
+				@-moz-keyframes twinkling {
+					0% {
+						opacity: 1;
+					}
+					20% {
+						opacity: 0;
+					}
+					40.01% {
+						opacity: 1;
+					}
+					/* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+					
+					100% {
+						opacity: 0;
+					}
+					@-ms-keyframes twinkling {
+						0% {
+							opacity: 1;
+						}
+						20% {
+							opacity: 0;
+						}
+						40.01% {
+							opacity: 1;
+						}
+						/* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+						
+						100% {
+							opacity: 0;
+						}
+						@-o-keyframes twinkling {
+							0% {
+								opacity: 1;
+							}
+							20% {
+								opacity: 0;
+							}
+							40.01% {
+								opacity: 1;
+							}
+							/* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+							
+							100% {
+								opacity: 0;
+							}
+		</style>
+		<script>
+			$(function() {
+				$("#div1").on("mousedown", function(ev) {
+					var pos = {};
+					pos.x = ev.pageX - $(this).offset().left;
+					pos.y = ev.pageY - $(this).offset().top;
+					$(document).on("mousemove", function(ev) {
+						var move = {};
+						move.left = ev.pageX - pos.x;
+						move.right = ev.pageX - pos.x + $("#div1").width();
+						move.top = ev.pageY - pos.y;
+						move.bottom = ev.pageY - pos.y + $("#div1").height();
+						$("#div1").css({
+							"left": ev.pageX - pos.x + "px",
+							"top": ev.pageY - pos.y + "px"
+						});
+						var target = $("#t");
+						if (move.left >= target.offset().left) {
+							console.info("left获取焦点")
+						}
+						if (move.top >= target.offset().top) {
+							console.info("top获取焦点")
+						}
+						if (move.right <= target.offset().left + target.width()) {
+							console.info("right获取焦点")
+						}
+						if (move.bottom <= target.offset().top + target.height()) {
+							console.info("bottom获取焦点")
+						}
+						if (move.left >= target.offset().left &&
+							move.top >= target.offset().top &&
+							move.right <= target.offset().left + target.width() &&
+							move.bottom <= target.offset().top + target.height()) {
+							$("#t").addClass("tl")
+								/*$("#t").css({"animation":"twinkling 1s infinite ease-in-out"});*/
+						}else{
+							$("#t").removeClass("tl")
+						}
+					});
+					$(document).on("mouseup", function() {
+						$(document).off("mousemove");
+						$(document).off("mouseup");
+					})
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+
+		<div id="t">
+			红色div 全部移入到蓝色框，我会闪烁
+		</div>
+
+		<div id="div1">
+
+		</div>
+		
+		
+		<div style="background-color: #000000;width: 300px; height: 100px;">111</div>
+		
+	
+		<div style="background-color: ##00CC00;width: 300px; height: 100px;">222</div>
+		
+		
+	</body>
+
+</html>
