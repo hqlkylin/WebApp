@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var callbackFunction = function () {
+            console.log('3333');
+        }
+        setTimeout(function () {
+            for (var i = 1; i < 1000; i++) {
+                console.log(i);
+
+            }
+        }, 100);
+        setTimeout(function () {
+            for (var i = 1; i < 1000; i++) {
+                console.log(111);
+            }
+        }, 10);
+        // setInterval(callbackFunction, 200);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
