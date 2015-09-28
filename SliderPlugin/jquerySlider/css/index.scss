@@ -8,6 +8,7 @@
   position: relative;
   overflow: hidden;
   ul {
+    position: relative;
     li {
       float: left;
       position: relative;
@@ -16,8 +17,8 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 45px;
-        line-height: 45px;
+        height: 40px;
+        line-height: 40px;
         color: #FFF;
         padding: 10px;
         font-size: 18px;
@@ -40,7 +41,7 @@
     height: 40px;
     position: absolute;
     z-index: 2;
-    top: 45%;
+    top: 40%;
     @include opacity(0);
     color: #fff;
     background-color: #000;
@@ -80,4 +81,8 @@
     }
   }
 
+}
+
+.fl {
+  float: left;
 }

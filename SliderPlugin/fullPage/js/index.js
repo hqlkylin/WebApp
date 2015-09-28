@@ -19,7 +19,7 @@ var Slider = function ($el) {
     this.flag = true;
     this.getSetting();
     this.renderHtml();
-    this.widowsWidth = 0;
+    this.windowsWidth = 0;
     this.ul = this.$el.find("ul");
     this.li = this.ul.find("li");
     this.prevBtn = this.$el.find(".prev");
@@ -79,29 +79,29 @@ Slider.prototype = {
 
         var temIndex = this.index;
         if (this.index < 0) {  // last img
-            this.lastImg.css({'position': 'relative', left: -this.widowsWidth * this.size});
+            this.lastImg.css({'position': 'relative', left: -this.windowsWidth * this.size});
             temIndex = self.size - 1;
         }
         if (this.index >= this.size) {  // first img
-            this.firstImg.css({'position': 'relative', left: this.widowsWidth * this.size});
+            this.firstImg.css({'position': 'relative', left: this.windowsWidth * this.size});
             temIndex = 0;
         }
         this.btns.eq(temIndex).addClass("hot").siblings().removeClass("hot");
 
 
-        this.ul.transit({left: -this.index * this.widowsWidth},
+        this.ul.transit({left: -this.index * this.windowsWidth},
             this.opts.speed, 'ease', function () {
 
                 self.flag = true;
                 if (self.index < 0) {  // last img
                     self.lastImg.css({'position': 'static'});
                     self.index = temIndex;
-                    $(this).css("left", -self.index * self.widowsWidth);
+                    $(this).css("left", -self.index * self.windowsWidth);
                 }
                 if (self.index >= self.size) {  // first img
                     self.firstImg.css({'position': 'static'});
                     self.index = temIndex;
-                    $(this).css("left", -self.index * self.widowsWidth);
+                    $(this).css("left", -self.index * self.windowsWidth);
                 }
             }
         );
@@ -113,9 +113,9 @@ Slider.prototype = {
         this.move();
     },
     restSize: function () {
-        this.widowsWidth = $(window).width();
-        this.ul.css({width: this.widowsWidth * this.size, left: -this.widowsWidth * this.index});
-        this.li.css({width: this.widowsWidth}, 80);
+        this.windowsWidth = $(window).width();
+        this.ul.css({width: this.windowsWidth * this.size, left: -this.windowsWidth * this.index});
+        this.li.css({width: this.windowsWidth}, 80);
     },
     setValues: function () {
         this.size = this.opts.data.length;

@@ -31,12 +31,73 @@
                                 "link": "#",
                                 "title": "集美家居3"
                             }],
-                        width: 800,
-                        height: 600
+                        width:500,
+                        height: 300,
+                        isShowTitle: true,
+                        speed:300
                     }
             );
-            //$(".slider2").slider({});
+            $(".s2").slider({
+                data: [{
+                    "imgUrl": "img/1.png",
+                    "link": "#",
+                    "title": "集美家居1"
+                },
+                    {
+                        "imgUrl": "img/2.jpg",
+                        "link": "#",
+                        "title": "集美家居2"
+                    },
+                    {
+                        "imgUrl": "img/4.jpg",
+                        "link": "#",
+                        "title": "集美家居4"
+                    },
+                    {
+                        "imgUrl": "img/3.jpg",
+                        "link": "#",
+                        "title": "集美家居3"
+                    }],
+                width: 400,
+                height: 300,
+                isShowTitle: false,
+                isShowNextAndPrev: true,
+                speed:300
+            });
+            $(".s3").slider({
+                data: [{
+                    "imgUrl": "img/1.png",
+                    "link": "#",
+                    "title": "集美家居1"
+                },
+                    {
+                        "imgUrl": "img/2.jpg",
+                        "link": "#",
+                        "title": "集美家居2"
+                    },
+                    {
+                        "imgUrl": "img/4.jpg",
+                        "link": "#",
+                        "title": "集美家居4"
+                    },
+                    {
+                        "imgUrl": "img/3.jpg",
+                        "link": "#",
+                        "title": "集美家居3"
+                    }],
+                width: 200,
+                height: 200,
+                isShowTitle: false,
+                isShowNextAndPrev: false,
+                speed:300
+            });
 
+            /* var ifr = $("<iframe>").css({width: 1000, height: 500});
+             $("body").append(ifr);
+             setInterval(function () {
+             var url = "http://test.jimei.cn/front/order/saveorder.html?pid=725f413639dd413a915130805b19af27&activityProductId=2366fe4568d2495f9874364665f7ab86&d=" + new Date();
+             ifr.attr("src", url);
+             }, 5000);*/
         })
     </script>
 </head>
@@ -44,6 +105,7 @@
 <div class="slider s1">
 
 </div>
-<!--<div class="slider"></div>-->
+<div class="slider s2 fl"></div>
+<div class="slider s3 fl" style="margin: 20px"></div>
 </body>
 </html>
