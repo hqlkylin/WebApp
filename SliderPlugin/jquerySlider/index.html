@@ -31,19 +31,153 @@
                                 "link": "#",
                                 "title": "集美家居3"
                             }],
-                        width: 800,
-                        height: 600
+                        width: 500,
+                        height: 300,
+                        isShowTitle: true,
+                        speed: 300
                     }
             );
-            //$(".slider2").slider({});
+            $(".s2").slider({
+                data: [{
+                    "imgUrl": "img/1.png",
+                    "link": "#",
+                    "title": "集美家居1"
+                },
+                    {
+                        "imgUrl": "img/2.jpg",
+                        "link": "#",
+                        "title": "集美家居2"
+                    },
+                    {
+                        "imgUrl": "img/4.jpg",
+                        "link": "#",
+                        "title": "集美家居4"
+                    },
+                    {
+                        "imgUrl": "img/3.jpg",
+                        "link": "#",
+                        "title": "集美家居3"
+                    }],
+                width: 500,
+                height: 300,
+                isShowTitle: false,
+                isShowNextAndPrev: true,
+                isShowControls: false,
+                speed: 300,
+                autoPlay: false
+            });
+            $(".s3").slider({
+                data: [{
+                    "imgUrl": "img/1.png",
+                    "link": "#",
+                    "title": "集美家居1"
+                },
+                    {
+                        "imgUrl": "img/2.jpg",
+                        "link": "#",
+                        "title": "集美家居2"
+                    },
+                    {
+                        "imgUrl": "img/4.jpg",
+                        "link": "#",
+                        "title": "集美家居4"
+                    },
+                    {
+                        "imgUrl": "img/3.jpg",
+                        "link": "#",
+                        "title": "集美家居3"
+                    }],
+                width: 500,
+                height: 300,
+                isShowTitle: false,
+                isShowNextAndPrev: false,
+                speed: 300
+            });
+
+
+            $(".s4").slider({
+                        data: [{
+                            "imgUrl": "img/1.png",
+                            "link": "#",
+                            "title": "集美家居1"
+                        },
+                            {
+                                "imgUrl": "img/2.jpg",
+                                "link": "#",
+                                "title": "集美家居2"
+                            },
+                            {
+                                "imgUrl": "img/4.jpg",
+                                "link": "#",
+                                "title": "集美家居4"
+                            },
+                            {
+                                "imgUrl": "img/3.jpg",
+                                "link": "#",
+                                "title": "集美家居3"
+                            }],
+                        width: 500,
+                        height: 300,
+                        isShowTitle: true,
+                        isShowNextAndPrev: false,
+                        speed: 300,
+                        autoPlay: false
+                    }
+            );
+            $(".s5").slider({
+                        data: [{
+                            "imgUrl": "img/1.png",
+                            "link": "#",
+                            "title": "集美家居1"
+                        },
+                            {
+                                "imgUrl": "img/2.jpg",
+                                "link": "#",
+                                "title": "集美家居2"
+                            },
+                            {
+                                "imgUrl": "img/4.jpg",
+                                "link": "#",
+                                "title": "集美家居4"
+                            },
+                            {
+                                "imgUrl": "img/3.jpg",
+                                "link": "#",
+                                "title": "集美家居3"
+                            }],
+                        width: 500,
+                        height: 300,
+                        isShowTitle: false,
+                        isShowNextAndPrev: true,
+                        isShowControls: true,
+                        speed: 300
+                    }
+            );
 
         })
     </script>
+    <style>
+        .slider {
+            float: left;
+
+            margin: 30px;
+        }
+    </style>
 </head>
 <body>
-<div class="slider s1">
 
-</div>
-<!--<div class="slider"></div>-->
+<div class="slider s1"></div>
+
+<div class="slider s2"></div>
+
+<div class="slider s3"></div>
+
+<div class="slider s4"></div>
+
+<div class="slider s5"></div>
+
+<div class="slider s2"></div>
+
+
 </body>
 </html>
