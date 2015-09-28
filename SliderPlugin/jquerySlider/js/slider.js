@@ -2,6 +2,29 @@
  * Created by 韩麒麟 on 2015/9/25.
  */
 
+
+/*
+ *参数说明
+ *
+ *
+ *   width: 500,-- 宽度
+ *   height: 300,-- 高度
+ *   autoPlay: true,--定时播放
+ *   isShowNextAndPrev: true,--显示上一个、下一个按钮
+ *   isShowTitle: true,--显示标题
+ *   isShowControls: true,--显示控制
+ *   data: [{
+ "imgUrl": "img/1.png",
+ "link": "链接",
+ "title": "标题"
+ }],--数据
+ *   speed: 600--动画时间/毫秒
+ *
+ *
+ */
+
+/* 创建一个闭包 */
+;
 (function ($) {
 
     //对象
@@ -14,6 +37,7 @@
             autoPlay: true,
             isShowNextAndPrev: true,
             isShowTitle: true,
+            isShowControls: true,
             data: [],
             speed: 600
         };
@@ -35,7 +59,7 @@
         this.isAnimate = false;
         this.arrLi = this.ul.find("li");
         this.arrImg = this.ul.find("img");
-        this.arrTitle = this.ul.find("p");
+        this.arrTitle = this.$element.find("p");
         this.size = this.arrImg.size();
         this.timer = null;
         this.controls = this.$element.find(".controls");
@@ -53,7 +77,9 @@
             this.prev.hide();
             this.next.hide();
         }
-
+        if (!this.opts.isShowControls) {
+            this.controls.hide();
+        }
         this.next.click(function () {
             self.npClick("next");
         });
@@ -106,12 +132,13 @@
             }
             this.controlsA.eq(index).addClass("active").siblings().removeClass("active");
 
-            /*  if (this.opts.isShowTitle) {
-             this.arrTitle.eq(index).fadeIn().siblings().fadeOut();
-             }*/
+            if (this.opts.isShowTitle) {
+                this.arrTitle.html(this.opts.data[index].title);
+            }
 
         },
         move: function () {
+
             var self = this;
             if (this.index < 0) {
                 this.lastILi.css({position: "absolute", left: -this.posWidth});
@@ -143,7 +170,8 @@
                 + '<div class="controls">'
                 + '</div>'
                 + '<a href="javascript:;" class="arrow prev">&lt;</a>'
-                + '<a href="javascript:;" class="arrow next">&gt;</a>';
+                + '<a href="javascript:;" class="arrow next">&gt;</a>'
+                + '<p></p>';
 
             this.$element.append(strHtml);
 
@@ -153,7 +181,7 @@
             for (var obj in this.opts.data) {
                 var object = this.opts.data[obj];
                 //strImg += "<li><a  href='" + object.link + "'><img src='" + object.imgUrl + "'/><p>" + object.title + "</p></a></li>";
-                strImg += "<li><a  href='" + object.link + "'><img src='" + object.imgUrl + "'/><p></p></a></li>";
+                strImg += "<li><a  href='" + object.link + "'><img src='" + object.imgUrl + "'/></a></li>";
                 strA += "<a href='javascript:;'></a>";
             }
             this.$element.find("ul").append(strImg).next().append(strA);
@@ -163,8 +191,7 @@
             this.arrImg.css({width: this.opts.width, height: this.opts.height});
             this.ul.css({width: this.size * this.opts.width});
             this.controlsA.first().addClass("active");
-
-
+            this.arrTitle.html(this.opts.data[this.index].title);
         }
 
     }
