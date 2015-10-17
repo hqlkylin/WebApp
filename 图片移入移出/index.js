@@ -8,12 +8,12 @@ $(function(){
         var w = $(this).width();
         var h = $(this).height();
 
-        arr.push(e.pageY -$(this).position().top); //top
-        arr.push($(this).position().left+w-e.pageX); //right
-        arr.push($(this).position().top+h-e.pageY); //bottom
-        arr.push(e.pageX-$(this).position().left);
+        arr.push(e.pageY -$(this).offset().top); //top
+        arr.push($(this).offset().left+w-e.pageX); //right
+        arr.push($(this).offset().top+h-e.pageY); //bottom
+        arr.push(e.pageX-$(this).offset().left);
         var sub=arr.indexOf(Math.min.apply(null,arr));
-
+        console.log(e.pageY);
         //var aPos=[{left:0,top:-200},{left:200,top:0},{left:0,top:200},{left:-200,top:0}];
         var aPos=[{left:0,top:-h},{left:w,top:0},{left:0,top:h},{left:-w,top:0}];
         if(e.type == 'mouseenter'){

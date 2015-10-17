@@ -194,7 +194,7 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
       background-color: rgba(255, 255, 255, 0.8);
       height: 100%;
       width: 120%;
-      @include transform(rotate(25deg));
+      @include transform(rotate(10deg));
       @include transform-origin(top left);
 
       h2 {
@@ -202,7 +202,7 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
         right: 20%;
         color: #b6230f;
         top: 15%;
-        @include transform(rotate(18deg));
+        @include transform(rotate(10deg));
       }
     }
   }

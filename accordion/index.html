@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .branch_menu span a {
+            font-family: Arial, Simsun !important;
+        }
+
+        /*fold*/
+        .fold_wrap {
+            width: 1204px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .fold_wrap ul {
+            width: 1204px;
+            height: 260px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .fold_wrap ul li {
+            float: left;
+            width: 130px;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .fold_wrap ul li .mask_b {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, .3);
+            _background: #B2B2B2;
+        }
+
+        .fold_wrap ul li.active .mask_b {
+            background: none;
+        }
+
+        .fold_wrap ul li .mask_b h4 {
+            color: #fff;
+            width: 30px;
+            margin: 0 auto;
+            display: block;
+            font: 30px/30px Microsoft Yahei;
+            position: relative;
+            padding: 30px 0 0 0;
+        }
+
+        .fold_wrap ul li.big {
+            width: 322px;
+        }
+
+        .fold_wrap ul li .adv_intro {
+            width: 92%;
+            height: 40px;
+            padding: 5px 4%;
+            position: absolute;
+            left: 0;
+            bottom: -50px;
+            background: #37D;
+            color: #FFF;
+            overflow: hidden;
+        }
+
+        .adv_intro_show {
+            bottom: 0 !important;
+            transition: bottom 0.3s linear 0.3s;
+            -webkit-transition: bottom 0.3s linear 0.3s;
+        }
+
+        .pic_auto {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pic_auto1 {
+            background: url(http://img.elongstatic.com/index/ifold/20150422_ifold1.jpg) no-repeat center 0;
+        }
+
+        .pic_auto2 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold2.jpg) no-repeat center 0;
+        }
+
+        .pic_auto3 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold3.jpg) no-repeat center 0;
+        }
+
+        .pic_auto4 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold4.jpg) no-repeat center 0;
+        }
+
+        .pic_auto5 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold5.jpg) no-repeat center 0;
+        }
+
+        .pic_auto6 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold6.jpg) no-repeat center 0;
+        }
+
+        .pic_auto7 {
+            background: url(http://img.elongstatic.com/index/ifold/20150120_ifold7.jpg) no-repeat center 0;
+        }
+    </style>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#sm li").mouseenter(function () {
+                $(this).stop().animate({width: 400}, 400).siblings().stop().animate({width: 133}, 400);
+            });
+            $("#sm").mouseleave(function () {
+                $(this).find("li").stop().animate({width: 172}, 400)
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="fold_wrap">
+    <ul class="clearfix" id="sm">
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold1/index.html" target="_blank">
+                <div class="mask_b" style="display: block;"><h4>园林酒店</h4></div>
+                <div class="pic_auto pic_auto1"></div>
+                <div class="adv_intro">有谁不爱泡温泉？浸入雾气蒸腾的泉水之中，把身体泡成一片茶叶，舒展轻盈。有比这更美妙的感觉吗？</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold2/index.html" target="_blank">
+                <div class="mask_b" style="display: block;"><h4>情侣酒店</h4></div>
+                <div class="pic_auto pic_auto2"></div>
+                <div class="adv_intro">浪漫，是香闺围笼里的暧昧，是灯火迷离，泪眼婆裟的唯美，是杨柳岸、晓风残月中的无语凝噎……</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold3/index.html" target="_blank">
+                <div class="mask_b"><h4>设计师酒店</h4></div>
+                <div class="pic_auto pic_auto3"></div>
+                <div class="adv_intro">前卫的酒店设计理念，独具魅力的风格，优美的自然风光才能有这样顶级的酒店。</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold4/index.html" target="_blank">
+                <div class="mask_b" style="display: block;"><h4>青年旅舍</h4></div>
+                <div class="pic_auto pic_auto4"></div>
+                <div class="adv_intro">我为你煮一杯温茶，斟一杯美酒。让我们席地而坐，听你的梦想。用你的只言片语装点我们的梦想博物馆。</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold5/index.html" target="_blank">
+                <div class="mask_b"><h4>特色客栈</h4></div>
+                <div class="pic_auto pic_auto5"></div>
+                <div class="adv_intro">在这里，你可以静静发呆，而不被人打扰，只用细细品味它的美好；在这里，你能看见最美好的星星，能让你找到最深的感动。</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold6/index.html" target="_blank">
+                <div class="mask_b" style="display: block;"><h4>海岛酒店</h4></div>
+                <div class="pic_auto pic_auto6"></div>
+                <div class="adv_intro">不想过冬，厌倦沉重，就飞去热带的岛屿游泳，卸下包袱，放下压力，让自己的身与心，在这碧海蓝天之中，享受一次超自然的洗礼。</div>
+            </a>
+        </li>
+        <li style="width: 172px;">
+            <a href="http://promotion.elong.com/index/fold/fold7/index.html" target="_blank">
+                <div class="mask_b"><h4>海外温泉</h4></div>
+                <div class="pic_auto pic_auto7"></div>
+                <div class="adv_intro">因地形地质的区别，世界各地的温泉也千差万别，选择一处适合自己的温泉，5分钟后，你会忘记自己，20分钟后，你会忘记世界。</div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

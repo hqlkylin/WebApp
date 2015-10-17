@@ -1,0 +1,219 @@
+/**
+ * Created by 韩麒麟 on 2015/10/8.
+ * QQ:290147465
+ */
+@import "../../publicCss/mixinInRest";
+
+.line {
+
+  background: rgb(241, 241, 241);
+  @include transition(background .8s);
+  width: 100%;
+  height: 470px;
+  &.active {
+    background: rgb(70, 154, 203);
+
+    .content {
+      left: 0px;
+      @include opacity(1);
+    }
+    .item {
+      width: 0;
+      @include opacity(0);
+
+    }
+  }
+}
+
+.wrap {
+
+  width: 1150px;
+  margin: 100px auto;
+  overflow: hidden;
+  position: relative;
+  ul {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    width: 835px;
+    height: 470px;
+    margin: 0 auto;
+    .item {
+      overflow: hidden;
+      position: relative;
+      float: left;
+      width: 167px;
+      height: 470px;
+      background: url("../img/01.png") no-repeat -60% 50%;
+      cursor: pointer;
+      @include transition(background .5s);
+      @include transition(all .8s);
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //background-color: rgba(241, 241, 241, 0.6);
+        @include opacity(.9);
+        background-color: #469acb;
+        /* @include transform(translateY(100%));*/
+        margin-top: 470px;
+        @include transition(all .5s)
+      }
+      &:hover {
+        background: url("../img/01.png") no-repeat -50% 50%;
+        .mask {
+          /*@include transform(translateY(0%));*/
+          margin-top: 0;
+        }
+        span {
+          color: #fff;
+        }
+
+      }
+      span {
+        display: inline-block;
+        font-family: "微软雅黑";
+        font-size: 20px;
+        line-height: 20px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        @include transform(translateY(-50%));
+        @include transition(all .5s);
+
+      }
+    }
+    .item.bg1 {
+      background-image: url("../img/01.png");
+    }
+    .item.bg2 {
+      background-image: url("../img/02.png");
+    }
+    .item.bg3 {
+      background-image: url("../img/03.png");
+    }
+    .item.bg4 {
+      background-image: url("../img/04.png");
+    }
+    .item.bg5 {
+      background-image: url("../img/05.png");
+    }
+
+  }
+  .content {
+
+    width: 1150px;
+    height: 470px;
+    position: absolute;
+    left: 600px;
+    @include opacity(0);
+    top: 0;
+    @include transition(all 1.2s);
+    ul {
+      margin: 0;
+      width: 100%;
+      li {
+        i {
+          display: block;
+          margin: 20px 40px;
+          background: url("../img/a.png");
+          width: 70px;
+          height: 70px;
+          @include transition(background .3s);
+          cursor: pointer;
+          &.bg1 {
+            background-position: 0px 0px;
+          }
+          &.bg2 {
+            background-position: -70px 0px;
+          }
+          &.bg3 {
+            background-position: -140px 0px;
+          }
+          &.bg4 {
+            background-position: -210px 0px;
+          }
+          &.bg5 {
+            background-position: -280px 0px;
+          }
+        }
+
+        &.active {
+          i {
+            &.bg1 {
+              background-position: 0px bottom;
+            }
+            &.bg2 {
+              background-position: -70px bottom;
+            }
+            &.bg3 {
+              background-position: -140px bottom;
+            }
+            &.bg4 {
+              background-position: -210px bottom;
+            }
+            &.bg5 {
+              background-position: -280px bottom;
+            }
+          }
+          .box {
+            img {
+              left: 50px;
+              @include opacity(1);
+              @include transition(all .8s);
+            }
+            span {
+              @include opacity(1);
+              @include transition(all .8s);
+              left: 420px;
+            }
+          }
+        }
+        .box {
+
+          width: 900px;
+          height: 400px;
+          position: absolute;
+          top: 50px;
+          left: 200px;
+
+          img {
+            position: absolute;
+            left: 0px;
+            @include transition(all .5s);
+            @include opacity(0);
+          }
+          span {
+            top: 80px;
+            position: absolute;
+            left: 600px;
+            display: inline-block;
+            width: 400px;
+            vertical-align: top;
+            font-family: "微软雅黑";
+            font-size: 30px;
+            line-height: 40px;
+            color: #fff;
+            @include opacity(0);
+            @include transition(all .5s);
+          }
+        }
+      }
+    }
+
+    .callback {
+      display: inline-block;
+      text-align: center;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 22;
+    }
+  }
+}

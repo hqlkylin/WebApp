@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="jquery-1.11.0.js"></script>
     <script src="index.js"></script>
     <style>
         * {
@@ -12,10 +12,12 @@
         }
 
         ul {
-            width: 90%;
+
             height: 100%;
-            padding: 0 5%;
+            /*padding: 0 5%;*/
             overflow: hidden;
+            position: relative;
+            left:25%
         }
 
         ul li {
@@ -23,6 +25,7 @@
             float: left;
             position: relative;
             overflow: hidden;
+            width: 33.333%;
         }
 
         ul li img {
@@ -34,6 +37,7 @@
         ul li div {
             position: absolute;
             top: 0px;
+            left: 0px;
             background-color: #3c3c3c;
             height: 100%;
             width: 100%;
@@ -48,7 +52,10 @@
 </head>
 <body>
 
-<ul>
+<div style="position: fixed; width: 25%">
+1111
+</div>
+<ul style="float: left;">
   
     <li>
         <div>message</div>

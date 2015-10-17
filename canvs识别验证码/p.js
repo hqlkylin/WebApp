@@ -49,7 +49,7 @@ var PL = function (tel) {
             this.timer = setInterval(function () {
                 self.pj(s);
                 s++;
-            }, 20);
+            }, 100);
         }
         /*   var flag = false;
          setTimeout(function () {
@@ -106,8 +106,8 @@ var PL = function (tel) {
          }*/
     }
 }
-var p = new PL('15169162935');
-p.init(700000, 800000);
+var p = new PL('15641978618');
+p.init(400000, 800000);
 /*PL.start = function (tel) {
  new PL(tel);
  }
