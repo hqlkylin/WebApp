@@ -1,0 +1,239 @@
+/**
+ * Created by 韩麒麟 on 2015/10/15.
+ * QQ:290147465
+ */
+@import "mixin";
+
+$width-small: 660px;
+$width-medium: 1000px;
+$width-large: 1200px;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.menu {
+  z-index: 1;
+  position: fixed;
+  width: 25%;
+  font-size: 14px;
+
+  .nav {
+    li {
+      span {
+        display: block;
+        float: left;
+        width: 66.66666667%;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: #fff;
+        @include opacity(.5);
+        position: relative;
+        z-index: 20;
+
+        @media screen and (max-width: $width-large) {
+          width: 100%;
+        }
+
+      }
+      cursor: pointer;
+      position: relative;
+      margin-left: 10%;
+      height: 40px;
+      line-height: 40px;
+      text-indent: 20px;
+      color: #fff;
+
+      .mask {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: #cb0a56;
+        @include transition(all .5s);
+        right: 0;
+        top: 0;
+      }
+      strong {
+        float: left;
+        width: 33.33333333%;
+        @include opacity(.7);
+        @include transform(scale(1));
+        font-size: 16px;
+
+        @media screen and (max-width: $width-large) {
+          display: none;
+        }
+
+      }
+      &.active > {
+        .mask {
+          width: 100%;
+        }
+        div > {
+          strong {
+            @include opacity(1);
+            font-size: 20px;
+          }
+          span {
+            @include opacity(1);
+          }
+        }
+        .content {
+          @include opacity(1);
+          visibility: visible;
+        }
+      }
+      .content {
+        visibility: hidden;
+        li {
+          margin-left: 0;
+          &.active {
+            span {
+              @include opacity(1);
+            }
+          }
+        }
+        position: absolute;
+        width: 210px;
+        left: 100%;
+        top: 0;
+        @include opacity(0);
+        margin-left: 10px;
+        background: url("../images/bg.png") center center;
+        @include transform(translateY(-33%));
+        @include transition(all .5s);
+      }
+    }
+  }
+  height: 100%;
+  background: url("../images/bg.png") center center;
+  border-right: 10px solid #cb0a56;
+  color: #fff;
+  .headPortraitBox {
+    img {
+      height: 70px;
+      width: 70px;
+    }
+    h5 {
+      font: bold 1em/1 Georgia;
+      color: #fff;
+      background: -webkit-linear-gradient(left, #f00, #ff0 25%, #0f0 40%, #0ff 55%, #00f 70%, #f00);
+      -webkit-background-clip: text; /*只有webkit内核支持text的剪切模式*/
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.list {
+
+  position: relative;
+  left: 25%;
+  width: 75%;
+  ul {
+    position: relative;
+    overflow: hidden;
+    li {
+      a {
+        display: inline-block;
+      }
+      width: 33.33%;
+      list-style: none;
+      float: left;
+      position: relative;
+      overflow: hidden;
+      img {
+        vertical-align: bottom;
+        width: 100%;
+        height: 100%;
+      }
+      div {
+        position: absolute;
+        background: url("../images/bg.png") center center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        text-align: center;
+        font-size: 30px;
+        line-height: 30px;
+        color: #FFF;
+        display: none;
+        span {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 100%;
+          padding: 5%;
+          left: 0;
+          top: 50%;
+          position: absolute;
+          @include transform(translateY(-50%));
+          overflow: hidden;
+
+        }
+
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 14px;
+        padding: 4px;
+        background: #cb0a56;
+        position: absolute;
+        right: 0%;
+        color: #FFF;
+        top: 0%;
+        &.moblie {
+          background: #30b81a;
+        }
+        &.html {
+          background: #22369F;
+        }
+        &.css {
+          background: #ff831c;
+        }
+      }
+
+      @media screen and (max-width: $width-large) {
+        width: 50%;
+      }
+      @media screen and (max-width: $width-small) {
+        width: 100%;
+      }
+
+    }
+  }
+
+}
+
