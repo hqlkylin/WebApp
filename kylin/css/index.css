@@ -176,7 +176,7 @@ h5 {
     .menu .nav li .content {
       visibility: hidden;
       position: absolute;
-      width: 210px;
+      width: 260px;
       left: 100%;
       top: 0;
       opacity: 0;

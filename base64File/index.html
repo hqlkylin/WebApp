@@ -8,28 +8,62 @@
         $(function () {
 
             $("#file").change(function () {
-                var reader=new FileReader();
+                var reader = new FileReader();
                 reader.readAsDataURL($(this)[0].files[0]);
-                reader.onload= function (e) {
-                    $("#result").val(this.result)
+                reader.onload = function (e) {
+                    $("#result").val(this.result);
                 }
+
+
             });
             $("#readBase64").click(function () {
-                $("img").attr("src",$("#result").val());
+
+                if ($("section img").size() <= 0) {
+                    $("section").append($("<img>"));
+                }
+                $("img").attr("src", $("#result").val());
             })
         })
     </script>
 </head>
 <body>
 <input type="file" id="file"/>
-<img src="" alt="base64图片"/>
 
-<button id="readBase64">显示图片</button>
 <div>
-    图片base64: <textarea id="result" rows="50" cols="100"></textarea>
+    图片base64: <textarea id="result" rows="10" cols="50"></textarea>
 </div>
+<div style="position: absolute;left:550px;top: 0;width: 500px">
+    <ul>
+        <li><h3>将图片保存转换成Base64格式</h3></li>
+
+        <li>使用base64:URL的优缺点
+            <p>减少了HTTP请求</p>
+
+            <p>某些文件可以避免跨域的问题</p>
+
+            <p>没有图片更新要重新上传，还要清理缓存的问题</p>
+        </li>
+
+        <li>不足在于：
+            <p>浏览器支持</p>
+
+            <p>使用base64编码图片作为背景图片的这种技术IE6/IE7浏览器是不支持</p>
+
+            <p>增加了CSS文件的尺寸</p>
+
+            <p>base64编码图片本质上是将图片的二进制大小以一些字母的形式展示，
+                例如一个1024字节的图片，base64编码后至少1024个字符，这个大小会被完全嵌入到CSS文件中
+                （不过幸运的是也可以被gzip了，而图片文件被gzip效果不明显）。</p>
+
+        </li>
 
 
+    </ul>
+</div>
+<section>
+    <button id="readBase64" style="display: block;">显示图片</button>
+    <br/>
+</section>
 
 </body>
 </html>

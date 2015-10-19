@@ -8,7 +8,7 @@ figure {
   width: 33.33%;
   float: left;
   overflow: hidden;
-  height: 350px; }
+  height: 294px; }
   figure figcaption {
     position: absolute;
     top: 0;
@@ -55,12 +55,6 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
     transform: translate(0px, 0px);
     opacity: 0.5;
     filter: alpha(opacity=50); }
-  .test1 img {
-    -webkit-transform: translate(-50px, 0px);
-    -moz-transform: translate(-50px, 0px);
-    -ms-transform: translate(-50px, 0px);
-    -o-transform: translate(-50px, 0px);
-    transform: translate(-50px, 0px); }
   .test1 figcaption p:nth-of-type(1) {
     -webkit-transition-delay: 0.05s;
     -moz-transition-delay: 0.05s;
@@ -253,11 +247,11 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
       background-color: rgba(255, 255, 255, 0.8);
       height: 100%;
       width: 120%;
-      -webkit-transform: rotate(10deg);
-      -moz-transform: rotate(10deg);
-      -ms-transform: rotate(10deg);
-      -o-transform: rotate(10deg);
-      transform: rotate(10deg);
+      -webkit-transform: rotate(18deg);
+      -moz-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+      -o-transform: rotate(18deg);
+      transform: rotate(18deg);
       -webkit-transform-origin: top left;
       -moz-transform-origin: top left;
       -ms-transform-origin: top left;
@@ -268,11 +262,11 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
         right: 20%;
         color: #b6230f;
         top: 15%;
-        -webkit-transform: rotate(10deg);
-        -moz-transform: rotate(10deg);
-        -ms-transform: rotate(10deg);
-        -o-transform: rotate(10deg);
-        transform: rotate(10deg); }
+        -webkit-transform: rotate(18deg);
+        -moz-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+        -o-transform: rotate(18deg);
+        transform: rotate(18deg); }
   .test5:hover div {
     -webkit-transform: rotate(-18deg);
     -moz-transform: rotate(-18deg);
@@ -318,25 +312,25 @@ figure figcaption p, figure img, figure h2, figure div, figure span {
   position: relative;
   background: rgba(234, 248, 10, 0.5); }
   .test7 img {
-    height: 280px;
-    width: 280px;
+    height: 235.2px;
+    width: 235.2px;
     border-radius: 50% 50%;
     top: 50%;
     left: 50%;
-    margin-left: -140px;
-    margin-top: -140px;
+    margin-left: -117.6px;
+    margin-top: -117.6px;
     position: absolute; }
   .test7 div {
     border: 10px solid #00cc00;
     border-right: 10px solid #7d37e4;
     border-top: 10px solid #7d37e4;
-    height: 280px;
-    width: 280px;
+    height: 235.2px;
+    width: 235.2px;
     border-radius: 50% 50%;
     top: 50%;
     left: 50%;
-    margin-left: -150px;
-    margin-top: -150px;
+    margin-left: -127.6px;
+    margin-top: -127.6px;
     position: absolute; }
   .test7:hover {
     background: rgba(234, 248, 10, 0.8); }
