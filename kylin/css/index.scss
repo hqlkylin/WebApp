@@ -125,6 +125,9 @@ h5 {
               @include opacity(1);
             }
           }
+          span{
+            width: 100%;
+          }
         }
         position: absolute;
         width: 260px;
@@ -186,15 +189,15 @@ h5 {
         width: 100%;
         opacity: 0.8;
         text-align: center;
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 28px;
         color: #FFF;
         display: none;
         span {
           white-space: nowrap;
           text-overflow: ellipsis;
           width: 100%;
-          padding: 5%;
+          padding: 1%;
           left: 0;
           top: 50%;
           position: absolute;
@@ -232,6 +235,9 @@ h5 {
         width: 100%;
       }
 
+      @media screen and (min-width: 1600px) {
+        width: 25%;
+      }
     }
   }
 

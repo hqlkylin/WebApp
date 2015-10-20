@@ -146,7 +146,8 @@
 .detail .left .list .list-btn.previous:hover{ background-position: 0 -46px;}
 .detail .left .list .list-btn.next{ bottom: 0; background-position: 0 -23px ;}
 .detail .left .list .list-btn.next:hover{ background-position: 0 -69px;}
-.detail .left .pic{ width: 515px; height: 515px; position: relative; overflow: hidden;}
+.detail .left .pic{ width: 515px; height: 515px; position: relative; overflow: hidden;
+ cursor: pointer;}
 .detail .left .pic li{ position: absolute; top: 0; left: 0;}
 .detail .left .pic li img{ width: 515px; height: 515px;}
 .detail .left .pic .p-pic{ background: url(../images/products-pic.png) no-repeat;}

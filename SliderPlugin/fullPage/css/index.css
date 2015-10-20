@@ -26,14 +26,14 @@
         display: block;
         background: no-repeat center top; }
   .promo-box .pager {
-    height: 5px;
+    height: 10px;
     position: absolute;
     bottom: 24px;
     right: 14%;
     overflow: hidden; }
     .promo-box .pager a {
       width: 54px;
-      height: 5px;
+      height: 10px;
       display: block;
       float: left;
       margin-left: 8px;

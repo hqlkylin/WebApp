@@ -3,65 +3,91 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .wrapper {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .wrapper > * {
+            padding: 10px;
+            flex: 1 100%;
+        }
+
+        .header {
+            background: tomato;
+        }
+
+        .footer {
+            background: lightgreen;
+        }
+
+        .main {
+            text-align: left;
+            background: deepskyblue;
+        }
+
+        .aside-1 {
+            background: gold;
+        }
+
+        .aside-2 {
+            background: hotpink;
+        }
+
+        @media all and (min-width: 600px) {
+
+            .aside {
+                flex: 1 auto;
+            }
+        }
+        @media all and (min-width: 800px) {
+
+            .main {
+                flex: 1 0px;
+            }
+            .aside-1 {
+                order: 1;
+            }
+
+            .main {
+                order: 2;
+            }
+
+            .aside-2 {
+                order: 3;
+            }
+
+            .footer {
+                order: 4;
+            }
+        }
+        body {
+            padding: 2em;
+        }
+
+    </style>
 </head>
-<style>
-    * {
-        margin: 0;
-    }
-
-    html, body {
-        height: 100%
-    }
-
-    #wrap {
-        box-sizing: border-box;
-        display: flex;
-        width: 80%;
-        margin: 0 auto;
-        border: 1px solid #0000cc;
-        height: 100%;
-        min-width: 640px;
-    }
-
-    #content {
-        width: 60%;
-    }
-
-    #left, #right {
-        flex: 1;
-        border: 1px solid #0066bb;
-        height: 100%;
-        box-sizing: border-box;
-    }
-
-    #left div, #right div {
-        display: table;
-        height: 100%;
-        margin: 0 auto;
-    }
-
-    p {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-    }
-</style>
 <body>
-
-<div id="wrap">
-    <nav id="left">
-        <div>
-            <p>
-                对于display:table-cell，我自己其实用的并不多，毕竟其特殊之处就在于垂直居中，等高，水平级联，匿名创建等特性，其他种种属性可以使用其他更好的display属性代替的。
-                但是话说回来，不太使用display:table-cell属性的真正的原因可能是对该属性的了解的还不够深入，
-                可能该属性本身是存在很多非常实用的应用，但是自己由于掌握不够而不知道。所以，要是哪位同行知道display:table-cell其他一些不错的应用的话，欢迎大力补充，不甚感谢！
-            </p>
-        </div>
-    </nav>
-    <section id="content">
-        <div>content</div>
-    </section>
-    <nav id="right">right</nav>
+<div class="wrapper">
+    <header class="header">Header</header>
+    <article class="main">
+        <p>
+            对于display:table-cell，我自己其实用的并不多，毕竟其特殊之处就在于垂直居中，等高，水平级联，匿名创建等特性，其他种种属性可以使用其他更好的display属性代替的。
+            但是话说回来，不太使用display:table-cell属性的真正的原因可能是对该属性的了解的还不够深入，
+            可能该属性本身是存在很多非常实用的应用，但是自己由于掌握不够而不知道。所以，要是哪位同行知道display:table-cell其他一些不错的应用的话，欢迎大力补充，不甚感谢！
+        </p>
+    </article>
+    <aside class="aside aside-1">Aside 1</aside>
+    <aside class="aside aside-2">Aside 2</aside>
+    <footer class="footer">Footer</footer>
 </div>
 </body>
 </html>
