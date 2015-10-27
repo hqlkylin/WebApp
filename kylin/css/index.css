@@ -183,11 +183,11 @@ h5 {
       filter: alpha(opacity=0);
       margin-left: 10px;
       background: url("../images/bg.png") center center;
-      -webkit-transform: translateY(-33%);
-      -moz-transform: translateY(-33%);
-      -ms-transform: translateY(-33%);
-      -o-transform: translateY(-33%);
-      transform: translateY(-33%);
+      -webkit-transform: translateY(-16%);
+      -moz-transform: translateY(-16%);
+      -ms-transform: translateY(-16%);
+      -o-transform: translateY(-16%);
+      transform: translateY(-16%);
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
       -ms-transition: all 0.5s;
@@ -264,7 +264,7 @@ h5 {
         right: 0%;
         color: #FFF;
         top: 0%; }
-        .list ul li h2.moblie {
+        .list ul li h2.nodejs {
           background: #30b81a; }
         .list ul li h2.html {
           background: #22369F; }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" href="css/user.css"/>
+    <script src="js/jquery-11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/datePlugin.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .calendar{margin-right: 10px;}
+    </style>
+</head>
+<body style="padding: 100px; background: url(images/1.jpg) no-repeat; background-size: cover">
+<!--日历star-->
+<script type="text/javascript">
+    $(function () {
+        DateCalendar.init($(".calendar"));
+    });
+</script>
+<div style="width: 900px;margin: 0 auto">
+    <div class="calendar FL" data-setting='{"dateTime":"2015/07/01","url":"js/data.json"}'></div>
+    <div class="calendar FL" data-setting='{"dateTime":"2015/08/01","url":"js/data.json"}'></div>
+    <div class="calendar FL" data-setting='{"dateTime":"2015/09/01","url":"js/data.json"}'></div>
+    <div style="margin: 10px; clear: both"></div>
+    <div class="calendar FL" data-setting='{"dateTime":"2015/10/01","url":"js/data.json"}'></div>
+    <div class="calendar FL" data-setting='{"dateTime":"2015/11/01","url":"js/data.json"}'></div>
+    <div class="calendar FL" data-setting='{"dateTime":"2015/12/01","url":"js/data.json"}'></div>
+
+</div>
+
+
+<!--日历end-->
+</body>
+</html>

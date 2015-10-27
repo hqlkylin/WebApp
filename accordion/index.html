@@ -17,7 +17,7 @@
         .fold_wrap {
             width: 1204px;
             overflow: hidden;
-            margin: 200px auto;
+            margin: 50px auto;
         }
 
         .fold_wrap ul {
@@ -117,6 +117,7 @@
         }
     </style>
     <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="base.css"/>
     <script>
         $(function () {
 
@@ -182,6 +183,169 @@
                 <div class="pic_auto pic_auto7"></div>
                 <div class="adv_intro">因地形地质的区别，世界各地的温泉也千差万别，选择一处适合自己的温泉，5分钟后，你会忘记自己，20分钟后，你会忘记世界。</div>
             </a>
+        </li>
+    </ul>
+</div>
+
+
+<style>
+
+    /*家居风尚馆*/
+    .fashion {
+        width: 100%;
+        margin-top: 12px;
+        overflow: hidden;
+    }
+
+    .fashion ul {
+        overflow: hidden;
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .fashion ul:hover li {
+        width: 300px;
+    }
+
+    .fashion ul li {
+        width: 400px;
+        height: 400px;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .fashion ul li:hover {
+        width: 600px;
+    }
+
+    .fashion ul li:hover img {
+        margin-left: 0px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .fashion ul li:hover .depict {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        filter: alpha(opacity=65) \9;
+        opacity: 0.65 \9;
+        bottom: 0;
+    }
+
+    .fashion ul li img {
+        width: 600px;
+        height: 400px;
+        margin-left: -100px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .fashion ul li .depict {
+        width: 100%;
+        height: 72px;
+        text-align: center;
+        color: #FFFFFF;
+        background: rgba(0, 0, 0, 0.65);
+        background: #000000 \9;
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        -webkit-transition: opacity 2s, bottom 1s;
+        -moz-transition: opacity 2s, bottom 1s;
+        -ms-transition: opacity 2s, bottom 1s;
+        -o-transition: opacity 2s, bottom 1s;
+        transition: opacity 2s, bottom 1s;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    .fashion ul li .depict h3 {
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    .fashion ul li.active {
+        width: 600px;
+    }
+
+    .fashion ul li.small {
+        width: 300px;
+    }
+
+</style>
+
+<div class="fashion">
+    <ul>
+        <li>
+            <img src="img/60.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/61.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/62.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
+        </li>
+
+    </ul>
+    <ul>
+        <li>
+            <img src="img/1.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/2.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/3.jpg" alt=""/>
+
+            <div class="depict ">
+                <h3>中式古典风格</h3>
+
+                <p>庄重与优雅的双重气质 精雕细琢 体现中国人的含蓄与贵气</p>
+            </div>
         </li>
     </ul>
 </div>

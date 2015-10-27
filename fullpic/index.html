@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="your keywords">
+    	<meta name="description" content="your description">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" href="css/products.css" />
+		<script src="js/jquery-11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/productsPlugin.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function () {
+				$(".magnify").pluginPhotoShow();
+				$("#small_wrap").pluginPicturesShow();
+			})
+		</script>
+	</head>
+	<body>
+
+	<!--头部end-->
+	<!--内容star-->
+	<div id="content">
+		<div class="wrapper products">
+
+			<!----产品star---->
+			<div class="detail">
+				<div class="left">
+					<!--列表图标-->
+					<div class="list FL">
+						<ul id="small_wrap" style="position: relative">
+							<li><img src="images/ac/58.jpg"/></li>
+							<li><img src="images/ac/pic8.JPG"/></li>
+
+							<li><img src="images/ac/57.jpg"/></li>
+							<li><img src="images/ac/pic7.JPG"/></li>
+							<li><img src="images/ac/pic (3).JPG"/></li>
+							<li><img src="images/ac/pic6.JPG"/></li>
+							<li><img src="images/ac/56.JPG"/></li>
+							<li><img src="images/ac/pic4.jpg"/></li>
+							<li><img src="images/ac/55.JPG"/></li>
+							<li><img src="images/ac/pic (7).JPG"/></li>
+							<li><img src="images/ac/54.JPG"/></li>
+						</ul>
+						<div class="list-btn previous" id="pre"></div>
+						<div class="list-btn next" id="next"></div>
+					</div>
+					<!--产品图-->
+					<div class="pic FR">
+						<ul id="big_wrap">
+							<li><img src="images/ac/58.jpg"/></li>
+							<li><img src="images/ac/pic8.JPG"/></li>
+
+							<li><img src="images/ac/57.jpg"/></li>
+							<li><img src="images/ac/pic7.JPG"/></li>
+							<li><img src="images/ac/pic (3).JPG"/></li>
+							<li><img src="images/ac/pic6.JPG"/></li>
+							<li><img src="images/ac/56.JPG"/></li>
+							<li><img src="images/ac/pic4.jpg"/></li>
+							<li><img src="images/ac/55.JPG"/></li>
+							<li><img src="images/ac/pic (7).JPG"/></li>
+							<li><img src="images/ac/54.JPG"/></li>
+						</ul>
+						<!--放大镜-->
+						<div class="p-pic magnify" title="全屏"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--内容end-->
+
+
+	<div class="products-pop pop">
+		<div class="wrap">
+			<ul id="slide_box">
+				<li class="selected "><img src="images/ac/58.jpg"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic8.JPG"/></li>
+
+				<li class="selected "><img src="images/ac/57.jpg"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic7.JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic (3).JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic6.JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/56.JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic4.jpg"/></li>
+				<li class="selected "><img class="blur" src="images/ac/55.JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/pic (7).JPG"/></li>
+				<li class="selected "><img class="blur" src="images/ac/54.JPG"/></li>
+			</ul>
+		</div>
+		<div class="btn-bg close"></div>
+		<div class="console">
+			<p class="btn-bg btn previous"></p>
+
+			<ul id="nav_box" style=" position: relative">
+				<li class="active"><span>1</span></li>
+				<li><span>2</span></li>
+				<li><span>3</span></li>
+				<li><span>4</span></li>
+				<li><span>5</span></li>
+				<li><span>6</span></li>
+				<li><span>7</span></li>
+				<li><span>8</span></li>
+				<li><span>9</span></li>
+				<li><span>10</span></li>
+				<li><span>11</span></li>
+			</ul>
+			<p class="btn-bg btn next"></p>
+
+			<p class="btn-bg btn return"></p>
+		</div>
+		<div class="mask"></div>
+	</div>
+	<!--弹出产品图end-->
+	<div class="clear"></div>
+
+	</body>
+	</html>
+

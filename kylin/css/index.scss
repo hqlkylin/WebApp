@@ -136,7 +136,7 @@ h5 {
         @include opacity(0);
         margin-left: 10px;
         background: url("../images/bg.png") center center;
-        @include transform(translateY(-33%));
+        @include transform(translateY(-16%));
         @include transition(all .5s);
       }
     }
@@ -217,7 +217,7 @@ h5 {
         right: 0%;
         color: #FFF;
         top: 0%;
-        &.moblie {
+        &.nodejs {
           background: #30b81a;
         }
         &.html {

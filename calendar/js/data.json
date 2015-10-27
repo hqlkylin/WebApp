@@ -1,0 +1,82 @@
+[
+  {
+    "active_day": "2015-07-29",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "over","startEnd":"7.29","title":"促销活动"}],
+    "active_state": "over"
+  },
+    {
+        "active_day": "2015-08-26",
+        "active_list": [
+            {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state":"over","startEnd":"8.25-28","title":"店庆"},
+            {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "over","startEnd":"8.26","title":"地板街"}],
+        "active_state": "over"
+    },
+  {
+    "active_day": "2015-08-10",
+    "active_list": [
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"状态over，current，future"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "大红门店 ", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"}],
+    "active_state": "over"
+  },
+    {
+        "active_day": "2015-09-01",
+        "active_list": [
+            {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"养生节"},
+            {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "over","startEnd":"8.25-28","title":"养生节"}],
+        "active_state": "over"
+    }
+
+,
+  {
+    "active_day": "2015-08-24",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "over","startEnd":"8.25-28","title":"集美家具的"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state":"over","startEnd":"8.25-28","title":"集美家具的"}],
+    "active_state": "over"
+  },
+  {
+    "active_day": "2015-11-11",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "future","startEnd":"11.11","title":"光棍节"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state":"future","startEnd":"11.11-11.20","title":"光棍节大促销"}],
+    "active_state": "future"
+  },
+  {
+    "active_day": "2015-12-12",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "future","startEnd":"11.11","title":"双12"}],
+    "active_state": "future"
+  },
+  {
+    "active_day": "2015-11-16",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "current","startEnd":"11.16","title":"老人节"}],
+    "active_state": "current"
+  },
+  {
+    "active_day": "2015-11-26",
+    "active_list": [
+      {"mallName": "银泰百货", "link": "http://www.baidu.com", "active_state": "current","startEnd":"11-12","title":"基督教"}],
+    "active_state": "current"
+  },
+  {
+    "active_day": "2015-11-07",
+    "active_list": [
+      {"mallName": "多久", "link": "http://www.baidu.com", "active_state": "over","startEnd":"11-12","title":"结婚纪念日"}],
+    "active_state": "over"
+  },
+  {
+    "active_day": "2015-12-24",
+    "active_list": [
+      {"mallName": "大红门店", "link": "http://www.baidu.com", "active_state": "current","startEnd":"8.25-28","title":"双蛋节"},
+      {"mallName": "定慧桥店", "link": "http://www.google.com", "active_state": "current","startEnd":"8.25-28","title":"双蛋节"}],
+    "active_state": "current"
+  }
+]
+
+

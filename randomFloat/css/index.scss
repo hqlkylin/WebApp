@@ -1,0 +1,39 @@
+/**
+ * Created by 韩麒麟 on 2015/10/22.
+ * QQ:290147465
+ */
+@import "../../publicCss/mixinInRest";
+
+html {
+  height: 100%;
+}
+
+body {
+
+  background: url("../img/1.jpg") no-repeat center;
+  padding: 100px;
+}
+
+#div1 {
+  width: 500px;
+  height: 500px;
+  margin: 0px auto;
+  position: relative;
+
+  a {
+    display: block;
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    top: 450px;
+    white-space: nowrap;
+    color: #fff;
+    font-weight: 800;
+    @include transition(color .5s);
+    z-index: 10;
+    &:hover {
+      z-index: 100;
+      color: #000000;
+    }
+  }
+}
