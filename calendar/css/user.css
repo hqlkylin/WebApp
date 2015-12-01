@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/**
+ * Created by 韩麒麟 on 2015/10/21.
+ * QQ:290147465
+ */
+
+
+.user-title{height:40px ; padding-left: 11px; overflow: hidden;}
+.user-title.bgcolor1{background: #a0cdeb;}
+.user-title.bgcolor2{background: #95d6a5;}
+.user-title.bgcolor3{background: #cbaf96;}
+.user-title.bgcolor4{background: #f69995;}
+.user-title.bgcolor5{background: #bdbde2;}
+.user-title.bgcolor6{background: #f7b29a;}
+.user-title span{ font-size: 18px;  line-height: 40px; color: #ffffff;}
+.user-title span i{ font-style:normal; font-size: 13px;}
+.user-title a{font-size:13px; color: #575757; font-family: simsun; background: #ffffff; padding: 2px 8px; margin-top: 8px; margin-right: 8px; text-decoration: none; }
+.user-title a:hover{ color: #6d3885;}
+/*日历*/
+.calendar {
+  width: 262px; }
+
+.calendar .box {
+  height: 301px;
+  background: #e7f3e9; }
+
+.calendar .box h3 {
+  font-size: 12px;
+  padding-left: 8px;
+  font-weight: normal;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 10px; }
+
+.calendar .box h3 span {
+  width: 34px;
+  line-height: 24px;
+  display: block;
+  float: left; }
+
+.calendar .box ul {
+  padding-left: 7px; }
+
+.calendar .box li {
+  width: 28px;
+  height: 39px;
+  padding-left: 6px;
+  background: #c8e3cf;
+  float: left;
+  margin-left: 1px;
+  margin-top: 1px;
+  position: relative; }
+
+/*日历活动内容弹出*/
+.calendar .box li .info {
+  width: 170px;
+  position: absolute;
+  top: 40px;
+  left: -42px;
+  z-index: 999;
+  display: none; }
+
+.calendar .box li .info .top {
+  background: url(../images/calendar-bg.png) no-repeat;
+  width: 170px;
+  height: 6px; }
+
+.calendar .box li .info .cont {
+  width: 168px;
+  border: 1px solid #93b59b;
+  padding-bottom: 10px;
+  border-top: none;
+  background: rgba(255, 255, 255, 0.85);
+  filter: Alpha(opacity=85) \9;
+  background: #ffffff\9; }
+
+.calendar .box li .info .cont dl {
+  overflow: hidden;
+  padding-top: 10px; }
+
+.calendar .box li .info .cont dt {
+  width: 36px;
+  height: 12px;
+  margin-top: 3px;
+  float: left;
+  background: url(../images/calendar-bg.png) no-repeat; }
+
+.calendar .box li .info .cont dt.overdue {
+  background-position: 0 -21px; }
+
+.calendar .box li .info .cont dt.star {
+  background-position: 0 -65px; }
+
+.calendar .box li .info .cont dt.nostar {
+  background-position: 0 -108px; }
+
+.calendar .box li .info .cont dd {
+  width: 120px;
+  float: right; }
+
+.calendar .box li .info .cont dd a {
+  line-height: 16px; }
+
+.calendar .box li .info .cont dd a.overdue {
+  color: #717171; }
+
+.calendar .box li .info .cont dd a.star {
+  color: #e1482a; }
+
+.calendar .box li .info .cont dd a.nostar {
+  color: #37ab80; }
+
+.calendar .box .normal {
+  color: #909090; }
+
+.calendar .box .overdue {
+  background: #b0b0b0;
+  cursor: pointer; }
+
+/*已过期*/
+.calendar .box .star {
+  background: #f27860;
+  cursor: pointer; }
+
+/*进行中*/
+.calendar .box .nostar {
+  background: #79cfb0;
+  cursor: pointer; }
+
+/*未开始*/
+.calendar .box .prompt {
+  float: right;
+  margin-right: 8px;
+  padding-top: 6px; }
+
+.calendar .box .prompt span {
+  width: 13px;
+  height: 13px;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+
+/*# sourceMappingURL=user.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
