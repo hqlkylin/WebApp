@@ -1,1 +1,145 @@
 @import "../../../publicCss/mixinInRest";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+#main {
+
+  width: 640px;
+  height: 960px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -320px;
+  overflow: hidden;
+  @include transform-origin(top center);
+
+  #list li {
+    &.zIndex {
+      z-index: 5;
+    }
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:nth-child(1) {
+      background: url("../img/1.jpg") no-repeat;
+      //background-size:100% 100%;
+    }
+    &:nth-child(2) {
+      background: url("../img/2.jpg") no-repeat;
+    }
+    &:nth-child(3) {
+      background: url("../img/3.jpg") no-repeat;
+    }
+    &:nth-child(4) {
+      background: url("../img/4.jpg") no-repeat;
+    }
+    .a1 {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 10%;
+      color: #fff;
+      font-size: 25px;
+      line-height: 25px;
+      & p:nth-child(odd) {
+        @include transform(translate(-800px, 0));
+      }
+      & p:nth-child(even) {
+        @include transform(translate(800px, 0));
+      }
+    }
+    #a1 {
+      p {
+        @include transform(translate(0, 0));
+        @include transition(1s);
+      }
+    }
+    .a2 {
+      p {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        left: 50%;
+        top: 50%;
+        margin-left: -45px;
+        margin-top: -45px;
+        background: url("../img/pic.jpg") no-repeat;
+        background-size: cover;
+        border-radius: (50%);
+        @include transition(1s);
+      }
+
+    }
+    #a2 p {
+      &:nth-child(1) {
+        left: 50%;
+        top: 30%;
+      }
+      &:nth-child(2) {
+        left: 20%;
+        top: 40%;
+      }
+      &:nth-child(3) {
+        left: 80%;
+        top: 40%;
+      }
+      &:nth-child(4) {
+        left: 20%;
+        top: 60%;
+      }
+      &:nth-child(5) {
+        left: 80%;
+        top: 60%;
+      }
+      &:nth-child(6) {
+        left: 50%;
+        top: 70%;
+      }
+    }
+    .a3 {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      //@include transform(translate(-50%, -50%));
+      margin-left: -100px;
+      margin-top: -100px;
+      border-radius: (50%);
+      background: url("../img/pic1.jpg") no-repeat;
+      background-size: cover;
+
+    }
+    #a3 {
+      @include animation(rotate,4s,linear);
+      @include transform-origin(top center);
+    }
+
+    @include keyframes(rotate) {
+      0% {
+        @include transform(rotate(0deg));
+      }
+      25% {
+        @include transform(rotate(90deg));
+      }
+      50% {
+        @include transform(rotate(0deg));
+      }
+      75% {
+        @include transform(rotate(-90deg));
+      }
+      100% {
+        @include transform(rotate(0deg));
+      }
+    }
+  }
+
+}
+
