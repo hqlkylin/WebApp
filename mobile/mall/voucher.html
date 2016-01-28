@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>我的信息</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/view/voucher.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!-- conter -->
+
+<div class="mui-content">
+    <div class="head Js-tab">
+        <p class="left active">未使用 <span class="mui-badge">1</span></p>
+
+        <p class="right">已过期</p>
+    </div>
+    <div class="Js-body active">
+        <div class="voucherBox">
+            <div class="description">
+                <p class="money">30元</p>
+
+                <p class="card">现金券</p>
+                <ul class="info">
+                    <li>使用范围：全部商品</li>
+                    <li>使用条件：购买满1000元（含）以上</li>
+                    <li>&nbsp;</li>
+                    <li>2015.12.3 ——2-16.3.20</li>
+                </ul>
+            </div>
+            <div class="text">未<br>使<br>用</div>
+        </div>
+
+    </div>
+    <div class="Js-body">
+        <div class="voucherBox off">
+            <div class="description">
+                <p class="money">30元</p>
+
+                <p class="card">现金券</p>
+                <ul class="info">
+                    <li>使用范围：全部商品</li>
+                    <li>使用条件：购买满1000元（含）以上</li>
+                    <li>&nbsp;</li>
+                    <li>2015.12.3 ——2-16.3.20</li>
+                </ul>
+            </div>
+            <div class="text">已<br>使<br>用</div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/mui.min.js"></script>
+<script src="js/jquery2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $(".Js-tab p").on("tap", function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".Js-body").eq($(this).index()).addClass("active").siblings().removeClass("active");
+        });
+    });
+</script>
+</body>
+
+</html>

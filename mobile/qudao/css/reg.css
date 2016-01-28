@@ -1,0 +1,49 @@
+body, html {
+  height: 100%;
+  background-color: #fff; }
+
+.mui-content {
+  background-color: #fff; }
+
+input {
+  /*  text-align: right;
+    text-indent: 50px;*/ }
+
+.mui-input-row label {
+  width: 43%;
+  color: #c0c0c0;
+  font-weight: 600;
+  padding: 15px 10px; }
+  .mui-input-row label span {
+    color: red; }
+
+.mui-input-row label ~ input, .mui-input-row label ~ select, .mui-input-row label ~ textarea {
+  width: 57%; }
+
+.mui-input-group .mui-input-row {
+  height: 45px; }
+
+#yzm {
+  float: left;
+  width: 37%; }
+
+#yzmbtn {
+  margin-top: 4px;
+  float: left;
+  width: 20%; }
+
+#sub {
+  width: 95%; }
+
+.mui-icon {
+  font-size: 48px;
+  color: #dd524d; }
+
+.card a {
+  font-size: 30px;
+  color: #222222; }
+
+.mui-input-group:after, .mui-input-group:before {
+  height: 0; }
+
+/*# sourceMappingURL=reg.css.map */

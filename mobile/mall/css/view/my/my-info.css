@@ -1,0 +1,112 @@
+/*
+*   我的信息
+*/
+.my-info-boxs .tops{
+    padding-bottom: 10px;
+}
+.my-info-boxs .mihh{
+    background: #ffffff;
+    padding: 10px;
+    padding-top: 1px;
+}
+.my-info-boxs .mihh ul{
+    padding: 0px;
+}
+.my-info-boxs .mihh li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.my-info-boxs .mihh li button{
+    width: 90%;
+    color: #ffffff;
+}
+.my-info-boxs .mihh .ht{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+.my-info-boxs .lis{
+    margin-top: 10px;
+}
+.my-info-boxs .mui-navigate-right:after{
+    color: #3dd4ac;
+    font-size: 25px;
+}
+.my-info-boxs .mui-navigate-right .rs{
+    padding-left: 20px;
+}
+.my-info-boxs .bots{
+    padding: 0px 10px;
+    margin-top: 10px;
+}
+
+
+
+/*
+*   我的关于
+*/
+.my-info{
+    padding: 5px;
+    background: #ffffff;
+}
+.my-info .list-li{
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.my-info .list-li div{
+    padding-bottom: 5px;
+}
+.my-info .titles{
+    color: #3dd4ac;
+}
+
+
+/*
+*   我的专属咨询师
+*/
+.my-exc-boxs{
+    padding: 10px;
+}
+.my-exc-boxs .names{
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    color: #3dd4ac;
+}
+.my-exc-boxs .names .wxs{
+    padding-top: 10px;
+    font-size: 16px;
+    color: #383a3f;
+}
+.my-exc-boxs .cons{
+    padding:20px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+.my-exc-boxs .cons .tt{
+    padding-bottom: 10px;
+    color: #2c2c2c;
+    font-weight: bold;
+    font-size: 14px;
+}
+.my-exc-boxs .cons .cc{
+    color: #777777;
+    font-size: 12px;
+}
+
+.my-exc-boxs .erweima{
+    padding-bottom: 30px;
+}
+.my-exc-boxs .erweima h3{
+    width: 50%;
+    background: #383a3f;
+    border-radius: 10px;
+    padding: 40px 0px;
+    color: #ffffff;
+    margin:0 auto;
+}
+
+
+

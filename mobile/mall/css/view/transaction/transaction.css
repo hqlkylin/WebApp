@@ -1,0 +1,312 @@
+/*
+*   首页列表
+*/
+
+.lr-list-boxs .lists .cc{
+    border: 1px solid #eeeeee;
+    background: #ffffff;
+}
+.lr-list-boxs .lists .cc .imgs img{
+    width: 100%;
+}
+.lr-list-boxs .lists .cc .tts{
+    padding: 10px 10px;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .mm{
+    padding: 0px 10px;
+    color: #62c0b3;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list{
+    padding-right: 10px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list.yj{
+    color: #889090;
+    text-decoration:line-through;
+}
+.lr-list-boxs .lists .cc .mm .mui-icon{
+    font-size: 16px;
+}
+
+
+
+.con-conter-list .ls{
+    width: 100%;
+}
+.con-conter-list .ls.tt{
+    padding-bottom: 10px;
+}
+.con-conter-list .ls img{
+    border: 1px solid #eeeeee;
+}
+.con-conter-list .cc .txt{
+    padding:0px 10px;
+}
+.con-conter-list .bb .mui-pull-left{
+    line-height: 30px;
+}
+
+
+.con-conter-list .cc .gwc{
+    padding-left: 10px;
+    font-size: 12px;
+}
+.con-conter-list .cc .gwc .txts{
+    text-decoration:line-through;
+}
+
+
+/*
+*   交易成功
+*/
+
+.success-boxs{
+    padding-bottom: 10px;
+}
+.success-boxs .bgcor{
+    background: #3dd4ac;
+    padding: 15% 0px;
+    color: #ffffff;
+}
+.success-boxs .bgcor .ics .mui-icon{
+    background: #ffffff;
+    color: #3dd4ac;
+    border-radius: 20px;
+    font-size: 32px;
+}
+.success-boxs .bgcor .txt{
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+
+/*
+*   立即支付
+*/
+.skf-tt{
+    margin: 10px 0px;
+    padding: 15px 10px;
+    background: #3dd4ac;
+    color: #ffffff;
+    font-size: 16px;
+}
+.skf-bts{
+    padding: 0px 10px;
+}
+
+/*
+*   评价成功
+*/
+.evaluate-boxs{
+    background: #ffffff;
+    padding: 10px;
+}
+.evaluate-boxs .tt{
+    padding: 10% 0px;
+    color: #3dd4ac;
+    font-size: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.evaluate-boxs .tt .mui-icon{
+    background: #fe5d2c;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 32px;
+}
+.evaluate-boxs .bb{
+    padding-top: 15px;
+    color: #707070;
+}
+
+
+/*
+*   评分
+*/
+.score-boxs{
+    padding:10px;
+    background: #ffffff;
+}
+.score-boxs .tt{
+    padding:20px 0px;
+    color: #3dd4ac;
+    font-size: 16px;
+    font-weight: bold;
+}
+.score-boxs .hd{
+    padding-bottom: 20px;
+}
+.score-boxs .txt{
+    padding-bottom: 20px;
+}
+.score-boxs .txt textarea{
+    border: 1px solid #3dd4ac;
+    padding: 10px;
+    font-size: 14px;
+}
+.score-boxs .btns .mui-btn-block{
+    padding: 5px 0px;
+}
+
+
+
+/*
+*   已完成订单
+*/
+.order-boxs .lists{
+    height: 80px;
+    margin-top: 10px;
+    background: #ffffff;
+    overflow: hidden;
+}
+.order-boxs .lists .tt .ll{
+    background: #ffffff;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+.order-boxs .lists .tt .ll img{
+    border: 1px solid #eeeeee;
+}
+
+.order-boxs .lists .tt .ras{
+    background: #ffffff;
+    text-align: center;
+}
+.order-boxs .lists .tt .ras .r1{
+    margin-top: 30px;
+}
+
+.order-boxs .lists .tt .ll h5{
+    padding-left: 10px;
+}
+
+
+.order-boxs .lists .tt .rr{
+    background: #3dd4ac;
+    height: 80px;
+    padding-right: 10px;
+    color: #ffffff;
+}
+.order-boxs .lists .tt .rr .dd{
+    margin-top: 12px;
+}
+
+.order-boxs .lists .hi{
+    padding: 20px 0px;
+    color: #4d4d4d;
+}
+.order-boxs .lists .bt{
+    padding:0px 10px;
+}
+.order-boxs .lists .bt .mui-btn{
+    padding: 5px;
+}
+.order-boxs .lists .bt .mui-icon{
+    font-size: 14px;
+}
+
+
+
+/*
+*   结算
+*/
+.set-bottoms {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    padding-left: 10px;
+    background: #222833;
+    line-height: 40px;
+    color: #ffffff;
+}
+.set-bottoms .lls{
+    margin-top: 13px;
+    padding-right: 10px;
+}
+.set-bottoms .lls .r1{
+    width: 20px;
+}
+.set-bottoms .mui-btn{
+    border-radius: 0px;
+    padding: 20px 25px;
+}
+
+
+/*
+*   待付款-2
+*/
+.stay-boxs .pp{
+    margin-bottom: 5px;
+}
+.stay-boxs .pp.ps{
+    font-size: 12px;
+}
+.stay-boxs .pp .mui-icon{
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 20px;
+    font-size: 18px;
+}
+.stay-boxs .shr{
+    background: #ffffff;
+    padding: 10px;
+}
+.stay-boxs .shr .ls{
+    padding: 10px 0px;
+}
+.stay-boxs .shr .ls .mui-icon{
+    color: #3dd4ac;
+}
+
+
+.stay-boxs .yunfei{
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+    padding: 10px;
+    margin-top: 10px;
+}
+.stay-boxs .mjly{
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.stay-boxs .allxx{
+    background: #ffffff;
+    padding:0px 10px;
+    margin-top: 10px;
+
+}
+.stay-boxs .allxx .lis{
+    padding: 10px 0px;
+    border-top: 1px solid #eeeeee;
+}
+.stay-boxs .allxx .lis .txt{
+    color: #ff1d1d;
+    font-weight: bold;
+}
+
+
+.stay-boxs .zhifus{
+    padding:0px 10px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

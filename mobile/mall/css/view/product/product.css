@@ -1,0 +1,176 @@
+/*
+*   首页列表
+*/
+
+.lr-list-boxs .lists .cc{
+    border: 1px solid #eeeeee;
+    background: #ffffff;
+}
+.lr-list-boxs .lists .cc .imgs img{
+    width: 100%;
+}
+.lr-list-boxs .lists .cc .tts{
+    padding: 10px 10px;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .mm{
+    padding: 0px 10px;
+    color: #62c0b3;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list{
+    padding-right: 10px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list.yj{
+    color: #889090;
+    text-decoration:line-through;
+}
+.lr-list-boxs .lists .cc .mm .mui-icon{
+    font-size: 16px;
+}
+
+
+/*
+*   产品详情
+*/
+.pro-boxs .mode{
+    padding: 10px 20px;
+    background: #ffffff;
+}
+
+.pro-boxs .infos-tle{
+    color: #707070;
+    font-size: 14px;
+}
+
+.pro-boxs .infos-tle .tt{
+    font-size: 18px;
+}
+.pro-boxs .infos-tle .tt-b{
+    font-size: 12px;
+    color: #707070;
+    padding: 3px 0px;
+}
+.pro-boxs .infos-tle .jg{
+    font-size: 18px;
+    color: #ff1d1d;
+}
+.pro-boxs .infos-tle .jg-y{
+    text-decoration:line-through;
+}
+
+.pro-boxs .infos-pj{
+    margin-top: 10px;
+}
+.pro-boxs .infos-pj .tt{
+    padding-bottom: 10px;
+}
+.pro-boxs .infos-pj .con-lis{
+    padding:10px 0px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.pro-boxs .infos-pj .con-lis .tops{
+    padding:10px 0px;
+}
+.pro-boxs .infos-pj .con-lis .tops img{
+    border-radius: 20px;
+}
+.pro-boxs .infos-pj .ckpj{
+    padding-top: 10px;
+}
+.pro-boxs .infos-pj .ckpj .mui-btn{
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 10px;
+}
+.pro-boxs .tdck{
+    padding: 10px 0px;
+    background: #bfbfbf;
+    color: #ffffff;
+}
+.pro-boxs .infolist .cont{
+    padding-top: 10px;
+}
+
+.mui-bar-fot a .mui-icon{
+    background: none;
+    border-radius: inherit;
+}
+
+
+/*
+*    弹窗
+*/
+.infos-windo{
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+.infos-windo.cur{
+    display: block;
+}
+.infos-windo .bgs{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+    position: fixed;
+    z-index: 11;
+}
+.infos-windo .cons{
+    width: 100%;
+    position: fixed;
+    z-index: 12;
+    background: #ffffff;
+    top:40%;
+    padding: 10px;
+}
+.infos-windo .cons .tt{
+    padding-bottom: 5px;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+}
+.infos-windo .cons .tt .mui-icon{
+    position: absolute;
+    right: 0px;
+    top:-3px;
+    font-size: 32px;
+}
+.infos-windo .cons .cc{
+    margin-top: 10px;
+}
+.infos-windo .cons .cc .xix{
+    padding: 5px 0px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.infos-windo .cons .cc .xix .ll img{
+    border: 1px solid #eeeeee;
+}
+.infos-windo .cons .cc .xix .rr{
+    padding-left: 10px;
+}
+.infos-windo .cons .cc .xix .rr p{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.infos-windo .cons .cc .sl{
+    padding: 15px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+.infos-windo .cons .cc .sl .mui-pull-left{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 28px;
+}
+.infos-windo .cons .cc .sl input{
+    height: 25px;
+}
+.infos-windo .cons .cc .btn{
+    padding: 10px 0px;
+}
+
+

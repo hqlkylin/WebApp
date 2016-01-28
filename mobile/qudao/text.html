@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <title>测试</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html
+        {
+            font-family: sans-serif;
+            height: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body{
+            height: 100%;
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 21px;
+            color: #000;
+            background-color: #efeff4;
+            /*-webkit-overflow-scrolling: touch;*/
+        }
+        .top{
+            position:absolute;
+            height: 44px;
+            background: #007aff;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 60;
+        }
+        .container{
+            position: absolute;
+            width: 100%;
+            top:44px;
+            padding: 10px;
+            -webkit-overflow-scrolling: touch;
+            overflow-y : auto;
+    /*        height : 80%; !*uc浏览器不兼容 calc 计算 *!
+            height : -webkit-calc(100% - 44px*2);*/
+            bottom: 44px;
+            z-index: 50;
+        }
+        .footer{
+            position:fixed;
+            height: 44px;
+            background: #2ac845;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 50;
+        }
+    </style>
+    <script>
+
+        window.onload= function () {
+
+            function preventDefault(ev) {
+                ev.preventDefault()
+            }
+            document.addEventListener('touchmove', preventDefault, false)
+
+            function isScroller(el) {
+                // 判断元素是否为 scroller
+                return el.classList.contains('container')
+            }
+
+            document.body.addEventListener('touchmove', function (ev) {
+                var target = ev.target;
+                // 在 scroller 上滑动，阻止事件冒泡，启用浏览器默认行为。
+                if (isScroller(target)) {
+                    ev.stopPropagation();
+                }
+            }, false);
+        }
+
+    </script>
+
+    <script>
+        $(function(){
+           //$(".container").height($(window).height()-108);
+        });
+    </script>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="container">
+        2abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        3abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        4abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        5abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        3abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        4abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        5abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        6abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        7abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        8abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1<br>
+        10<br>
+        3<br>
+        1<br>
+        1<br>
+        1<br>
+        1haha 哈哈<br>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

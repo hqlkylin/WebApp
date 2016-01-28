@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>我的信息</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/view/activeInfo.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!-- conter -->
+
+<div class="mui-content">
+    <div class="head">
+        <ul class="Js-tab">
+            <li class="active"><span>全部</span></li>
+            <li><span>进行中</span></li>
+            <li><span>遗忘活动</span></li>
+        </ul>
+    </div>
+    <p class="mui-text-center sj">2016-12-1 星期三</p>
+    <div class="Js-body active">
+        <div class="wrap">
+            <div class="box">
+                <div class="leftBox">
+                    <div class="tb">本活动实施积极的角度解读基督教的就金库大劫</div>
+                    <ul>
+                        <li>利普康</li>
+                        <li class="mui-text-center">浏览 1234</li>
+                        <li class="mui-text-right">热</li>
+                    </ul>
+                </div>
+                <div class="rightBox">
+                    <img src="images/lp.png" alt="" width="100%">
+                </div>
+            </div>
+            <div class="box">
+                <div class="leftBox">
+                    <div class="tb">本活动实施积极的角度解读基督教的就金库大劫</div>
+                    <ul>
+                        <li>利普康</li>
+                        <li class="mui-text-center">浏览 1234</li>
+                        <li class="mui-text-right">热</li>
+                    </ul>
+                </div>
+                <div class="rightBox">
+                    <img src="images/lp.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Js-body">
+        <div class="wrap">
+            <div class="box">
+                <div class="leftBox">
+                    <div class="tb">本活动实施积极的角度解读基督教的就金库大劫</div>
+                    <ul>
+                        <li>利普康</li>
+                        <li class="mui-text-center">浏览 1234</li>
+                        <li class="mui-text-right">热</li>
+                    </ul>
+                </div>
+                <div class="rightBox">
+                    <img src="images/lp.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/mui.min.js"></script>
+<script src="js/jquery2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $(".Js-tab li").on("tap", function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".Js-body").eq($(this).index()).addClass("active").siblings().removeClass("active");
+        });
+    });
+</script>
+
+</body>
+
+</html>

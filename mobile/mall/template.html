@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+
+    <style>
+        .area {
+            margin: 20px auto 0px auto;
+        }
+        .mui-input-group {
+            margin-top: 10px;
+        }
+        .mui-input-group:first-child {
+            margin-top: 20px;
+        }
+        .mui-input-group label {
+            width: 30%;
+        }
+        .mui-input-row label~input,
+        .mui-input-row label~select,
+        .mui-input-row label~textarea {
+            width: 70%;
+        }
+        .mui-checkbox input[type=checkbox],
+        .mui-radio input[type=radio] {
+            top: 6px;
+        }
+        .mui-content-padded {
+            margin-top: 25px;
+        }
+        .mui-btn {
+            padding: 10px;
+        }
+        .link-area {
+            display: block;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .spliter {
+            color: #bbb;
+            padding: 0px 8px;
+        }
+        .oauth-area {
+            position: absolute;
+            bottom: 20px;
+            left: 0px;
+            text-align: center;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        .oauth-area .oauth-btn {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-size: 30px 30px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0px 20px;
+            /*-webkit-filter: grayscale(100%); */
+
+            border: solid 1px #ddd;
+            border-radius: 25px;
+        }
+        .oauth-area .oauth-btn:active {
+            border: solid 1px #aaa;
+        }
+    </style>
+
+</head>
+<body onload="loaded()">
+
+
+
+<div id="header" class="mui-bar mui-bar-nav">
+    <span class="mui-icon mui-icon-closeempty"></span>
+    <h1 class="mui-title">利普康商城</h1>
+</div>
+
+<div id="wrapper">
+    <div id="scroller">
+        <div class="mui-content">
+            <!--	顶部搜索模块	-->
+            <div class="search-boxs">
+                <div class="bgs mui-pull-left">
+                    <div class="mui-col-xs-11  mui-pull-left"><input type="text" placeholder="请输入商品关键字" /></div>
+                    <div class="mui-col-xs-1  mui-pull-left"><span class="mui-icon mui-icon-search"></span></div>
+                </div>
+                <div class="mui-pull-right">
+                    <span class="mui-icon mui-icon-arrowdown"></span> 分类
+                </div>
+                <div  class="mui-clearfix"></div>
+            </div>
+            <!--	顶部搜索模块	-->
+            <!--	轮播模块	-->
+            <div class="mui-slider">
+                <div class="mui-slider-group">
+                    <div class="mui-slider-item"><a href="#"><img src="images/banner/banner-01.png" /></a></div>
+                    <div class="mui-slider-item"><a href="#"><img src="images/banner/banner-01.png" /></a></div>
+                </div>
+            </div>
+            <!--	轮播模块	-->
+            <!--	左右两列-列表	-->
+            <div class="lr-list-boxs">
+                <div class="mui-col-xs-6 mui-pull-left lists">1</div>
+                <div class="mui-col-xs-6 mui-pull-right lists">1</div>
+            </div>
+            <!--	左右两列-列表	-->
+            <br>1
+            <br>2
+            <br>3
+            <br>4
+            <br>5
+            <br>6
+            <br>7
+            <br>8
+            <br>9
+            <br>1
+            <br>2
+            <br>3
+            <br>4
+            <br>5
+            <br>6
+            <br>7
+            <br>8
+            <br>9
+            <br>1
+            <br>2
+            <br>3
+            <br>4
+            <br>5
+            <br>6
+            <br>7
+            <br>8
+            <br>9
+        </div>
+    </div>
+</div>
+
+<div id="footer">11111</div>
+
+
+<link href="css/mui.min.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="libs/iscroll-master/build/iscroll.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/jquery2.1.4.min.js"></script>
+
+<script type="text/javascript">
+    var myScroll;
+    function loaded () {
+        myScroll = new IScroll('#wrapper', { mouseWheel: true });
+    }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    myScroll.on('scrollEnd', function () {
+        console.log(this.x);
+        
+    });
+    $("form").serialize()
+</script>
+
+</body>
+</html>

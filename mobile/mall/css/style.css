@@ -1,0 +1,197 @@
+
+
+/*
+*	页面初始化
+*/
+
+ul li{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+
+.area {
+	margin: 20px auto 0px auto;
+}
+.mui-input-group {
+	margin-top: 10px;
+}
+.mui-input-group:first-child {
+	margin-top: 20px;
+}
+.mui-input-group label {
+	width: 30%;
+}
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	width: 70%;
+}
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	top: 6px;
+}
+.mui-content-padded {
+	margin-top: 25px;
+}
+.mui-btn {
+	padding: 10px;
+}
+.link-area {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+.spliter {
+	color: #bbb;
+	padding: 0px 8px;
+}
+.oauth-area {
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.oauth-area .oauth-btn {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0px 20px;
+	/*-webkit-filter: grayscale(100%); */
+
+	border: solid 1px #ddd;
+	border-radius: 25px;
+}
+.oauth-area .oauth-btn:active {
+	border: solid 1px #aaa;
+}
+
+
+
+
+
+.ui-page-login,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.mui-content{height: 100%; padding-bottom: 100px;}
+
+.mui-bar-con{
+	padding-top: 10px;
+}
+.mui-bar-fot{
+	opacity: 1.0;
+	background: #222833;
+}
+.mui-bar-fot a{
+	color: #ffffff;
+}
+.mui-bar-fot a .mui-icon{
+
+	border-radius: 20px;
+	background: #ffffff;
+	color: #3dd4ac;
+}
+
+
+/*
+*	公用样式文件区域 -
+*/
+
+.mui-bar .mui-icon{
+	line-height: 25px;
+}
+
+
+/*顶部-搜索*/
+.search-boxs{
+	padding: 0px 10px;
+	padding-bottom: 10px;
+}
+.search-boxs .bgs{
+	padding: 0px 15px;
+	background: #ffffff;
+	border-radius: 10px;
+	color: #b5b5b5;
+}
+.search-boxs .bgs input{
+	border: 0px;
+}
+.search-boxs .bgs .mui-col-xs-1{
+	line-height: 25px;
+	text-align: center;
+}
+.search-boxs .bgs .mui-icon{
+	font-size: 25px;
+	color: #3dd4ac;
+	font-weight: bold;
+	margin-top: 7px;
+}
+
+
+.search-boxs .mui-pull-right{
+	color: #62c0b3;
+	line-height: 38px;
+	text-align: center;
+	padding-left: 10px;
+}
+.search-boxs .mui-pull-right span{
+	background: #62c0b3;
+	color: #ffffff;
+	border-radius: 20px;
+}
+
+.lr-list-boxs{
+	padding: 10px;
+}
+.lr-list-boxs .lists{
+	width: 48.5%;
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+
+/*
+*	白色背景标题
+*/
+.con-title{
+	background: #ffffff;
+	padding: 5px 10px;
+	color: #626262;
+}
+.con-cons{
+	line-height: 28px;
+	padding: 5px 10px;
+}
+
+/*
+*	白色背景-内容模块
+*/
+.con-conter-list{
+	background: #ffffff;
+	padding: 15px 10px;
+	padding-bottom: 5px;
+	color: #626262;
+	margin-top: 10px;
+	border:1px solid #eeeeee ;
+}
+
+
+
+
+
+
+
+
+
+
+
+

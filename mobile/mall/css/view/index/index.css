@@ -1,0 +1,91 @@
+/*
+*   首页列表
+*/
+
+.lr-list-boxs .lists .cc{
+    border: 1px solid #eeeeee;
+    background: #ffffff;
+    position: relative;
+}
+.lr-list-boxs .lists .cc .ps-wyqg{
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -28px;
+    margin-top: -35px;
+}
+.lr-list-boxs .lists .cc .imgs img{
+    width: 100%;
+}
+.lr-list-boxs .lists .cc .tts{
+    padding: 10px 10px;
+    background: url("../../../images/cp-bgs.png") no-repeat;
+    background-position: center center;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .tts .p1{
+    color: #62c0b3;
+    font-weight: bold;
+}
+.lr-list-boxs .lists .cc .tts .p2{
+    color: #999999;
+    line-height: 15px;
+}
+
+.lr-list-boxs .lists .cc .mm{
+    padding: 0px 10px;
+    background:#62c0b3;
+    color: #ffffff;
+    font-size: 12px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list{
+    padding-right: 10px;
+}
+.lr-list-boxs .lists .cc .mm .sp-list.yj{
+    color: #889090;
+    text-decoration:line-through;
+}
+.lr-list-boxs .lists .cc .mm .mui-icon{
+    font-size: 14px;
+}
+
+
+
+
+
+/*
+*   收藏
+*/
+.collection-boxs{
+    margin: 10px 0px;
+    background: #ffffff;
+}
+.collection-boxs .cons{
+    border: 1px solid #3dd4ac;
+    border-radius: 10px;
+}
+.collection-boxs .cons .imgs{
+    background: #3dd4ac;
+    border-radius:10px 10px 0px 0px;
+}
+.collection-boxs .cons .imgs img{
+    border-radius:10px 10px 0px 0px;
+}
+.collection-boxs .cons .tts{
+    padding:0px 5px;
+    padding-bottom: 5px;
+    background: #3dd4ac;
+    color: #ffffff;
+    font-size: 12px;
+}
+.collection-boxs .cons .jg{
+    padding:5px 5px;
+    padding-top: 10px;
+}
+
+
+
+
+

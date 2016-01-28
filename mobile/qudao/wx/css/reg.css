@@ -1,0 +1,27 @@
+.tipError{
+    position: fixed;
+    top:15%;
+    left:50%;
+    -webkit-transform:translateX(-50%) ;
+    z-index: 9999;
+    background-color:rgba(255,0,0,0.5) ;
+    -webkit-transition: opacity .8s;
+    transition: opacity .8s;
+    font-size: 14px;
+    margin: 5px auto;
+    padding: 10px;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 7px;
+    opacity: 0;
+}
+.tipError.mui-active{
+    opacity: 1;
+}
+.mui-input-row label {
+    width: 38%;
+}
+.mui-input-row label ~ input, .mui-input-row label ~ select, .mui-input-row label ~ textarea {
+    width: 62%;
+}

@@ -1,0 +1,89 @@
+
+.head {
+    width: 100%;
+    margin-top: 20px;
+    color: #b9b9b9;
+    overflow: hidden;
+}
+
+.head ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+.head ul li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    background-color: #ffffff;
+    color: #6f6f6f;
+}
+
+.head ul li.active {
+    color: #3dd3ad;
+}
+
+.head ul li span {
+    display: inline-block;
+    width: 100px;
+    border-bottom: 2px solid transparent;
+    padding: 14px;
+}
+.head ul li.active span {
+    border-bottom: 2px solid #3dd3ad;
+}
+
+.Js-body {
+    display: none;
+}
+
+.Js-body.active {
+    display: block;
+}
+
+.sj {
+    padding-top: 12px;
+}
+
+.wrap .box {
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.box .leftBox {
+    float: left;
+    width: 75%;
+    padding-right: 18px;
+}
+
+.box .leftBox .tb {
+    color: #6d6d6d;
+}
+
+.box .leftBox ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 60%;
+    bottom: 18px;
+}
+
+.box .leftBox li {
+    float: left;
+    width: 33.33%;
+    color: #d2d2d2;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.box .rightBox {
+    float: right;
+    width: 25%;
+}

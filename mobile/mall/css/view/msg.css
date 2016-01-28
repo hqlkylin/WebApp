@@ -1,0 +1,44 @@
+
+.head {
+    width: 100%;
+    margin-top: 9%;
+    color: #b9b9b9;
+    overflow: hidden;
+}
+
+.head .left {
+    float: left;
+    margin-left: 18.90%;
+}
+
+.head .left .mui-badge {
+    color: #fff;
+    background-color: #ff5c2c;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.head .right {
+    float: right;
+    margin-right: 18.90%;
+}
+.Js-body{
+    display: none;
+}
+.Js-body.active{
+    display: block;
+}
+.wrap{
+   border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    color: #ffffff !important;
+    background-color: #3dd4ac;
+}
+
+.wrap.off{
+    background-color: #a1a1a1;
+}
+.wrap h5{
+    color: #fff;
+}

@@ -1,0 +1,89 @@
+
+.head {
+    width: 100%;
+    position: relative;
+    margin-top: 9%;
+    color: #b9b9b9;
+    height: 45px;
+}
+
+.head .left {
+    position: absolute;
+    left: 18.90%;
+}
+
+.head .left .mui-badge {
+    color: #fff;
+    background-color: #ff5c2c;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.head .right {
+    position: absolute;
+    right: 18.90%;
+}
+
+.voucherBox {
+    width: 100%;
+    position: relative;
+    padding: 0 2.8%;
+    color: #fff;
+    margin-bottom: 28px;
+    height: 160px;
+}
+
+.voucherBox.off .description, .voucherBox.off .text {
+    background-color: #a1a1a1;
+}
+
+.description {
+    float: left;
+    width: 81.25%;
+    background-color: #3dd4ac;
+    height: 160px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.description .money {
+    position: absolute;
+    top: 22%;
+    left: 7%;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.description .card {
+    position: absolute;
+    top: 54.85%;
+    left: 12%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description .info {
+    position: absolute;
+    font-size: 12px;
+    top: 12%;
+    left: 23%;
+}
+
+.text {
+    float: right;
+    width: 16.85%;
+    background-color: #3dd4ac;
+    margin-left: 1.8%;
+    height: 160px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 55px;
+}
+
+.Js-body {
+    display: none;
+}
+.Js-body.active {
+    display: block;
+}

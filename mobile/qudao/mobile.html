@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header, footer, main {
+            display: block;
+        }
+
+        header {
+            position: fixed;
+            height: 50px;
+            left: 0;
+            right: 0;
+            top: 0;
+            background-color: #0b183a;
+        }
+
+        footer {
+            position: fixed;
+            height: 34px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2ac845;
+        }
+
+        main {
+            /* main绝对定位，进行内部滚动 */
+            position: absolute;
+            top: 50px;
+            bottom: 34px;
+            /* 使之可以滚动 */
+            overflow-y: scroll;
+            /* 增加该属性，可以增加弹性 */
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        main .content {
+
+        }
+
+    </style>
+</head>
+<body class="layout-scroll-fixed">
+<!-- fixed定位的头部 -->
+<header>
+        头部
+</header>
+
+<!-- 可以滚动的区域 -->
+<main>
+    <div class="content">
+        <!-- 内容在这里... -->
+        2abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        3abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        4abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        5abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        3abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        4abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        5abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        6abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        7abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        8abcd ha  你好 我们 都很好 哈哈 非常好 淘宝<br>
+        1<br>
+        10<br>
+        3<br>
+        1<br>
+        1<br>
+        1<br>
+        1haha 哈哈<br>
+    </div>
+</main>
+
+<!-- fixed定位的底部 -->
+<footer>
+    <input type="text" placeholder="Footer..."/>
+    <button class="submit">提交</button>
+</footer>
+
+<script>
+
+    function preventDefault(ev) {
+        ev.preventDefault()
+    }
+    var header = document.querySelector('header');
+    header.addEventListener('touchmove', preventDefault, false);
+    var footer = document.querySelector('footer');
+    footer.addEventListener('touchmove', preventDefault, false);
+
+    // 防止内容区域滚到底后引起页面整体的滚动
+    var content = document.querySelector('main');
+    var startY;
+
+    content.addEventListener('touchstart', function (e) {
+        startY = e.touches[0].clientY;
+    });
+
+    content.addEventListener('touchmove', function (e) {
+        // 高位表示向上滚动
+        // 底位表示向下滚动
+        // 1容许 0禁止
+        var status = '11';
+        var ele = this;
+
+        var currentY = e.touches[0].clientY;
+
+        if (ele.scrollTop === 0) {
+            // 如果内容小于容器则同时禁止上下滚动
+            status = ele.offsetHeight >= ele.scrollHeight ? '00' : '01';
+        } else if (ele.scrollTop + ele.offsetHeight >= ele.scrollHeight) {
+            // 已经滚到底部了只能向上滚动
+            status = '10';
+        }
+
+        if (status != '11') {
+            // 判断当前的滚动方向
+            var direction = currentY - startY > 0 ? '10' : '01';
+            // 操作方向和当前允许状态求与运算，运算结果为0，就说明不允许该方向滚动，则禁止默认事件，阻止滚动
+            if (!(parseInt(status, 2) & parseInt(direction, 2))) {
+                stopEvent(e);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

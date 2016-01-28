@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACT,gBAAgB,EAAE,IAAI;;AAExB,YAAa;EACX,gBAAgB,EAAE,IAAI;;AAItB,oBAAc;EACZ,WAAW,EAAE,GAAG;AAElB,SAAE;EACA,aAAa,EAAE,EAAE;EACjB,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,MAAM;AAErB,SAAE;EAAC,eAAe,EAAC,YAAY",
+"sources": ["proListNew.scss"],
+"names": [],
+"file": "proListNew.css"
+}

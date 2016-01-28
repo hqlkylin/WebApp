@@ -1,0 +1,121 @@
+body, html {
+  height: 100%;
+  background-color: #fff; }
+
+.mui-content {
+  background-color: #fff; }
+
+ul li {
+  list-style: none; }
+
+.headbg {
+  /*  width: 100%;*/
+  background: url("../img/bg.jpg") no-repeat;
+  background-size: 100%;
+  padding-top: 43.6%;
+  position: relative;
+  overflow: hidden; }
+
+.headbg .box {
+  margin-top: -43.6%;
+  overflow: hidden;
+  position: relative; }
+
+.headbg .box .lhead {
+  float: left;
+  width: 50%; }
+
+.headbg .box .rhead {
+  float: left;
+  width: 45%;
+  margin-left: -5%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(0%, -50%); }
+
+.headbg .box .lhead img {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20%; }
+
+.headbg .box .lhead p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 18px;
+  height: 24px; }
+
+.headbg .box .rhead ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 0; }
+
+.headbg .box .rhead ul li {
+  overflow: hidden; }
+
+.headbg .box .rhead ul li:nth-child(1) {
+  border-bottom: 1px solid #686868;
+  margin-bottom: 5%;
+  padding-bottom: 5%; }
+
+.headbg .box .rhead ul div {
+  width: 60%;
+  text-align: right;
+  float: left; }
+
+.headbg .box .rhead ul p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 5px; }
+
+.headbg .box .rhead ul span {
+  color: #fff;
+  font-size: 14px; }
+
+.headbg .box .rhead ul a {
+  float: left;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  background-clip: padding-box; }
+
+.linkBox {
+  background-color: #fff;
+  margin: 10px 0;
+  overflow: hidden; }
+  .linkBox div {
+    background-color: #fff;
+    box-sizing: border-box;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    text-align: center; }
+    .linkBox div:nth-child(2) {
+      border-left: 1px dotted #8f8f94;
+      border-right: 1px dotted #8f8f94; }
+    .linkBox div p {
+      color: red;
+      font-size: 20px; }
+    .linkBox div h5 {
+      font-size: 12px; }
+
+.mui-table-view {
+  margin-top: 15px; }
+
+.mui-media-body {
+  height: 42px;
+  line-height: 42px; }
+
+.removeAfter:after, .removeAfter:after {
+  right: 15px;
+  content: ''; }
+
+/*# sourceMappingURL=pindex.css.map */

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/reg.css">
+    <link href="css/mui.picker.css" rel="stylesheet" />
+    <link href="css/mui.poppicker.css" rel="stylesheet" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <!--<script src="../js/mui.picker.min.js"></script>-->
+    <script src="js/mui.picker.js"></script>
+    <script src="js/mui.poppicker.js"></script>
+<!--    <script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+<div class="mui-content">
+    <div class="mui-content-padded" style="margin: 5px;">
+
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>姓名<span>*</span>：</label>
+                <input type="text" placeholder="张三">
+            </div>
+
+            <div class="mui-input-row">
+                <label>手机号码<span>*</span>：</label>
+                <input type="text"  placeholder="15001380111">
+            </div>
+            <div class="mui-input-row">
+                <label>身份证号码<span>*</span>：</label>
+                <input type="text"  placeholder="110106548987xxxxxx">
+            </div>
+            <div class="mui-input-row">
+                <label>工作单位：</label>
+                <input type="text"  placeholder="">
+            </div>
+            <div class="mui-input-row">
+                <label>职位：</label>
+                <input type="text"  placeholder="总务">
+            </div>
+            <div class="mui-input-row">
+                <label style="width: 32%">区域：</label>
+               <!-- <input type="text" id="ct3" style="width:52%; float:left;">-->
+                <label id="ct3" style="width:52%; float:left; font-size: 14px;"></label>
+                <a style="float:right;" id='showCityPicker3'><span class="mui-icon mui-icon-forward" style="color:#c0c0c0;"></span></a>
+
+                <!--<a id='showCityPicker3' href="#" style="color: #c8c7cc;display: inline-block; margin-top: 12px;">
+                    >
+                </a>-->
+            </div>
+            <div class="mui-input-row">
+                <label>地址：</label>
+                <input type="text"  placeholder="">
+            </div>
+            <div class="mui-input-row">
+                <label>备注：</label>
+                <input  type="text"  placeholder="我喜欢这个产品">
+            </div>
+            <div class="mui-input-row">
+                <label>验证码：</label>
+                <input type="text"  id="yzm" placeholder="验证码">
+                <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" id="yzmbtn"  onclick="return false;">
+                    获取
+                </button>
+
+            </div>
+            <div  class="card" style="margin: 10px 5px; text-align: center">
+                <a><span class="mui-icon mui-icon-camera"></span> 上传照片</a>
+                <p>(请上传手持身份证正面，五官清晰可见照片)</p>
+            </div>
+
+            <div class="mui-button-row bn">
+                <button type="button" class="mui-btn mui-btn-primary" id="sub" onclick="return false;">确认</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+</body>
+
+
+<script>
+    (function($m, doc) {
+        $m.init();
+        $m.ready(function() {
+            //-----------------------------------------
+            //					//级联示例
+            var cityPicker3 = new $m.PopPicker({
+                layer: 3
+            });
+            cityPicker3.setData(cityData3);
+            var showCityPickerButton = doc.getElementById('showCityPicker3');
+            var cityResult3 = doc.getElementById('cityResult3');
+            showCityPickerButton.addEventListener('tap', function(event) {
+                cityPicker3.show(function(items) {
+                   // $("#cityResult3").attr("value","222");
+                    $("#ct3").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
+                    //alert("你选择的城市是:" + (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text)
+                    //cityResult3.value = "你选择的城市是:" + (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }, false);
+            //var info = document.getElementById("sub");
+            document.getElementById("sub").addEventListener('tap', function() {
+                mui.alert('', '带<span style="color:red">*</span>的框不能为空');
+            });
+        });
+
+
+    })(mui, document);
+</script>
+
+
+</html>

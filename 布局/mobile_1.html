@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+
+        }
+
+        .wrap {
+            font-size: 0;
+        }
+
+        .wrap div {
+            font-size: 12px;
+            width: 20%;
+            background-color: #0bcd00;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+
+        }
+
+        .wrap div:before {
+            padding-bottom: 100%;
+            width: .1px;
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+        .wrap div:nth-child(2n) {
+            background-color: red;
+        }
+
+        .wrap span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 4em;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="wrap">
+    <div><span>1</span></div>
+    <div><span>2</span></div>
+    <div><span>3</span></div>
+    <div><span>4</span></div>
+    <div><span>5</span></div>
+    <div><span>6</span></div>
+    <div><span>7</span></div>
+    <div><span>8</span></div>
+</div>
+
+<style>
+    .hanqilin {
+        font-size: 0;
+        text-align: center;
+        width: 30%;
+        height: 200px;
+        border: 1px solid #00a3ff;
+    }
+
+    .m {
+        font-size: 12px;
+        display: inline-block;
+        border: 1px solid #cccccc;
+        vertical-align: middle;
+    }
+
+    .hanqilin:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: .1px;
+    }
+   /* .hanqilin .k {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: .1px;
+    }*/
+</style>
+<p class="hanqilin">
+   <!-- <span class="k"></span>-->
+    <span class="m">
+        我来 vertical-align
+    </span>
+</p>
+
+<style type="text/css">
+    .box_2 {
+        display: table-cell;
+        width: 550px;
+        height: 300px;
+        border: 4px solid #beceeb;
+        color: #069;
+        font-size: 12px;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+</style>
+
+<div class="box_2"><span>这里显示多行文字啊手动阀手动阀手动阀手动阀手啊手动阀手动阀手动阀阿三地方阿三地方动阀阿三地方阿三地方阿三地方阿三地方。</span></div>
+
+
+<style>
+    #content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        text-align: center;
+    }
+
+    #content span {
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    #content img {
+        vertical-align: middle;
+    }
+</style>
+
+<div id="content">
+    <span></span>
+    <img src="../img/1.jpg" width="50" height="50">
+</div>
+
+<style>
+    .kylin {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #0bcd00;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+</style>
+<div class="kylin">
+    <img src="../img/1.jpg" width="50" height="50">
+
+    <p>我是水平垂直居中dfjskdfjk的jfk速度jfk世界的看法就是看到jfk手机打开世界的看法就是看到房价</p>
+</div>
+<div style="clear: both"></div>
+<style>
+    .kylin1 {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #0bcd00;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+</style>
+<div style="width: 500px; height: 500px">
+    <div class="kylin1">
+        <img src="../img/1.jpg" width="50" height="50">
+
+        <p style="padding: 20px;">我是水平垂直居中dfjskdfjk的jfk速度jfk世界的看法就是看到jfk手机打开世界的看法就是看到房价</p>
+    </div>
+</div>
+<p>111</p>
+
+</body>
+</html>

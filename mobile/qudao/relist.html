@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+
+    <link rel="stylesheet" href="css/reList.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/mui.min.js"></script>
+    <script>
+        $(function(){
+            $(".mui-control-content").height($(window).height()-48);
+        });
+    </script>
+</head>
+
+<body>
+
+
+<div class="mui-content">
+    <div id="slider" class="mui-slider">
+        <div id="sliderSegmentedControl"
+             class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+            <a class="mui-control-item" href="#item1mobile">
+                待结算
+            </a>
+            <a class="mui-control-item" href="#item2mobile">
+                已结算
+            </a>
+            <a class="mui-control-item" href="#item3mobile">
+                总返佣
+            </a>
+        </div>
+        <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+        <div class="mui-slider-group">
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <div id="scroll1" class="mui-scroll-wrapper">
+
+                    <div class="mui-scroll">
+                        <p class="showm mui-text-right">总返佣金额：<span class="mui-h4">￥64.35</span></p>
+                        <ul class="mui-table-view">
+
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段1</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段2</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段3</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段4</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段5</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段6</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段7</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段8</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段9</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段0</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="mui-table-view-cell mui-row ploa">
+
+                                <div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">
+                                    <img src="img/ad/pro1.png" width="100%">
+                                </div>
+
+                                <div class="mui-col-xs-5">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>单价：<span class="mui-badge-red">￥50.00/件</span></p>
+                                </div>
+                                <div class="mui-col-xs-2 ">
+                                    <p class='mui-h6 mui-ellipsis mt24'>数量：65</p>
+                                </div>
+                                <div class="mui-col-xs-3 mui-text-right">
+                                    <h5 class="mui-ellipsis">设计阶段</h5>
+
+                                    <p class='mui-h6 mui-ellipsis'>售价：<span class="mui-badge-red">￥50</span></p>
+                                </div>
+                                <div class="mui-clearfix"></div>
+                                <div class="line"></div>
+                                <div class="mui-col-xs-12 mui-text-right">
+                                    <p class='mui-h6 mui-ellipsis'><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll2" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <div class="mui-loading">
+                            <div class="mui-spinner">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll3" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <div class="mui-loading">
+                            <div class="mui-spinner">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    mui.init({
+        swipeBack: false
+    });
+    (function ($) {
+
+        $('.mui-scroll-wrapper').scroll({
+            indicators: true //是否显示滚动条
+        });
+        /*'<p class="showm mui-text-right">总返佣金额：<span class="mui-h4">￥64.35</span></p>'
+         +'<ul class="mui-table-view">'
+         +'<li class="mui-table-view-cell mui-row ploa">'
+         +'<div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">'
+         +'<img src="img/ad/pro1.png" width="100%">'
+         +'</div>'
+         +'<div class="mui-col-xs-5">'
+         +'<h5 class="mui-ellipsis">设计阶段</h5>'
+         +'<p class= "mui-h6 mui-ellipsis">单价：<span class="mui-badge-red">￥50.00/件</span></p>'
+         +'</div>'
+         +'<div class="mui-col-xs-2 ">'
+         +'<p class= "mui-h6 mui-ellipsis mt24">数量：65</p>'
+         +'</div>'
+         +'<div class="mui-col-xs-3 mui-text-right">'
+         +'<h5 class="mui-ellipsis">设计阶段</h5>'
+         +'<p class= "mui-h6 mui-ellipsis">售价：<span class="mui-badge-red">￥50</span></p>'
+         +'</div>'
+         +'<div class="mui-clearfix"></div>'
+         +'<div class="line"></div>'
+         +'<div class="mui-col-xs-12 mui-text-right">'
+         +'<p class= "mui-h6 mui-ellipsis"><span class="mui-inline">返佣日期：2015-12-25</span>结算日期：未结算</p>'
+         +'</div>'
+         +'</li>'
+         +'</ul>'*/
+        var html2 = '<p class="showm mui-text-right">总返佣金额：<span class="mui-h4">￥100.35</span></p>'
+                + '<ul class="mui-table-view">'
+                + '<li class="mui-table-view-cell mui-row ploa">'
+                + '<div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">'
+                + '<img src="img/ad/pro1.png" width="100%">'
+                + '</div>'
+                + '<div class="mui-col-xs-5">'
+                + '<h5 class="mui-ellipsis">设计阶段</h5>'
+                + '<p class= "mui-h6 mui-ellipsis">单价：<span class="mui-badge-red">￥50.00/件</span></p>'
+                + '</div>'
+                + '<div class="mui-col-xs-2 ">'
+                + '<p class= "mui-h6 mui-ellipsis mt24">数量：65</p>'
+                + '</div>'
+                + '<div class="mui-col-xs-3 mui-text-right">'
+                + '<h5 class="mui-ellipsis">设计阶段</h5>'
+                + '<p class= "mui-h6 mui-ellipsis">售价：<span class="mui-badge-red">￥50</span></p>'
+                + '</div>'
+                + '<div class="mui-clearfix"></div>'
+                + '<div class="line"></div>'
+                + '<div class="mui-col-xs-12 mui-text-right">'
+                + '<p class= "mui-h6 mui-ellipsis"><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11</p>'
+                + '</div>'
+                + '</li>'
+                + '</ul>';
+        var html3 = '<p class="showm mui-text-right">总返佣金额：<span class="mui-h4">￥110.35</span></p>'
+                + '<ul class="mui-table-view">'
+                + '<li class="mui-table-view-cell mui-row ploa">'
+                + '<div class="mui-col-xs-2 mui-media-object" style="padding-right: 2%">'
+                + '<img src="img/ad/pro1.png" width="100%">'
+                + '</div>'
+                + '<div class="mui-col-xs-5">'
+                + '<h5 class="mui-ellipsis">阶段</h5>'
+                + '<p class= "mui-h6 mui-ellipsis">单价：<span class="mui-badge-red">￥520.00/件</span></p>'
+                + '</div>'
+                + '<div class="mui-col-xs-2 ">'
+                + '<p class= "mui-h6 mui-ellipsis mt24">数量：65</p>'
+                + '</div>'
+                + '<div class="mui-col-xs-3 mui-text-right">'
+                + '<h5 class="mui-ellipsis">设计阶段</h5>'
+                + '<p class= "mui-h6 mui-ellipsis">售价：<span class="mui-badge-red">￥500</span></p>'
+                + '</div>'
+                + '<div class="mui-clearfix"></div>'
+                + '<div class="line"></div>'
+                + '<div class="mui-col-xs-12 mui-text-right">'
+                + '<p class= "mui-h6 mui-ellipsis"><span class="mui-inline">成交日期：2015-12-25</span>预结算日期：2016-10-11</p>'
+                + '</div>'
+                + '</li>'
+                + '</ul>';
+        //var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+        var item2 = document.getElementById('item2mobile');
+        var item3 = document.getElementById('item3mobile');
+        document.getElementById('slider').addEventListener('slide', function (e) {
+            if (e.detail.slideNumber === 1) {
+                if (item2.querySelector('.mui-loading')) {
+                    setTimeout(function () {
+                        item2.querySelector('.mui-scroll').innerHTML = html2;
+                    }, 500);
+                }
+            } else if (e.detail.slideNumber === 2) {
+                if (item3.querySelector('.mui-loading')) {
+                    setTimeout(function () {
+                        item3.querySelector('.mui-scroll').innerHTML = html3;
+                    }, 500);
+                }
+            }
+        });
+
+    })(mui);
+</script>
+
+</body>
+
+</html>
