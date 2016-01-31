@@ -1,0 +1,165 @@
+
+@charset "utf-8";
+/**
+ * By jasonshan@tencent.com
+ * date 2013.9.19
+ * v  1.0
+ * 适配频道页样式
+ */
+/*reset*/
+body,div,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,iframe,input,textarea,select,label,article,aside,footer,header,menu,nav,section,time,audio,video {
+  margin:0;
+  padding:0;
+}
+article,aside,footer,header,hgroup,nav,section,audio,canvas,video,img {
+  display: block;
+}
+body {
+  font-size: 100%;
+  font-family:Helvetica,STHeiti,Droid Sans Fallback;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+textarea {
+  resize: none;
+}
+iframe,img {
+  border:0;
+}
+ul,ol {
+  list-style:none;
+}
+input,
+select,
+textarea {
+  outline: 0;
+  -webkit-user-modify: read-write-plaintext-only;
+}
+input {
+  -webkit-appearance: none;
+}
+a{
+  text-decoration: none;
+}
+body,.global{
+  background: #fafafa
+}
+.global{
+  min-width: 320px;
+}
+
+
+
+a {
+  color: #8c8792;
+  text-decoration: none;
+  &:visited {
+    color: #929292;
+  }
+}
+
+.list {
+  padding: 0 8px 0;
+}
+
+.full {
+  padding: 10px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #cccccc;
+  a {
+    display: block;
+    color: #000;
+  }
+  h5 {
+    height: 22px;
+    line-height: 22px;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+
+  }
+  p {
+    padding: 0 0 0 5px;
+    line-height: 17px;
+    font-size: 13px;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 34px;
+    color: #878c92;
+  }
+  .count {
+    height: 17px;
+    line-height: 17px;
+    display: inline-block;
+    text-align: right;
+    float: right;
+
+
+  }
+  .flag {
+    vertical-align: middle;
+  }
+  .count i {
+    font-size: 12px;
+    font-family: Helvetica;
+    color: #878c92;
+    font-style: normal;
+  }
+
+  .cComm {
+    margin-left: 6px;
+    &:before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-position: -84px 0;
+      vertical-align: middle;
+      margin-right: 3px;
+      background-image: url(http://mat1.gtimg.com/www/mobi/image/icon.png);
+      background-repeat: no-repeat;
+      -webkit-background-size: 119px 21px;
+      -moz-background-size: 119px 21px;
+      -o-background-size: 119px 21px;
+      background-size: 119px 21px;
+    }
+  }
+
+}
+
+.wrapImg {
+  width: 75px;
+  height: 55px;
+  border: 1px solid #c4c3c3;
+  padding: 1px;
+  text-align: center;
+  float: left;
+  margin-right: 4px;
+  img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.flag {
+  display: inline-block;
+  margin-right: 4px;
+  width: 24px;
+  height: 14px;
+  background-image: url(http://mat1.gtimg.com/www/mobi/image/flagicon.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 168px 14px;
+  -moz-background-size: 168px 14px;
+  -o-background-size: 168px 14px;
+  background-size: 168px 14px;
+  vertical-align: -1px;
+}
+.flag3 {
+  background-position: -48px 0;
+  display: none;
+  margin: 0;
+}
