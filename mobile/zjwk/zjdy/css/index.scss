@@ -1,0 +1,139 @@
+.page {
+  padding-bottom: 80px;
+}
+
+.hd {
+  position: relative;
+  img {
+    max-width: 100%;
+  }
+  h1 {
+    width: 100%;
+    color: #fdc23a;
+    font-family: "微软雅黑";
+    position: absolute;
+    top: 9%;
+    text-align: center;
+    font-size: 2.3rem;
+    p {
+      font-size: 1rem;
+    }
+  }
+  .ct {
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    color: #fff;
+    p {
+
+      -webkit-box-flex: 1.0;
+      -moz-flex-grow: 1;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+
+      text-align: center;
+      color: #aeadb2;
+      span {
+        display: block;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+  }
+
+}
+
+.bd {
+
+  font-family: "微软雅黑";
+  color: #ababab;
+  .tabMenu {
+
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    position: relative;
+    border-bottom: 1px solid #c1c1c1;
+    p {
+      position: relative;
+      -webkit-box-flex: 1.0;
+      -moz-flex-grow: 1;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      text-align: center;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-weight: bold;
+      &.active {
+        position: relative;
+        color: #cf0001;
+        &::before {
+          content: "";
+          position: absolute;
+          top: -20%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 15px solid #ffffff;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+        }
+      }
+    }
+    .menuLine {
+      display: inline-block;
+      color: #cf0001;
+      position: absolute;
+      bottom: 0;
+      left: 0%;
+      width: 33.33%;
+      text-align: center;
+      height: 30px;
+      transition: left .2s;
+      &::after {
+        display: inline-block;
+        height: 93%;
+        content: '';
+        text-align: center;
+        width: 50%;
+        border-bottom: 2px solid #cf0001;
+      }
+    }
+  }
+  .weui_cells {
+    margin-top: 12px;
+  }
+
+}
