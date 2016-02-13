@@ -1,0 +1,86 @@
+@import "func";
+.page {
+  padding-bottom: 80px;
+
+}
+
+.hd{
+    input{
+      width: 48px;
+      outline: 0;
+      -webkit-appearance: none;
+      background-color: transparent;
+      font-size: inherit;
+      color: inherit;
+      height: 22px;
+      font-size: 16px;
+      padding: 0px;
+      -webkit-user-select: text;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+}
+
+.line{
+  height: 12px;
+  background-color: #ededed;
+  width: 100%;
+}
+.bd {
+  color: #ababab;
+  .box{
+
+    @include flexbox();
+    @include justify-content();
+    @include align-items();
+    position: relative;
+    .list{
+      @include  flex(1);
+      .title{
+        font-size: .8rem;
+      }
+      .content{
+        color: #63b7ff;
+        font-size: 1.1rem;
+      }
+    }
+    .del{
+      margin-right: 4px;
+    }
+    padding: 10px 15px;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom:1px solid #D9D9D9;
+      -webkit-transform:scaleY(.5);
+      -webkit-transform-origin:0 0;
+    }
+  }
+  .gameAdd{
+    font-size: 2rem;
+    color: #63b7ff;
+    text-align: center;
+  }
+  .result{
+    padding: 10px;
+    background-color: #ededed;
+    @include flexbox();
+
+    @include align-items();
+    p{
+      font-size: 0.8rem;
+      text-align: center;
+      @include flex(1)
+    }
+  }
+  .btn{
+    text-align: center;
+    .weui_btn{
+      width: 20%;
+      display: inline-block;
+    }
+  }
+}

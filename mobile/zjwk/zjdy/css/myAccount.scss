@@ -1,0 +1,35 @@
+@import "func";
+
+
+.page {
+  padding-bottom: 80px;
+}
+
+.bd {
+  padding: 10px 15px;
+  text-align: center;
+  p{
+    text-align: right;
+    a{
+      font-size: .8rem;
+      color: #545c8b;
+    }
+  }
+  h2{
+    padding-bottom:15px;
+    font-weight:400;
+    font-size: 2rem;
+  }
+  h3{
+    color: #888;
+  }
+  .box{
+    margin: 0 auto;
+    width: 40%;
+    img{
+      max-width: 100%;
+    }
+    padding:15px 0;
+  }
+
+}

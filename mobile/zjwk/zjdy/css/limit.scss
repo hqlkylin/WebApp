@@ -1,0 +1,22 @@
+@import "func";
+
+
+.page {
+  padding-bottom: 80px;
+}
+
+.hd {
+  padding: 10px 15px;
+  text-align: center;
+  span{
+    font-size: .8rem;
+    color: #545c8b;
+  }
+  .title{
+    color: $blue;
+    padding-top: 20px;
+  }
+  p{
+
+  }
+}

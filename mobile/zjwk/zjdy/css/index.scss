@@ -1,5 +1,6 @@
 .page {
   padding-bottom: 80px;
+
 }
 
 .hd {
@@ -8,9 +9,9 @@
     max-width: 100%;
   }
   h1 {
+
     width: 100%;
     color: #fdc23a;
-    font-family: "微软雅黑";
     position: absolute;
     top: 9%;
     text-align: center;
@@ -61,8 +62,6 @@
 }
 
 .bd {
-
-  font-family: "微软雅黑";
   color: #ababab;
   .tabMenu {
 
@@ -83,7 +82,8 @@
     align-items: center;
 
     position: relative;
-    border-bottom: 1px solid #c1c1c1;
+    border-bottom: 1px solid #d9d9d9;
+    overflow: hidden;
     p {
       position: relative;
       -webkit-box-flex: 1.0;
@@ -91,9 +91,10 @@
       -webkit-flex-grow: 1;
       flex-grow: 1;
       text-align: center;
-      padding: 0.8rem;
-      font-size: 1rem;
+      padding: 12px;
+      font-size: 18px;
       font-weight: bold;
+      width: 33.33%;
       &.active {
         position: relative;
         color: #cf0001;
@@ -122,12 +123,13 @@
       text-align: center;
       height: 30px;
       transition: left .2s;
+      -webkit-transition:left .2s;
       &::after {
         display: inline-block;
         height: 93%;
         content: '';
         text-align: center;
-        width: 50%;
+        width: 70%;
         border-bottom: 2px solid #cf0001;
       }
     }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>单日限额</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/limit.css">
+</head>
+<body class="global">
+
+<div class="page">
+
+    <div class="hd ">
+        <div class="clearfix">
+            <a href=""><span class="fl">充值</span></a>
+            <a href=""><span class="fr">费用明细</span></a>
+        </div>
+        <h1 class="title">&yen; 3000.00</h1>
+        <p class="weui_cells_title">当日限额</p>
+    </div>
+
+    <div class="bd">
+        <div class="weui_cells_title">修改记录</div>
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2015-02-1 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;300.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2015-02-1 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;300.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2016-01-23 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;3000.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2015-04-1 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;100.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2015-05-1 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;300.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>2015-02-12 10:30:20</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <p>&yen;30.00</p>
+                    <small>修改人:张三</small>
+                </div>
+            </div>
+        </div>
+        <p class="tc m10"><a href="">加载更多…</a> </p>
+    </div>
+
+</div>
+<div class="ft">
+    <ul class="nav">
+        <li><a href="index.html"><i class="fa fa-home"></i>
+            <small>首页</small>
+        </a></li>
+        <li><a href="promoteIndex.html"><i class=" md-volume-up"></i>
+            <small>推广设置</small>
+        </a></li>
+        <li><a href="gameSettings.html"><i class="fa  ti-game"></i>
+            <small>游戏设置</small>
+        </a></li>
+        <li><a href="mySelf.html" class="active"><i class="fa fa-user"></i>
+            <small>我</small>
+        </a></li>
+    </ul>
+</div>
+
+<!--BEGIN toast-->
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+
+        <p class="weui_toast_content">已完成</p>
+    </div>
+</div>
+<!--end toast-->
+
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/view/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+<script>
+    $(function () {
+
+    })
+</script>
+</body>
+</html>

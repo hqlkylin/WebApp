@@ -1,0 +1,52 @@
+@import "func";
+
+.page {
+  padding-bottom: 80px;
+}
+.line{
+  height: 12px;
+  background-color: #ededed;
+  width: 100%;
+}
+.bd {
+  padding: 0 12px;
+  .list {
+    padding: 12px 0;
+    position: relative;
+
+    .main {
+      @include flexbox();
+      @include  align-items();
+      .photo {
+        width: 20%;
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .title {
+        width: 80%;
+        vertical-align: middle;
+        margin-left: 12px;
+        span {
+          display: inline-block;
+          h4 {
+            font-size: 1rem;
+            color: #383838;
+            line-height: 1.8;
+          }
+          p {
+            font-size: .8rem;
+            small {
+              font-size: .8rem;
+            }
+          }
+        }
+
+
+      }
+    }
+
+  }
+
+}

@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     <title>指尖代言</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
     <link rel="stylesheet" href="css/base.css">
@@ -16,7 +20,7 @@
     <div class="hd">
         <img src="img/bd.png" alt="">
 
-        <h1 class="page_title">￥69.820.00
+        <h1 class="page_title">&yen; 69.820.00
             <p>订单金额</p>
         </h1>
         <div class="ct">
@@ -46,7 +50,7 @@
                                 src="img/icon1.png"
                                 alt="" style="width:20px;margin-right:5px;display:block"></div>
                         <div class="weui_cell_bd weui_cell_primary">
-                            <p>费用支出（<span class="red">￥188.00</span>）</p>
+                            <p>费用支出（<span class="red">&yen;188.00</span>）</p>
                         </div>
                         <div class="weui_cell_ft"></div>
                     </a>
@@ -57,7 +61,7 @@
                         <div class="weui_cell_bd weui_cell_primary">
                             <p>账户余额</p>
                         </div>
-                        <div class="weui_cell_ft_no">￥5687.00</div>
+                        <div class="weui_cell_ft_no">&yen;5687.00</div>
                     </a>
                 </div>
             </div>
@@ -67,16 +71,16 @@
 </div>
 <div class="ft">
     <ul class="nav">
-        <li><a href="javascript;:" class="active"><i class="fa fa-home"></i>
+        <li><a href="index.html" class="active"><i class="fa fa-home"></i>
             <small>首页</small>
         </a></li>
-        <li><a href="javascript;:"><i class=" md-volume-up"></i>
+        <li><a href="promoteIndex.html"><i class=" md-volume-up"></i>
             <small>推广设置</small>
         </a></li>
-        <li><a href="javascript;:"><i class="fa  ti-game"></i>
+        <li><a href="gameSettings.html"><i class="fa  ti-game"></i>
             <small>游戏设置</small>
         </a></li>
-        <li><a href="javascript;:"><i class="fa fa-user"></i>
+        <li><a href="mySelf.html"><i class="fa fa-user"></i>
             <small>我</small>
         </a></li>
     </ul>
@@ -122,15 +126,25 @@
     $(function () {
 
         $(".tabMenu p").on("tap", function () {
+
             $.wx_showTipData();
             $(this).addClass("active").siblings().removeClass("active");
             var movePosX = $(".menuLine").width();
             var index = $(this).index();
+
             $(".menuLine").css("left", movePosX * index);
+            //$(".menuLine").animate({"left": movePosX * index},"liner", function () {
+
+           // });
             $.ajaxJson("#", "data", function () {
-                $.wx_hideTipData();
+                setTimeout(function () {
+                    $.wx_hideTipData();
+                },500);
+
             }, function () {
-                $.wx_hideTipData();
+                setTimeout(function () {
+                    $.wx_hideTipData();
+                },500);
             });
         });
     })
