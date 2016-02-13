@@ -1,0 +1,25 @@
+.page {
+  padding-bottom: 80px; }
+
+.bd {
+  padding: 10px 15px;
+  text-align: center; }
+  .bd p {
+    text-align: right; }
+    .bd p a {
+      font-size: .8rem;
+      color: #545c8b; }
+  .bd h2 {
+    padding-bottom: 15px;
+    font-weight: 400;
+    font-size: 2rem; }
+  .bd h3 {
+    color: #888; }
+  .bd .box {
+    margin: 0 auto;
+    width: 40%;
+    padding: 15px 0; }
+    .bd .box img {
+      max-width: 100%; }
+
+/*# sourceMappingURL=myAccount.css.map */

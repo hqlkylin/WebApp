@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,KAAM;EACJ,cAAc,EAAE,IAAI;;AAGtB,GAAI;EACF,OAAO,EAAE,SAAS;EAClB,UAAU,EAAE,MAAM;EAClB,QAAI;IACF,SAAS,EAAE,KAAK;IAChB,KAAK,EAAE,OAAO;EAEhB,UAAM;IACJ,KAAK,ECdF,OAAO;IDeV,WAAW,EAAE,IAAI",
+"sources": ["limit.scss","func.scss"],
+"names": [],
+"file": "limit.css"
+}

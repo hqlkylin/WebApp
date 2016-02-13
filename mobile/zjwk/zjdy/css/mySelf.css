@@ -1,0 +1,43 @@
+.page {
+  padding-bottom: 80px; }
+
+.line {
+  height: 12px;
+  background-color: #ededed;
+  width: 100%; }
+
+.bd {
+  padding: 0 12px; }
+  .bd .list {
+    padding: 12px 0;
+    position: relative; }
+    .bd .list .main {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-align-items: center;
+      -webkit-align-items: center;
+      align-items: center; }
+      .bd .list .main .photo {
+        width: 20%; }
+        .bd .list .main .photo img {
+          max-width: 100%; }
+      .bd .list .main .title {
+        width: 80%;
+        vertical-align: middle;
+        margin-left: 12px; }
+        .bd .list .main .title span {
+          display: inline-block; }
+          .bd .list .main .title span h4 {
+            font-size: 1rem;
+            color: #383838;
+            line-height: 1.8; }
+          .bd .list .main .title span p {
+            font-size: .8rem; }
+            .bd .list .main .title span p small {
+              font-size: .8rem; }
+
+/*# sourceMappingURL=mySelf.css.map */
