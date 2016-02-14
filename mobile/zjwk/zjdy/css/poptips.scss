@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*
+头部下拉 自动消失提示框*/
 .ui-poptips {
   width: 100%;
   position: fixed;
@@ -58,5 +60,36 @@
 
 .ui-poptips-error i:before {
   content: '\f128';
+}
+
+/*
+自动消失提示框*/
+.toast-container {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  z-index: 9999;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+  font-size: 14px;
+  padding: 10px 30px;
+  text-align: center;
+  color: #fff;
+  border-radius: 7px;
+  opacity: 0;
+}
+
+.toast-success {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.toast-error {
+  background-color: rgba(255, 0, 0, 0.5);
+
+}
+
+.toast-container.active {
+  opacity: 1;
 }
 

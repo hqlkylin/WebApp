@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/attention.css">
+    <link rel="stylesheet" href="css/poptips.css">
 </head>
 <body class="global">
 
@@ -22,7 +23,7 @@
         <div class="weui_cell weui_cell_switch">
             <div class="weui_cell_hd weui_cell_primary">关注规则设置</div>
             <div class="weui_cell_ft">
-                <input class="weui_switch" type="checkbox" checked>
+                <input  class="Js-switch weui_switch" type="checkbox" checked>
             </div>
         </div>
     </div>
@@ -96,7 +97,7 @@
         <div class="weui_dialog_bd">
 
             <div class="input-row">
-                <label>积分:</label>
+                <!--<label>积分:</label>-->
                 <input class="input" type="tel" placeholder="请输入分数">
             </div>
         </div>
@@ -155,6 +156,14 @@
             });
 
         });
+
+        $(".Js-switch").change(function () {
+            if($(this).prop("checked")){
+                $.toast("成功开启！");
+            }else {
+                $.toast("关闭关注设置！");
+            }
+        })
     })
 </script>
 </body>

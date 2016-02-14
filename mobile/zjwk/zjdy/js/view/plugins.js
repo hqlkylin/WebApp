@@ -15,17 +15,20 @@ $.wx_hideTipData = function () {
 /*******************************************************************************************************
  *  调用方法 : $.wx_popTips(options)    头部 浮层提示条
  *
- *  $.wx_popTips({
+ *  var pop=$.popTips({
  *       "content": "恭喜您 操作成功!",
  *       "type": "info",
  *       "stayTime": 2000
  *   });
- *
- *
- *
+ *   自定义事件
+ *  pop.on("tips:show", function () {
+ *               console.log("sb");
+ *           })
+ *  pop.on("tips:hide", function () {
+ *               console.log("bs");
+ *          })
  ********************************************************************************************************/
-
-$.wx_popTips = function (options) {
+$.popTips = function (options) {
 
     var PopTips = function (options) {
         var self = this;
@@ -33,9 +36,7 @@ $.wx_popTips = function (options) {
         this.opts = {
             content: '',
             stayTime: 2000,
-            type: 'info',
-            callback: function () {
-            }
+            type: 'info'
         };
         $.extend(this.opts, options);
         this.renderHtml();
@@ -59,15 +60,12 @@ $.wx_popTips = function (options) {
                 '<i></i>' + this.opts.content + '' +
                 '</div>' +
                 '</div>';
-
             $("body").append(html);
             this.element = $(".ui-poptips");
-
-
         },
         show: function () {
             var self = this;
-            self.opts.callback();
+            self.element.trigger($.Event("tips:show"));
 
             this.element.css({
                 "-webkit-transform": "translateY(0px)"
@@ -80,22 +78,44 @@ $.wx_popTips = function (options) {
         },
         hide: function () {
             var self = this;
+            self.element.trigger($.Event("tips:hide"));
             this.element.css({
                 "-webkit-transform": "translateY(-" + this.elementHeight + "px)"
             });
             setTimeout(function () {
                 self.element.remove();
             }, 500)
-
-
         }
     }
 
-    new PopTips(options);
+    return new PopTips(options).element;
 };
 
 
-var isIPHONE = navigator.userAgent.toUpperCase().indexOf('IPHONE')!= -1;
+/*******************************************************************************************************
+ *  调用方法 : $.toast(msg,type)    自动消失提示框
+ ********************************************************************************************************/
+$.toast = function (msg, type) {
+    var msg = msg || "";
+    var type = type || "success";
+    if (jQuery(".toast-container")) {
+        jQuery(".toast-container").remove();
+    }
+    var renderHtml = '<div class="toast-container toast-' + type + '"><p>' + msg + '</p></div>';
+    var $toast = $(renderHtml).appendTo($("body"));
+    $toast.on('webkitTransitionEnd', function () {
+        if (!$(this).hasClass("active")) {
+            $(this).remove();
+        }
+    });
+    $toast.addClass("active");
+    setTimeout(function () {
+        $toast.removeClass("active");
+    }, 2000);
+};
+
+
+var isIPHONE = navigator.userAgent.toUpperCase().indexOf('IPHONE') != -1;
 /*---------------------------------------- Ajax 扩展 -------------------------------------------------*/
 
 /*******************************************************************************************************
