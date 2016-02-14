@@ -115,6 +115,7 @@ $.toast = function (msg, type) {
 };
 
 
+
 var isIPHONE = navigator.userAgent.toUpperCase().indexOf('IPHONE') != -1;
 /*---------------------------------------- Ajax 扩展 -------------------------------------------------*/
 
