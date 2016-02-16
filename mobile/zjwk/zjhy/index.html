@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <title>指尖会员</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="global">
+
+<div class="page">
+
+    <div class="hd">
+        <img src="img/bd.png" alt="">
+
+        <h1 class="page_title">&yen; 69.820.00
+            <p>订单金额</p>
+        </h1>
+        <div class="ct">
+            <p><span>1400</span>新增关注</p>
+            <i>|</i>
+
+            <p><span>90</span>新增代言</p>
+            <i>|</i>
+
+            <p><span>30258</span>新增UV</p>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="tabMenu">
+            <p class="active">今天</p>
+
+            <p>近七天</p>
+
+            <p>近一月</p>
+            <span class="menuLine"></span>
+        </div>
+        <div class="tabBd">
+            <div class="list">
+                <div class="weui_cells weui_cells_access">
+                    <a class="weui_cell p15" href="javascript:;">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon1.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>费用支出（<span class="red">&yen;188.00</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                    <a class="weui_cell p15" href="javascript:;">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon2.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>账户余额</p>
+                        </div>
+                        <div class="weui_cell_ft_no">&yen;5687.00</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="ft">
+    <ul class="nav">
+        <li><a href="index.html" class="active"><i class="fa fa-home"></i>
+            <small>首页</small>
+        </a></li>
+        <li><a href="promoteIndex.html"><i class=" md-volume-up"></i>
+            <small>推广设置</small>
+        </a></li>
+        <li><a href="gameSettings.html"><i class="fa  ti-game"></i>
+            <small>游戏设置</small>
+        </a></li>
+        <li><a href="mySelf.html"><i class="fa fa-user"></i>
+            <small>我</small>
+        </a></li>
+    </ul>
+</div>
+
+<!--BEGIN toast-->
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+
+        <p class="weui_toast_content">已完成</p>
+    </div>
+</div>
+<!--end toast-->
+
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/view/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+<script>
+    $(function () {
+
+        $(".tabMenu p").on("tap", function () {
+
+            $.wx_showTipData();
+            $(this).addClass("active").siblings().removeClass("active");
+            var movePosX = $(".menuLine").width();
+            var index = $(this).index();
+
+            $(".menuLine").css("left", movePosX * index);
+            //$(".menuLine").animate({"left": movePosX * index},"liner", function () {
+
+           // });
+            $.ajaxJson("#", "data", function () {
+                setTimeout(function () {
+                    $.wx_hideTipData();
+                },500);
+
+            }, function () {
+                setTimeout(function () {
+                    $.wx_hideTipData();
+                },500);
+            });
+        });
+    })
+</script>
+</body>
+</html>

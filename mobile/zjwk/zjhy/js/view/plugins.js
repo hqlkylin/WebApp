@@ -136,6 +136,8 @@ $.ajaxJson = function (url, data, onSuccess, onError) {
 /*---------------------------------------- Ajax 扩展 -------------------------------------------------*/
 
 $(function () {
+
+
     /* 解决iOS下input和fixed 问题*/
     !function () {
         var $box = $(".ft");
@@ -152,4 +154,5 @@ $(function () {
             })
         }
     }();
+
 });
