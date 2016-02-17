@@ -141,6 +141,21 @@ a {
   white-space: nowrap;
   text-overflow: ellipsis; }
 
+.f12 {
+  font-size: 12px !important; }
+
+.f14 {
+  font-size: 14px !important; }
+
+.f16 {
+  font-size: 16px !important; }
+
+.f18 {
+  font-size: 18px !important; }
+
+.fw {
+  font-weight: 600 !important; }
+
 .clearfix {
   *zoom: 1; }
 

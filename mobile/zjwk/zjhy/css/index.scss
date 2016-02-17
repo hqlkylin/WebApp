@@ -8,23 +8,19 @@
   img {
     max-width: 100%;
   }
-  h1 {
-
+  .help {
     width: 100%;
     color: #fdc23a;
+    text-align: right;
+    font-size: 0.8rem;
     position: absolute;
-    top: 9%;
-    text-align: center;
-    font-size: 2.3rem;
-    p {
-      font-size: 1rem;
-    }
+    top: 5px;
+    right: 5px;
   }
   .ct {
     width: 100%;
     position: absolute;
     bottom: 20%;
-
     display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
     display: -moz-box; /* 老版本语法: Firefox (buggy) */
     display: -ms-flexbox; /* 混合版本语法: IE 10 */
@@ -53,9 +49,14 @@
       color: #aeadb2;
       span {
         display: block;
-        color: #fff;
-        font-size: 1rem;
+        color: #fdc23a;
+        font-size: 1.2rem;
       }
+    }
+    img {
+      display: inline-block;
+      width: 26px;
+      vertical-align: middle;
     }
   }
 
@@ -83,7 +84,7 @@
 
     position: relative;
     border-bottom: 1px solid #d9d9d9;
-    overflow: hidden;
+    /*overflow: hidden;*/
     p {
       position: relative;
       -webkit-box-flex: 1.0;
@@ -94,7 +95,6 @@
       padding: 12px;
       font-size: 18px;
       font-weight: bold;
-      width: 33.33%;
       &.active {
         position: relative;
         color: #cf0001;
@@ -119,11 +119,11 @@
       position: absolute;
       bottom: 0;
       left: 0%;
-      width: 33.33%;
+      width: 50%;
       text-align: center;
       height: 30px;
       transition: left .2s;
-      -webkit-transition:left .2s;
+      -webkit-transition: left .2s;
       &::after {
         display: inline-block;
         height: 93%;
@@ -136,6 +136,19 @@
   }
   .weui_cells {
     margin-top: 12px;
+  }
+  .list {
+    display: none;
+    &.active {
+      display: block;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .weui_cell_ft_no {
+      text-align: right;
+    }
   }
 
 }
