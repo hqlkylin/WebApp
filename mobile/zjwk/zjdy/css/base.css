@@ -78,6 +78,14 @@ a {
   display: block;
   width: 5em; }
 
+.weui_dialog_confirm {
+  display: none; }
+  .weui_dialog_confirm.active {
+    display: block; }
+
+.weui_dialog {
+  top: 40%; }
+
 /*--------------------- end 扩展weiUI-------------------*/
 /*--------------------- 自定义通用样式-------------------*/
 .fl {

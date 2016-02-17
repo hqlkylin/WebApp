@@ -116,6 +116,17 @@ a {
   width: 5em;
 }
 
+.weui_dialog_confirm {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.weui_dialog {
+  top: 40%;
+}
+
 /*--------------------- end 扩展weiUI-------------------*/
 
 /*--------------------- 自定义通用样式-------------------*/
@@ -192,12 +203,14 @@ a {
 .clearfix {
   *zoom: 1;
 }
+
 .clearfix:before,
 .clearfix:after {
   display: table;
   line-height: 0;
   content: "";
 }
+
 .clearfix:after {
   clear: both;
 }

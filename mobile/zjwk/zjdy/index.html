@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/poptips.css">
+
 </head>
 <body class="global">
 
@@ -54,7 +56,7 @@
                         </div>
                         <div class="weui_cell_ft"></div>
                     </a>
-                    <a class="weui_cell p15" href="javascript:;">
+                    <a class="weui_cell p15" href="javascript:;" id="dialog1">
                         <div class="weui_cell_hd"><img
                                 src="img/icon2.png"
                                 alt="" style="width:20px;margin-right:5px;display:block"></div>
@@ -135,17 +137,43 @@
             $(".menuLine").css("left", movePosX * index);
             //$(".menuLine").animate({"left": movePosX * index},"liner", function () {
 
-           // });
+            // });
             $.ajaxJson("#", "data", function () {
                 setTimeout(function () {
                     $.wx_hideTipData();
-                },500);
+                }, 500);
 
             }, function () {
                 setTimeout(function () {
                     $.wx_hideTipData();
-                },500);
+                }, 500);
             });
+        });
+
+        $("#dialog1").on("tap", function () {
+            var dia = $.dialog({
+                title: '温馨提示',
+                content: '温馨提示内容',
+                button: ["取消", "确认"]
+            });
+
+            dia.on("dialog:action", function (e) {
+                if (e.index == 0) {
+                    $.popTips({
+                        "content": "您点击了取消按钮！",
+                        "type": "info",
+                        "stayTime": 2000
+                    });
+                } else {
+                    $.toast("您点击了确定按钮！")
+                }
+            });
+            dia.on("dialog:hide", function (e) {
+
+                console.log("dialog hide")
+            });
+
+            return false; //  防止点穿
         });
     })
 </script>
