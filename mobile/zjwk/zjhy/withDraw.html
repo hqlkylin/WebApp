@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>微信钱包</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/withDraw.css">
+</head>
+<body class="global">
+<div class="page">
+    <div class="line"></div>
+    <div class="bd">
+
+
+
+        <div class="weui_cells weui_cells_checkbox">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">提现账户 :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>微信钱包</p>
+                </div>
+                <div class="weui_cell_ft">实时到账</div>
+            </div>
+
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">金额( 元 ) :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="number" pattern="[0-9]*" placeholder="当前余额22.00元">
+                </div>
+            </div>
+
+
+        </div>
+
+        <p class="tip">提示：因微信政策限制，单次提现金额需大于1.00元</p>
+        <div class="weui_btn_area">
+            <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">确认提现</a>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

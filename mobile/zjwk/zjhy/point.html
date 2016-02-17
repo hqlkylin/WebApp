@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
-    <title>会员中心</title>
+
+    <title>指尖会员</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/poptips.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/point.css">
 
 </head>
 <body class="global">
@@ -20,76 +17,111 @@
 <div class="page">
 
     <div class="hd">
-        <img src="img/member1.png" alt="">
+        <img src="img/bd.png" alt="">
 
-        <p class="level">
-            金牌会员
+        <p class="help">
+            <a href="javascript:;">使用帮助</a>
         </p>
-    </div>
 
-    <div class="bd">
-        <div class="main">
-            <div class="photo"><img src="img/temp/1.jpg" alt=""></div>
-            <div class="info">
-                <span>
-                    <h4>陶子</h4>
-                    <p>金币：270</p>
-                    <p>元宝：570</p>
-                </span>
-            </div>
-            <div class="checkBox">
-                <a href="javascript:;" class="Js-check check">签到</a>
+        <div class="ct">
+            <p><span>100</span>
+                <img src="img/icon5.png" alt="">
+            </p>
+            <i>|</i>
 
-                <p>我的推荐码：<span>E82T2PL</span></p>
-            </div>
+            <p>
+                <span>100</span>
+                <img src="img/icon6.png" alt="">
+            </p>
         </div>
-        <div class="weui_cells weui_cells_access">
-            <a class="weui_cell p15" href="order.html">
-                <div class="weui_cell_hd"><img
-                        src="img/icon7.png"
-                        alt="" style="width:20px;margin-right:5px;display:block"></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>我的订单</p>
-                </div>
-                <div class="weui_cell_ft"></div>
-            </a>
-            <a class="weui_cell p15" href="point.html">
-                <div class="weui_cell_hd"><img
-                        src="img/icon8.png"
-                        alt="" style="width:20px;margin-right:5px;display:block"></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>我的积分</p>
-                </div>
-                <div class="weui_cell_ft"></div>
-            </a>
-            <a class="weui_cell p15" href="myAccount.html">
-                <div class="weui_cell_hd"><img
-                        src="img/icon9.png"
-                        alt="" style="width:20px;margin-right:5px;display:block"></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>我的钱包</p>
-                </div>
-                <div class="weui_cell_ft"></div>
-            </a>
-            <a class="weui_cell p15" href="rights.html">
-                <div class="weui_cell_hd"><img
-                        src="img/icon10.png"
-                        alt="" style="width:20px;margin-right:5px;display:block"></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>会员权益</p>
-                </div>
-                <div class="weui_cell_ft"></div>
-            </a>
-            <a class="weui_cell p15" href="javascript:;">
-                <div class="weui_cell_hd"><img
-                        src="img/icon11.png"
-                        alt="" style="width:20px;margin-right:5px;display:block"></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>完善个人资料</p>
-                </div>
-                <div class="weui_cell_ft">完善送积分</div>
-            </a>
+    </div>
+    <div class="bd">
+        <div class="tabMenu">
+            <p class="active">金币数</p>
 
+            <p>元宝数</p>
+            <span class="menuLine"></span>
+        </div>
+        <div class="tabBd">
+            <div class="list active">
+                <div class="weui_cells weui_cells_access">
+                    <a class="weui_cell p15" href="javascript:;">
+
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p class="f14 fw">购物赠送</p>
+
+                            <p>订单号：22345678932165</p>
+                        </div>
+                        <div class="weui_cell_ft_no">
+                            <p class="red">1000</p>
+
+                            <p>2015-08-27</p>
+                        </div>
+
+                    </a>
+                    <a class="weui_cell p15" href="javascript:;">
+
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p class="f14 fw">推荐会员</p>
+
+                            <p>人数：1</p>
+                        </div>
+                        <div class="weui_cell_ft_no">
+                            <p class="red">200</p>
+
+                            <p>2015-08-27</p>
+                        </div>
+
+                    </a>
+                    <a class="weui_cell p15" href="javascript:;">
+
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p class="f14 fw">首次注册</p>
+
+                            <p>姓名：朱思雨5</p>
+                        </div>
+                        <div class="weui_cell_ft_no">
+                            <p class="red">200</p>
+
+                            <p>2015-08-27</p>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="list">
+                <div class="weui_cells weui_cells_access">
+
+                    <a class="weui_cell p15" href="javascript:;">
+
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p class="f14 fw">游戏</p>
+
+                            <p>人数：1</p>
+                        </div>
+                        <div class="weui_cell_ft_no">
+                            <p class="red">200</p>
+
+                            <p>2015-08-27</p>
+                        </div>
+
+                    </a>
+                    <a class="weui_cell p15" href="javascript:;">
+
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p class="f14 fw">推广</p>
+
+                            <p>姓名：金丹</p>
+                        </div>
+                        <div class="weui_cell_ft_no">
+                            <p class="red">2000</p>
+
+                            <p>2016-02-27</p>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -151,17 +183,6 @@
                 }, 500);
             });
         });
-
-        $(".Js-check").tap(function () {
-            if (!$(this).hasClass("disabled")) {
-                $(this).addClass("disabled");
-
-                setTimeout(function () {
-                    $.toast("签到成功  +100");
-                },100)
-
-            }
-        });
         $("#dialog1").on("tap", function () {
             var dia = $.dialog({
                 title: '温馨提示',
@@ -187,7 +208,6 @@
 
             return false; //  防止点穿
         });
-
     })
 </script>
 </body>
