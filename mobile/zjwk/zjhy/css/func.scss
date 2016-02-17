@@ -9,6 +9,7 @@ $blue: #63b7ff;
   display: flex;
 }
 
+
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex:  $values;
@@ -31,6 +32,13 @@ $blue: #63b7ff;
   -webkit-justify-content: center;
   justify-content: center;
 }
+@mixin justify-space-between{
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
 @mixin align-items{
   -webkit-box-align: center;
   -moz-align-items: center;

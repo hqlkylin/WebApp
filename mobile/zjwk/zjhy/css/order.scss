@@ -22,8 +22,8 @@
 .ui-tab-content {
   @include flexbox();
   width: 500%;
-  @include transition(all 1s);
-  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  @include transition(all 0s);
+  //transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
 }
 
 .ui-tab-content > li {
@@ -34,7 +34,7 @@
 .ui-tab-nav li {
   height: 50px;
   line-height: 50px;
-  min-width: 70px;
+  min-width: 60px;
   text-align: center;
   color: #777;
   border-bottom: 2px solid transparent;
@@ -51,18 +51,28 @@
   opacity: .8
 }
 
-.weui_cells{
+.weui_cells {
   margin-top: 2px;
-  .weui_cell{
-    p{
-      font-size: 0.6rem;
+  .weui_cell {
+    -webkit-box-align: start;
+    -moz-align-items: flex-start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    p {
+      font-size: 12px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      color: #c4c3c3;
+      @include flex(1);
+    }
+    h5{
+      @include flex(1);
     }
   }
 }
-.weui_cell_hd {
+
+.weui_cells {
 
   img {
     width: 60px;
@@ -70,17 +80,16 @@
     display: block
   }
 }
-.weui_cell_primary{
- /* margin-left: 5px;*/
+.w100{
+  width: 100px;
 }
-.title{
-  font-size: 1rem !important;
-  padding: 4px 0;
+.box {
+
+  @include flexbox();
+  padding: 6px 0px;
 
 }
-.ll{
- height: 60px;
-}
+
 
 
 

@@ -139,6 +139,18 @@ a {
 .p20 {
   padding: 20px; }
 
+.pl15 {
+  padding-left: 15px; }
+
+.pr15 {
+  padding-right: 15px; }
+
+.mr15 {
+  margin-right: 15px; }
+
+.ml15 {
+  margin-left: 15px; }
+
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
@@ -170,6 +182,12 @@ a {
 
 .clearfix:after {
   clear: both; }
+
+.flex-end {
+  align-self: flex-end; }
+
+.flex-start {
+  align-self: flex-start; }
 
 .input-row {
   display: -webkit-box;

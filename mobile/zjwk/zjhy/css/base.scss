@@ -193,7 +193,18 @@ a {
 .p20 {
   padding: 20px;
 }
-
+.pl15{
+  padding-left: 15px;
+}
+.pr15{
+  padding-right: 15px;
+}
+.mr15{
+  margin-right: 15px;
+}
+.ml15{
+  margin-left: 15px;
+}
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
@@ -201,24 +212,26 @@ a {
 }
 
 .f12 {
-  font-size: 12px!important;
+  font-size: 12px !important;
 }
 
 .f14 {
-  font-size: 14px!important;
+  font-size: 14px !important;
 }
 
 .f16 {
-  font-size: 16px!important;
+  font-size: 16px !important;
 }
 
 .f18 {
-  font-size: 18px!important;
+  font-size: 18px !important;
 
 }
-.fw{
-  font-weight: 600!important;
+
+.fw {
+  font-weight: 600 !important;
 }
+
 .clearfix {
   *zoom: 1;
 }
@@ -232,6 +245,14 @@ a {
 
 .clearfix:after {
   clear: both;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.flex-start {
+  align-self: flex-start;
 }
 
 .input-row {
