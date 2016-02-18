@@ -24,28 +24,28 @@
 <div class="page">
 
     <div class="bd">
-        <div class="weui_cells_title">个人资料</div>
+        <div class="weui_cells_title p10">个人资料</div>
         <div class="weui_cells weui_cells_form">
-            <a class="weui_cell">
-                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>姓名 :</label></div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>姓名 </label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <input class="weui_input" type="number" value="weui input error" placeholder="请输入姓名">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
-            </a>
-            <a class="weui_cell">
-                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>手机号码:</label></div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>手机号码</label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <input class="weui_input" type="number" value="weui input error" placeholder="请输入手机号码">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
-            </a>
-            <a class="weui_cell weui_cell_select">
-                <div class="weui_cell_hd"><label for="" class="weui_label">生日 :</label></div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">生日 </label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <!--<input class="weui_input" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="请输入生日">-->
                     <input class="weui_input" type="date">
@@ -54,37 +54,37 @@
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
-            </a>
-            <a class="weui_cell" href="javascript:;">
-                <div class="weui_cell_hd"><label for="" class="weui_label">邮箱 :</label></div>
+            </div>
+            <div class="weui_cell weui_cell_select" href="javascript:;" id="showCityPicker">
+                <div class="weui_cell_hd">
+                    <label for="" class="weui_label">地区 </label>
+
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <span id="cityResult"></span>
+                </div>
+            </div>
+            <div class="weui_cell" href="javascript:;">
+                <div class="weui_cell_hd"><label for="" class="weui_label">邮箱 </label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <input class="weui_input" type="email" placeholder="请输入邮箱">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
-            </a>
+            </div>
 
 
-
-            <a class="weui_cell">
-                <div class="weui_cell_hd"><label for="" class="weui_label">备注 :</label></div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label">备注 </label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <input class="weui_input" type="number" value="weui input error" placeholder="请输入备注">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
-            </a>
-            <a class="weui_cell weui_cell_select" href="javascript:;" id="showCityPicker">
-                <div class="weui_cell_hd">
-                    <label for="" class="weui_label">地区 :</label>
+            </div>
 
-                </div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <span id="cityResult"></span>
-                </div>
-            </a>
         </div>
 
         <div class="weui_btn_area">
@@ -111,6 +111,7 @@
             var showCityPickerButton = doc.getElementById('showCityPicker');
             var cityResult = doc.getElementById('cityResult');
             showCityPickerButton.addEventListener('tap', function (event) {
+
                 cityPicker.show(function (items) {
                     cityResult.innerText = "" + items[0].text + " " + items[1].text;
                     //返回 false 可以阻止选择框的关闭
