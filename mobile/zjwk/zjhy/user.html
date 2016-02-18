@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>个人资料</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="../mui/js/mui.js"></script>
+    <script src="../mui/js/mui.picker.js"></script>
+    <script src="../mui/js/mui.poppicker.js"></script>
+    <script src="../mui/js/city.data.js"></script>
+    <link rel="stylesheet" href="../mui/css/mui.picker.css">
+    <link rel="stylesheet" href="../mui/css/mui.poppicker.css">
+
+</head>
+<body class="global">
+<div class="page">
+
+    <div class="bd">
+        <div class="weui_cells_title">个人资料</div>
+        <div class="weui_cells weui_cells_form">
+            <a class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>姓名 :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入姓名">
+                </div>
+                <div class="weui_cell_ft">
+                    <i class="weui_icon_warn"></i>
+                </div>
+            </a>
+            <a class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>手机号码:</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入手机号码">
+                </div>
+                <div class="weui_cell_ft">
+                    <i class="weui_icon_warn"></i>
+                </div>
+            </a>
+            <a class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">生日 :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <!--<input class="weui_input" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="请输入生日">-->
+                    <input class="weui_input" type="date">
+                </div>
+
+                <div class="weui_cell_ft">
+                    <i class="weui_icon_warn"></i>
+                </div>
+            </a>
+            <a class="weui_cell" href="javascript:;">
+                <div class="weui_cell_hd"><label for="" class="weui_label">邮箱 :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="email" placeholder="请输入邮箱">
+                </div>
+                <div class="weui_cell_ft">
+                    <i class="weui_icon_warn"></i>
+                </div>
+            </a>
+
+
+
+            <a class="weui_cell">
+                <div class="weui_cell_hd"><label for="" class="weui_label">备注 :</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入备注">
+                </div>
+                <div class="weui_cell_ft">
+                    <i class="weui_icon_warn"></i>
+                </div>
+            </a>
+            <a class="weui_cell weui_cell_select" href="javascript:;" id="showCityPicker">
+                <div class="weui_cell_hd">
+                    <label for="" class="weui_label">地区 :</label>
+
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <span id="cityResult"></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="weui_btn_area">
+            <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">确定</a>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+    (function ($, doc) {
+
+        $.ready(function () {
+            $.init();
+            //级联示例
+            var cityPicker = new $.PopPicker({
+                layer: 2
+            });
+            cityPicker.setData(cityData);
+            var showCityPickerButton = doc.getElementById('showCityPicker');
+            var cityResult = doc.getElementById('cityResult');
+            showCityPickerButton.addEventListener('tap', function (event) {
+                cityPicker.show(function (items) {
+                    cityResult.innerText = "" + items[0].text + " " + items[1].text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }, false);
+        });
+    })(mui, document);
+</script>
+</body>
+</html>
