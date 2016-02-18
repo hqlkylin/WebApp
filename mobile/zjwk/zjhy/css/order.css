@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.ui-tab {
+  width: 100%;
+  overflow: hidden; }
+
+.ui-tab-nav {
+  width: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  height: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  z-index: 100; }
+
+.ui-tab-content {
+  z-index: 10;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 500%;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -ms-transition: transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); }
+
+.ui-tab-content > li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%; }
+
+.ui-tab-nav li {
+  height: 50px;
+  line-height: 50px;
+  min-width: 60px;
+  text-align: center;
+  color: #777;
+  border-bottom: 2px solid transparent;
+  width: 100%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.ui-tab-nav li.current {
+  color: #d00000;
+  border-bottom: 2px #d00000 solid; }
+
+.ui-tab-nav li:active {
+  opacity: 0.8; }
+
+.weui_cells {
+  margin-top: 2px; }
+  .weui_cells .weui_cell {
+    -webkit-box-align: start;
+    -moz-align-items: flex-start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start; }
+    .weui_cells .weui_cell p {
+      font-size: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #c4c3c3;
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+    .weui_cells .weui_cell h5 {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+
+.weui_cells img {
+  width: 60px;
+  margin-right: 5px;
+  display: block; }
+
+.w100 {
+  width: 100px; }
+
+.box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 6px 0px; }
+
+/*# sourceMappingURL=order.css.map */
