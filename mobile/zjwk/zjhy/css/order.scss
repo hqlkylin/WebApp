@@ -16,14 +16,17 @@
   font-size: 16px;
   height: 50px;
   @include flexbox();
-
+  position: fixed;
+  z-index: 100;
 }
 
 .ui-tab-content {
+  z-index: 10;
+  margin-top: 50px;
   @include flexbox();
   width: 500%;
-  @include transition(all 0s);
-  //transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  @include transition(transform 1s);
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
 }
 
 .ui-tab-content > li {
