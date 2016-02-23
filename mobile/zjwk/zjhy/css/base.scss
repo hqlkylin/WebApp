@@ -155,9 +155,11 @@ a {
 }
 
 .red {
-  color: #cf0001;
+  color: #cf0001 !important;
 }
-
+.blue{
+  color: #63b7ff !important;
+}
 .fb {
   font-weight: bold;
 }
