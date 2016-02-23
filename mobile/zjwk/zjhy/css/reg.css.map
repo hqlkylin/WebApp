@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAgGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;AChHN,qBAAS;EAGP,KAAK,EAAE,OAAO",
+"sources": ["func.scss","reg.scss"],
+"names": [],
+"file": "reg.css"
+}

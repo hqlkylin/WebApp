@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAgGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;AClHR,wBAAyB;EACvB,SAAS,EAAE,IAAI;EACf,QAAQ,EAAE,MAAM;EAChB,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,QAAQ;EACvB,KAAK,EAAE,OAAO",
+"sources": ["func.scss","moneyList.scss"],
+"names": [],
+"file": "moneyList.css"
+}
