@@ -68,10 +68,15 @@
     .tips {
 
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       p {
         float: left;
         font-size: .8rem;
         width: 33.33%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       padding-top: 8px;
     }

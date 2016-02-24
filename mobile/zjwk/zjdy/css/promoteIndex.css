@@ -59,10 +59,15 @@
           top: -1px; }
     .bd .list .tips {
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       padding-top: 8px; }
       .bd .list .tips p {
         float: left;
         font-size: .8rem;
-        width: 33.33%; }
+        width: 33.33%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
 
 /*# sourceMappingURL=promoteIndex.css.map */

@@ -1,0 +1,225 @@
+@import "func";
+
+.page {
+
+}
+
+.hd {
+  position: relative;
+  img {
+    max-width: 100%;
+  }
+
+}
+
+.uBox {
+  position: relative;
+  @include flexbox();
+  @include align-items-end();
+  padding: 0px 12px;
+  margin-top: -40px;
+  .uImg {
+    width: 80px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .title {
+    font-size: 1.1rem;
+    padding-left: 12px;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+  }
+  padding-bottom: 12px;
+}
+
+.bd {
+
+  .ui-searchbar-wrap {
+    @include flexbox();
+    @include justify-content();
+    @include align-items();
+    background-color: #ebeced;
+    height: 44px;
+  }
+  .ui-searchbar {
+    border-radius: 5px;
+    margin: 0 10px;
+    background: #fff;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    padding-left: 4px;
+    @include flex(1);
+    @include flexbox();
+    @include justify-content();
+    @include align-items();
+
+    color: #bbb;
+    font-size: 14px;
+    width: 100%;
+    input {
+      -webkit-appearance: none;
+      border: none;
+      background: none;
+      color: #000;
+      width: 100%;
+      padding: 4px 0;
+
+    }
+    .ui-icon-search {
+      background: url("../img/search.png") no-repeat;
+      width: 40px;
+      height: 24px;
+      background-size: 60%;
+    }
+    .ui-icon-close {
+      line-height: 30px;
+    }
+  }
+  .ui-searchbar-input {
+    @include flex(1);
+  }
+
+  .navBox {
+    position: relative;
+    padding: 0 8px;
+    ul {
+      @include flexbox();
+      @include justify-content();
+      @include align-items();
+      position: relative;
+      &::after {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include transform(scaleY(0.5));
+      }
+      li {
+        @include flex(1);
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 10px 0px;
+        border-bottom: 2px solid transparent;
+        max-width: 100px;
+        color: #777;
+        font-size: 14px;
+        &.active {
+          color: #d00000;
+          border-bottom: 2px #d00000 solid
+        }
+
+      }
+
+    }
+    .moreBox {
+      display: none;
+      &.active {
+        display: block;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        top: -10px;
+        right: 20%;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #545454;
+      }
+      position: absolute;
+      top: 56px;
+      right: 12px;
+      background-color: #545454;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.8;
+      padding: 12px;
+      a {
+        display: inline-block;
+        color: #fff;
+        width: 70px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .content {
+    a {
+      display: block;
+    }
+    margin: 15px;
+    .list-horizontal {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 49%;
+      float: left;
+      .imgBox {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .name {
+        font-size: 14px;
+        line-height: 1.8;
+        padding: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .price {
+        color: red;
+        padding: 4px 4px 4px 8px;
+      }
+
+      &:nth-child(even) {
+        float: right;
+      }
+      margin-bottom: 12px;
+    }
+    .list-vertical {
+      @include flexbox();
+      @include align-items();
+      position: relative;
+      padding: 12px 0px;
+      .imgBox {
+        margin-right: 12px;
+        width: 30%;
+        img {
+          width: 100%;
+        }
+      }
+      .name {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 4px 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .price {
+        color: red;
+      }
+      &::after {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include transform(scaleY(0.5));
+      }
+
+    }
+  }
+
+}
