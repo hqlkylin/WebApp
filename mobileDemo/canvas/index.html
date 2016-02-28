@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>html5 canvas圆形转盘抽奖特效 - 站长素材</title>
+    <script src="../../js/jquery.js"></script>
+</head>
+
+<body>
+
+<div style="width:400px;margin:40px auto 0 auto;">
+    <canvas id='bg'></canvas>
+</div>
+
+<script type="text/javascript">
+    var fillStyle = ['rgb(255,154,2)', 'rgb(210,92,4)', 'rgb(255,154,0)', 'rgb(210,92,4)', 'rgb(255,154,0)', 'rgb(210,92,4)', 'rgb(255,154,0)', 'rgb(210,92,4)', 'rgb(255,154,0)', 'rgb(210,92,4)']
+            , fillText = ['一等奖', '二等奖', '三等奖', '四等奖', '五等奖', '六等奖', '7等奖', '8等奖', '9等奖', '10等奖']
+            , width = 400
+            , height = 400
+            , c_x = 200
+            , c_y = 200
+            , radius = 170 // 圆盘半径
+            , canvas = document.getElementById('bg')
+            , index = 0
+            , timer = null
+            , running = false // 是否运行中
+            , speed = 200 // 速度
+            , isBeginPrize = false // 是否开始抽奖
+            , stepping = 0 // 步数，经过一个扇形为1步
+            , basecircle = 5 // 点击开始时，圆盘旋转的圈数，旋转玩指定圈数之后，再根据selected的值确定奖项
+            , selected = 6; // 最终选中第几个扇形，也就是确定几等奖
+
+    function setup() {
+        drawCircle(false);
+
+    }
+    function drawCircle(isRunning) {
+        var deg = Math.PI / 300;
+        var startAngle = 0;
+        var endAngle = 58;
+        canvas.height = height;
+        canvas.width = width;
+        var ctx = canvas.getContext('2d');
+        for (var i = 0; i < 10; i++) {
+            ctx.beginPath();
+
+            // 正在运行的时候，改变当前扇形的颜色
+            if (isRunning && index == i) {
+                ctx.fillStyle = 'rgb(255,18,1)';
+            }
+            else {
+                ctx.fillStyle = fillStyle[i];
+            }
+
+            // 绘制扇形
+            ctx.moveTo(c_x, c_y);
+            ctx.arc(c_x, c_y, radius, deg * startAngle, deg * endAngle, false);
+            ctx.fill();
+
+            // 绘制扇形上的文字
+            ctx.font = "12px Microsoft YaHei";
+            ctx.fillStyle = '#000';
+            ctx.textAlign = "center";
+            ctx.fillText(fillText[i], 200 + Math.cos(deg * (startAngle + 30)) * 150, 200 + Math.sin(deg * (startAngle + 30)) * 150);
+            startAngle += 60;
+            endAngle += 60;
+        }
+
+
+        // 绘制中心圆
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, 0, 2 * Math.PI, 1);
+        ctx.fillStyle = 'rgb(255,255,255)';
+        ctx.fill();
+
+        // 绘制中心圆
+        ctx.font = "15px Microsoft YaHei";
+        // 创建渐变
+        var gradient = ctx.createLinearGradient(0, 0, width, 0);
+        gradient.addColorStop("0", "magenta");
+        gradient.addColorStop("0.2", "blue");
+        gradient.addColorStop("0.4", "red");
+        // 用渐变填色
+        ctx.textAlign = "center";
+        ctx.fillStyle = gradient;
+        ctx.fillText("start", 200, 195 + 0);
+        ctx.fillText("立即抽奖", 200, 200 + 20);
+
+        // 绘制中心园边框
+        ctx.strokeStyle = 'rgb(0,0,0)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+
+
+    function rotate() {
+
+        console.log(speed);
+        if (stepping == 4) { // 4步之后开始加速
+            clearTimer();
+            speed = 160;
+            timer = setInterval(rotate, speed);
+        }
+
+        if (basecircle > 0 && index == 10) { // 基本圈数借宿以后，开始随机抽奖
+            index = 0;
+            basecircle--;
+            if (basecircle == 0) // 开始随机抽奖
+            {
+                clearTimer();
+                speed = 160;
+                timer = setInterval(rotate, speed);
+                isBeginPrize = true;
+
+            }
+
+        }
+
+        if (isBeginPrize && selected > 0) // 开始抽奖
+        {
+
+            if (--selected == 0) //到了选择的奖项之后
+            {
+                clearTimer();
+                isStop = true;
+                running = false;
+            }
+            else {
+                clearTimer();
+                speed = 160;
+                timer = setInterval(rotate, speed);
+            }
+
+        }
+
+        drawCircle(true);
+        index++;
+        stepping++;
+
+    }
+
+    // 初始化抽奖参数
+    function init() {
+        //basecircle = 4;
+        // selected =  (Math.floor(Math.random() * 10) + 1 );//输出1-10的随机数
+
+        running = true;
+        isBeginPrize = false;
+
+        index = index++;
+
+        //stepping = 0;
+        //speed = 300;
+    }
+
+    function mouseDown_Start(e) {
+        console.log('cao');
+        console.log(running);
+        if (running == true) {
+            return;
+        }
+        console.log(12);
+        var local = getPointOnCanvas(canvas, e.pageX, e.pageY);
+
+        if (local.x > 100 && local.x < 300 && local.y > 100 && local.y < 300) // 中心圆区域
+        {
+
+
+            init();
+
+            timer = setInterval(rotate, speed);
+
+        }
+    }
+
+
+    function clearTimer() {
+
+        clearInterval(timer);
+        timer = null;
+    }
+
+    function getPointOnCanvas(canvas, x, y) {
+
+        var bbox = canvas.getBoundingClientRect();
+
+        return {
+            x: x - bbox.left * (canvas.width / bbox.width),
+
+            y: y - bbox.top * (canvas.height / bbox.height)
+
+        };
+
+    }
+
+    setup();
+    $("canvas").off().on("mousedown", mouseDown_Start);
+    //canvas.addEventListener("mousedown", mouseDown_Start, false);
+
+
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+    <p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+
+    <p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
