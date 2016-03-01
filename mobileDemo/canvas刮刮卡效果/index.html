@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>canvas刮刮卡效果</title>
+    <style>
+        body{margin:0;padding:0;}
+        #desc{width:320px;text-align:center;height:32px;line-height:32px;font-weight:bold;border:2px dotted #ddd;margin:40px auto auto;}
+        #demo{width:320px;margin:20px auto;min-height:300px;}
+    </style>
+</head>
+<body>
+<div id="desc">
+    刮刮卡来了，试试运气？
+    <a href="javascript:void(0);" onClick="window.location.reload();">再刮一次</a>
+</div>
+<div id="demo">
+    <canvas id="guaguaka"></canvas>
+</div>
+<script>
+    var canvas = document.getElementById('guaguaka'),
+            img = new Image(),
+            imgs = ['p_0.jpg','p_1.jpg'],
+            mousedown = false,
+            num, ctx, w, offsetX;
+
+    //等待画布内图片加载完成执行
+    img.onload = function(){
+        w = img.width,
+                h = img.height;
+        offsetX = canvas.offsetLeft,
+                offsetY = canvas.offsetTop;
+
+        canvas.width = w;
+        canvas.height = h;
+        canvas.style.position = 'absolute';
+        canvas.style.backgroundImage = 'url('+img.src+')';
+        canvas.style.backgroundSize = 'cover';
+        ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#999';
+        ctx.fillRect(0, 0, w, h);
+        ctx.globalCompositeOperation = 'destination-out'; //在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的。
+
+        function eventDown(e){
+            e.preventDefault();
+            mousedown = true;
+        }
+
+        function eventUp(e){
+            e.preventDefault();
+            mousedown = false;
+
+            //计算刮痕面积(ps: 先获取画布中的所有像素点,然后进行像素点属性（透明度的比较），对于擦除部分，透明度均为0。)
+            //我们可以进行每个像素点的检测，从而通过符合擦除条件的像素点数量与像素点总数量相对比，得出被擦除部分的面积。
+            var datas = ctx.getImageData(0,0,w,h), n = 0;
+            for (var i = 0; i < datas.data.length; i++) {
+                if (datas.data[i] == 0) {
+                    n++;
+                };
+            };
+
+            //如果擦除面积达到了整个画布的50%，我们就直接清除掉整个画布上的灰色层。
+            if (n >= datas.data.length * 0.5) {
+                switch(num){
+                    case 0:
+                        alert('哎哟我去，谢谢惠顾～');
+                        break;
+                    case 1:
+                        alert('灰常牛x，恭喜您中奖了！');
+                        break;
+                }
+                ctx.fillRect(0,0,w,h);
+            };
+        }
+
+        function eventMove(e){
+            e.preventDefault();
+            if(mousedown) {
+                if(e.changedTouches){
+                    e = e.changedTouches[e.changedTouches.length-1];
+                }
+                var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+                        y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+                with(ctx) {
+                    beginPath();
+                    arc(x, y, 25, 0, Math.PI * 2); //绘制圆点，默认圆点大小25
+                    fill();
+                    closePath();
+                }
+            }
+        }
+
+        canvas.addEventListener('touchstart', eventDown, false);
+        canvas.addEventListener('touchend', eventUp, false);
+        canvas.addEventListener('touchmove', eventMove, false);
+        canvas.addEventListener('mousedown', eventDown, false);
+        canvas.addEventListener('mouseup', eventUp, false);
+        canvas.addEventListener('mousemove', eventMove, false);
+    }
+    num = Math.floor(Math.random()*2);
+    img.src = imgs[num];
+</script>
+</body>
+</html>

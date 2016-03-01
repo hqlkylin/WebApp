@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+今天在做一个单页面的手机端项目时，遇到介样的需求：
+
+所有页面都是禁用滚动条的，但其中有一个页面的图片很长，需要出现滚动条浏览。
+
+哎呦我去，于是我想着用iscroll插件解决掉算了，于是到github上下载下来部署到项目中，用多个iPhone手机测试了都不行。这下子伤心了，说好的酣畅淋漓滑动呢？？
+
+于是我便网上搜索了一下，发现大神［张鑫旭］的博客里有这款“神器” ［simpScroller］，于是便下载下来试了下，果然比iscroll好用多了，一下子就解决掉问题了。哈哈，得感谢这位大神啊，膜拜了。后期一定要好好研究他的插件怎么写的。
+
+简单说一下使用方法，具体可以去大神的博客学习哦：
+
+基本使用以及APIs
+
+simpScroller方法不依赖任何JavaScript框架，几乎无冲突可能，可放心使用。
+
+<script>
+    if (window.addEventListener) {
+        simpScroller(document.querySelector(".vertical"));
+    }
+
+</script>
+
+
+container表示需要滚动的容器，如果垂直滚动，要定高。options为可选参数，具体见下：
+
+
+{
+verticalScroll: true, // 默认垂直滚动
+horizontalScroll: false, // 水平滚动，默认false，不水平滚动
+hideScrollBar: false, // 是否隐藏滚动条
+onScroll: function () {
+} // 滚动时候的回调
+// 支持一个参数，为event对象
+}
+
+
+滚动条的UI放在外部CSS中了，方便控制，全部CSS如下：
+
+<style>
+    .scroller_vertical,
+    .scroller_horizontal {
+        border-radius: 2.5px;
+        background-color: rgba(0, 0, 0, .35);
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .scroller_vertical {
+        width: 5px;
+        right: 0;
+    }
+
+    .scroller_horizontal {
+        height: 5px;
+        bottom: 0;
+    }
+</style>
+
+
+</body>
+</html>

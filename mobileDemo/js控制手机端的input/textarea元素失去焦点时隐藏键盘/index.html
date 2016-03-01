@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+今天在制作触屏页面的时候收到这样一个需求：“我们的页面为什么点击完input输入框，在点空白处时，iPhone的键盘不能隐藏？”
+
+于是上网搜了搜相关的方法显示隐藏键盘的方法都是基于APP的而没有js的，看来需要自己动手解决了。
+
+于是写js进行测试给document添加一个click事件，发现了问题的原因：
+
+Android是可以触发click事件的，而IPHONE不会触发。
+
+也就是说在iPhone下你点击空白的document处textarea并不能失去焦点。
+
+下面是解决方法的js源码：
+
+<script>
+
+
+    //判断是否为苹果
+    var isIPHONE = navigator.userAgent.toUpperCase().indexOf('IPHONE') != -1;
+
+    // 元素失去焦点隐藏iphone的软键盘
+    function objBlur(id, time) {
+        if (typeof id != 'string') throw new Error('objBlur()参数错误');
+        var obj = document.getElementById(id),
+                time = time || 300,
+                docTouchend = function (event) {
+                    if (event.target != obj) {
+                        setTimeout(function () {
+                            obj.blur();
+                            document.removeEventListener('touchend', docTouchend, false);
+                        }, time);
+                    }
+                };
+        if (obj) {
+            obj.addEventListener('focus', function () {
+                document.addEventListener('touchend', docTouchend, false);
+            }, false);
+        } else {
+            throw new Error('objBlur()没有找到元素');
+        }
+    }
+
+    if (isIPHONE) {
+        var input = new objBlur('input_id');
+        input = null;
+    }
+</script>
+
+
+</body>
+</html>
