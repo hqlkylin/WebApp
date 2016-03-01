@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.lottery_turntable {
+  overflow: hidden;
+  -webkit-transform: scale(0.96);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 10px; }
+
+.turntable {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-animation: rotate 7s linear both reverse infinite;
+  background: url("../img/zhuanpan.png") no-repeat center center;
+  background-size: 100%; }
+
+.item {
+  width: 100%;
+  margin: 0 auto; }
+
+#go {
+  -webkit-transform-origin: center;
+  width: 175px;
+  height: 175px;
+  background: url("../img/zhizhen.png") no-repeat center center;
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -87px 0 0 -87px;
+  z-index: 99998; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(180deg); }
+  to {
+    -webkit-transform: rotate(0deg); } }
+html, .page {
+  height: 100%; }
+
+body.global {
+  background: url(../img/gameBg.jpg) no-repeat #3d0702;
+  background-size: 100% 100%;
+  height: 100%; }
+
+.tr a {
+  display: inline-block;
+  font-family: "微软雅黑";
+  font-size: 16px;
+  color: #fbff8c;
+  margin: 15px; }
+
+.title {
+  width: 80%;
+  text-align: center;
+  background: url(../img/d.png) no-repeat center center;
+  background-size: 100% 100%;
+  font-family: "微软雅黑";
+  font-size: 1.6rem;
+  line-height: 2;
+  padding: 6px 16px 16px 16px;
+  margin: 0 auto;
+  color: #fbff8c; }
+
+.result {
+  text-align: center;
+  font-family: "微软雅黑";
+  font-size: 1.2rem;
+  line-height: 2;
+  padding: 6px 0 16px 0;
+  margin: 0 auto;
+  color: #fbff8c;
+  margin-top: 5%; }
+
+.red {
+  color: #ff2d2d !important; }
+
+/*# sourceMappingURL=game.css.map */

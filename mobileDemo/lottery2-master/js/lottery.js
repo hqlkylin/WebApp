@@ -144,7 +144,8 @@ function lottery(){
 	}else{
 		var angels = [247, 202, 157, 112, 67, 22, 337, 292]; //对应角度
 		drawLottery();
-		item = rnd(0,7); 
+		//item = rnd(0,7);
+		item =0;
 		rotateFn(item, angels[item], _lottery.title[item]);
 		total_num--;
 	}

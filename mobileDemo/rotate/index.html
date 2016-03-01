@@ -129,6 +129,7 @@ function drawRouletteWheel() {
 		  var text = turnplate.restaraunts[i];
 		  var line_height = 17;
 		  //translate方法重新映射画布上的 (0,0) 位置
+
 		  ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
 		  //rotate方法旋转当前的绘图
 		  ctx.rotate(angle + arc / 2 + Math.PI / 2);

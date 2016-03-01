@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>使用帮助</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/poptips.css">
+    <link rel="stylesheet" href="css/game.css">
+
+</head>
+<body class="global">
+
+<div class="page">
+
+    <div class="tr"><a href="###">中奖记录</a></div>
+    <div class="title">
+        幸运大转盘
+    </div>
+    <div class="lottery_turntable">
+        <div class="turntable"></div>
+        <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+        <div id="go" class="pointer"></div>
+
+    </div>
+
+    <div class="result">
+        <p>单次抽奖消耗 <span class="red">100</span> 元宝</p>
+        <p>您当前拥有 <span class="red">6500</span> 元宝</p>
+    </div>
+
+</div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/view/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+<script src="js/view/awardRotate.js"></script>
+<script src="js/view/game.js"></script>
+
+</body>
+</html>
