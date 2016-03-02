@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
 /**
  * By 麒麟 qq 290147465
  * date 2016.2.5
@@ -135,6 +138,15 @@ a {
 
 .p20 {
   padding: 20px; }
+
+.f12 {
+  font-size: 12px; }
+
+.f14 {
+  font-size: 14px; }
+
+.f16 {
+  font-size: 16px; }
 
 .ellipsis {
   overflow: hidden;

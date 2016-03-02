@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>用户个人中心</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/poptips.css">
+    <link rel="stylesheet" href="css/users.css">
+
+</head>
+<body class="global">
+
+<div class="page">
+
+    <div class="hd">
+        <div class="bg">
+            <img src="img/bg.png" alt="">
+        </div>
+        <div class="content">
+            <div class="boxImg">
+                <img src="img/temp/1.jpg" alt="">
+            </div>
+            <p class="title">小鸡鸡</p>
+        </div>
+    </div>
+    <div class="bd">
+
+        <div class="boxPoint">
+            <div class="br">
+                <p class="red">230</p>
+
+                <p>可用积分</p>
+            </div>
+            <div class="br">
+                <p class="red">325</p>
+
+                <p>关注数</p>
+            </div>
+            <div>
+                <p class="red">5.88</p>
+
+                <p>钱包余额</p>
+            </div>
+        </div>
+
+        <div class="weui_cells weui_cells_access">
+            <a class="weui_cell p15" href="sort.html">
+                <div class="weui_cell_hd"><img src="img/icon5.png" alt=""
+                                               style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>代言排行榜</p>
+                </div>
+                <div class="weui_cell_ft"><span class="red f12">第10名</span></div>
+            </a>
+            <a class="weui_cell p15" href="javascript:;">
+                <div class="weui_cell_hd"><img src="img/icon6.png" alt=""
+                                               style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>幸运抽奖</p>
+                </div>
+                <div class="weui_cell_ft"></div>
+            </a>
+            <a class="weui_cell p15 Js-dialog" href="javascript:;">
+                <div class="weui_cell_hd"><img src="img/icon7.png" alt=""
+                                               style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>代言海报</p>
+                </div>
+                <div class="weui_cell_ft"></div>
+            </a>
+            <a class="weui_cell p15" href="javascript:;">
+                <div class="weui_cell_hd"><img src="img/icon8.png" alt=""
+                                               style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>推广赢积分</p>
+                </div>
+                <div class="weui_cell_ft"></div>
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/view/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+<script>
+    $(function () {
+
+        $(".Js-dialog").tap(function () {
+            var dia = $.dialog({
+                title: '',
+                content: '代言海报已通过微信消息发送给您',
+                button: ["确认"]
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>
