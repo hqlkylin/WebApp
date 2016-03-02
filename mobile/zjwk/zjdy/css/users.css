@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page {
+  padding-bottom: 80px; }
+
+.hd {
+  position: relative; }
+  .hd .bg img {
+    max-width: 100%; }
+  .hd .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%; }
+    .hd .content .boxImg {
+      width: 16%; }
+      .hd .content .boxImg img {
+        border-radius: 50%;
+        border: 2px solid #fff;
+        max-width: 100%; }
+    .hd .content .title {
+      color: #fff;
+      font-size: 1rem;
+      padding: 2px; }
+
+.bd .boxPoint {
+  padding: 10px 0;
+  color: #929292;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  .bd .boxPoint div {
+    font-weight: bold;
+    line-height: 1.6;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center; }
+    .bd .boxPoint div p {
+      font-size: 0.9rem; }
+    .bd .boxPoint div.br {
+      position: relative; }
+      .bd .boxPoint div.br::after {
+        position: absolute;
+        height: 80%;
+        top: 10%;
+        right: 0;
+        content: '';
+        border-right: 1px dotted #929292; }
+.bd .weui_cells {
+  margin-top: 10px; }
+
+/*# sourceMappingURL=users.css.map */

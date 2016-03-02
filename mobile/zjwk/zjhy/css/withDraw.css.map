@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": ";AAuGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;ACzHR,MAAM;EACJ,SAAS,EAAE,IAAI;;AAEjB,IAAI;EACF,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM",
-"sources": ["func.scss","withDraw.scss"],
+"mappings": ";;;;AAOA,MAAM;EACJ,SAAS,EAAE,IAAI;;AAEjB,IAAI;EACF,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM",
+"sources": ["withDraw.scss"],
 "names": [],
 "file": "withDraw.css"
 }
