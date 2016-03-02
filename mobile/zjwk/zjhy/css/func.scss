@@ -46,6 +46,13 @@ $blue: #63b7ff;
   align-items: center;
 }
 
+@mixin flex-column {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
 
 
 @mixin transition-delay($transition) {
@@ -136,3 +143,4 @@ $blue: #63b7ff;
   -o-animation-duration: $time;
   animation-duration: $time;
 }
+

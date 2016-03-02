@@ -1,0 +1,73 @@
+@import "func";
+
+.page {
+  padding-bottom: 80px;
+
+}
+
+.hd {
+  position: relative;
+  .bg {
+
+    img {
+      max-width: 100%;
+    }
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flexbox();
+    @include justify-content();
+    @include align-items();
+    @include flex-column();
+    height: 100%;
+    .boxImg {
+      width: 16%;
+      img {
+        border-radius: 50%;
+        border: 2px solid #fff;
+        max-width: 100%;
+      }
+    }
+    .title {
+      color: #fff;
+      font-size: 1rem;
+      padding: 2px;
+    }
+  }
+}
+
+.bd {
+
+  .boxPoint {
+    padding: 10px 0;
+    color: #929292;
+    background-color: #fff;
+    @include flexbox();
+    div {
+      font-weight: bold;
+      line-height: 1.6;
+      p{
+        font-size: 0.9rem;
+      }
+      @include flex(1);
+      text-align: center;
+      &.br {
+        position: relative;
+        &::after {
+          position: absolute;
+          height: 80%;
+          top: 10%;
+          right: 0;
+          content: '';
+          border-right: 1px dotted #929292;
+        }
+      }
+    }
+
+  }
+  .weui_cells{
+    margin-top: 10px;
+  }
+}

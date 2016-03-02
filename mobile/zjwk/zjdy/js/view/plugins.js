@@ -251,4 +251,6 @@ $(function () {
             })
         }
     }();
+
+    $.wx_hideTipData();
 });
