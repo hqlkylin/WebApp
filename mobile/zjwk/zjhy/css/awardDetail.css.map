@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAuGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;ACzHR,wBAAyB;EACvB,SAAS,EAAE,IAAI;EACf,QAAQ,EAAE,MAAM;EAChB,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,QAAQ;EACvB,KAAK,EAAE,OAAO;;AAEhB,QAAQ;EACN,SAAS,EAAE,MAAM;;AAEnB,IAAI;EACF,KAAK,EAAE,kBAAkB",
+"sources": ["func.scss","awardDetail.scss"],
+"names": [],
+"file": "awardDetail.css"
+}

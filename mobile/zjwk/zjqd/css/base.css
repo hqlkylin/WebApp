@@ -101,19 +101,16 @@ a {
   overflow: hidden; }
 
 .tc {
-  text-align: center; }
+  text-align: center !important; }
 
 .tl {
-  text-align: left; }
+  text-align: left !important; }
 
 .tr {
-  text-align: right; }
+  text-align: right !important; }
 
 .red {
-  color: #cf0001 !important; }
-
-.blue {
-  color: #63b7ff !important; }
+  color: #cf0001; }
 
 .fb {
   font-weight: bold; }
@@ -142,37 +139,19 @@ a {
 .p20 {
   padding: 20px; }
 
-.pl15 {
-  padding-left: 15px; }
+.f12 {
+  font-size: 12px; }
 
-.pr15 {
-  padding-right: 15px; }
+.f14 {
+  font-size: 14px; }
 
-.mr15 {
-  margin-right: 15px; }
-
-.ml15 {
-  margin-left: 15px; }
+.f16 {
+  font-size: 16px; }
 
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
-
-.f12 {
-  font-size: 12px !important; }
-
-.f14 {
-  font-size: 14px !important; }
-
-.f16 {
-  font-size: 16px !important; }
-
-.f18 {
-  font-size: 18px !important; }
-
-.fw {
-  font-weight: 600 !important; }
 
 .clearfix {
   *zoom: 1; }
@@ -185,14 +164,6 @@ a {
 
 .clearfix:after {
   clear: both; }
-
-.flex-end {
-  align-self: flex-end;
-  align-items: flex-end; }
-
-.flex-start {
-  align-self: flex-start;
-  align-items: flex-start; }
 
 .input-row {
   display: -webkit-box;
