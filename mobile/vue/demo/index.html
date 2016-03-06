@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../vue.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 </head>
 <body>
 
+<div id="app">
+
+    {{message}}
+
+    <input type="text" v-model="message">
+
+    <div v-if="display">
+        console 隐藏
+    </div>
+
+</div>
+
+<div id="limitLen">
+    <input type="text" v-model="title">
+    <span v-html="len"></span>/10
+</div>
+
+<script>
+    Vue.config.debug = true;
+    var viewModel = new Vue({
+        el: "#limitLen",
+        data: {
+            title: "",
+            len: 0
+        },
+        watch: {
+            title: function (val) {
+                if (val.length > 10) {
+                    this.len = '<span style="color: #ff0000;">' + val.length + '</span>';
+                    if ($('.errorLabel').length) {
+                        $('.errorLabel').html("超出限制:" + (val.length - 10) + "个")
+                    } else {
+                        $('<span class="errorLabel">').html("超出限制:" + (val.length - 10) + "个").appendTo($(this.$el));
+                    }
+
+                } else {
+                    this.len = val.length;
+                    $(".errorLabel").remove();
+                }
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "nmb",
+            display: true
+
+        }
+    })
+</script>
 </body>
 </html>
