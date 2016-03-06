@@ -209,6 +209,89 @@ $.toast = function (msg, type) {
     }, 2000);
 };
 
+/*******************************************************************************************************
+ *  调用方法 : $.showMsg(options)    数据遮罩层
+ *  var a=$.showMsg("海报获取获取中");
+ *  a.element.on("msg:hide",function(){console.log(1)});
+ *  a.hide();
+ *  自动关闭
+ *
+    $.showMsg({title:'自动关闭后跳转链接',stayTime:3000}).element.on("msg:hide",function(){
+    console.log('222');
+       location.href='http://www.baidu.com';
+    })
+ *
+ *
+ ********************************************************************************************************/
+$.showMsg = function (options) {
+    var Msg = function (options) {
+        var self = this;
+        // 默认参数
+        this.opts = {
+            title: '获取数据中…',
+            stayTime: 0
+        };
+        if (typeof  options == 'object') {
+            $.extend(this.opts, options);
+        } else if (typeof  options == 'string') {
+            $.extend(this.opts, {title: options});
+        } else {
+            new Error("参数错误啊");
+        }
+        this.renderHtml();
+        setTimeout(function () {
+            self.show();
+        }, 20);
+    };
+    Msg.prototype = {
+        renderHtml: function () {
+            $(".weui_loading_toast").remove();
+            var html = '<div  class="weui_loading_toast" style="display:none;">'
+                + '<div class="weui_mask_transparent"></div>'
+                + '<div class="weui_toast">'
+                + '<div class="weui_loading">'
+                + '<div class="weui_loading_leaf weui_loading_leaf_0"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_1"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_2"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_3"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_4"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_5"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_6"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_7"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_8"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_9"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_10"></div>'
+                + '<div class="weui_loading_leaf weui_loading_leaf_11"></div>'
+                + '</div>'
+                + '<p class="weui_toast_content">' + this.opts.title + '</p>'
+                + '</div>'
+                + '</div>'
+            $("body").append(html);
+            this.element = $(".weui_loading_toast");
+        },
+        show: function () {
+            var self = this;
+            self.element.trigger($.Event("msg:show"));
+            this.element.fadeIn();
+
+            if (self.opts.stayTime > 0) {
+                setTimeout(function () {
+                    self.hide();
+                }, self.opts.stayTime)
+            }
+
+        },
+        hide: function () {
+            var self = this;
+            self.element.trigger($.Event("msg:hide"));
+            this.element.fadeOut();
+            setTimeout(function () {
+                self.element.remove();
+            }, 500)
+        }
+    };
+    return new Msg(options);
+};
 
 var isIPHONE = navigator.userAgent.toUpperCase().indexOf('IPHONE') != -1;
 /*---------------------------------------- Ajax 扩展 -------------------------------------------------*/
@@ -230,6 +313,16 @@ $.ajaxJson = function (url, data, onSuccess, onError) {
 };
 /*---------------------------------------- Ajax 扩展 -------------------------------------------------*/
 
+/*******************************************************************************************************
+ *  调用方法 : $.baseUrl   获取页面根路径
+ *
+ ********************************************************************************************************/
+$.baseUrl = (function getContextPath() {
+    var pathName = document.location.pathname;
+    var index = pathName.substr(1).indexOf("/");
+    var result = pathName.substr(0, index + 1);
+    return result;
+})();
 
 $(function () {
     /* 解决iOS下input和fixed 问题*/
