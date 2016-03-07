@@ -80,4 +80,10 @@
 .toast-container.active {
   opacity: 1; }
 
+.weui_dialog i.close {
+  position: absolute;
+  right: 0px;
+  color: #949494;
+  padding: 10px; }
+
 /*# sourceMappingURL=poptips.css.map */

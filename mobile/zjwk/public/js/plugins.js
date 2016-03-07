@@ -124,7 +124,9 @@ $.dialog = function (options) {
             content: '',
             button: ['确认'],
             select: 0,
-            allowScroll: false
+            allowScroll: false,
+            showClose: false,
+            tapMaskClose: false
         };
         $.extend(this.opt, opt);
         this.renderHtml();
@@ -137,9 +139,12 @@ $.dialog = function (options) {
             // 默认模板
             var _dialog = '<div class="weui_dialog_confirm">' +
                 '<div class="weui_mask"></div>' +
-                '<div class="weui_dialog">' +
-                '<div class="weui_dialog_hd"><strong class="weui_dialog_title">' + this.opt.title + '</strong></div>' +
-                '<div class="weui_dialog_bd">' + this.opt.content + '</div>' +
+                '<div class="weui_dialog">';
+            if (this.opt.showClose) {
+                _dialog += '<i class="fa fa-times close"></i>'
+            }
+            _dialog += '<div class="weui_dialog_hd"><strong class="weui_dialog_title">' + this.opt.title + '</strong></div>' +
+                '<div class="weui_dialog_bd tc">' + this.opt.content + '</div>' +
                 '<div class="weui_dialog_ft">';
             for (var i = 0; i < this.opt.button.length; i++) {
                 _dialog += '<a href="javascript:;" class="weui_btn_dialog default">' +
@@ -161,6 +166,16 @@ $.dialog = function (options) {
                 self.hide.apply(self);
                 return false;
             });
+            if (self.opt.showClose) {
+                this.element.find("i.close").on("tap", function () {
+                    self.hide();
+                });
+            }
+            if(self.opt.tapMaskClose){
+                this.element.find(".weui_mask").on("tap", function () {
+                    self.hide();
+                });
+            }
         },
         show: function () {
 

@@ -56,7 +56,9 @@ $(document).ready(function () {
                 var dia = $.dialog({
                     title: '温馨提示',
                     content: '恭喜您抽中'+turnplate.restaraunts[item],
-                    button: ["查看", "再玩一次"]
+                    button: ["查看", "再玩一次"],
+                    showClose:true,
+                    tapMaskClose:true
                 });
                 dia.on("dialog:action", function (e) {  //e.index 点击 按钮的索引
                     if (e.index == 0) {
