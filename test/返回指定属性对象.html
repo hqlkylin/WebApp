@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+
+        var json = [
+            {id: 1, name: "kylin"},
+            {id: 2, name: "hanqilin"},
+            {id: 3, name: "hql"},
+            {id: 4, name: "hqlkylin", age: 29}
+        ]
+
+        var a = objectByNameToArray(json, 'age');
+        var b = objectByNameToArray2(json, 'age');
+        console.log(b);
+
+        function objectByNameToArray(obj, name) {
+
+            return obj.map(function (item) {
+                return item[name];
+            })
+
+        }
+
+        function objectByNameToArray2(obj, name) {
+
+            return obj.filter(function (item) {
+                if (item[name] != undefined) {
+                    return true;
+                }
+            })
+
+        }
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

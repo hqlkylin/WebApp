@@ -18,6 +18,13 @@
         console 隐藏
     </div>
 
+    <div v-if="true">
+        Sorry
+    </div>
+    <div v-else>
+        Not sorry
+    </div>
+
 </div>
 
 <div id="limitLen">
@@ -57,6 +64,43 @@
             message: "nmb",
             display: true
 
+        }
+    })
+
+    var demo = new Vue({
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        computed: {
+            fullName: {
+                // getter 应返回计算后的值
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                },
+                // setter 是可选的
+                set: function (newValue) {
+                    var names = newValue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[names.length - 1]
+                }
+            },
+            fn: function () {
+                return 'fn';
+            }
+
+        }
+    })
+    demo.fullName // 'Foo Bar'
+
+
+    var vm1 = new Vue({
+        data: {
+            a: 1
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+            console.log('a is: ' + this.a)
         }
     })
 </script>
