@@ -6,8 +6,8 @@
 
     <title>指尖会员</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
-     <link rel="stylesheet" href="../public/css/base.css">
-     <link rel="stylesheet" href="../public/css/icons.css">
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/icons.css">
     <link rel="stylesheet" href="../public/css/poptips.css">
     <link rel="stylesheet" href="css/point.css">
 
@@ -183,6 +183,11 @@
                 }, 500);
             });
         });
+
+        $(".ct p").tap(function () {
+            $(".tabMenu p").eq($(".ct p").index($(this))).tap();
+        });
+
         $("#dialog1").on("tap", function () {
             var dia = $.dialog({
                 title: '温馨提示',
