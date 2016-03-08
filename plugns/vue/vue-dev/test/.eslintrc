@@ -1,0 +1,22 @@
+{
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "jasmine": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "spyOn": true,
+    "spyWarns": true,
+    "getWarnCount": true,
+    "hasWarned": true,
+    "casper": true
+  },
+  "rules": {
+    "no-new": 0,
+    "no-multi-str": 0,
+    "standard/object-curly-even-spacing": 0
+  }
+}
