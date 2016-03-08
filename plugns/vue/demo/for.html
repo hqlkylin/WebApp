@@ -3,8 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
+    <script src="../vue-dev/dist/vue.js"></script>
+    <script>
+        var jsonData = {
+            list1: [
+                {name: "kylin", age: 30},
+                {name: "hanqilin", age: 29},
+                {name: "hqlkylin", age: 28}
+            ],
+            list2: [
+                {top: 1, left: 2},
+                {top: 1, left: 3},
+                {top: 2, left: 4}
+            ]
+        };
 
+
+        window.onload = function () {
+
+            var vm = new Vue({
+                el: "#examplesDemo",
+                data: {
+                    current: "list1",
+                    items: []
+
+                },
+                created: function () {
+                    this.fetchData();
+                },
+                methods: {
+                    fetchData: function () {
+                        this.items = jsonData[this.current];
+                    },
+                    changeType: function (s) {
+                        this.current = s;
+                    }
+                },
+                computed: {
+                    test: function () {
+                        return this.current+" 哈哈 ";
+                    }
+                },
+                watch: {
+                    current: function () {
+                        this.fetchData();
+                    }
+                }
+            });
+
+        }
+
+
+    </script>
+</head>
+<body id="examplesDemo">
+<p>当前选中的类型:{{current}}</p>
+
+<p>我是计算属性:{{test}}</p>
+
+
+<div>
+    <span @click="changeType('list1')">第一列表</span>
+
+    <span @click="changeType('list2')">第二列表</span>
+</div>
+
+<div>
+    <div>
+        <ul>
+            <li v-for="item in items">
+                <sapn v-for="value in item ">
+                    {{$key}}:{{value}}
+                </sapn>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

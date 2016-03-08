@@ -3,8 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../vue-dev/dist/vue.js"></script>
 </head>
 <body>
 
+<p>数据列表</p>
+
+<div>
+    <ul>
+        <li v-for="user in users">
+            name:{{user.name}} || age:{{user.age}} <a href="" v-on:click.prevent="delUser(user)">删除</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <form action="" v-on:submit.prevent="addUser">
+        <p>name: <input type="text" v-model="newUser.name"> <label for="" v-show="!validate.name">错误提示:请正确输入姓名</label>
+        </p>
+
+        <p>age: <input type="text" v-model="newUser.age"> <label for="" v-show="!validate.age">错误提示:请正确输入年龄</label></p>
+
+        <button type="submit">添加</button>
+    </form>
+</div>
+
+<script>
+    var jsonData = {
+        list1: [
+            {name: "kylin", age: 30},
+            {name: "hanqilin", age: 29},
+            {name: "hqlkylin", age: 28}
+        ],
+        list2: [
+            {top: 1, left: 2},
+            {top: 1, left: 3},
+            {top: 2, left: 4}
+        ]
+    };
+
+    var vm = new Vue({
+        el: "body",
+        data: {
+            users: jsonData.list1,
+            newUser: {
+                name: '',
+                age: 0
+            }
+
+
+        },
+        computed: {
+            validate: function () {
+                return {
+                    name: !!this.newUser.name > 4,
+                    age: !!this.newUser.age > 5
+                }
+            }
+        },
+        methods: {
+
+            addUser: function () {
+                this.users.push(this.newUser);
+            },
+            delUser: function (user) {
+
+                
+                $.each(this.users, function (index, item) {
+                    if (item.name == user.name) {
+                        vm.users.splice(index, 1);
+                        return false;
+                    }
+
+                })
+
+            }
+
+        }
+
+    })
+</script>
 </body>
 </html>
