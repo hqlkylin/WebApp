@@ -187,7 +187,8 @@
     .bd .content .list-horizontal .imgBox {
       width: 100%; }
       .bd .content .list-horizontal .imgBox img {
-        width: 100%; }
+        width: 100%;
+        height: 140px; }
     .bd .content .list-horizontal .name {
       font-size: 14px;
       line-height: 1.8;

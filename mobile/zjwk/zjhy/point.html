@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="../public/css/poptips.css">
     <link rel="stylesheet" href="css/point.css">
 
+
 </head>
 <body class="global">
+
 
 <div class="page">
 
@@ -20,7 +22,7 @@
         <img src="img/bd.png" alt="">
 
         <p class="help">
-            <a href="help.html">使用帮助</a>
+            <a href="help.html" id="Js-help">使用帮助</a>
         </p>
 
         <div class="ct">
@@ -126,6 +128,46 @@
     </div>
 
 </div>
+
+
+<div class="popup-container">
+
+    <div class="popup-mask"></div>
+    <div class="popup-content">
+
+        <div class="popBox">
+
+
+            <header class="ui-header ui-header-positive ui-border-b">
+                <i class="glyphicon glyphicon-chevron-left Js-popup-close">返回</i>
+
+            </header>
+
+            <p class="title">使用帮助</p>
+
+            <ul>
+                <li>
+                    <p>如何获取:</p>
+
+                    <div>
+                        1、积分可通过购买商品获得。 2、等级越高的会员购买商品时获得积分越多。
+                    </div>
+                </li>
+                <li>
+                    <p>如何使用:</p>
+
+                    <div>
+                        1、积分可用来参加幸运大抽奖游戏，赢取现金。 2、积分在购买部分商品时可抵扣现金。
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
 <!--BEGIN toast-->
 <div id="toast" style="display: none;">
     <div class="weui_mask_transparent"></div>
@@ -213,6 +255,24 @@
 
             return false; //  防止点穿
         });
+
+        $("#Js-help").tap(function () {
+            var $box = $(".popup-container").show(function () {
+                $box.find(".popup-mask").addClass("popup-mask_toggle");
+                $box.find(".popup-content").addClass("popup-content_toggle");
+            });
+
+            $box.find(".Js-popup-close").off("tap").on("tap", function () {
+                $box.find(".popup-mask").removeClass("popup-mask_toggle");
+                $box.find(".popup-content").removeClass("popup-content_toggle");
+                $box.find(".popup-content").on('webkitTransitionEnd', function () {
+                    if (!$(this).hasClass("popup-content_toggle")) {
+                        $box.hide();
+                    }
+                });
+            });
+            return false;
+        })
     })
 </script>
 </body>
