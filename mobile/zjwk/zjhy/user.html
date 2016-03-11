@@ -9,8 +9,8 @@
     <meta http-equiv="Expires" content="0"/>
     <title>个人资料</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
-     <link rel="stylesheet" href="../public/css/base.css">
-     <link rel="stylesheet" href="../public/css/icons.css">
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/icons.css">
     <link rel="stylesheet" href="css/user.css">
     <script src="../mui/js/mui.js"></script>
     <script src="../mui/js/mui.picker.js"></script>
@@ -74,6 +74,36 @@
                 </div>
             </div>
 
+            <div class="weui_cell weui_cell_select weui_select_after">
+                <div class="weui_cell_hd">
+                    职业
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select" name="">
+
+                        <option value="0">请选择</option>
+                        <option value="1">中国</option>
+                        <option value="2">美国</option>
+                        <option value="3">英国</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select weui_select_after">
+                <div class="weui_cell_hd">
+                    学历
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select" name="" placeholder="请输入邮箱">
+
+                        <option value="0">请选择</option>
+                        <option value="1">中国</option>
+                        <option value="2">美国</option>
+                        <option value="3">英国</option>
+                    </select>
+                </div>
+            </div>
+
 
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label for="" class="weui_label">备注 </label></div>
@@ -101,6 +131,7 @@
 <script>
     (function ($, doc) {
 
+
         $.ready(function () {
             $.init();
             //级联示例
@@ -118,6 +149,11 @@
                     //return false;
                 });
             }, false);
+            document.addEventListener('click', function (event) {
+               if(event.target.id!="showCityPicker"){
+                   cityPicker.hide();
+               }
+            }, false)
         });
     })(mui, document);
 </script>
