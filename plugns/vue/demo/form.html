@@ -48,7 +48,7 @@
             users: jsonData.list1,
             newUser: {
                 name: '',
-                age: 0
+                age: ''
             }
 
 
@@ -56,19 +56,31 @@
         computed: {
             validate: function () {
                 return {
-                    name: !!this.newUser.name > 4,
-                    age: !!this.newUser.age > 5
+                    name: !!(this.newUser.name.trim() > 4),
+                    age: !!(this.newUser.age > 8)
                 }
             }
         },
         methods: {
 
             addUser: function () {
-                this.users.push(this.newUser);
+                console.log(this.validate);
+                console.log(this.newUser.age > 8);
+
+                if (this.validate.name && this.validate.age) {
+                    this.users.push(this.newUser);
+                    alert('注册成功');
+                    this.newUser.name = ''
+                    this.newUser.age = ''
+                } else {
+                    console.log("失败");
+                }
+
+
             },
             delUser: function (user) {
 
-                
+
                 $.each(this.users, function (index, item) {
                     if (item.name == user.name) {
                         vm.users.splice(index, 1);
