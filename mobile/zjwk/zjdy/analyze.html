@@ -40,7 +40,7 @@
 
             <div class="title">
 
-                <h5>订单总额:16000.00</h5>
+                <h5></h5>
 
             </div>
 
@@ -98,13 +98,81 @@
     $(function () {
 
         var myChart = echarts.init(document.getElementById('main'));
-        myChart.showLoading();
-
-        $(".bd").on("tap", ".navBox li", function () {
-            $(this).addClass("active").siblings().removeClass("active");
+        var show = function (jsonData) {
+            // 基于准备好的dom，初始化echarts图表
+            var option = {
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['订单金额'],
+                    left: '0%'
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: jsonData.xData
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+               /* dataZoom: [
+                    {   // 这个dataZoom组件，默认控制x轴。
+                        type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+                        start: 10,      // 左边在 10% 的位置。
+                        end: 60         // 右边在 60% 的位置。
+                    }
+                ],*/
+                series: [
+                    {
+                        name: '订单金额',
+                        type: 'line',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        areaStyle: {normal: {}},
+                        data: jsonData.data
+                    }
+                ]
+            };
+            // 为echarts对象加载数据
+            myChart.setOption(option);
+            myChart.hideLoading();
+            $(".title h5").html("订单总金额:" + jsonData.total);
+        };
+        $(".navBox li").on("tap", function () {
+            myChart.showLoading();
+            var $this = $(this);
+            $this.addClass("active").siblings().removeClass("active");
+            //获取缓存数据
+            if ($this.data("cacheData")) {
+                show($this.data("cacheData"));
+                return;
+            }
             //获取类型
-            var dt = $(this).attr("data-type");
-
+            var dt = $this.attr("data-type");
             $.ajax({
                 url: dt, //模拟
                 //url: "date.json",
@@ -113,69 +181,11 @@
                     type: dt
                 }
             }).done(function (jsonData) {
-                console.log(jsonData);
-                // 基于准备好的dom，初始化echarts图表
-                var option = {
-                    title: {
-                        text: ''
-                    },
-                    tooltip: {
-                        trigger: 'axis'
-                    },
-                    legend: {
-                        data: ['订单金额'],
-                        left: '0%'
-                    },
-                    toolbox: {
-                        feature: {
-                            saveAsImage: {}
-                        }
-                    },
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    xAxis: [
-                        {
-                            type: 'category',
-                            boundaryGap: false,
-                            data: jsonData.xData
-                        }
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value'
-                        }
-                    ],
-                    series: [
-                        {
-                            name: '订单金额',
-                            type: 'line',
-                            stack: '总量',
-                            label: {
-                                normal: {
-                                    show: true,
-                                    position: 'top'
-                                }
-                            },
-                            areaStyle: {normal: {}},
-                            data: jsonData.data
-                        }
-                    ]
-                };
-                // 为echarts对象加载数据
-                myChart.setOption(option);
-                myChart.hideLoading();
-
-
+                $this.data("cacheData", jsonData);
+                show(jsonData);
             })
-        });
+        }).eq(0).tap();
     })
-
-
-
 
 
 </script>
