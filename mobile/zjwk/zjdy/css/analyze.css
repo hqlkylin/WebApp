@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page {
+  padding-bottom: 80px; }
+
+.bd .navBox {
+  position: relative;
+  padding: 0 8px; }
+  .bd .navBox ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative; }
+    .bd .navBox ul::after {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-transform: scaleY(0.5);
+      -moz-transform: scaleY(0.5);
+      -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+    .bd .navBox ul li {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 10px 0px;
+      border-bottom: 2px solid transparent;
+      color: #777;
+      font-size: 14px; }
+      .bd .navBox ul li.active {
+        color: #d00000;
+        border-bottom: 2px #d00000 solid; }
+.bd .title {
+  font-family: "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif, "宋体";
+  text-align: center;
+  color: #cf0001;
+  margin-top: 10px; }
+
+/*# sourceMappingURL=analyze.css.map */
