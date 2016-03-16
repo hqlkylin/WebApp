@@ -12,12 +12,10 @@ ul li {
   /*  width: 100%;*/
   background: url("../img/bg.jpg") no-repeat;
   background-size: 100%;
-  padding-top: 43.6%;
   position: relative;
   overflow: hidden; }
 
 .headbg .box {
-  margin-top: -43.6%;
   overflow: hidden;
   position: relative; }
 
@@ -55,11 +53,6 @@ ul li {
 
 .headbg .box .rhead ul li {
   overflow: hidden; }
-
-.headbg .box .rhead ul li:nth-child(1) {
-  border-bottom: 1px solid #686868;
-  margin-bottom: 5%;
-  padding-bottom: 5%; }
 
 .headbg .box .rhead ul div {
   width: 60%;
