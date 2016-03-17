@@ -5,7 +5,7 @@
 .hd {
   position: relative; }
   .hd img {
-    max-width: 100%; }
+    width: 100%; }
   .hd h1 {
     width: 100%;
     color: #fdc23a;
