@@ -1,0 +1,65 @@
+@import "../../public/css/func";
+
+.page {
+  padding-bottom: 80px;
+
+}
+
+.bd {
+  .navBox {
+    position: relative;
+    padding: 0 8px;
+    ul {
+      @include flexbox();
+      @include justify-content();
+      @include align-items();
+      position: relative;
+      &::after {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include transform(scaleY(0.5));
+      }
+      li {
+        @include flex(1);
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 10px 0px;
+        border-bottom: 2px solid transparent;
+
+        color: #777;
+        font-size: 14px;
+        &.active {
+          color: #d00000;
+          border-bottom: 2px #d00000 solid
+        }
+
+      }
+
+    }
+  }
+  .title {
+    font-family: "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif, "宋体";
+    margin: 10px 0px;
+    @include flexbox();
+    @include justify-content();
+    @include align-items-flex-end();
+    div {
+      text-align: center;
+      @include flex(1);
+      color: #777;
+      font-size: 14px;
+      &.active {
+        color: #d00000;
+        h5 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

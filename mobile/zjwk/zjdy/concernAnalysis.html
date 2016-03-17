@@ -7,11 +7,11 @@
     <!--  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
       <meta http-equiv="Pragma" content="no-cache"/>
       <meta http-equiv="Expires" content="0"/>-->
-    <title>阅读分析</title>
+    <title>关注分析</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
     <link rel="stylesheet" href="../public/css/base.css">
     <link rel="stylesheet" href="../public/css/icons.css">
-    <link rel="stylesheet" href="css/analyze.css">
+    <link rel="stylesheet" href="css/concernAnalysis.css">
     <link rel="stylesheet" href="../public/css/poptips.css">
     <script src="../echarts-master/echarts-master/dist/echarts.min.js"></script>
 
@@ -20,9 +20,7 @@
 
 <div class="page">
 
-    <div class="hd">
 
-    </div>
     <div class="bd">
 
 
@@ -39,12 +37,25 @@
         <div class="content">
 
             <div class="title">
+                <div>
+                    <h5 class="Js-historyTotal">3576</h5>
 
-                <h5></h5>
+                    <p>代言关注</p>
+                </div>
+                <div class="active">
+                    <h5 class="Js-total">569</h5>
 
+                    <p>新增关注</p>
+                </div>
+                <div>
+                    <h5 class="Js-out">23</h5>
+
+                    <p>取消关注</p>
+                </div>
             </div>
 
             <div id="main" style="width: 100%; height: 340px; "></div>
+
 
         </div>
     </div>
@@ -96,7 +107,8 @@
 <script>
 
     $(function () {
-
+        //设置高度
+        $("#main").height($(window).height() * 0.6);
         var myChart = echarts.init(document.getElementById('main'));
         var show = function (jsonData) {
             // 基于准备好的dom，初始化echarts图表
@@ -134,13 +146,13 @@
                         type: 'value'
                     }
                 ],
-               /* dataZoom: [
-                    {   // 这个dataZoom组件，默认控制x轴。
-                        type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
-                        start: 10,      // 左边在 10% 的位置。
-                        end: 60         // 右边在 60% 的位置。
-                    }
-                ],*/
+                /* dataZoom: [
+                 {   // 这个dataZoom组件，默认控制x轴。
+                 type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+                 start: 10,      // 左边在 10% 的位置。
+                 end: 60         // 右边在 60% 的位置。
+                 }
+                 ],*/
                 series: [
                     {
                         name: '订单金额',
@@ -160,7 +172,9 @@
             // 为echarts对象加载数据
             myChart.setOption(option);
             myChart.hideLoading();
-            $(".title h5").html("订单总金额:" + jsonData.total);
+            $(".title .Js-historyTotal").html(+jsonData.historyTotal);
+            $(".title .Js-total").html(+jsonData.total);
+            $(".title .Js-out").html(+jsonData.out);
         };
         $(".navBox li").on("tap", function () {
             myChart.showLoading();

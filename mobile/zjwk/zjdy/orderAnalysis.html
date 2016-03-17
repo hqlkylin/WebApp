@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <!--  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+      <meta http-equiv="Pragma" content="no-cache"/>
+      <meta http-equiv="Expires" content="0"/>-->
+    <title>订单分析</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/icons.css">
+    <link rel="stylesheet" href="css/orderAnalysis.css">
+    <link rel="stylesheet" href="../public/css/poptips.css">
+    <script src="../echarts-master/echarts-master/dist/echarts.min.js"></script>
+
+</head>
+<body class="global">
+
+<div class="page">
+
+
+    <div class="bd">
+
+
+        <div class="navBox">
+            <ul>
+                <!--  <li class="active" data-type="date">今天</li>
+                  <li data-type="weeks">近七天</li>
+                  <li data-type="month">近一个月</li>-->
+                <li class="active" data-type="js/data/date.json">今天</li>
+                <li data-type="js/data/weeks.json">近七天</li>
+                <li data-type="js/data/month.json">近一个月</li>
+            </ul>
+        </div>
+        <div class="content">
+
+            <div class="title">
+
+                <h5 class="Js-total"></h5>
+
+            </div>
+
+            <div id="main" style="width: 100%; height: 340px; "></div>
+
+            <p class="historyTotal">历史订单金额：95874.00</p>
+        </div>
+    </div>
+
+</div>
+<div class="ft">
+    <ul class="nav">
+        <li><a href="index.html" class="active"><i class="fa fa-home"></i>
+            <small>首页</small>
+        </a></li>
+        <li><a href="promoteIndex.html"><i class=" md-volume-up"></i>
+            <small>推广设置</small>
+        </a></li>
+        <li><a href="gameSettings.html"><i class="fa  ti-game"></i>
+            <small>游戏设置</small>
+        </a></li>
+        <li><a href="mySelf.html"><i class="fa fa-user"></i>
+            <small>我</small>
+        </a></li>
+    </ul>
+</div>
+
+
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="../public/js/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+<script>
+
+    $(function () {
+        //设置高度
+        $("#main").height($(window).height() * 0.6);
+        var myChart = echarts.init(document.getElementById('main'));
+        var show = function (jsonData) {
+            // 基于准备好的dom，初始化echarts图表
+            var option = {
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['订单金额'],
+                    left: '0%'
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: jsonData.xData
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+               /* dataZoom: [
+                    {   // 这个dataZoom组件，默认控制x轴。
+                        type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+                        start: 10,      // 左边在 10% 的位置。
+                        end: 60         // 右边在 60% 的位置。
+                    }
+                ],*/
+                series: [
+                    {
+                        name: '订单金额',
+                        type: 'line',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        areaStyle: {normal: {}},
+                        data: jsonData.data
+                    }
+                ]
+            };
+            // 为echarts对象加载数据
+            myChart.setOption(option);
+            myChart.hideLoading();
+            $(".Js-total").html("订单总额:" + jsonData.total);
+        };
+        $(".navBox li").on("tap", function () {
+            myChart.showLoading();
+            var $this = $(this);
+            $this.addClass("active").siblings().removeClass("active");
+            //获取缓存数据
+            if ($this.data("cacheData")) {
+                show($this.data("cacheData"));
+                return;
+            }
+            //获取类型
+            var dt = $this.attr("data-type");
+            $.ajax({
+                url: dt, //模拟
+                //url: "date.json",
+                dataType: "json",
+                data: {
+                    type: dt
+                }
+            }).done(function (jsonData) {
+                $this.data("cacheData", jsonData);
+                show(jsonData);
+            })
+        }).eq(0).tap();
+    })
+
+
+</script>
+</body>
+</html>
