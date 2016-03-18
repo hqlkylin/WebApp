@@ -1,0 +1,21 @@
+@import "func";
+
+.page {
+
+}
+
+.weui_cells .weui_cell p {
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #c4c3c3;
+}
+
+.weui_cells .weui_cell_ft_no {
+  text-align: right;
+  .green {
+    color: #00b326;
+  }
+
+}

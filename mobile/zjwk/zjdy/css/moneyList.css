@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.weui_cells .weui_cell p {
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #c4c3c3; }
+
+.weui_cells .weui_cell_ft_no {
+  text-align: right; }
+  .weui_cells .weui_cell_ft_no .green {
+    color: #00b326; }
+
+/*# sourceMappingURL=moneyList.css.map */

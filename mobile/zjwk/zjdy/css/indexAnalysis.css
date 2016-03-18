@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.ui-tab {
+  width: 100%;
+  overflow: hidden; }
+
+.ui-tab-nav {
+  width: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  height: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+.ui-tab-nav li {
+  height: 50px;
+  line-height: 50px;
+  min-width: 60px;
+  text-align: center;
+  color: #777;
+  border-bottom: 2px solid transparent;
+  width: 20%;
+  margin: 0 10%; }
+
+.ui-tab-nav li.current {
+  color: #d00000;
+  border-bottom: 2px #d00000 solid; }
+
+.ui-tab-nav li:active {
+  opacity: 0.8; }
+
+.ui-tab-content > li {
+  display: none; }
+  .ui-tab-content > li.current {
+    display: block; }
+
+.weui_cells {
+  margin-top: 2px; }
+  .weui_cells .weui_cell_hd {
+    width: 40px; }
+  .weui_cells .weui_cell_bd {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .weui_cells .weui_cell_bd img {
+      border-radius: 50%;
+      max-width: 40px;
+      margin-left: 5px;
+      margin-right: 30px;
+      display: inline-block; }
+  .weui_cells .weui_cell_ft_no p {
+    font-size: 12px;
+    color: #929292; }
+
+.w100 {
+  width: 100px; }
+
+/*# sourceMappingURL=indexAnalysis.css.map */
