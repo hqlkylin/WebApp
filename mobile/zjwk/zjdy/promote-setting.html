@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>推广设置</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/icons.css">
+
+    <link rel="stylesheet" href="../public/css/poptips.css">
+    <link rel="stylesheet" href="css/promote-setting.css">
+
+</head>
+<body class="global">
+
+<div class="page">
+    <div class="bd">
+
+
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell weui_cell_switch">
+                <div class="weui_cell_hd weui_cell_primary">
+                    <div class="main">
+
+                        <div class="photo"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
+                                alt=""></div>
+                        <div class="name">
+                            <p>
+                                指尖代言抽奖游戏第一波开始-中秋狂欢敢抽您就中，赶快行动!
+                            </p>
+                            <input class="weui_switch" type="checkbox" checked>
+                        </div>
+                        <div class="tips">
+                            <p class="tl">一级赠分1011</p>
+
+                            <p class="tc">二级赠分51</p>
+
+                            <p class="tr">三级赠分209</p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="weui_cell_ft">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="title">推广关注赠积分（一级）</div>
+        <div class="ipt">
+            <div>每个UV（用户阅读）送</div>
+            <div class="flex_remaining"><input type="text" placeholder="请填写积分数额"></div>
+            <div>分</div>
+        </div>
+
+        <div class="title">推广关注赠积分（二级）</div>
+        <div class="ipt">
+            <div>每个UV（用户阅读）送</div>
+            <div class="flex_remaining"><input type="text" placeholder="请填写积分数额"></div>
+            <div>分</div>
+        </div>
+
+        <div class="title">推广关注赠积分（三级）</div>
+        <div class="ipt">
+            <div>每个UV（用户阅读）送</div>
+            <div class="flex_remaining"><input type="text" placeholder="请填写积分数额"></div>
+            <div>分</div>
+        </div>
+
+        <div class="btn">
+            <a href="javascript:;" class="Js-save weui_btn weui_btn_primary">保存</a>&nbsp;&nbsp;
+            <a href="javascript:;" class="weui_btn weui_btn_warn">取消</a>
+        </div>
+
+    </div>
+</div>
+<div class="ft">
+    <ul class="nav">
+        <li><a href="index.html"><i class="fa fa-home"></i>
+            <small>首页</small>
+        </a></li>
+        <li><a href="promoteIndex.html" class="active"><i class=" md-volume-up"></i>
+            <small>推广设置</small>
+        </a></li>
+        <li><a href="gameSettings.html"><i class="fa  ti-game"></i>
+            <small>游戏设置</small>
+        </a></li>
+        <li><a href="mySelf.html"><i class="fa fa-user"></i>
+            <small>我</small>
+        </a></li>
+    </ul>
+</div>
+
+<!--BEGIN toast-->
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+
+        <p class="weui_toast_content">已完成</p>
+    </div>
+</div>
+<!--end toast-->
+
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="../public/js/plugins.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+
+</body>
+</html>

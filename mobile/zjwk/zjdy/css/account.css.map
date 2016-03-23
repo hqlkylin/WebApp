@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAuGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;AC9HR,KAAM;EACJ,cAAc,EAAE,IAAI",
+"sources": ["func.scss","account.scss"],
+"names": [],
+"file": "account.css"
+}

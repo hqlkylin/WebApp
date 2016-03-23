@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAuGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;ACvHN,qBAAS;EACP,KAAK,EAAE,OAAO;;AAIlB,IAAI;EACF,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,EAAE;EACV,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,OAAO;EACd,MAAC;IACC,KAAK,EAAE,kBAAkB;IACzB,WAAW,EAAE,GAAG",
+"sources": ["func.scss","reg.scss"],
+"names": [],
+"file": "reg.css"
+}

@@ -1,0 +1,94 @@
+@import "func";
+
+.page {
+  padding-bottom: 80px;
+
+}
+
+.bd {
+  .weui_cells {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .title {
+    padding: 15px;
+    background-color: #fff;
+    font-size: 16px;
+  }
+  .ipt {
+    background: #f6f6f6;
+    font-size: 14px;
+    padding: 8px 15px;
+    @include flexbox();
+    .flex_remaining {
+      @include flex(1);
+      margin-left: 8%;
+      input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        background-color: transparent;
+        font-size: inherit;
+        color: inherit;
+      }
+
+    }
+  }
+  .btn {
+    text-align: center;
+    .weui_btn {
+      width: 20%;
+      display: inline-block;
+    }
+  }
+
+  .main {
+    .photo {
+      margin-right: 5px;
+      img {
+        width: 100px;
+        height: 75px;
+      }
+      float: left;
+
+    }
+
+    .name {
+      overflow: hidden;
+      height: 75px;
+      padding-right: 60px;
+      position: relative;
+      .weui_switch {
+        position: absolute;
+        top: 0;
+        right: 0px;
+      }
+      p {
+        overflow: hidden;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+    }
+  }
+  .tips {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    p {
+      float: left;
+      font-size: .8rem;
+      width: 33.33%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    padding-top: 8px;
+  }
+
+}

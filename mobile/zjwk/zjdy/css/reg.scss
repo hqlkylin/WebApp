@@ -1,0 +1,25 @@
+@import "func";
+
+.page {
+
+}
+
+
+
+.weui_vcode{
+  .weui_btn{
+    color: #00a5e0;
+  }
+}
+
+.reg{
+  position: fixed;
+  bottom: 5%;
+  text-align: center;
+  width: 100%;
+  color: #929292;
+  a{
+    color: #000000 !important;
+    font-weight: 500;
+  }
+}
