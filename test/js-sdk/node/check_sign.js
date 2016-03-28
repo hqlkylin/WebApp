@@ -1,6 +1,6 @@
 var sign = require('./sign.js');
 
-console.log(sign('jsapi_ticket', 'http://example.com'));
+console.log(sign('kgt8ON7yVITDhtdwci0qebS_ZaPaF-msJJwvD99RYKn3p4Y-kMe2D0WLKfiK-U-H_C4Av1ys1leaNm10Kwt-eA', 'http://www.hqlkylin.com/test/js-sdk/index.html'));
 /*
  *something like this
  *{
