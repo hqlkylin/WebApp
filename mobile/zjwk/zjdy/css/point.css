@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page {
+  padding-bottom: 80px; }
+
+.hd {
+  position: relative; }
+  .hd img {
+    max-width: 100%; }
+  .hd .help {
+    width: 100%;
+    color: #fdc23a;
+    text-align: right;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+  .hd .ct {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .hd .ct p {
+      text-align: center;
+      color: #fdc23a;
+      font-size: 1.8rem;
+      font-family: "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif, "宋体"; }
+    .hd .ct img {
+      display: inline-block;
+      width: 26px;
+      vertical-align: bottom; }
+    .hd .ct span {
+      color: #8c8792;
+      font-size: 16px; }
+
+.bd .weui_cells {
+  margin-top: 0; }
+.bd .weui_cell_bd p {
+  font-size: 14px; }
+.bd .weui_cell_ft_no h3 {
+  text-align: right; }
+.bd .weui_cell_ft_no p {
+  text-align: right;
+  font-size: 14px; }
+.bd .weui_cell_ft_no .green {
+  color: #74c161; }
+
+/*# sourceMappingURL=point.css.map */

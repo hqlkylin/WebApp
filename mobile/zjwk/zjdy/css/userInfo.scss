@@ -1,0 +1,62 @@
+@import "func";
+
+.page {
+
+}
+
+.weui_cell_select {
+  padding: 10px 15px;
+}
+.weui_select{
+  padding-left:0px;
+  height: auto;
+}
+
+.mui-poppicker-header .mui-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.mui-btn {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.42;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  font-size: 16px;
+  padding: 8px;
+  margin: 3px;
+}
+
+
+.mui-poppicker-btn-cancel {
+  float: left;
+}
+
+.mui-poppicker-btn-ok {
+  float: right;
+}
+.mui-btn-blue{
+  color: #fff;
+  background-color: #007aff;
+  border: 1px solid #007aff;
+}
+
+
+
+
+
