@@ -1,0 +1,74 @@
+@import "func";
+
+.page {
+  padding-bottom: 80px;
+}
+
+.hd {
+  position: relative;
+  img {
+    max-width: 100%;
+  }
+  .help {
+    width: 100%;
+    color: #fdc23a;
+    text-align: right;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .ct {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    @include flexbox();
+    @include align-items();
+    @include justify-content();
+    @include flex-column();
+    p {
+      text-align: center;
+      color: #fdc23a;
+      font-size: 1.8rem;
+      font-family: "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif, "宋体";
+    }
+    img {
+      display: inline-block;
+      width: 26px;
+      vertical-align: sub;
+    }
+    span {
+      color: #8c8792;
+      font-size: 16px;
+    }
+  }
+
+}
+
+.bd {
+  .weui_cells {
+    margin-top: 0;
+  }
+  .weui_cell_bd {
+    p {
+      font-size: 14px;
+    }
+  }
+  .weui_cell_ft_no {
+
+    h3 {
+      text-align: right;
+    }
+    p {
+      text-align: right;
+      font-size: 14px;
+    }
+   .green{
+     color: #74c161;
+   }
+  }
+}
+
