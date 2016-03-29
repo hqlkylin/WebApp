@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page {
+  padding-bottom: 80px; }
+
+.bd {
+  margin-top: 10%; }
+  .bd .box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .bd .box img {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px; }
+    .bd .box div .name {
+      font-weight: 600;
+      line-height: 2.2; }
+    .bd .box div .info span {
+      font-size: 18px; }
+  .bd .code {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 10%; }
+    .bd .code img {
+      width: 100%; }
+  .bd .intr {
+    text-align: center;
+    margin-top: 20px; }
+
+/*# sourceMappingURL=recommend-member.css.map */

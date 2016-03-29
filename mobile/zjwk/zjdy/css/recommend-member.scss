@@ -1,0 +1,46 @@
+@import "func";
+
+.page {
+  padding-bottom: 80px;
+
+}
+
+.hd {
+
+}
+
+.bd {
+  margin-top: 10%;
+  .box {
+    @include flexbox();
+    @include justify-content();
+    img {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+    }
+    div {
+      .name {
+        font-weight: 600;
+        line-height: 2.2;
+      }
+      .info span {
+
+        font-size: 18px;
+      }
+    }
+  }
+
+  .code {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 10%;
+    img {
+      width: 100%;
+    }
+  }
+  .intr {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
