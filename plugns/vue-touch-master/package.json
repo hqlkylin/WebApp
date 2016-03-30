@@ -1,0 +1,26 @@
+{
+  "name": "vue-touch",
+  "version": "1.0.2",
+  "main": "vue-touch.js",
+  "files": [
+    "vue-touch.js"
+  ],
+  "description": "Hammer.js based touch events plugin for Vue.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vuejs/vue-touch.git"
+  },
+  "bugs": "https://github.com/vuejs/vue-touch/issues",
+  "dependencies": {
+    "hammerjs": "^2.0.6"
+  },
+  "devDependencies": {
+    "vue": "^1.0.16",
+    "webpack": "^1.12.12"
+  },
+  "scripts": {
+    "build": "webpack example/example.js example/example.build.js",
+    "dev": "webpack --watch example/example.js example/example.build.js"
+  }
+}

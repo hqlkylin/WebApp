@@ -53,7 +53,8 @@
 
                 </div>
 
-                <p class="tc m15" v-show="showPage1"><a href="javascript:;" @click="getData('level_1')">加载更多数据…</a></p>
+                <p class="tc m15" v-show="showPage1" v-tap="getData('level_1')"><a href="javascript:;">加载更多数据…</a>
+                </p>
             </div>
         </div>
         <div class="tab">
@@ -79,7 +80,8 @@
                     </div>
                 </div>
 
-                <p class="tc m15" v-show="showPage2"><a href="javascript:;" @click="getData('level_2')">加载更多数据…</a></p>
+                <p class="tc m15" v-show="showPage2" v-tap="getData('level_2')"><a href="javascript:;">加载更多数据…</a>
+                </p>
 
             </div>
         </div>
@@ -105,7 +107,8 @@
                         <div class="weui_cell_ft"></div>
                     </div>
                 </div>
-                <p class="tc m15" v-show="showPage3"><a href="javascript:;" @click="getData('level_3')">加载更多数据…</a></p>
+                <p class="tc m15" v-show="showPage3" v-tap="getData('level_3')"><a href="javascript:;">加载更多数据…</a>
+                </p>
             </div>
         </div>
     </div>
@@ -137,10 +140,8 @@
 </div>
 <script src="../zepto/zepto.js"></script>
 <script src="../vue/vue.js"></script>
+<script src="../vue/vue-tap-click.js"></script>
 
-
-<!--<script src="js/jquery.js"></script>-->
-<!--<script src="js/jquery.mobile.custom.min.js"></script>-->
 <script src="../public/js/plugins.js"></script>
 
 
