@@ -22,14 +22,14 @@
     <div class="hd">
         <p>我的人脉</p>
 
-        <p>{{jsonData.allCount}}人</p>
+        <p v-text="jsonData.allCount+'人'"></p>
     </div>
 
     <div class="bd">
 
         <div class="tab">
             <div class="tab-title">
-                <p>一级人脉 <span>(人脉数:{{jsonData.level_1.count}})</span></p>
+                <p>一级人脉 <span>(人脉数: <span v-text="jsonData.level_1.count"></span>)</span></p>
                 <i class="ion-chevron-right"></i>
             </div>
             <div class="tab-content" id="scroll_1">
@@ -40,10 +40,10 @@
                         <div class="weui_cell_hd">
                             <img v-bind:src="item.imgUrl" alt=""></div>
                         <div class="weui_cell_bd weui_cell_primary">
-                            <h5>{{item.name}}</h5>
+                            <h5 v-text="item.name"></h5>
 
                             <p>
-                                <span>{{item.levelName}}</span>
+                                <span v-text="item.levelName"></span>
                                 <span>人脉数:{{item.number}}</span>
                             </p>
 
@@ -53,12 +53,12 @@
 
                 </div>
 
-                <p class="tc m15"><a href="javascript:;"> 加载更多数据…</a></p>
+                <p class="tc m15" v-show="showPage1"><a href="javascript:;" @click="getData('level_1')">加载更多数据…</a></p>
             </div>
         </div>
         <div class="tab">
             <div class="tab-title">
-                <p>二级人脉 <span>(人脉数:{{jsonData.level_2.count}})</span></p>
+                <p>二级人脉 <span>(人脉数:<span v-text="jsonData.level_2.count"></span>)</span></p>
                 <i class="ion-chevron-right"></i>
             </div>
             <div class="tab-content" id="scroll_2">
@@ -78,12 +78,14 @@
                         <div class="weui_cell_ft"></div>
                     </div>
                 </div>
-                <p class="tc m15"><a href="javascript:;"> 加载更多数据…</a></p>
+
+                <p class="tc m15" v-show="showPage2"><a href="javascript:;" @click="getData('level_2')">加载更多数据…</a></p>
+
             </div>
         </div>
         <div class="tab">
             <div class="tab-title">
-                <p>三级人脉 <span>(人脉数:{{jsonData.level_3.count}})</span></p>
+                <p>三级人脉 <span>(人脉数:<span v-text="jsonData.level_3.count"></span>)</span></p>
                 <i class="ion-chevron-right"></i>
             </div>
             <div class="tab-content" id="scroll_3">
@@ -103,7 +105,7 @@
                         <div class="weui_cell_ft"></div>
                     </div>
                 </div>
-
+                <p class="tc m15" v-show="showPage3"><a href="javascript:;" @click="getData('level_3')">加载更多数据…</a></p>
             </div>
         </div>
     </div>
@@ -143,86 +145,6 @@
 
 
 <script src="../xscroll/src/xscroll.js"></script>
-<script>
-
-    var jsonData = {
-        allCount: 15,
-        level_1: {
-            count: 10,
-            list: [
-                {name: "俊哥", levelName: "铜牌会员", number: 2, imgUrl: "img/temp/ad1.gif"},
-                {name: "a哥", levelName: "金牌会员", number: 3, imgUrl: "img/temp/1.jpg"},
-                {name: "b哥", levelName: "铜牌会员", number: 4, imgUrl: "img/temp/2.jpg"},
-                {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
-                {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"}
-            ]
-        },
-        level_2: {
-            count: 30,
-            list: [
-                {name: "俊哥", levelName: "铜牌会员", number: 2, imgUrl: "img/temp/ad1.gif"},
-                {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"},
-                {name: "a哥", levelName: "金牌会员", number: 3, imgUrl: "img/temp/1.jpg"},
-                {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
-                {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"},
-                {name: "a哥", levelName: "金牌会员", number: 3, imgUrl: "img/temp/1.jpg"},
-                {name: "b哥", levelName: "铜牌会员", number: 4, imgUrl: "img/temp/2.jpg"}
-            ]
-        },
-        level_3: {
-            count: 40,
-            list: [
-                {name: "俊哥", levelName: "铜牌会员", number: 2, imgUrl: "img/temp/ad1.gif"},
-                {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"}
-
-            ]
-        }
-    };
-
-    var vm = new Vue({
-        el: ".page",
-        data: {
-            pageIndex1: 1,
-            pageIndex2: 1,
-            pageIndex3: 1,
-            jsonData: {
-                allCount: 0,
-                level_1: {},
-                level_2: {},
-                level_3: {},
-            }
-        },
-        created: function () {
-            var _this = this;
-            var showMsg = $.showMsg("加载数据中…");
-            $.ajax({
-                url: "index.html"
-            }).done(function () {
-                /*模拟取数据*/
-                setTimeout(function () {
-                    showMsg.hide();
-                    _this.jsonData = jsonData;
-                    $(".tab-title").eq(0).trigger("tap");
-                }, 2000)
-            })
-        },
-        methods: {},
-        /*计算属性*/
-        computed: {},
-        /*监听变量*/
-        watch: {}
-    });
-
-    $(".tab-title").on("tap", function () {
-        $(this).closest(".tab").addClass("active").siblings().removeClass("active");
-    })
-    $(".tab-content").height($(window).height() - 52 * 4);
-
-    new xScroll({el: "#scroll_1"});
-    new xScroll({el: "#scroll_2"});
-    new xScroll({el: "#scroll_3"});
-
-
-</script>
+<script src="js/view/contacts.js"></script>
 </body>
 </html>

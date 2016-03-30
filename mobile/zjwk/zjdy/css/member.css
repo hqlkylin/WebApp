@@ -15,7 +15,7 @@
       margin-right: 12px; }
       .hd .box .headImg img {
         width: 100%; }
-    .hd .box .info h3 {
+    .hd .box .info h3 a {
       color: #000; }
     .hd .box .info p {
       line-height: 1.8;
@@ -27,7 +27,8 @@
         font-size: 12px; }
       .hd .box .info .level img {
         width: 18px;
-        display: inline-block; }
+        display: inline-block;
+        vertical-align: middle; }
       .hd .box .info .level span {
         display: inline-block;
         margin: 0 4px; }

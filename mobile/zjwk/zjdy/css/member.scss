@@ -22,7 +22,10 @@
     }
     .info {
       h3 {
-        color: #000;
+        a {
+          color: #000;
+        }
+
       }
       p {
         line-height: 1.8;
@@ -37,6 +40,7 @@
         img {
           width: 18px;
           display: inline-block;
+          vertical-align: middle;
         }
         span {
           display: inline-block;
