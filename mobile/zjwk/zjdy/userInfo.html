@@ -12,16 +12,37 @@
     <link rel="stylesheet" href="../public/css/base.css">
     <link rel="stylesheet" href="../public/css/icons.css">
     <link rel="stylesheet" href="css/userInfo.css">
+    <link rel="stylesheet" href="../public/css/poptips.css">
     <script src="../mui/js/mui.js"></script>
     <script src="../mui/js/mui.picker.js"></script>
     <script src="../mui/js/mui.poppicker.js"></script>
     <script src="../mui/js/city.data.js"></script>
     <link rel="stylesheet" href="../mui/css/mui.picker.css">
     <link rel="stylesheet" href="../mui/css/mui.poppicker.css">
-    <script src="js/jquery.js"></script>
+    <script src="../zepto/zepto.js"></script>
+    <script src="../public/js/plugins.js"></script>
+    <script src="../vue/vue.js"></script>
+    <script src="../vue/vue-tap-click.js"></script>
+    <script>
+
+        var model = {
+
+            openId: "123",
+            userName: "刘德华",
+            occupation: "",
+            phoneNumber: "13800138000",
+            // birthday: "2016-04-03",
+            birthday: "",
+            area: "",
+            cender: "1"
+
+        }
+
+    </script>
 </head>
 <body class="global">
 <div class="page">
+
 
     <div class="bd">
         <div class="weui_cells_title p10">个人资料</div>
@@ -29,7 +50,8 @@
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>姓名 </label></div>
                 <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入姓名">
+                    <input class="weui_input" v-model="userName" type="text"
+                           placeholder="请输入姓名">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
@@ -38,17 +60,34 @@
             <div class="weui_cell">
                 <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>手机号码</label></div>
                 <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入手机号码">
+                    <input class="weui_input" type="number" v-model="phoneNumber"
+                           placeholder="请输入手机号码">
                 </div>
                 <div class="weui_cell_ft">
                     <i class="weui_icon_warn"></i>
                 </div>
             </div>
-            <div class="weui_cell weui_cell_select">
-                <div class="weui_cell_hd"><label for="" class="weui_label">生日 </label></div>
+            <div class="weui_cell weui_cell_select" href="javascript:;">
+                <div class="weui_cell_hd">
+                    <label for="" class="weui_label"><span class="red">*</span>性别 </label>
+                </div>
                 <div class="weui_cell_bd weui_cell_primary">
-                    <!--<input class="weui_input" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="请输入生日">-->
-                    <input class="weui_input" type="date">
+                    <select class="weui_select" name="" v-model="cender">
+
+                        <option value="">请选择</option>
+                        <option value="1">男</option>
+                        <option value="0">女</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label"><span class="red">*</span>生日 </label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+
+
+                    <input class="weui_input" v-model="birthday"
+                           type="date">
                 </div>
 
                 <div class="weui_cell_ft">
@@ -57,64 +96,46 @@
             </div>
             <div class="weui_cell weui_cell_select" href="javascript:;" id="showCityPicker">
                 <div class="weui_cell_hd">
-                    <label for="" class="weui_label">地区 </label>
+                    <label for="" class="weui_label"><span class="red">*</span>地区 </label>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <span id="cityResult" v-text="area | areaCity"></span>
+                    <input type="hidden" id="cityRusultValue" v-model="area">
+                </div>
+            </div>
 
-                </div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <span id="cityResult"></span>
-                </div>
-            </div>
-            <div class="weui_cell" href="javascript:;">
-                <div class="weui_cell_hd"><label for="" class="weui_label">邮箱 </label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="email" placeholder="请输入邮箱">
-                </div>
-                <div class="weui_cell_ft">
-                    <i class="weui_icon_warn"></i>
-                </div>
-            </div>
 
             <div class="weui_cell weui_cell_select">
                 <div class="weui_cell_hd">
                     <label for="" class="weui_label">职业 </label>
                 </div>
                 <div class="weui_cell_bd weui_cell_primary">
-                    <select class="weui_select" name="">
+                    <select class="weui_select" name="" v-model="occupation">
 
-                        <option value="0">请选择</option>
-                        <option value="1">中国</option>
-                        <option value="2">美国</option>
-                        <option value="3">英国</option>
-
+                        <option value="">请选择</option>
+                        <option value="1">农、林、牧、渔、水利业</option>
+                        <option value="2">工业</option>
+                        <option value="3">地质普查和勘探业</option>
+                        <option value="4">建筑业</option>
+                        <option value="5">交通运输业、邮电通信业</option>
+                        <option value="6">商业、公共饮食业、物资供应和仓储业</option>
+                        <option value="7">房地产管理、公用事业、居民服务和咨询服务业</option>
+                        <option value="8">卫生、体育和社会福利事业</option>
+                        <option value="9">教育、文化艺术和广播电视业</option>
+                        <option value="10">科学研究和综合技术服务业</option>
+                        <option value="11">金融、保险业</option>
+                        <option value="12">国家机关、党政机关和社会团体</option>
+                        <option value="13">其他行业</option>
+                        <option value="13">其他行业</option>
                     </select>
                 </div>
             </div>
-            <div class="weui_cell weui_cell_select">
-                <div class="weui_cell_hd">
-                    <label for="" class="weui_label">学历 </label>
-                </div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <select class="weui_select" name="" placeholder="请输入邮箱">
-                        <option value="0">请选择</option>
-                        <option value="1">中国</option>
-                        <option value="2">美国</option>
-                        <option value="3">英国</option>
-                    </select>
-                </div>
-            </div>
-            <div class="weui_cell">
-                <div class="weui_cell_hd"><label for="" class="weui_label">备注 </label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" value="weui input error" placeholder="请输入备注">
-                </div>
-                <div class="weui_cell_ft">
-                    <i class="weui_icon_warn"></i>
-                </div>
-            </div>
+
+
         </div>
 
         <div class="weui_btn_area">
-            <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">确定</a>
+            <a class="weui_btn weui_btn_primary" href="javascript:;" v-tap="save">确定</a>
         </div>
 
 
@@ -124,33 +145,6 @@
 </div>
 
 
-<script>
-    (function ($, doc) {
-
-
-        $.ready(function () {
-            //$.init();
-            //级联示例
-            var cityPicker = new $.PopPicker({
-                layer: 2
-            });
-            cityPicker.setData(cityData);
-            var showCityPickerButton = doc.getElementById('showCityPicker');
-            var cityResult = doc.getElementById('cityResult');
-            showCityPickerButton.addEventListener('tap', function (event) {
-                cityPicker.show(function (items) {
-                    cityResult.innerText = "" + items[0].text + " " + items[1].text;
-                    //返回 false 可以阻止选择框的关闭
-                    //return false;
-                });
-            }, false);
-            document.addEventListener('click', function (event) {
-                if (event.target.id != "showCityPicker") {
-                    cityPicker.hide();
-                }
-            }, false)
-        });
-    })(mui, document);
-</script>
+<script src="js/view/userInfo.js"></script>
 </body>
 </html>

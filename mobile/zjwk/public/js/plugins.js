@@ -208,8 +208,8 @@ $.dialog = function (options) {
 $.toast = function (msg, type) {
     var msg = msg || "";
     var type = type || "success";
-    if (jQuery(".toast-container")) {
-        jQuery(".toast-container").remove();
+    if ($(".toast-container")) {
+        $(".toast-container").remove();
     }
     var renderHtml = '<div class="toast-container toast-' + type + '"><p>' + msg + '</p></div>';
     var $toast = $(renderHtml).appendTo($("body"));
