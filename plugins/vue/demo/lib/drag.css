@@ -1,0 +1,95 @@
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 480px;
+}
+
+#sortable li {
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    width: 150px;
+    height: 130px;
+    text-align: center;
+    position: relative;
+}
+
+#sortable li img {
+    width: 100%;
+    height: 100%;
+}
+
+#sortable li p {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-state-default span {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    line-height: 30px;
+    z-index: 3;
+    display: none;
+    color: #fff;
+}
+
+.ui-state-default:hover span {
+    display: block;
+}
+
+.ui-state-disabled {
+    line-height: 130px;
+    font-size: 40px;
+}
+
+.layer_notice {
+    display: none;
+    padding: 10px;
+}
+
+ul {
+    padding: 0;
+    width: 120px;
+
+}
+
+li {
+    list-style: none;
+
+}
+
+.layui-form-checkbox {
+    cursor: pointer;
+}
+
+.layui-form-checkbox label {
+    width: auto;
+    background-color: #DFDFDF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.layui-form-checked label {
+    border: 1px solid #5FB878;
+    background-color: #5FB878;
+
+}
+
+.layui-form-checked .layui-form-sure {
+    border: 1px solid #5FB878;
+}
+

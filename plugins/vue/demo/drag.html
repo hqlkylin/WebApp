@@ -1,10 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>Sortable 拖动排序</title>
 </head>
-<body>
+<body class="page">
+
+<br>
+<ul id="sortable">
+
+    <li class="ui-state-default" v-for="item in items">
+        <img src="" alt="" v-bind:src="item.imgUrl">
+
+        <p v-text="item.title"></p>
+        <span @click="del(item)">x</span>
+    </li>
+
+    <li class="ui-state-default ui-state-disabled" @click="open">+</li>
+
+</ul>
+
+<div style="clear: both"><br></div>
+<button style="font-size: 36px">保存</button>
+<div class="layer_notice">
+
+
+    <fieldset>
+        <div class="layui-form-label layui-form-checkbox layui-form-checked">
+            <label>音乐</label>
+            <input type="checkbox" value="1">
+        </div>
+        <div class="layui-form-label layui-form-checkbox layui-form-checked">
+            <label>写作</label>
+            <input required="" type="checkbox" checked="" value="2">
+        </div>
+        <div class="layui-form-label layui-form-checkbox layui-form-checked">
+            <label>代码</label>
+            <input required="" type="checkbox" value="3">
+        </div>
+        <div class="layui-form-label layui-form-checkbox layui-form-checked">
+            <label>旅行</label>
+            <input required="" type="checkbox" value="4">
+        </div>
+        <div class="layui-form-label layui-form-checkbox layui-form-checked">
+            <label>美女</label>
+            <input required="" type="checkbox" value="5">
+        </div>
+        <br>
+        <button @click="add">确定</button>
+    </fieldset>
+
+
+</div>
+<link rel="stylesheet" href="lib/jquery-ui.min.css">
+<link rel="stylesheet" href="../../../plugins/layer-v2.2/layer/skin/layer.css">
+<link rel="stylesheet" href="lib/drag.css">
+<script src="../../../js/jquery.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script src="../vue-dev/dist/vue.js"></script>
+<script src="../../../plugins/layer-v2.2/layer/layer.js"></script>
+<script src="lib/drag.js"></script>
 
 </body>
 </html>
