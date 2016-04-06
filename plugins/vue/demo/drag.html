@@ -9,7 +9,7 @@
 <br>
 <ul id="sortable">
 
-    <li class="ui-state-default" v-for="item in items">
+    <li class="ui-state-default" v-for="item in items" track-by="$index" v-bind:id="$index">
         <img src="" alt="" v-bind:src="item.imgUrl">
 
         <p v-text="item.title"></p>
@@ -21,36 +21,19 @@
 </ul>
 
 <div style="clear: both"><br></div>
-<button style="font-size: 36px">保存</button>
+
+<pre style=" position: absolute; left: 500px;top:0px;font-size: 12px;"><h3>数据同步</h3>{{ items | json 2 }}</pre>
+
 <div class="layer_notice">
-
-
     <fieldset>
-        <div class="layui-form-label layui-form-checkbox layui-form-checked">
-            <label>音乐</label>
-            <input type="checkbox" value="1">
+
+        <div class="layui-form-label layui-form-checkbox layui-form-checked" v-for="item in pushData">
+            <label v-text="item.title"></label>
+            <input type="checkbox" class="ck" v-model="checkedNames" value="{{$index}}">
         </div>
-        <div class="layui-form-label layui-form-checkbox layui-form-checked">
-            <label>写作</label>
-            <input required="" type="checkbox" checked="" value="2">
-        </div>
-        <div class="layui-form-label layui-form-checkbox layui-form-checked">
-            <label>代码</label>
-            <input required="" type="checkbox" value="3">
-        </div>
-        <div class="layui-form-label layui-form-checkbox layui-form-checked">
-            <label>旅行</label>
-            <input required="" type="checkbox" value="4">
-        </div>
-        <div class="layui-form-label layui-form-checkbox layui-form-checked">
-            <label>美女</label>
-            <input required="" type="checkbox" value="5">
-        </div>
-        <br>
+
         <button @click="add">确定</button>
     </fieldset>
-
-
 </div>
 <link rel="stylesheet" href="lib/jquery-ui.min.css">
 <link rel="stylesheet" href="../../../plugins/layer-v2.2/layer/skin/layer.css">
