@@ -35,60 +35,91 @@
       font-size: 26px;
     }
   }
-}
-
-.ui-tab {
-  width: 100%;
-  overflow: hidden
-}
-
-.ui-tab-nav {
-  width: 100%;
-  background-color: #fff;
-  font-size: 16px;
-  height: 50px;
-  @include flexbox();
-  @include justify-content();
 
 }
 
-.ui-tab-nav li {
-  height: 50px;
-  line-height: 50px;
-  min-width: 60px;
-  text-align: center;
-  color: #777;
-  border-bottom: 2px solid transparent;
-  width: 20%;
-  margin: 0 10%;
-}
+.bd {
+  .navBox {
+    position: relative;
+    padding: 0 8px;
+    ul {
+      @include flexbox();
+      @include justify-content();
+      @include align-items();
+      position: relative;
+      &::after {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include transform(scaleY(0.5));
+      }
+      li {
+        @include flex(1);
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 10px 0px;
+        border-bottom: 2px solid transparent;
 
-.ui-tab-nav li.current {
-  color: #d00000;
-  border-bottom: 2px #d00000 solid
-}
+        color: #777;
+        font-size: 14px;
+        &.active {
+          color: #d00000;
+          border-bottom: 2px #d00000 solid
+        }
 
-.ui-tab-nav li:active {
-  opacity: .8
-}
+      }
 
-.ui-tab-content {
-  @include flexbox();
-  width: 200%;
-  @include transition(transform 1s);
-  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
-}
-
-.ui-tab-content > li {
-  @include flex(1);
-  width: 100%
+    }
+  }
+  .weui-infinite-scroll {
+    height: auto;
+  }
+  .content{
+    .tab {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
 }
 
 .weui_cells {
   margin-top: 2px;
-  .weui_cell_hd {
-    width: 40px;
+
+  .weui_cell:nth-child(1) .weui_cell_hd {
+    width: 20px;
+    height: 24px;
+    background: url("../img/top1.png") no-repeat;
+    background-size: 80%;
+    margin-right: 10px;
   }
+  .weui_cell:nth-child(2) .weui_cell_hd {
+    width: 20px;
+    height: 24px;
+    background: url("../img/top2.png") no-repeat;
+    background-size: 80%;
+    margin-right: 10px;
+  }
+  .weui_cell:nth-child(3) .weui_cell_hd {
+    width: 20px;
+    height: 24px;
+    background: url("../img/top3.png") no-repeat;
+    background-size: 80%;
+    margin-right: 10px;
+  }
+  .weui_cell_hd {
+    width: 20px;
+    height: 24px;
+    margin-right: 10px;
+    text-align: center;
+  }
+
   .weui_cell_bd {
     @include flexbox();
     @include align-items();

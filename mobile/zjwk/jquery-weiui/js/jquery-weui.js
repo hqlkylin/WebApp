@@ -1,10 +1,4 @@
-/** 
-* jQuery WeUI V0.6.0 
-* By 言川
-* http://lihongxun945.github.io/jquery-weui/
- */
-/* global $:true */
-/* global WebKitCSSMatrix:true */
+
 
 (function($) {
   "use strict";
@@ -731,7 +725,7 @@
     });
   }
 
-  $.toast = function(text, style) {
+  $.toast1 = function(text, style) {
     var className;
     if(style == "cancel") {
       className = "weui_toast_cancel";
@@ -759,7 +753,7 @@
     hide();
   }
 
-  var toastDefaults = $.toast.prototype.defaults = {
+  var toastDefaults = $.toast1.prototype.defaults = {
     duration: 2000
   }
 
@@ -947,6 +941,8 @@
   Infinite.prototype.scroll = function() {
     var container = this.container;
     var offset = container.scrollHeight() - ($(window).height() + container.scrollTop());
+    console.log("scrollHeight:"+container.scrollHeight());
+    console.log("scrollTop:"+container.scrollTop());
     if(offset <= this.distance) {
       container.trigger("infinite");
     }
@@ -954,6 +950,7 @@
 
   Infinite.prototype.attachEvents = function(off) {
     var el = this.container;
+
     var scrollContainer = (el[0].tagName.toUpperCase() === "BODY" ? $(document) : el);
     scrollContainer[off ? "off" : "on"]("scroll", $.proxy(this.scroll, this));
   };
