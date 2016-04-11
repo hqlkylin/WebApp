@@ -22,7 +22,7 @@
     });
   }
 
-  $.toast = function(text, style) {
+  $.toast1 = function(text, style) {
     var className;
     if(style == "cancel") {
       className = "weui_toast_cancel";
@@ -50,7 +50,7 @@
     hide();
   }
 
-  var toastDefaults = $.toast.prototype.defaults = {
+  var toastDefaults = $.toast1.prototype.defaults = {
     duration: 2000
   }
 
