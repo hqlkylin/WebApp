@@ -941,8 +941,6 @@
   Infinite.prototype.scroll = function() {
     var container = this.container;
     var offset = container.scrollHeight() - ($(window).height() + container.scrollTop());
-    console.log("scrollHeight:"+container.scrollHeight());
-    console.log("scrollTop:"+container.scrollTop());
     if(offset <= this.distance) {
       container.trigger("infinite");
     }

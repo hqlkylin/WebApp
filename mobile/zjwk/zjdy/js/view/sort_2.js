@@ -13,16 +13,9 @@ var jsonData = {
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
-            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"}
         ],
-        pageCount: 20
+        pageCount: 4
     },
     list2: {
         imgUrl: "img/temp/2.jpg",
@@ -117,7 +110,7 @@ var vm = new Vue({
             })
         },
         initData: function (type) {
-            
+
         }
     },
     computed: {}

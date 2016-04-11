@@ -84,6 +84,8 @@
   display: none; }
   .bd .content .tab.active {
     display: block; }
+  .bd .content .tab .text {
+    display: none; }
 
 .weui_cells {
   margin-top: 2px; }

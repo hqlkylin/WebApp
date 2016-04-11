@@ -79,11 +79,14 @@
   .weui-infinite-scroll {
     height: auto;
   }
-  .content{
+  .content {
     .tab {
       display: none;
       &.active {
         display: block;
+      }
+      .text {
+        display: none;
       }
     }
   }
