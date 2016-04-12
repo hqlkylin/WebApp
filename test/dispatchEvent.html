@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="list1" onclick="console.log(123);">
+        aaaa
+    </div>
+    <script>
+        var e = document.createEvent("MouseEvents");
+        e.initEvent("click", true, true);
+        document.querySelector(".list1").dispatchEvent(e);
+        
+    </script>
+</body>
+</html>
