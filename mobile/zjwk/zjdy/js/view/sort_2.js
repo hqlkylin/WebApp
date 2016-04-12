@@ -10,12 +10,19 @@ var jsonData = {
         top: "21",
         tag: "积分数",
         data: [
+
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
+            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
+            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
+            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
+            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"}
         ],
-        pageCount: 4
+        pageCount: 12
     },
     list2: {
         imgUrl: "img/temp/2.jpg",
@@ -28,9 +35,13 @@ var jsonData = {
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "66"}
         ],
-        pageCount: 5
+        pageCount: 15
     }
 }
 
@@ -56,13 +67,7 @@ var vm = new Vue({
         pageSize: 10
     },
     created: function () {
-
-        this.list1 = this.current = jsonData.list1;
-        this.list2 = jsonData.list2;
-
-        //$(".weui-infinite-scroll").hide();
-        //$(".text").hide();
-
+        this.tab("list1");
         $(document.body).infinite().on("infinite", function () {
             if (vm.loading) return;
             vm.loading = true;
@@ -74,35 +79,45 @@ var vm = new Vue({
             }
             $(".text").hide();
             $(".weui-infinite-scroll").show();
+
             setTimeout(function () {
-                vm.getData(vm.current.tag == "积分数" ? "list1" : "list2");
+                vm.getData(vm.dataListStatus);
             }, 1500)
 
         });
 
     },
     methods: {
-        tab: function (tag, event) {
-            $(event.target).addClass("active").siblings().removeClass("active");
-            var index = $(".navBox li").index(event.target);
-            $(".content .tab").eq(index).addClass("active").siblings().removeClass("active");
-            this.current = vm.$data[tag];
-
-            if (vm.current.data.length >= vm.current.pageCount) {
-                $(".weui-infinite-scroll").hide();
-                $(".text").show();
+        tab: function (tag) {
+            if (this.loading) return;
+            var $dom = $("." + tag);
+            $(".text").hide();
+            $(".weui-infinite-scroll").show();
+            var flag = $dom.data("initData");
+            if (flag == undefined) {
+                $dom.data("initData", "true");
+                this.initData(tag);
+            } else {
+                this.current = this[tag];
+                if (this.current.data.length >= this.current.pageCount) {
+                    $(".weui-infinite-scroll").hide();
+                    $(".text").show();
+                }
             }
+            $dom.addClass("active").siblings().removeClass("active");
+            var index = $(".navBox li").index($dom);
+
         },
         getData: function (type) {
             $.ajax({
                 url: '',
                 data: {
                     type: type,
-                    startCount: vm.startCount,
+                    startCount: vm.current.data.length,
                     pageSize: vm.pageSize
                 }
             }).done(function () {
-                vm.$data[type].data.push(
+                vm[type].data.push(
                     {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
                     {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"}
                 )
@@ -110,8 +125,30 @@ var vm = new Vue({
             })
         },
         initData: function (type) {
+            var _this = this;
+            var tip = $.showMsg();
+            $.ajax({
+                url: '',
+                data: {
+                    type: type,
+                    pageSize:_this.pageSize
+                }
+            }).done(function (Data) {
+                _this[type] = _this.current = jsonData[type];
+                _this.loading = false;
+                _this.current = _this[type];
+                if (_this.current.data.length >= _this.current.pageCount) {
+                    $(".weui-infinite-scroll").hide();
+                    $(".text").show();
+                }
+                tip.hide();
+            })
 
         }
     },
-    computed: {}
+    computed: {
+        dataListStatus: function () {
+            return this.current.tag == "积分数" ? "list1" : "list2"
+        }
+    }
 })

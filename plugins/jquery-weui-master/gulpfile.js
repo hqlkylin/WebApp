@@ -61,6 +61,14 @@ gulp.task('less', function () {
   .pipe(gulp.dest('./dist/css/'));
 });
 
+gulp.task('less-infinite', function () {
+  return gulp.src(['./src/less/infinite.less'])
+      .pipe(less())
+      .pipe(autoprefixer())
+      .pipe(header(banner))
+      .pipe(gulp.dest('./dist/css/'));
+});
+
 gulp.task('ejs', function () {
   return gulp.src(["./demos/*.html", "!./demos/_*.html"])
     .pipe(ejs({}))
