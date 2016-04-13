@@ -22,7 +22,7 @@ var jsonData = {
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"}
         ],
-        pageCount: 12
+        pageCount: 20
     },
     list2: {
         imgUrl: "img/temp/2.jpg",
@@ -33,15 +33,11 @@ var jsonData = {
         data: [
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
             {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
-            {imgUrl: "img/temp/1.jpg", name: "haha", number: "66"},
+            {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
+            {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"},
             {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "66"}
         ],
-        pageCount: 15
+        pageCount: 3
     }
 }
 
@@ -67,7 +63,6 @@ var vm = new Vue({
         pageSize: 10
     },
     created: function () {
-        this.tab("list1");
         $(document.body).infinite().on("infinite", function () {
             if (vm.loading) return;
             vm.loading = true;
@@ -90,6 +85,7 @@ var vm = new Vue({
     methods: {
         tab: function (tag) {
             if (this.loading) return;
+            this.loading = true;
             var $dom = $("." + tag);
             $(".text").hide();
             $(".weui-infinite-scroll").show();
@@ -98,11 +94,12 @@ var vm = new Vue({
                 $dom.data("initData", "true");
                 this.initData(tag);
             } else {
-                this.current = this[tag];
+                this.$set("current", this[tag]);
                 if (this.current.data.length >= this.current.pageCount) {
                     $(".weui-infinite-scroll").hide();
                     $(".text").show();
                 }
+                this.loading = false;
             }
             $dom.addClass("active").siblings().removeClass("active");
             var index = $(".navBox li").index($dom);
@@ -117,10 +114,15 @@ var vm = new Vue({
                     pageSize: vm.pageSize
                 }
             }).done(function () {
-                vm[type].data.push(
+               vm[type].data.push(
                     {imgUrl: "img/temp/1.jpg", name: "haha", number: "23"},
                     {imgUrl: "img/temp/ad1.gif", name: "hehe", number: "21"}
                 )
+                vm.current = vm[type];
+                if (vm.current.data.length >= vm.current.pageCount) {
+                    $(".weui-infinite-scroll").hide();
+                    $(".text").show();
+                }
                 vm.loading = false;
             })
         },
@@ -131,12 +133,11 @@ var vm = new Vue({
                 url: '',
                 data: {
                     type: type,
-                    pageSize:_this.pageSize
+                    pageSize: _this.pageSize
                 }
             }).done(function (Data) {
                 _this[type] = _this.current = jsonData[type];
                 _this.loading = false;
-                _this.current = _this[type];
                 if (_this.current.data.length >= _this.current.pageCount) {
                     $(".weui-infinite-scroll").hide();
                     $(".text").show();
@@ -152,3 +153,4 @@ var vm = new Vue({
         }
     }
 })
+vm.tab("list1");

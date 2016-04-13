@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
-    <title>订单中心</title>
+    <title>代言人排行</title>
     <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
     <link rel="stylesheet" href="../public/css/base.css">
 
@@ -19,7 +19,6 @@
 <body class="global">
 
 <div class="page">
-
     <div class="hd">
 
         <div class="boxImg">
@@ -37,8 +36,8 @@
     <div class="bd">
         <div class="navBox">
             <ul>
-                <li class="active list1" v-tap="tab('list1')">积分数</li>
-                <li class="list2" v-tap="tab('list2')">关注数</li>
+                <li class="active list1" @click="tab('list1')">积分数</li>
+                <li class="list2" @click="tab('list2')">关注数</li>
             </ul>
         </div>
         <div class="content">
@@ -100,7 +99,7 @@
 
 <script src="../vue/vue.js"></script>
 <script src="../vue/vue-tap-click.js"></script>
-<script src="js/view/sort_2.js"></script>
+<script src="js/view/sort_2.js?v=1"></script>
 
 
 </body>
