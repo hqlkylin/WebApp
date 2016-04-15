@@ -157,7 +157,7 @@ $.dialog = function (options) {
         },
         _bindEvent: function () {
             var self = this;
-            self.button.on("tap", function () {
+            self.button.on("touchend", function () {
                 var index = $(self.button).index($(this));
                 // self.option.callback("button",index);
                 var e = $.Event("dialog:action");
@@ -167,12 +167,12 @@ $.dialog = function (options) {
                 return false;
             });
             if (self.opt.showClose) {
-                this.element.find("i.close").on("tap", function () {
+                this.element.find("i.close").on("click", function () {
                     self.hide();
                 });
             }
             if(self.opt.tapMaskClose){
-                this.element.find(".weui_mask").on("tap", function () {
+                this.element.find(".weui_mask").on("click", function () {
                     self.hide();
                 });
             }

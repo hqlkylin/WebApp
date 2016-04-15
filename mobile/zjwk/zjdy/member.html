@@ -74,7 +74,7 @@
                     代言人脉
                 </p>
             </a>
-            <a href="javascript:;" class="weui_grid js_grid">
+            <a href="javascript:;" class="weui_grid js_grid js_dyhb">
                 <div class="weui_grid_icon">
                     <img src="img/micon5.png" alt="">
                 </div>
@@ -82,7 +82,7 @@
                     代言海报
                 </p>
             </a>
-            <a href="javascript:;" class="weui_grid js_grid">
+            <a href="http://www.baidu.com" class="weui_grid js_grid">
                 <div class="weui_grid_icon">
                     <img src="img/micon6.png" alt="">
                 </div>
@@ -90,7 +90,7 @@
                     代言排行榜
                 </p>
             </a>
-            <a href="javascript:;" class="weui_grid js_grid">
+            <a href="http://www.baidu.com" class="weui_grid js_grid">
                 <div class="weui_grid_icon">
                     <img src="img/micon7.png" alt="">
                 </div>
@@ -98,7 +98,7 @@
                     我的钱包
                 </p>
             </a>
-            <a href="javascript:;" class="weui_grid js_grid">
+            <a href="http://www.baidu.com" class="weui_grid js_grid">
                 <div class="weui_grid_icon">
                     <img src="img/micon8.png" alt="">
                 </div>
@@ -106,7 +106,7 @@
                     幸运大转盘
                 </p>
             </a>
-            <a href="javascript:;" class="weui_grid js_grid">
+            <a href="http://www.baidu.com" class="weui_grid js_grid">
                 <div class="weui_grid_icon">
                     <img src="img/micon9.png" alt="">
                 </div>
@@ -230,16 +230,44 @@
         <p class="weui_toast_content">数据加载中</p>
     </div>
 </div>
-<script src="js/jquery.js"></script>
-
+<!--<script src="js/jquery.js"></script>-->
+<script src="../zepto/zepto.js"></script>
 <script src="../public/js/plugins.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script>
+<!--<script src="js/jquery.mobile.custom.min.js"></script>-->
 
 <script>
-    $(function () {
+    $(document).ready(function () {
+        //代言海报
+        $(".js_dyhb").click(function () {
+            var msg = $.showMsg("正在获取海报中…");
+            $.ajax({
+                url: '',
+                type: 'post',
+                dataType: 'text',
+                data: {},
+                success: function (data) {
+                    msg.hide();
+                    console.log(data);
 
 
-    })
+                        $.dialog({
+                            title: '',
+                            content: '获取海报成功',
+                            button: ["确认"]
+                        });
+
+
+
+                },
+                error: function () {
+                    msg.hide();
+                    $.toast("获取海报失败", "error");
+                }
+            });
+        });
+
+
+    });
 </script>
 </body>
 </html>
