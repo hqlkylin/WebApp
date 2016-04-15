@@ -234,7 +234,9 @@
 <script src="../zepto/zepto.js"></script>
 <script src="../public/js/plugins.js"></script>
 <!--<script src="js/jquery.mobile.custom.min.js"></script>-->
-
+<script src="../jquery-weiui/js/jquery-extend.js"></script>
+<script src="../jquery-weiui/js/modal.js"></script>
+<link rel="stylesheet" href="../jquery-weiui/css/jquery-weui.css">
 <script>
     $(document).ready(function () {
         //代言海报
@@ -247,17 +249,16 @@
                 data: {},
                 success: function (data) {
                     msg.hide();
-                    console.log(data);
-
-
-                        $.dialog({
-                            title: '',
-                            content: '获取海报成功',
-                            button: ["确认"]
-                        });
-
-
-
+                    /* var dial = $.dialog({
+                     title: '',
+                     content: '获取海报成功',
+                     button: ["确认"]
+                     });*/
+                    $.modal({
+                        title: '',
+                        text: "获取海报成功",
+                        buttons: [{text: "确认"}]
+                    })
                 },
                 error: function () {
                     msg.hide();
