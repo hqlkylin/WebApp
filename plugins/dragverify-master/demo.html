@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动解锁</title>
+    <link rel="stylesheet" type="text/css" href="css/dragverify.css"/>
+
+    <meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, commodi dignissimos dolore earum esse excepturi
+    illum iure minus quam quibusdam suscipit velit. Error eum, facere modi quasi quidem sapiente unde.
+</div>
+<br>
+
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur earum et fuga maxime odit quisquam
+    totam velit! Deserunt, libero!
+</div>
+<br><br>
+
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores deserunt distinctio dolorum eos iste libero
+    magni molestiae nostrum omnis, perspiciatis provident sed sunt unde voluptatum? Animi autem commodi, delectus
+    expedita explicabo itaque iusto magni nisi pariatur quae quaerat quidem quisquam, quod quos sunt. Ad, aliquid amet
+    corporis cumque dolor, illo ipsum molestiae mollitia nostrum officia reiciendis sint tempore voluptatum! Aliquam aut
+    dolore dolores eum libero nemo numquam obcaecati perferendis repellendus, repudiandae! Amet assumenda, commodi
+    consectetur cum dolorum enim eos fuga harum maxime, modi nobis non obcaecati officiis quas quibusdam repellendus,
+    vero! Animi delectus dolorum error nam, pariatur praesentium provident?
+</div>
+
+<strong>【注意事项】</strong>
+
+<div>
+    一、使用时，请把文件夹layer整个放置在您站点的任何一个目录，只需引入layer.js即可，除jQuery外，其它文件无需再引入。
+    二、如果您的js引入是通过合并处理或者您不想采用layer自动获取的绝对路径，您可以通过layer.config()来配置（详见官网API页）
+    三、jquery需1.8+
+    四、更多使用说明与演示，请参见layer官网。
+    五、使用时请务必保留来源，请勿用于违反我国法律的web平台。
+    六、layer遵循LGPL协议，将永久性提供无偿服务。版权最终解释权：贤心。
+
+</div>
+
+<div id="dragverify"></div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="../layer-v2.2/layer/skin/layer.css">
+
+<script type="text/javascript" src="../layer-v2.2/layer/layer.js"></script>
+
+<script>
+    //页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
+    layer.ready(function () {
+
+        //官网欢迎页
+        layer.open({
+            type: 1,
+            title: 'layer弹层组件',
+            fix: false,
+            shadeClose: true,
+            area: ['80%', 'auto'],
+            content: $('#dragverify'),
+            closeBtn: false
+        });
+
+    });
+</script>
+<script type="text/javascript" src="js/dragverify.js"></script>
+</body>
+</html>
