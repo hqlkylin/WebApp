@@ -23,7 +23,7 @@
     <div class="hd">
         <img src="img/bd.png" alt="">
         <a href="orderAnalysis.html">
-            <h1 class="page_title">&yen; 69.820.00
+            <h1 class="page_title">&yen; {{total}}
                 <p>订单金额</p>
             </h1>
         </a>
@@ -31,16 +31,16 @@
         <div class="ct">
 
             <p>
-                <a href="concernAnalysis.html"><span>1400</span>新增关注</a>
+                <a href="concernAnalysis.html"><span v-text="t1"></span>新增关注</a>
             </p>
 
             <i>|</i>
 
-            <p> <a href="indexAnalysis.html"><span>90</span>新增代言</a></p>
+            <p><a href="indexAnalysis.html"><span v-text="t2"></span>新增代言</a></p>
 
             <i>|</i>
 
-            <p><a href="readingAnalysis.html"><span>30258</span>新增UV</a></p>
+            <p><a href="readingAnalysis.html"><span v-text="t3"></span>新增UV</a></p>
 
         </div>
     </div>
@@ -56,6 +56,52 @@
         <div class="tabBd">
             <div class="list">
                 <div class="weui_cells weui_cells_access">
+
+                    <a class="weui_cell p15" href="member.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon7.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>九宫格布局（<span class="red">Demo</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                    <a class="weui_cell p15" href="contacts.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon5.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>vue+scroll渲染数据（<span class="red">Demo</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                    <a class="weui_cell p15" href="../../zjwk/zjhy/game.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/micon8.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>H5+canvas转盘游戏（<span class="red">Demo</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                    <a class="weui_cell p15" href="sort_2.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon4.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>vue+滚动加载（<span class="red">Demo</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                    <a class="weui_cell p15" href="concernAnalysis.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon3.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>手机报表(echarts)（<span class="red">Demo</span>）</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
                     <a class="weui_cell p15" href="moneyList.html">
                         <div class="weui_cell_hd"><img
                                 src="img/icon1.png"
@@ -65,6 +111,7 @@
                         </div>
                         <div class="weui_cell_ft"></div>
                     </a>
+
                     <a class="weui_cell p15" href="myAccount.html" id="dialog1">
                         <div class="weui_cell_hd"><img
                                 src="img/icon2.png"
@@ -73,6 +120,24 @@
                             <p>账户余额</p>
                         </div>
                         <div class="weui_cell_ft_no">&yen;5687.00</div>
+                    </a>
+                    <a class="weui_cell p15" href="users.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon6.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>个人中心</p>
+                        </div>
+                        <div class="weui_cell_ft_no">去完善</div>
+                    </a>
+                    <a class="weui_cell p15" href="userInfo.html">
+                        <div class="weui_cell_hd"><img
+                                src="img/icon8.png"
+                                alt="" style="width:20px;margin-right:5px;display:block"></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>注册页面+验证+二级联动</p>
+                        </div>
+                        <div class="weui_cell_ft_no">去注册</div>
                     </a>
                 </div>
             </div>
@@ -109,7 +174,7 @@
 <!--end toast-->
 
 <!-- loading toast -->
-<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+<div id="loadingToast" class="weui_loading_toast" style="display:block;">
     <div class="weui_mask_transparent"></div>
     <div class="weui_toast">
         <div class="weui_loading">
@@ -133,11 +198,21 @@
 <script src="../zepto/zepto.js"></script>
 <script src="../public/js/plugins.js"></script>
 <script src="../jquery-weiui/js/jquery-weui.js"></script>
-
+<script src="../vue/vue.js"></script>
 
 <script>
     $(function () {
 
+        var vm = new Vue({
+            el: ".page",
+            data: {
+                total: 68041.32,
+                t1: 1202,
+                t2: 830,
+                t3: 22312
+            }
+        })
+        $.wx_showTipData();
         $(".tabMenu p").on("tap", function () {
 
             $.wx_showTipData();
@@ -146,9 +221,12 @@
             var index = $(this).index();
 
             $(".menuLine").css("left", movePosX * index);
-            //$(".menuLine").animate({"left": movePosX * index},"liner", function () {
 
-            // });
+            vm.total = Math.round(Math.random() * 1000000) + 1;
+            vm.t1 = Math.round(Math.random() * 20000) + 1;
+            vm.t2 = Math.round(Math.random() * 30000) + 1;
+            vm.t3 = Math.round(Math.random() * 10000) + 1;
+
             $.ajaxJson("#", "data", function () {
                 setTimeout(function () {
                     $.wx_hideTipData();

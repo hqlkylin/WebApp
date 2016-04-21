@@ -3,6 +3,10 @@
 
 }
 
+//html, body {
+//  height: 100%;
+//}
+
 .hd {
   position: relative;
   img {
@@ -123,7 +127,7 @@
       text-align: center;
       height: 30px;
       transition: left .2s;
-      -webkit-transition:left .2s;
+      -webkit-transition: left .2s;
       &::after {
         display: inline-block;
         height: 93%;
