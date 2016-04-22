@@ -23,8 +23,8 @@
 
         this.setting = {
             liAutoPlay: false,  //周围的灯是否自动旋转
-            roLiSpeed: 100,     //灯旋转的速度ms
-            roPrSpeed: 200,     //奖品旋转速度ms
+            roLiSpeed: 80,     //灯旋转的速度ms
+            roPrSpeed: 69,     //奖品旋转速度ms
             liDirection: true,  //旋转方向 true  正方向   false  反方向
             randomPrize: false  //空格是否随机选取
         };
