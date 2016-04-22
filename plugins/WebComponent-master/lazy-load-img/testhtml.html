@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>图片懒加载</title>
+    <link rel="stylesheet" href="css/lazy.css">
+</head>
+
+<body>
+    <div lazy-setting='{
+        "mobileHeight":0,
+        "loadNum":1
+    }'>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div node-type="imglazy">
+            <div class="double-content clearfix">
+                <div class="content-left ">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg1.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="content-right">
+                    <a href="" class="href-block">
+                        <div class="img-tip-txt">商品名称描述</div>
+                        <img src="#" data-lazysrc="img/pc_ebg2.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/zepto.js"></script>
+    <script src="js/loadLazyImg.js"></script>
+    <script>
+        $(function() {
+            window.LoadImgLazy.init($('[node-type=imglazy]'));
+        })
+    </script>
+
+</body>
+
+</html>
