@@ -102,12 +102,18 @@ var vm = new Vue({
             }).done(function () {
                 /*模拟取数据*/
                 setTimeout(function () {
-                    _this.jsonData[type].list.push(
-                        {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
+                     _this.jsonData[type].list.push(
+                     {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
+                     {name: "a哥", levelName: "金牌会员", number: 3, imgUrl: "img/temp/1.jpg"},
+                     {name: "b哥", levelName: "铜牌会员", number: 4, imgUrl: "img/temp/2.jpg"},
+                     {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
+                     {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"});
+                    /*var json = [{name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
                         {name: "a哥", levelName: "金牌会员", number: 3, imgUrl: "img/temp/1.jpg"},
                         {name: "b哥", levelName: "铜牌会员", number: 4, imgUrl: "img/temp/2.jpg"},
                         {name: "c哥", levelName: "银牌会员", number: 5, imgUrl: "img/temp/users.png"},
-                        {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"});
+                        {name: "e哥", levelName: "银牌会员", number: 6, imgUrl: "img/temp/ad1.gif"}];
+                    Array.prototype.push.apply(_this.jsonData[type].list, json);*/
                     showMsg.hide();
                 }, 1000)
             });
