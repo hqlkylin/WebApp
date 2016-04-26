@@ -27,11 +27,11 @@
     <div class="bd">
         <div class="navBox">
             <ul>
-                <li class="active">全部</li>
-                <li class="">待付款</li>
-                <li class="">待发货</li>
-                <li class="">待收货</li>
-                <li class="">已完成</li>
+                <li  @click="tab(0)">全部</li>
+                <li  @click="tab(1)">待付款</li>
+                <li  @click="tab(2)">待发货</li>
+                <li  @click="tab(3)">待收货</li>
+                <li  @click="tab(4)">已完成</li>
             </ul>
         </div>
         <div class="content">

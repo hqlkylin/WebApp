@@ -91,6 +91,18 @@ $.popTips = function (options) {
 };
 
 /*******************************************************************************************************
+ *  调用方法 : $.getUrlParam(name)    获取url参数
+ *  alert(window.location.href);
+ *  alert($.getUrlParam('page'));
+ ********************************************************************************************************/
+$.getUrlParam = function (name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+
+/*******************************************************************************************************
  *  调用方法 : $.dialog(options)    弹出框
  ********************************************************************************************************/
 /*
@@ -171,7 +183,7 @@ $.dialog = function (options) {
                     self.hide();
                 });
             }
-            if(self.opt.tapMaskClose){
+            if (self.opt.tapMaskClose) {
                 this.element.find(".weui_mask").on("click", function () {
                     self.hide();
                 });
