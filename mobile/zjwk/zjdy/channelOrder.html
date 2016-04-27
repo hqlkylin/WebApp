@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--测试阶段 清除微信缓存 每次都拉取新代码-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>订单列表</title>
+    <link rel="stylesheet" href="../weiUI/dist/style/weui.css"/>
+    <link rel="stylesheet" href="../public/css/base.css">
+
+    <link rel="stylesheet" href="../public/css/icons.css">
+    <link rel="stylesheet" href="../public/css/poptips.css">
+    <link rel="stylesheet" href="css/channelOrder.css">
+    <link rel="stylesheet" href="../jquery-weiui/css/jquery-weui.css"/>
+
+    <script>
+        var userId = "kylin";
+    </script>
+</head>
+<body class="global">
+
+<div class="page">
+
+    <div class="bd">
+        <div class="content">
+            <div class="noData"  v-bind:class="[showData ? '' : 'active']">
+                <h5>没有相关纪录!</h5>
+            </div>
+            <div class="tab" v-bind:class="[showData ? 'active' : '']">
+
+                <div class="weui_cells" track-by="$index" v-for="item in items">
+                    <div class="weui_cell f14">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>订单号: <span v-text="item.orderNumber"></span></p>
+                        </div>
+                        <div class="weui_cell_ft"><p v-text="item.tranTimeFormat"></p></div>
+
+                    </div>
+                    <div class="weui_cell" v-for="model in item.orderItem">
+                        <div class="weui_cell_hd">
+                            <img v-bind:src="model.image" alt="">
+                        </div>
+
+                        <div class="weui_cell_primary">
+                            <div class="box">
+                                <h5 v-text="model.productName"></h5>
+
+                                <p class="tr"></p>
+                            </div>
+                            <div class="box">
+                                <p class="pr15" v-text="'单价: &yen; '+model.price+'/件 '"></p>
+
+                                <p class="tr" v-text="'数量 : '+model.qty"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="weui-infinite-scroll">
+                    <div class="infinite-preloader"></div>
+                    <div>正在加载</div>
+                </div>
+                <div class="text tc p10">没有数据了!</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- loading toast -->
+<div id="loadingToast" class="weui_loading_toast" style="display:block;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<script src="../zepto/zepto.js"></script>
+<script src="../zepto/zepto-extend.js"></script>
+<script src="../public/js/plugins.js"></script>
+<script src="../jquery-weiui/js/jquery-extend.js"></script>
+<script src="../jquery-weiui/js/infinite.js"></script>
+
+<script src="../vue/vue.js"></script>
+<script src="../vue/vue-tap-click.js"></script>
+<script src="js/view/channelOrder.js"></script>
+
+
+</body>
+</html>
+
