@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": ";AAuGA,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;AC9HR,KAAM;EACJ,cAAc,EAAE,IAAI",
-"sources": ["func.scss","account.scss"],
-"names": [],
-"file": "account.css"
-}
+{"version":3,"sources":["account.css","func.scss","account.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACuGjB,oBAAoB;AAgBpB,oBAAoB;AASpB,QAAQ;AC9HR;IACE,qBAAoB;CFGrB;;AAID;AACA;IACI,mBAAmB;CACtB;CACA","file":"account.css"}

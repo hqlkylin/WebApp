@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script>
-
-        var image = document.querySelector("img");                 //获取到验证码图片
-        var canvas = document.createElement('canvas');                        //新建一个canvas
-        var ctx = canvas.getContext("2d");                                    //获取2D上下文
-        var numbers = [];                                                     //存储数字模板的数组
-        canvas.width = image.width;                                           //设置canvas的宽度
-        canvas.height = image.height;                                         //设置canvas的高度
-        document.body.appendChild(canvas);                                    //将canvas添加进文档
-        ctx.drawImage(image, 0, 0);                                           //将验证码绘制到canvas上
-        for (var i = 0; i < 4; i++) {
-
-            var pixels = ctx.getImageData(15 * i + 3, 2, 10, 18).data;
-
-
-            //按照公式获取到每个数字上的像素点
-            var ldString = "";                                                //用来存储明暗值的字符串
-            for (var j = 0, length = pixels.length; j < length; j += 4) {                 //每次循环取四个值,分别是一个像素点的r,g,b,a值
-                ldString = ldString + (+(pixels[j] * 0.3 + pixels[j + 1] * 0.59 + pixels[j + 2] * 0.11 >= 128));     //灰度化+二值化,但我们并没有真正的处理图像
-            }
-            console.log(ldString);                 //输出存储着明暗值的字符串
-        }
-
-
-        var numbers = [ //模板,依次是0-9十个数字对应的明暗值字符串
-            "111111111111111111111111000011011000000111000110001000111000100011100000011110000001111000000111100000011110000001110001000111000110000000111100001111111101111111111111111111011111",
-            "111111111111111110111111100011100000001101000000111111100011111100011011100001111111000111111100011110110001111111000111111000111100000000010000000001111111111111111111111101111111",
-            "111111111111111111111100000011100000000110111100001111111000111111000101110100011101100011111100111111000011111001111111000111111100000000110000000010111111111111011111111111111111",
-            "111111111011111111111110000011110000000111011110001110011000111111000111000000111100000111111110001101111100001111000001010110001100000000111000001111111111111111110101111110111111",
-            "111111111111101110111111111000111111000011110000000111001000111001000111001100011001110001001111000100000000000000000000111110001111111000111111000011111111111111111111111111111111",
-            "111111111110111111111100000000100000000011001111111100101101100000011010000000111111100001111011000111111100011011100001011110001100000001111000001111111111111011111110111111111111",
-            "110111111111111111111111000001111000000011000011101000111110100011101100011000110000000001000001000000011110000000111000000111000110000000111100000111111111111111111111111110111111",
-            "111111111111111111111000000000110000000011111111001111111100111111100110111100111111100111111100001111110011111110011111110001111111001111011000111111111111111111111111011111111111",
-            "110111111111011011110011000001111000000100000110001100011000110001000111000000111100000011100010000100011100000001111000000111000100000000111000000111111111111111111111111111111111",
-            "111111111111111101111111000011110000000010001110001000111100000011100010001110001000000000110000100011111100001111110001011110001100000001111000001111110111111111111111111111111011"
-        ];
-
-    </script>
-
-
-    <!--http://www.jimei.cn/safecode-->
-    <script>
-        var iframe = document.createElement('iframe');
+ var iframe = document.createElement('iframe');
         iframe.src="about:blank";
         iframe.width="1000px";
         iframe.height="500px";
@@ -141,74 +94,8 @@
                 }
                 console.log(captcha);
 
-                var url = "http://www.jimei.cn/front/order/vouchersaveorder.html?pid=090e0ed9e0b84122b23447eb4974e338&activityProductId=eb1002c2c78344599d2001c18630707f&code=" + captcha;
+                var url = "http://www.jimei.cn/front/order/vouchersaveorder.html?pid=090e0ed9e0b84122b23447eb4974e338&activityProductId=db7d979807ae495da6b62d902d38a6f6&code=" + captcha;
                 //console.log("http://www.jimei.cn/front/order/saveorder.html?pid=d5da89b541384243a2f2c0650fe09ad6&activityProductId=e6e8525c754c4b90a023f497ddb1913e&code=0869");
                 iframe.src=url;
             }
         }, 10);
-    </script>
-
-</head>
-<body>
-
-</body>
-</html>
-
-
-<div class="dialog">
-    <div class="box">
-        <input type="text" class="yzm" id="safecode" placeholder="图片验证码">
-
-        <p class="yzm-pic"><img src="/safecode"></p>
-
-        <div class="clear"></div>
-        <input type="button" value="确定" class="pop-btn sure" onclick="codeQianggou()">
-        <input type="button" value="取消" class="pop-btn cancel" onclick="closeCode()">
-    </div>
-</div>
-
-<script>
-
-    //验证码提交订单清沟
-    function codeQianggou() {
-        var code = $("#safecode").val();
-        if (code == null || code == "") {
-            alert("验证码不能为空！");
-            return;
-        }
-        $.ajax({
-            url: "/asyscode.html",
-            data: "data=" + new Date() + "&code=" + code,
-            type: "get",
-            dataType: "json",
-            success: function (data) {
-                if (data.falg == "1") {
-                    alert("请输入正确的验证码！");
-                    return;
-                } else {
-                    $("#code").val(code);
-                    //提交表单
-                    $('#form').submit();
-                    //隐藏验证码弹框
-                    $(".validate").hide();
-                    //提交特效显示
-                    var progress = function ($el) {
-                        var liItem = $el.find("ul li");
-                        var len = liItem.size();
-                        var index = 0;
-                        var timer = setInterval(function () {
-                            if (index % len == 0) {
-                                liItem.removeClass("active");
-                            }
-                            liItem.eq(index).addClass("active");
-                            index++;
-                            index = index % len;
-                        }, 500);
-                    };
-                    $(".schedule").show();
-                    progress($(".schedule"));
-                }
-            }
-        });
-    }
-</script>
