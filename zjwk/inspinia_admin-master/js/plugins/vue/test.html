@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-dev/dist/vue.js"></script>
+    <script src="../../../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="utf8-jsp/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="utf8-jsp/ueditor.all.min.js"></script>
+
+
+</head>
+<body id="examplesDemo">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        list-style: none;
+
+        padding: 10px;
+    }
+
+    li.active {
+        border: 2px solid #ff0000;
+    }
+
+    li img {
+        width: 40px;
+        height: 40px;
+    }
+
+    li.add {
+        margin-top: 10px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #ff0000;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        color: #00a3ff;
+    }
+
+    li p {
+        width: 60%;
+    }
+
+    button {
+
+        padding: 20px;
+        margin: 20px auto;
+        display: block;
+    }
+</style>
+
+
+<div style="float: left;width: 40%">
+    <ul>
+        <li v-for="(current, item) in items" v-bind:class="[index==current ? 'active' : '']"
+            @click="show(item,current)">
+            <img v-bind:src="item.imgUrl" alt="">
+            <span>{{item.title}} </span>
+
+            <p>
+                <a href="javascript:;" @click="del(current)">删除</a>
+                <a href="javascript:;" @click="up(current)">上移</a>
+                <a href="javascript:;" @click="down(current)">下移</a>
+            </p>
+
+
+        </li>
+        <li class="add" @click="add">添加</li>
+    </ul>
+</div>
+<div style="float: right;width: 60%">
+
+    <div>标题:<input type="text" v-model="current.title"></div>
+
+    <div>缩略图:<img v-bind:src="current.imgUrl" alt="" width="150" height="100">
+        <input type="hidden" v-model="current.imgUrl">
+    </div>
+    <div>介绍:<input type="text" v-model="current.intr"></div>
+    <div>
+        <!--内容:<textarea v-model="current.content" rows="10" cols="30"></textarea>-->
+        <!-- 加载编辑器的容器 -->
+        <script id="editor" type="text/plain" style="width:500px;height:100px;"></script>
+        <!--<textarea id="editor"  type="text/plain"></textarea>-->
+
+    </div>
+
+</div>
+<div style="clear: both"></div>
+<button @click="save">保存</button>
+
+<script>
+
+
+    var jsonData = {
+        items: [
+            {
+                title: "我的第一个标题",
+                content: "内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1",
+                intr: "简介1",
+                imgUrl: "../../../img/1.png"
+            },
+            {
+                title: "我的第二个标题",
+                content: "内容2",
+                intr: "简介2",
+                imgUrl: "../../../img/1.jpg"
+            },
+            {
+                title: "我的第三个标题",
+                content: "内容3",
+                intr: "简介3",
+                imgUrl: "../../../img/2.jpg"
+            },
+            {
+                title: "我的第四个标题",
+                content: "内容4",
+                intr: "简介4",
+                imgUrl: "../../../img/3.jpg"
+            }
+        ]
+    };
+
+
+    var ue = UE.getEditor('editor');
+
+    //同步model 并解决 ueditor 按住shit||control 不触发contentChange事件
+    ue.addListener('contentChange blur', function (editor) {
+        vm.items[vm.index].content = ue.getContent();
+    });
+
+    var vm = new Vue({
+        el: "#examplesDemo",
+        data: {
+            index: -1,
+            items: jsonData.items
+        },
+        created: function () {
+            this.index = 0;
+            !this.items.length && this.add();
+        },
+        methods: {
+            add: function () {
+                if (this.items.length > 7) {
+                    alert("最多创建8个");
+                    return;
+                }
+                this.items.push({
+                    title: "",
+                    content: "",
+                    intr: "",
+                    imgUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
+                });
+                this.index = this.items.length - 1;
+            },
+            del: function (index) {
+                if (this.items.length <= 1) {
+                    alert("不能全部都删除");
+                    return;
+                }
+                this.items.splice(index, 1);
+                if (this.items.length == index) {
+                    this.index = this.items.length - 1;
+                } else {
+                    this.index = index;
+                }
+                ue.ready(function () {
+                    ue.setContent(vm.current.content);
+                });
+            },
+            show: function (item, index) {
+                this.index = index;
+            },
+            up: function (index) {
+                if (index == 0) {
+                    return;
+                }
+                this.swap(index, index - 1);
+
+            },
+            down: function (index) {
+                if (index == this.items.length - 1) {
+                    return;
+                }
+                this.swap(index, index + 1);
+
+            },
+            swap: function (index1, index2) {
+                this.items[index1] = this.items.splice(index2, 1, this.items[index1])[0];
+            },
+            validate: function () {
+
+                var flag = true;
+                $.each(this.items, function (index, item) {
+                    if (item.title.length <= 0) {
+                        vm.index = index;
+                        flag = false;
+                        alert("请输入标题");
+                        return false;
+                    }
+                    if (item.content.length <= 0) {
+                        vm.index = index;
+                        flag = false;
+                        alert("请输入内容");
+                        return false;
+                    }
+                });
+
+                return flag;
+
+            },
+            save: function () {
+                if (this.validate()) {
+                    //保存成功
+                    alert("保存成功");
+                    console.log();
+                    $.ajax({
+                        url: "index.html",
+                        type: "post",
+                        data: JSON.stringify(vm.items),
+                        success: function () {
+                            alert(JSON.stringify(vm.items))
+                        },
+                        error: function () {
+
+                        }
+                    })
+
+                }
+
+            }
+        },
+        /*计算属性*/
+        computed: {
+            current: function () {
+                return this.items[this.index];
+            }
+        },
+        /*监听变量*/
+        watch: {
+            current: function () {
+                ue.ready(function () {
+                    //设置编辑器的内容
+                    ue.setContent(vm.current.content);
+                });
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>
