@@ -13,20 +13,48 @@
     <link rel="stylesheet" href="../public/css/icons.css">
     <link rel="stylesheet" href="../public/css/poptips.css">
     <link rel="stylesheet" href="../jquery-weiui/css/jquery-weui.css"/>
-    <link rel="stylesheet" href="css/wIndex2.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="css/templateIndex.css">
 </head>
 <body class="global">
 
 <div class="page">
+    <div class="hd">
 
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="./img/temp/3.jpg">
+                <p>我是第一个,我的内容很长,你知道是做什么用的吗,i believe you</p>
+                </div>
+                <div class="swiper-slide"><img src="./img/temp/1.png" />
+                    <p>我是第2个</p>
+                </div>
+                <div class="swiper-slide"><img src="./img/temp/1.jpg" />
+                    <p>哈哈 你才对了 我是3</p>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
 
     <div class="bd">
         <div class="tab">
+            <!--BEGIN tab_hd-->
+            <div class="tab_hd">
+                <div class="tab_hd_inner">
+
+                    <a href="javascript:void(0);"  class="js_cname_item item active ">分类名2</a>
+                    <a href="javascript:void(0);"  class="js_cname_item item">分类名3</a>
+
+                </div>
+            </div>
+            <!--END tab_hd-->
             <!--BEGIN tab_bd-->
             <div class="tab_bd">
+
                 <div class="article_list js_article_list active">
                     <a class="list_item" href="javascript:void(0);">
                         <div class="cover">
@@ -65,6 +93,39 @@
                         </div>
                     </a>
                 </div>
+
+                <div class="article_list js_article_list">
+                    <a class="list_item" href="javascript:void(0);">
+                        <div class="cover">
+                            <img class="img" src="https://mmbiz.qlogo.cn/mmbiz/iazJELyKqLtrFDpSPtVFfiaY6tL31ary9OcuHmNzL9zvDuCZ1WHdGz3YTpkzxLYOIuIdrvEkiboicEKNPcG6qaLjBw/0?wx_fmt=jpeg" alt="">
+                        </div>
+                        <div class="cont">
+                            <h2 class="title">上周功能更新（4月5日篇）</h2>
+                            <p class="desc">清明小长假刚过，我们的一周功能优化又跟大家见面啦！研发攻城师们很勤奋，有木有？快来看看上一周都有哪些功能更新吧！</p>
+                        </div>
+                    </a>
+                    <a class="list_item" href="javascript:void(0);">
+                        <div class="cover">
+                            <img class="img" src="https://mmbiz.qlogo.cn/mmbiz/iazJELyKqLtr8UIMia98uD1QLkawvEqdeTibM46jOZnrDt1xv5ic2pZEoD2GOPFlzImvmibZDoicpXFWMqlbO5YNhoNw/0?wx_fmt=jpeg" alt="">
+                        </div>
+                        <div class="cont">
+                            <h2 class="title">上周功能更新（4月13日篇）</h2>
+                            <p class="desc">春风送暖，万物复苏，又到了上周功能优化大放送时间啦！快来欣赏码农哥哥为大家送上的春日福利大餐吧~~~</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="article_list js_article_list">
+                    <a class="list_item" href="javascript:void(0);">
+                        <div class="cover">
+                            <img class="img" src="https://mmbiz.qlogo.cn/mmbiz/iazJELyKqLtrFDpSPtVFfiaY6tL31ary9OcuHmNzL9zvDuCZ1WHdGz3YTpkzxLYOIuIdrvEkiboicEKNPcG6qaLjBw/0?wx_fmt=jpeg" alt="">
+                        </div>
+                        <div class="cont">
+                            <h2 class="title">上周功能更新（4月5日篇）</h2>
+                            <p class="desc">清明小长假刚过，我们的一周功能优化又跟大家见面啦！研发攻城师们很勤奋，有木有？快来看看上一周都有哪些功能更新吧！</p>
+                        </div>
+                    </a>
+                </div>
+
             </div>
             <!--END tab_bd-->
         </div>
@@ -99,7 +160,15 @@
 <!--<script src="../jquery-weiui/js/jquery-weui.js"></script>-->
 <script src="../jquery-weiui/js/jquery-extend.js"></script>
 <script src="../vue/vue.js"></script>
-<script src="js/view/wIndex2.js"></script>
+<script src="../jquery-weiui/js/swiper.js"></script>
+
+<script>
+    $(".swiper-container").swiper({
+        pagination: '.swiper-pagination',
+        loop: true,
+        autoplay: 3000
+    });
+</script>
 
 </body>
 </html>

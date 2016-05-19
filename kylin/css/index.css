@@ -95,6 +95,9 @@ h5 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.f14 {
+  font-size: 14px; }
+
 .center-block {
   display: block;
   margin-right: auto;
@@ -183,11 +186,11 @@ h5 {
       filter: alpha(opacity=0);
       margin-left: 10px;
       background: url("../images/bg.png") center center;
-      -webkit-transform: translateY(-22%);
-      -moz-transform: translateY(-22%);
-      -ms-transform: translateY(-22%);
-      -o-transform: translateY(-22%);
-      transform: translateY(-22%);
+      -webkit-transform: translateY(-10%);
+      -moz-transform: translateY(-10%);
+      -ms-transform: translateY(-10%);
+      -o-transform: translateY(-10%);
+      transform: translateY(-10%);
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
       -ms-transition: all 0.5s;

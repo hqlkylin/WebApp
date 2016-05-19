@@ -51,7 +51,7 @@
     font-size: 0;
     background-color: #f2f2f2;
     overflow: hidden;
-
+    @include flexbox();
   }
 
   .tab_hd_inner .item {
@@ -64,7 +64,7 @@
     height: 24px;
     overflow: hidden;
     float: left;
-    width: 50%;
+    @include flex(1);
   }
 
   .tab_hd_inner .item.active {
@@ -132,7 +132,6 @@
     display: block;
     width: 80px;
     height: 60px;
-
 
   }
 

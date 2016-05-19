@@ -20,6 +20,7 @@ html, body {
   text-align: center;
 }
 
+
 h3 {
   font-size: 24px;
   margin-top: 20px;
@@ -33,6 +34,10 @@ h3 {
 h5 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.f14 {
+  font-size: 14px;
 }
 
 .center-block {
@@ -136,7 +141,7 @@ h5 {
         @include opacity(0);
         margin-left: 10px;
         background: url("../images/bg.png") center center;
-        @include transform(translateY(-22%));
+        @include transform(translateY(-10%));
         @include transition(all .5s);
       }
     }
@@ -180,10 +185,10 @@ h5 {
 
   .tel {
     position: relative;
-    a{
+    a {
       color: #fff;
-   /*   display: inline-block;
-      margin-right: 40px;*/
+      /*   display: inline-block;
+         margin-right: 40px;*/
       position: absolute;
       left: 20px;
     }
