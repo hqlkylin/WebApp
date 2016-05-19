@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>微信公众平台页面模版功能</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+
+    <script src="js/plugins/sweetalert/dist/sweetalert-dev.js"></script>
+    <link href="js/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet"/>
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/view/plugins.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/view/swiper.min.css"/>
+    <link rel="stylesheet" href="css/view/wxTemplateSettingIndex.css"/>
+    <!-- 分页插件-类库 -->
+    <link href="js/plugins/page/page.css" rel="stylesheet" type="text/css">
+
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('麒麟个人作品展', '欢迎光临');
+
+            }, 1300);
+        });
+    </script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+
+    <nav class="navbar-default navbar-static-side Js-navMenu" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <div style="padding-bottom:10px;"><a href="##"><img src="img/logo-30px.png" width="130"
+                                                                            height="43"></a></div>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+	                            <span class="clear">
+	                            	<span class="block m-t-xs">
+	                            		<strong class="font-bold">
+                                            当前公众号：指尖服务
+                                        </strong>
+	                            	</span>
+
+	                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="#">公司名称：刘德华</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">公司编码：210024</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        <div style="background-image: url(img/logo-30px.png);width: 42px; height: 36px;"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">推广项管理</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+
+                        <li><a href="/dypc/zpsp/material">代言素材库</a></li>
+                        <li><a href="wxTemplateSettingIndex.html">页面模版</a></li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">个人中心</span> <span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/dypc/pcenter/pinfo">我的公众号</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+
+        <div class="row border-bottom Js-navTop">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                    </a>
+
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="m-r-sm">
+		        	<span>
+
+
+								<img src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLDY6J1650tDElPBcYibldluiav5PBicT7c9Art9bzFJSicdsOicHgM4BuEb4mwicr3dJL1PDvSSavmT9gYA/0"
+                                     class="img-circle" width="40">
+
+                    </span>
+                    </li>
+                    <li>
+                    <span class="m-r-sm text-muted welcome-message">
+					             欢迎您:
+
+						刘德华
+
+					</span>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;" class="right-sidebar-toggle accnt_switch">
+                            <i class="fa fa-exchange"></i>切换账号
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-sign-out"></i>退出账号
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="wrapper wrapper-content ">
+
+
+            <div class="row page">
+
+                <div class="content_div">
+
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right"></span>
+                            <h5>消息模板设置 / 编辑页面</h5>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="ibox float-e-margins">
+                                <div class="well">
+                                    内容从推广列表或者代言素材中选择,从推广列表中选择的内容可以设置推广积分等,若素材库中的图文也需推广请先将图文添加到推广列表中.
+                                </div>
+                                <div class="title_edit">页面名称 <span class="tpl_name" v-text="title"></span>
+                        <span class="box" @click.stop="openDiv('.popTitle')">修改
+                            <div class="popTitle">
+                                <div class="up"></div>
+                                <p>模版名称</p>
+
+                                <p><input type="text" class="form-control" v-model="tempTitle" value="{{title}}"></p>
+
+                                <div class="text-center">
+                                    <a class="btn btn-primary" v-on:click.stop="updateTitle">确定</a>
+                                    <a class="btn btn-white" v-on:click.stop="closeDiv('.popTitle')">取消</a>
+                                </div>
+                            </div>
+                        </span>
+
+                                </div>
+                                <div class="tpl_container">
+                                    <div class="tpl_preview">
+                                        <div class="simulator">
+                                            <div class="simulator_hd">
+                                                <h4 class="title" id="js_preview_title" v-text="title"></h4>
+                                            </div>
+                                            <div class="simulator_bd">
+                                                <div class="hd">
+
+                                                    <div class="swiper-container">
+                                                        <!-- Additional required wrapper -->
+                                                        <div class="swiper-wrapper">
+                                                            <!-- Slides -->
+                                                            <div class="swiper-slide" v-for="item in headData"
+                                                                 track-by="$index">
+                                                                <img v-bind:src="prefix+item.imageURL">
+
+                                                                <p v-text="item.name"></p>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <!-- If we need pagination -->
+
+                                                        <div class="swiper-pagination swiper-pagination-bullets">
+                                                <span class="swiper-pagination-bullet"
+                                                      v-bind:class="$index==0?'swiper-pagination-bullet-active':''"
+                                                      v-for="item in headData" track-by="$index"></span>
+
+                                                        </div>
+                                                        <div class="noData" v-show="headData.length==0"></div>
+                                                    </div>
+                                                    <div class="mask">
+                                                        <i class="fa fa-pencil"
+                                                           @click="viewTab(3,'headData','.Js-hd')"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bd">
+                                                    <div class="tab">
+                                                        <!--BEGIN tab_hd-->
+                                                        <div class="tab_hd">
+                                                            <div class="tab_hd_inner">
+                                                                <a href="javascript:void(0);" class="item"
+                                                                   v-bind:class="dataListCurrentIndex==$index?'active':''"
+                                                                   v-for="item in listData" v-text="item.tabName"></a>
+                                                            </div>
+                                                        </div>
+                                                        <!--END tab_hd-->
+                                                        <!--BEGIN tab_bd-->
+                                                        <div class="tab_bd">
+
+
+                                                            <div class="article_list js_article_list active">
+
+                                                                <a class="list_item" href="javascript:void(0);"
+                                                                   v-for="m in listData[dataListCurrentIndex].materials">
+                                                                    <div class="cover">
+                                                                        <img v-bind:src="prefix+m.imageURL">
+                                                                    </div>
+                                                                    <div class="cont">
+                                                                        <h2 class="title" v-text="m.name"></h2>
+
+                                                                        <p class="desc" v-text="m.summary"></p>
+                                                                    </div>
+                                                                </a>
+
+                                                                <div v-show="listData[dataListCurrentIndex].materials==0">
+                                                                    <a class="list_item" href="javascript:void(0);">
+                                                                        <div class="cover">
+                                                                            <img src="img/listDataTmep.jpeg">
+                                                                        </div>
+                                                                        <div class="cont">
+                                                                            <h2 class="title">标题示例</h2>
+
+                                                                            <p class="desc">摘要示例</p>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list_item" href="javascript:void(0);">
+                                                                        <div class="cover">
+                                                                            <img src="img/listDataTmep.jpeg">
+                                                                        </div>
+                                                                        <div class="cont">
+                                                                            <h2 class="title">标题示例</h2>
+
+                                                                            <p class="desc">摘要示例</p>
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="list_item" href="javascript:void(0);">
+                                                                        <div class="cover">
+                                                                            <img src="img/listDataTmep.jpeg">
+                                                                        </div>
+                                                                        <div class="cont">
+                                                                            <h2 class="title">标题示例</h2>
+
+                                                                            <p class="desc">摘要示例</p>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <!--END tab_bd-->
+                                                    </div>
+                                                    <div class="mask">
+                                                        <i class="fa fa-pencil"
+                                                           @click="viewTab(30,'listData','.Js-bd')"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="Js-hd Js-showSetting">
+                                        <div class="tpl_edit">
+                                            <div class="plugin_edit_area">
+                                                <div class="portable_editor to_left">
+                                                    <div class="editor_toolbar">
+
+                                                        <div class="ext">
+                                                            <a class="btn btn-white" @click="openDialog()">添加</a>
+
+
+                                                        </div>
+                                                        <div class="titleBox">
+                                                            <h4 class="title">封面文章</h4>
+
+                                                            <p class="counter"><span
+                                                                    v-text="headData.length">0</span>/<span
+                                                                    v-text="currentLength"></span></p>
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                    <ul class="articles sortable">
+                                                        <li class="article" v-for="item in headData" track-by="$index"
+                                                            v-bind:data-id="$index">
+                                                            <a class="opr icon" href="javascript:;" title="排序"><i
+                                                                    class="fa fa-list-ul"></i></a>
+
+                                                            <a class="opr " href="javascript:;"
+                                                               v-on:click.stop="headDataDel(item)">删除</a>
+
+                                                            <p class="title"><a href="###" target="_blank"
+                                                                                v-text="item.name"></a>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="left"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Js-bd Js-showSetting">
+                                        <div class="tpl_edit">
+                                            <div class="plugin_edit_area">
+
+
+                                                <div class="portable_editor to_left">
+
+                                                    <div class="editor_hd">
+                                                        <!--BEGIN tab分类-->
+                                                        <div class="section_tab">
+
+
+                                                            <ul class="tab_navs js_tab_nav">
+
+                                                                <li class="tab_nav" @click="typeTab($index)"
+                                                                    v-bind:class="dataListCurrentIndex==$index?'active':''"
+                                                                    v-for="item in listData">
+
+                                                                    <a href="javascript:void(0);"
+                                                                       v-text="item.tabName"></a>
+                                                                </li>
+
+
+                                                                <li class="tab_nav no_extra js_add_nav">
+                                                                    <a class="add_nav" href="javascript:void(0);"
+                                                                       @click="addType()">添加</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                        <!--END tab分类-->
+                                                    </div>
+
+
+                                                    <div class="editor_bd"
+                                                         v-bind:class="dataListCurrentIndex==$index?'active':''"
+                                                         v-for="item in listData">
+                                                        <div class="typeBox">
+                                                <span href="###" class="del" @click.stop="openDiv('.popType')"> 删除
+
+                                                    <div class="popType">
+                                                        <div class="up"></div>
+                                                        <p></p>
+
+                                                        <p>确定删除此分类？</p>
+
+                                                        <div class="text-center">
+                                                            <a class="btn btn-primary" v-on:click.stop="delType(item)">确定</a>
+                                                            <a class="btn btn-white"
+                                                               v-on:click.stop="closeDiv('.popType')">取消</a>
+                                                        </div>
+                                                    </div>
+
+                                                </span>
+
+                                                            <p>分类名称 <span class="inpBox"><input type="text"
+                                                                                                maxlength="4"
+                                                                                                class="form-control"
+                                                                                                v-model="item.tabName"> <span
+                                                                    class="lenBox"
+                                                                    v-text="item.tabName.length+'/4'"></span></span>
+                                                            </p>
+
+                                                        </div>
+
+                                                        <div class="editor_toolbar">
+
+                                                            <div class="ext">
+                                                                <a class="btn btn-white " @click="openDialog()">添加</a>
+
+
+                                                            </div>
+                                                            <div class="titleBox">
+                                                                <h4 class="title">封面文章</h4>
+
+                                                                <p class="counter"><span
+                                                                        v-text="item.materials.length"></span>/<span
+                                                                        v-text="currentLength"></span></p>
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                        <ul class="articles sortable">
+                                                            <li class="article" v-for="m in item.materials"
+                                                                track-by="$index"
+                                                                v-bind:data-id="$index">
+                                                                <a class="opr icon" href="javascript:;" title="排序"><i
+                                                                        class="fa fa-list-ul"></i></a>
+
+                                                                <a class="opr " href="javascript:;"
+                                                                   @click="listDataDel(m)">删除</a>
+
+                                                                <p class="title"><a href="###" target="_blank"
+                                                                                    v-text="m.name"></a>
+                                                                </p>
+                                                            </li>
+                                                        </ul>
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="left"></div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="tool_bar">
+
+                                <button type="button" class="btn btn-w-m btn-primary" @click="save">发布</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="dialog" style="display: none">
+                    <div class="dialog_hd">
+
+                        <ul class="dialogNav">
+                            <li class="active">
+                                推广列表
+                            </li>
+                            <li>
+                                代言素材库
+                            </li>
+                            <form action="" id="materialForm">
+                                <input type="hidden" name="pageSize" value="8">
+                                <input type="hidden" name="curPage" value="1">
+                                <input type="hidden" name="pageType" value="2">
+                            </form>
+                            <form action="" id="spreadForm">
+                                <input type="hidden" name="pageSize" value="8">
+                                <input type="hidden" name="curPage" value="1">
+                                <input type="hidden" name="pageType" value="1">
+                            </form>
+                        </ul>
+
+                    </div>
+                    <div class="global_extra">你还可以勾选<span v-text="showCount"></span>篇文章</div>
+
+                    <div class="tabContent active">
+
+                        <div class="dialog_bd">
+                            <div class="select_list_container">
+                                <ul>
+                                    <li v-for="item in spreadData.resultList">
+                                        <div class="time" v-text="item.createTime"></div>
+                                        <div>
+                                            <input type="checkbox" v-model="selectMaterialData" value="{{item.rowId}}"
+                                                   @click="checkCount(item,$event)">
+                                            <span v-text="item.name"></span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pageMaterial pageBox"></div>
+                        <div class="dialog_ft">
+                            <a class="btn btn-primary" @click="okDialog">确定</a>
+                            <a class="btn btn-white" @click="closeDialog">取消</a>
+                        </div>
+                    </div>
+
+                    <div class="tabContent">
+                        <div class="dialog_bd">
+                            <div class="select_list_container">
+                                <ul>
+                                    <li v-for="item in materialData.resultList">
+                                        <div class="time" v-text="item.createTime"></div>
+                                        <div>
+                                            <input type="checkbox" v-model="selectSpreadData" value="{{item.rowId}}"
+                                                   @click="checkCount(item,$event)">
+                                            <span v-text="item.name"></span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pageSpread pageBox"></div>
+                        <div class="dialog_ft">
+                            <a class="btn btn-primary" @click="okDialog">确定</a>
+                            <a class="btn btn-white" @click="closeDialog">取消</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="submitDiv" style="padding: 40px;" class="dn">
+                    <pre>{{$data | json 4}}</pre>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <strong>Copyright</strong>北京指尖微客科技有限公司 © 2015-2016
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $(function () {
+        $.highlightMenu("页面模版");
+    });
+
+    var prefix = '<%=imgPath%>';
+    var id = 0;
+    var accountId = '123456';
+    var publicId = '654321';
+
+
+</script>
+
+<script src="js/plugins/page/jquery.page.js"></script>
+<script src="js/plugins/layer-v2.2/layer/layer.js" type="text/javascript"></script>
+<script src="js/plugins/vue/vue.js" type="text/javascript"></script>
+<script src="js/plugins/vue/Sortable.js" type="text/javascript"></script>
+<script src="js/view/wxTemplateSettingIndex.js" type="text/javascript"></script>
+
+
+</body>
+</html>
