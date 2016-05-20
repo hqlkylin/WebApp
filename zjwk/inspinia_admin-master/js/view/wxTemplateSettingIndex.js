@@ -452,7 +452,7 @@ var vm = new Vue({
         getSpreadData: function () {
             var _this = this;
             return $.ajax({
-                url: "",
+                url: "/favicon.ico",
                 type: "post",
                 data: $.initPage.spreadData,
                 success: function (data) {
@@ -483,7 +483,7 @@ var vm = new Vue({
         getMaterialData: function () {
             var _this = this;
             return $.ajax({
-                url: "",
+                url: "/favicon.ico",
                 type: "post",
                 data: $.initPage.materialData,
                 success: function (data) {
@@ -530,7 +530,7 @@ var vm = new Vue({
 
 
             return $.ajax({
-                url: $.baseUrl + "",
+                url: "/favicon.ico",
                 type: "get",
                 success: function (data) {
                     var data = initData;
@@ -735,7 +735,7 @@ var vm = new Vue({
                 categorys: _this.listData
             };
             $.ajax({
-                url: $.baseUrl,
+                url: "/favicon.ico",
                 type: "post",
                 data: JSON.stringify(postData),
                 success: function (data) {
