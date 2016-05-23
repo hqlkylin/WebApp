@@ -1,5 +1,4 @@
-//.weui_dialog, .weui_toast {
-.weui_dialog {
+.weui_dialog, .weui_toast {
   transition-duration: .2s;
   opacity: 0;
   transform: scale(.9);
@@ -32,6 +31,12 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .weui_dialog {
+    left: 32.5%;
+  }
+}
+
 .weui_toast {
   left: 50%;
   top: 35%;
@@ -53,7 +58,6 @@
   opacity: 0;
   transition-duration: .3s;
   visibility: hidden;
-  z-index: 10;
   &.weui_mask_visible {
     opacity: 1;
     visibility: visible;
