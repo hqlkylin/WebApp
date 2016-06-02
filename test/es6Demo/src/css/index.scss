@@ -1,0 +1,12 @@
+$width: 550px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
+  width: $width;
+  height: 406px;
+  border: 1px solid #c4c3c3;
+}
