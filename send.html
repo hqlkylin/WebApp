@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <blockquote>集美家居短信发送平台。<small>by <cite title="Source Title">韩麒麟</cite></small></blockquote>
+    <div class="row" style="margin:20px;">
+
+        <form action="http://115.29.171.5:9001/sms.aspx" method="get" target="_blank">
+
+            <div class="form-group">
+                <label for="mobile">接受短信号码</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" value="" placeholder="接受短信号码">
+            </div>
+            <div class="form-group">
+                <label for="content">发送内容</label>
+                <textarea class="form-control" rows="5" id="content" name="content" placeholder="发送内容">【集美家居】您已成功支付集美家居2016端午节20升200，电子券验证码：5467669543凭此码06.04-06.11至集美家居北京五店兑换使用，请妥善保管，祝您购物愉快！（注：短信转发无效）有疑问请致电400-006-5858</textarea>
+            </div>
+            <div class="form-group">
+                <label for="userid">企业id</label>
+                <input type="text" class="form-control" name="userid" id="userid" placeholder="企业id" value="4743"
+                       readonly>
+            </div>
+            <div class="form-group">
+                <label for="account">发送用户帐号</label>
+                <input type="text" class="form-control" id="account" name="account" value="15801606686" readonly
+                       placeholder="发送用户帐号">
+            </div>
+            <div class="form-group">
+                <label for="account">发送帐号密码</label>
+                <input type="text" class="form-control" id="password" name="password" value="15801606686" readonly
+                       placeholder="发送帐号密码">
+            </div>
+            <div class="form-group">
+                <label for="account">发送任务命令</label>
+                <input type="text" class="form-control" id="action" name="action" value="send" readonly
+                       placeholder="发送任务命令">
+            </div>
+
+            <div class="form-group">
+                <label for="checkcontent">检查内容</label>
+                <input type="text" class="form-control" id="checkcontent" name="checkcontent" value="0" readonly
+                       placeholder="检查内容">
+            </div>
+            <div class="form-group">
+                <label for="taskName">任务名称</label>
+                <input type="text" class="form-control" id="taskName" name="taskName" value="端午活动" readonly
+                       placeholder="taskName">
+            </div>
+            <div class="form-group">
+                <label for="countnumber">号码总数量</label>
+                <input type="text" class="form-control" id="countnumber" name="countnumber" value="1" readonly
+                       placeholder="号码总数量">
+            </div>
+            <div class="form-group">
+                <label for="mobilenumber">手机号码数量</label>
+                <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" value="1" readonly
+                       placeholder="手机号码数量">
+            </div>
+            <div class="form-group">
+                <label for="telephonenumber">小灵通或座机号码数</label>
+                <input type="text" class="form-control" id="telephonenumber" name="telephonenumber" value="0" readonly
+                       placeholder="小灵通或座机号码数">
+            </div>
+
+            <button type="submit" class="btn btn-primary">提交发送</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
+

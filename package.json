@@ -27,6 +27,7 @@
     "gulp-ruby-sass": "^2.0.6",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
+    "jquery": "^2.1.4",
     "jshint": "^2.8.0"
   },
   "dependencies": {

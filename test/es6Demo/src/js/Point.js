@@ -9,8 +9,8 @@ class Point {
         this.y = y;
         console.log("初始化");
     }
-
     toString() {
+        jQuery("#box").height("200px");
         return '(' + this.x + ', ' + this.y + ')';
     }
 }
