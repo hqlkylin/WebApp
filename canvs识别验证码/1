@@ -94,7 +94,7 @@
                 }
                 console.log(captcha);
 
-                var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=52ffb172c6f4408fb85465b2ed331180&code=" + captcha;
+                var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=80af4a08c93c41f997e284ec2ffd7b55&code=" + captcha;
                 iframe.src=url;
             }
         }, 10);
