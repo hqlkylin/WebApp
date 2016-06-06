@@ -93,8 +93,7 @@ setInterval(function () {
             captcha += comms.indexOf(Math.max.apply(null, comms)); //添加到识别好的验证码中
         }
         console.log(captcha);
-
-        var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=52ffb172c6f4408fb85465b2ed331180&code=" + captcha;
+        var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=1a86e168c0af4fd5816d70c134b3f841&code=" + captcha;
         iframe.src=url;
     }
 }, 10);
