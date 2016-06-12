@@ -93,7 +93,14 @@ setInterval(function () {
             captcha += comms.indexOf(Math.max.apply(null, comms)); //添加到识别好的验证码中
         }
         console.log(captcha);
-        var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=1a86e168c0af4fd5816d70c134b3f841&code=" + captcha;
+
+        var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=6627ccf00c7842b0ade6ec0c38662bba&code=" + captcha;
         iframe.src=url;
+
     }
 }, 10);
+
+【集美家居】恭喜您成功抢购集美家居2016端午节20升200，验证码:20160530ZKVC，请10分钟内完成支付，逾期支付订单自动取消。
+
+
+【集美家居】您已成功支付集美家居2016端午节20升200，电子券验证码：5348379582凭此码06.04-06.11至集美家居北京五店兑换使用，请妥善保管，祝您购物愉快！（注：短信转发无效）有疑问请致电400-006-5858

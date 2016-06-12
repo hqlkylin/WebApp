@@ -1,7 +1,7 @@
 var iframe = document.createElement('iframe');
-iframe.src="about:blank";
-iframe.width="1000px";
-iframe.height="500px";
+iframe.src = "about:blank";
+iframe.width = "1000px";
+iframe.height = "500px";
 document.body.appendChild(iframe);
 setInterval(function () {
     var image = new Image();
@@ -94,6 +94,21 @@ setInterval(function () {
         }
         console.log(captcha);
         var url = "http://www.jimei.cn/front/order/voucherorder.html?pid=46d887322d74491f91bf165b0f4c7d64&activityProductId=1a86e168c0af4fd5816d70c134b3f841&code=" + captcha;
-        iframe.src=url;
+        iframe.src = url;
     }
 }, 10);
+
+
+//立即抢购转化代码
+function pyRegisterCvt() {
+    var w = window, d = document, e = encodeURIComponent;
+    var b = location.href, c = d.referrer, f, g = d.cookie, h = g.match(/(^|;)\s*ipycookie=([^;]*)/), i = g.match(/(^|;)\s*ipysession=([^;]*)/);
+    if (w.parent != w) {
+        f = b;
+        b = c;
+        c = f;
+    }
+    ;
+    u = '//stats.bjglxf.com/cvt?a=' + e('_Ls.bCs.KIeqy4jcImRChC9bfJao8X') + '&c=' + e(h ? h[2] : '') + '&s=' + e(i ? i[2].match(/jump\%3D(\d+)/)[1] : '') + '&u=' + e(b) + '&r=' + e(c) + '&rd=' + (new Date()).getTime() + '&e=';
+    (new Image()).src = u;
+}
