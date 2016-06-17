@@ -1,4 +1,0 @@
---compilers js:espower-babel/guess
---timeout 20s
---require babel-polyfill
---require mocha-generators
