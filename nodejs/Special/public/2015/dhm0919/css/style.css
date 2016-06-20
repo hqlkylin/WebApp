@@ -1,0 +1,29 @@
+.main{width: 100%;background-color: #FFCC00;font-family: "microsoft yahei",sans-serif;padding-bottom: 62px;}
+.main .top{background: url(../images/top.gif) no-repeat top center;height: 712px;}
+
+.wrap{width: 1000px;margin: 0 auto;}
+.wrap .form-wrap{background-color: #711E69;overflow: hidden;zoom: 1;margin-bottom: 13px;}
+.wrap .form-wrap .left{float: left;padding: 34px 0 43px 48px;margin-right: 45px;width: 335px;}
+.wrap .form-wrap .left p{color: #fff;font-size: 21px;}
+.wrap .form-wrap .left .mb{margin-bottom: 62px;}
+.wrap .form-wrap .left .mbb{margin-bottom: 15px;}
+
+.wrap .form-wrap .right{ float: right; width: 511px; padding-right: 60px;padding-top: 24px;padding-bottom: 28px;}
+.wrap .form-wrap .right form{ background: #965690; padding-left: 20px; padding-bottom: 20px;}
+.wrap .form-wrap .right h3{font-weight: lighter;font-size: 21px; line-height: 40px;color: #fff;}
+.wrap .form-wrap .right form div{ padding-top: 13px;}
+.wrap .form-wrap .right form div input{ width: 210px; height: 34px; border: none; text-indent: 1em; line-height: 40px;}
+.wrap .form-wrap .right form div input[type='text']{font-size: 20px;border: 1px solid #711E69;}
+.wrap .form-wrap .right form div label.error{ color: #ff0000; font-size: 12px; font-family: simsun; padding-left: 15px; font-weight: normal;}
+.wrap .form-wrap .right form div label{ font-weight: normal;font-size: 20px;}
+.wrap .form-wrap .right form div input.yzm_btn{ background: none; border: none; width: 110px; text-align: center; font-size: 16px; color: #cc2a1e; cursor: pointer;}
+.wrap .form-wrap .right form .submit{ background: #FFCC00; border: none; color: #8D017F; 
+width: 153px; height: 34px; text-align: center; display: block; margin: 0 auto;
+ font-family: "microsoft yahei"; cursor: pointer;}
+
+
+.wrap .icon1{margin-bottom: 33px;}
+
+.wrap .icon2{background-color: #FFE822;margin-bottom: 53px;padding: 26px 0 38px 8px;}
+
+.wrap .icon3{background-color: #FFE822;padding: 45px 0 45px 16px;}

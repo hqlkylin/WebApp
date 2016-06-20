@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <title>100变2400元,集美家居,金牌联盟 </title>
+    <meta name="keywords" content="马可波罗墙砖,森德豪门,雅燃壁纸,喜临门吊顶,朗斯淋浴房,老板电器,中旺门窗,林之缘地板,恒洁卫浴,简欧家具,一良尚品榻榻米,大信橱柜,依丽兰床垫,诺奇家具,朗能照明,南山散热器,假日森林"/>
+    <meta name="description" content="北京集美家居金牌联盟签售惠，一次空前的家居价格折扣盛宴，一次家居工厂老板与客户的见面优惠，让集美全城业主见证低价家居奇迹。100元变2400元。联单送大礼4999元免单。"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link href="http://public.jimei.com.cn/css/Global.css" rel="stylesheet"/>
+    <link rel="icon" href="http://www.jimei.com.cn/favicon.ico" type="image/x-icon"/>
+
+    <script src="./js/jquery-11.2.min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/jquery.dialog.js"></script>
+    <script src="/javascripts/jquery.messager.js"></script>
+    <script src="/javascripts/jquery.cookie.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/form1.js"></script>
+    <script src="./js/jquery.placeholder.min.js"></script>
+
+
+    <link href="http://public.jimei.com.cn/css/top.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/content.css"/>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="contenter">
+	<div class="top"></div>
+    <section class="main">
+    	<div class="form-wrap">
+    		<div class="left">
+    			活动时间：
+    			<p>2015年6月13日 13:30-19:30</p>					
+				活动地址：
+				<p>大红门集美家居8号厅中央大厅</p>					
+				报名电话：
+				<p>010-52299030</p>
+    		</div>
+    		<div class="right">
+                <h3>活动报名</h3>
+                <form id="form1">
+                    <div><input  type="hidden" name="activity" id="activity" readonly/></div>
+                    <div><label>手　机：</label>
+                        <input type="text" required name="tel" id="tel" placeholder="手机号码" class="ismobile">
+                    </div>
+                    <div class="yz">
+                        <label>验证码：</label>
+                        <input type="text" name="code" id="code" placeholder="手机验证码">
+                        <input type="button"  id="getCode" value="发送验证码" class="yzm_btn">
+                    </div>
+                    <div>
+                        <label>姓　名：</label>
+                        <input type="text" required name="name" id="name" placeholder="真实姓名" class="myname"></div>
+                    <div>
+                        <button type="submit" id="saveUpdate" class="submit">立即报名</button>
+                    </div>
+                </form>
+            </div>
+    	</div>
+    	<div class="img-01">
+    		<img src="images/img-01.gif" alt="" />
+    		<div class="mx">
+    			<img src="images/mx.png" alt="" />
+    		</div>
+    	</div>
+    	<div class="img">
+    		<img src="images/img-02.png" alt="" />
+    	</div>
+    	<div class="img">
+    		<img src="images/img-03.png" alt="" />
+    	</div>
+    	<div class="img">
+    		<img src="images/img-04.png" alt="" />
+    	</div>
+    	<div class="img">
+    		<img src="images/img-05.png" alt="" />
+    	</div>
+		
+    </section>
+</section>
+
+<script type="text/javascript">
+    $(function(){
+        $('input, textarea').placeholder();
+        $.ajax({
+            type: "post",
+            url: "http://manage.jimeinet.cn/template/topjsonp?temptime=" + Math.random(),
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            success: function (json)
+            {
+                if (json[0].state == "1")
+                {
+                    $("body").prepend(json[0].str);
+                    $.getScript("http://products.jimei.com.cn/Content/Js/top.js");
+                }
+            }
+        });
+    });
+
+</script>
+<!--客服开始-->
+<script type="text/javascript" src="http://lead.soperson.com/10032903/10038235.js"></script>
+<!--客服结束-->
+<!--分享开始-->
+<a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=5&amp;fs=4&amp;bgcolor=Green"></script>
+<!--分享结束-->
+<!--统计开始-->
+<div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30027281'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30027281%26l%3D3' type='text/javascript'%3E%3C/script%3E"));</script></div>
+<!--统计结束-->
+</body>
+</html>

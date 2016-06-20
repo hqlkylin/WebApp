@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet">
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/bootstrap.js"></script>
+    <script src="/javascripts/jquery.cookie.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            position: relative;
+        }
+
+        ul.nav-pills {
+            top: 20px;
+            position: fixed;
+        }
+
+        div.col-sm-9 div {
+            margin-bottom: 100px;
+            font-size: 18px;
+        }
+
+        /*
+                #section1 {
+                    color:#000000;
+                    background-color: #9d9d9d;
+                }
+
+                #section2 {
+                    color: #fff;
+                    background-color: #673ab7;
+                }
+
+                #section3 {
+                    color: #fff;
+                    background-color: #ff9800;
+                }
+
+        */
+
+        @media screen and (max-width: 810px) {
+            #section1, #section2, #section3, #section41, #section42 {
+                margin-left: 150px;
+            }
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+<div class="container">
+    <div class="row">
+        <nav class="col-sm-3" id="myScrollspy">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#section1">Html</a></li>
+                <li><a href="#section2">JavaScript</a></li>
+                <li><a href="#section3">示例代码</a></li>
+            </ul>
+        </nav>
+        <div class="col-sm-9">
+            <div id="section1">
+                <h1>Html</h1>
+                <blockquote>
+                    <p>Input:必选字段【activity】、【name】、【tel】、【code】</p>
+                </blockquote>
+<pre style="background: none;width: 100%;border: none" rows="10">
+&lt;form  id="form1"&gt;
+    &lt;input type="hidden" name="activity" id="activity" readonly/&gt;
+    &lt;input type="text" name="name" id="name" placeholder="姓名" /&gt;
+    &lt;input type="text" name="tel" id="tel" placeholder="电话" /&gt;
+    &lt;input type="text" name="address" id="address" placeholder="地址" /&gt;
+    &lt;input type="text" name="money" id="money" placeholder="金额" /&gt;
+    &lt;input type="text" name="code" id="code" placeholder="手机验证码" /&gt;
+    &lt;button id="getCode" class="btn btn-default"&gt;点击获取验证码 &lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+                <blockquote>
+                    <p>引入Js，css样式（必须）</p>
+                </blockquote>
+<pre>
+&lt;script src="/javascripts/jquery.js"/&gt&lt;/script/&gt
+&lt;script src="/javascripts/jquery.cookie.js"/&gt&lt;/script/&gt
+</pre>
+            </div>
+            <div id="section2">
+                <h1>JavaScript</h1>
+                <blockquote>
+                    <p>第1步：初始化活动（必选）</p>
+                </blockquote>
+<pre>
+var activity='5548976d1e6aab9453f4cd1a';        //从后台获取活动ID
+$("input[name='activity']").val(activity);      //赋值给input
+
+if (!$.cookie('activity_'+activity)) {          //初始化点击率
+    $.ajax({
+        url: '/users/click',
+        type: 'get',
+        dataType: 'json',
+        data: {activity:activity },
+        success: function (data) {
+          if(data.success){
+              $.cookie('activity_'+activity, new Date(), {expires: 10});
+          }else{
+              console.log(data.msg);
+          }
+
+        }
+    });
+}
+
+</pre>
+
+
+
+                <blockquote>
+                    <p>第2步：加载数据接口</p>
+                    <footer>获取所有报名信息接口 Url地址：“/users/list”</footer>
+
+                </blockquote>
+<pre>
+$.ajax({
+        url: '/users/list',
+        type: 'get',
+        dataType: 'json',
+        data: {activity: activity},
+        success: function (data) {
+            //循环操作……
+            $.each(data, function (index, item) {
+                    //item._id     //ID编号
+                    //item.name    //姓名
+                    //item.tel     //电话
+                    //item.addTime //报名时间
+            });
+        }
+});
+</pre>
+<pre>Data数据:
+[{
+    "_id":"555954a4a1293f2826c9a751",
+    "name":"邓登",
+    "tel":"138****764",
+    "address":"丰台区西马场小区",
+    "addTime":"2015-05-18T00:00:00.000Z"
+}]
+</pre>
+                <blockquote>
+
+                    <footer>获取活动状态接口 Url地址：“/users/check”</footer>
+
+                </blockquote>
+<pre>
+    $.ajax({
+        url: '/users/check',
+        type: 'post',
+        dataType: 'json',
+        data: {tel: $("input[name='tel']").val(), activity: activity},
+        success: function (data) {
+            if(data.success){                                     //活动成功操作
+                $.messager.popup(data.msg);                       //提示信息
+            }else{                                                //活动失败操作
+                                                                  //活动关闭
+                $("button","#form1").attr("disabled","disabled"); //禁用按钮
+                $.messager.popup(data.msg);                       //提示信息
+            }
+        }
+    });
+</pre>
+<pre>Data数据:
+[{
+    "msg":"活动运行中……",      //[活动已关闭,活动还未开始,活动已经结束,对不起，活动报名人数已满。,活动运行中……]
+    "success":true               //[true,false]
+}]
+</pre>
+                <blockquote>
+
+                    <footer>获取活动验证码接口 Url地址：“/users/getCode”</footer>
+
+                </blockquote>
+<pre>
+ $.ajax({
+        url: '/users/getCode',
+        type: 'post',
+        dataType: 'json',
+        data: {tel: $("input[name='tel']").val(), activity: activity},
+        success: function (data) {
+            $.messager.popup(data.msg);
+        }
+});
+</pre>
+<pre>Data数据:
+[{
+    "msg":"验证码获取成功",          [手机号码不正确,
+                                    对不起，您提交的参数错误,
+                                    对不起，未查询到活动，
+                                    对不起，活动已关闭,
+                                    对不起，活动还未开始，
+                                    对不起，活动已经结束，
+                                    对不起，活动报名人数已满，
+                                    验证码获取成功]
+    "success":true                //[true,false]
+}]
+</pre>
+                <blockquote>
+
+                    <footer>添加报名接口 Url地址：“/users/add”</footer>
+
+                </blockquote>
+<pre>
+$.ajax({
+        url: '/users/add',
+        type: 'post',
+        dataType: 'json',
+        data: $("#form1").serialize(),
+        success: function (data) {
+            /*data:{msg:"信息",success:"true"}*/
+            $.messager.popup(data.msg);
+            $("#form1").validate().resetForm();      //清空表单错误提示
+            $("#form1")[0].reset();                  //清空表单
+        }
+});
+</pre>
+<pre>Data数据:
+[{
+    "msg":"添加成功",                [手机号码不正确,
+                                    获取数据失败请从新获取验证码，
+                                    接收验证码短信电话与报名电话不符。，
+                                    手机号码不正确！，
+                                    对不起，您提交的参数错误,
+                                    对不起，未查询到活动，
+                                    对不起，活动已关闭,
+                                    对不起，活动还未开始，
+                                    对不起，活动已经结束，
+                                    对不起，活动报名人数已满，
+                                    验证码获取成功]
+    "success":true                //[true,false]
+}]
+</pre>
+            </div>
+            <div id="section3">
+                <h1>示例代码</h1>
+                <pre>
+/**
+    * Created by kylin on 2015/5/7.
+ */
+$(function () {
+    //init 活动
+    var activity = '5554113f4fbb3b0411bd3c11';
+    $("input[name='activity']").val(activity);
+
+    /*form submit*/
+    /*$("#form1").submit(function () {
+     // 表单验证
+     if (!$("#form1")[0].checkValidity()) {
+     return;
+     }
+     $.ajax({
+     url: '/users/add',
+     type: 'post',
+     dataType: 'json',
+     data: $("#form1").serialize(),
+     success: function (data) {
+     /!*data:{msg:"信息",success:"true"}*!/
+     $.messager.popup(data.msg);
+     }
+     });
+     return false;
+     });*/
+
+
+    $("#form1").validate({
+        submitHandler: function () {
+            $.ajax({
+                url: '/users/add',
+                type: 'post',
+                dataType: 'json',
+                data: $("#form1").serialize(),
+                success: function (data) {
+                    /*data:{msg:"信息",success:"true"}*/
+                    $.messager.popup(data.msg);
+                    $("#form1").validate().resetForm();
+                    $("#form1")[0].reset();
+                }
+            });
+        }
+    });
+
+
+    loadData();
+    function loadData() {
+
+        // cookies is true  add clickCount
+        if (!$.cookie('activity_' + activity)) {
+            $.ajax({
+                url: '/users/click',
+                type: 'get',
+                dataType: 'json',
+                data: {activity: activity},
+                success: function (data) {
+                    if (data.success) {
+                        $.cookie('activity_' + activity, new Date(), {expires: 10});
+                    } else {
+                        console.log(data.msg);
+                    }
+
+                }
+            });
+        }
+        // get listData
+        $.ajax({
+            url: '/users/list',
+            type: 'get',
+            dataType: 'json',
+            data: {activity: activity},
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    var newline = $(".list li:first").clone();
+                    newline.find("span").eq(0).html(item.name);
+                    newline.find("span").eq(1).html(item.tel);
+                    newline.find("span").eq(2).html(item.address);
+                    newline.find("span").eq(3).html(item.money);
+                    $(".list").append(newline);
+                });
+            }
+        });
+        //check
+        $.ajax({
+            url: '/users/check',
+            type: 'post',
+            dataType: 'json',
+            data: {tel: $("input[name='tel']").val(), activity: activity},
+            success: function (data) {
+                /*data:{msg:"信息",success:"true"}*/
+                if (data.success) {
+                    $.messager.popup(data.msg);
+                } else {
+                    //活动关闭
+                    $("button", "#form1").attr("disabled", "disabled");
+                    $.messager.popup(data.msg);//弹出信息
+                }
+            }
+        });
+
+    };
+
+    var countdown = 60;
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value = "免费获取验证码";
+            countdown = 60;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value = "重新发送(" + countdown + ")";
+            countdown--;
+            setTimeout(function () {
+                settime(val)
+            }, 1000);
+        }
+    }
+
+    //获取验证码
+    $("#getCode").click(function () {
+
+        if (!$("#form1").validate().element($("input[name='tel']")[0])) {
+            return;
+        }
+        settime($(this).get(0));
+
+        $.ajax({
+            url: '/users/getCode',
+            type: 'post',
+            dataType: 'json',
+            data: {tel: $("input[name='tel']").val(), activity: activity},
+            success: function (data) {
+                /*data:{msg:"信息",success:"true"}*/
+                if (data.success) {
+                    //$.messager.popup(data.msg);
+                } else {
+                    $.messager.popup(data.msg);
+                }
+            }
+        });
+    })
+
+
+})
+                </pre>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

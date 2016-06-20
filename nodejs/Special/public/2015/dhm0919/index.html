@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>买家具_建材,工厂直销_新浪工长_金牌联盟</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta name="viewport" content="width=1210">
+	<meta name="keywords" content="集美家居,大将军陶瓷,森德豪门,雅燃壁纸,喜临门集成吊顶,大信橱柜,方太,恒洁卫浴,林之然地板,南山散热器,佳洁斯,中旺门窗,朗能照明,亚美特家具,小月家居,依丽兰床垫,美国森乐净水,家乐居布衣,新浪工长" />
+	<meta name="description" content="9月19日，集美家居大红门店金牌联盟_家居建材一线品牌工厂直购会，年中大扫荡降价优惠。工厂直供家具，价格一降到底；服务无忧_三日内自由退订；逛店礼、签到礼、联购礼、无忧礼，豪礼不断。" />
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+	<link href="http://public.jimei.com.cn/css/Global.css" rel="stylesheet"/>
+	<link rel="icon" href="http://www.jimei.com.cn/favicon.ico" type="image/x-icon"/>
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="./js/jquery-11.2.min.js"></script>
+	<script src="/javascripts/bootstrap.js"></script>
+	<script src="/javascripts/jquery.dialog.js"></script>
+	<script src="/javascripts/jquery.messager.js"></script>
+	<script src="/javascripts/jquery.cookie.js"></script>
+	<script src="./js/form.js"></script>
+	<script src="./js/jquery.validate.min.js"></script>
+	<script src="./js/form1.js"></script>
+	<script src="./js/jquery.placeholder.min.js"></script>
+
+
+	<link href="http://public.jimei.com.cn/css/top.css" rel="stylesheet" />
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+	<body>
+		<!--内容部分start-->
+		<div class="main">
+			<div class="top"></div>
+			<div class="wrap">
+				<div class="form-wrap">
+					<div class="left">
+						<p class="mbb">活动时间：</p>
+						<p class="mb">2015年9月19日 （13:30—17:30）</p>
+						<p class="mbb">活动地点：</p>
+						<p>集美家居大红门店8号厅一层中央厅</p>
+					</div>
+					<div class="right">
+						<h3>活动报名:</h3>
+						<form id="form1">
+							<div>
+								<input type="hidden" name="activity" id="activity" readonly/>
+							</div>
+							<div>
+								<label>手　机：</label>
+								<input type="text" required name="tel" id="tel" placeholder="13911111111" class="ismobile">
+							</div>
+							<div class="yz">
+								<label>验证码：</label>
+								<input type="text" name="code" id="code">
+								<input type="button" id="getCode" value="发送验证码" class="yzm_btn">
+							</div>
+							<div>
+								<label>姓　名：</label>
+								<input type="text" required name="name" id="name" placeholder="某某某" class="myname">
+							</div>
+							<div>
+								<button type="submit" id="saveUpdate" class="submit">立即报名</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="icon1"><img src="images/icon1.jpg" /></div>
+				<div class="icon2"><img src="images/icon2.gif" /></div>
+				<div class="icon3"><img src="images/icon3.gif" /></div>
+			</div>
+		</div>
+		<!--内容部分end-->
+		<!--乐语开始-->
+		<script type="text/javascript" src="http://lead.soperson.com/10032903/10038235.js"></script>
+		<!--乐语结束-->
+		<!--分享开始-->
+		<a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
+		<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=5&amp;fs=4&amp;bgcolor=Green"></script>
+		<!--分享结束-->
+		<!--统计开始-->
+		<div style="display:none">
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_30027281'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30027281%26l%3D3' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</div>
+		<!--统计结束-->
+		<script>
+			$(function() {
+				$.ajax({
+					type: "post",
+					url: "http://manage.jimeinet.cn/template/topjsonp?temptime=" + Math.random(),
+					dataType: "jsonp",
+					jsonp: "callbackparam",
+					success: function(json) {
+						if (json[0].state == "1") {
+							$("body").prepend(json[0].str);
+							$.getScript("http://products.jimei.com.cn/Content/Js/top.js");
+						}
+					}
+				})
+			});
+		</script>
+	</body>
+
+</html>

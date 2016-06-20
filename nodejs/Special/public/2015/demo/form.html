@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单提交</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js" ></script>
+    <script src="/javascripts/jquery.dialog.js"></script>
+    <script src="/javascripts/jquery.messager.js"></script>
+    <script src="/javascripts/jquery.cookie.js"></script>
+    <script src="./js/form.js"></script>
+</head>
+<body>
+<div class="row" >
+    <div class="col-md-6 col-md-offset-3">
+        <p class="bg-primary" style="padding: 15px;margin: 15px;">活动报名</p>
+
+        <form class="form-horizontal" id="form1">
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动id</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="activity"  value="5767a8546d2d34ae0cf5f9a7" id="activity" readonly/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">姓名</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required name="name" id="name" placeholder="姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">电话</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required name="tel" id="tel" placeholder="电话">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">地址</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required name="address" id="address" placeholder="地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">金额</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required name="money" id="money" placeholder="金额">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">验证码</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control"  name="code" id="code" placeholder="手机验证码">
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="getCode" class="btn btn-default">点击获取验证码</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="submit" class="btn btn-primary" id="saveUpdate">
+                    提交更改
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <ul class="list">
+        <li><span>姓名</span><span>电话</span><span>小区</span><span>金额</span></li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>集美家居专题报名管理系统</title>
+
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-table.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/bootstrap-table.js"></script>
+    <script src="javascripts/bootstrap-table-zh-CN.js"></script>
+    <script src="javascripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="javascripts/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="javascripts/kylin.js"></script>
+    <script src="javascripts/jquery.dialog.js"></script>
+    <script src="javascripts/jquery.messager.js"></script>
+    <script src="javascripts/lib/activity_index.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">集美家居专题报名管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Activity/api#section1" target="_blank">接口api</a></li>
+                <li><a href="http://www.jimei.com.cn" target="_blank">集美首页</a></li>
+                <li><a href="/2015/demo/form.html" target="_blank">报名示例</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-3 col-md-2 sidebar">
+
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">活动管理</a></li>
+                <li><a href="/Activity">活动列表</a></li>
+                <li><a href="/Users">报名列表</a></li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <div class="alert alert-warning alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <strong>温馨提示：</strong> <span class="msg"></span>
+            </div>
+            <div class="alert alert-success alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <strong>提示：</strong> <span class="msg"></span>
+            </div>
+            <div class="alert alert-danger alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <strong>错误提示：</strong> <span class="msg"></span>
+            </div>
+
+            <div class="panel panel-default">
+
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        查询
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" role="form" id="searchForm">
+                        <div class="form-group">
+                            <label class="control-label" for="name">名称:</label>
+                            <input type="text" class="form-control" name="name" placeholder="请输入名称">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">市场:</label>
+                            <select name="market" class="form-control">
+                                <option value=""></option>
+                                <option value="大红门">大红门</option>
+                                <option value="定慧桥">定慧桥</option>
+                                <option value="水屯">水屯</option>
+                                <option value="北苑">北苑</option>
+                                <option value="天津">天津</option>
+                                <option value="厦门">厦门</option>
+                                <option value="廊坊">廊坊</option>
+                                <option value="卢沟桥">卢沟桥</option>
+                                <option value="唐山">唐山</option>
+                                <option value="燕郊">燕郊</option>
+                            </select>
+                        </div>
+                        <button type="button" id="searchBtn" class="btn btn-primary">提交</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+
+                    <div class="table-responsive">
+                        <div id="custom-toolbar">
+                            <div class="form-inline" role="form">
+                                <div class="form-group">
+
+                                    <button type="button" id="addBtn" class="btn btn-default">添加</button>
+                                    <button type="button" id="editBtn" class="btn btn-default">修改</button>
+                                    <button type="button" id="delBtn" class="btn btn-default">删除</button>
+                                    <button type="button" id="excelBtn" class="btn btn-default">导出Excel</button>
+                                    <button type="button" id="batceBtn" class="btn btn-default">批量导入</button>
+
+                                    <a href="template/1.xlsx" class="btn btn-primary" role="button">
+                                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> 下载模板
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <table id="table1" data-toolbar="#custom-toolbar">
+                            <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="id" data-align="right"></th>
+                                <th data-field="name" data-align="center"></th>
+                                <th data-field="price" data-sortable="true"></th>
+                            </tr>
+
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" data-show="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    活动管理
+                </h4>
+            </div>
+            <form class="form-horizontal" id="form1">
+                <div class="modal-body">
+                    <input type="hidden" name="_id" value="" id="_id"/>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">活动名称</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" required name="name" id="name" placeholder="活动名称">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">开始时间</label>
+
+                        <div class="col-sm-10">
+
+                            <div class="">
+
+                                <input class="form-control" type="datetime" value="" name="startDate" id="startDate"
+                                       required="required"/>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">结束时间</label>
+
+                        <div class="col-sm-10">
+                            <input type="datetime" class="form-control" name="endDate" id="endDate" placeholder=""
+                                   required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">市场</label>
+
+                        <div class="col-sm-10">
+                            <select name="market" id="market" class="form-control" required>
+                                <option value=""></option>
+                                <option value="大红门">大红门</option>
+                                <option value="定慧桥">定慧桥</option>
+                                <option value="水屯">水屯</option>
+                                <option value="北苑">北苑</option>
+                                <option value="天津">天津</option>
+                                <option value="厦门">厦门</option>
+                                <option value="廊坊">廊坊</option>
+                                <option value="卢沟桥">卢沟桥</option>
+                                <option value="唐山">唐山</option>
+                                <option value="燕郊">燕郊</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">短信模板</label>
+
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="4" name="messageTemplate">您已成功预约【8折储值卡】，验证码[$yzm]请勿泄露。请凭此短信于5.1~5.3日营业期间到$market办理8折储值卡，预约金额$money元，储值卡有效期至2015年12月31日。</textarea>
+                            <span id="helpBlock" class="help-block">验证码=$yzm，金额=$money，市场=$market</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">点击 率</label>
+
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="clickCount" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">报名人数限制</label>
+
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="limitForm" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">状态</label>
+
+                        <div class="col-sm-10">
+                            <input type="radio" checked name="state" value="1">开启
+                            <input type="radio" name="state" value="0">关闭
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="saveUpdate">
+                        提交更改
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!--提示框-->
+<div class="modal fade" id="batceModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">批量上传</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputFile">模板文件</label>
+                    <input id='file' type="file">
+                    <p class="help-block">请选择后缀是xlsx的Excel文件.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="file_upload">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+</body>
+</html>

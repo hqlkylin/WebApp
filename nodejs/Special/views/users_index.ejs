@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-table.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/bootstrap-table.js"></script>
+    <script src="javascripts/bootstrap-table-zh-CN.js"></script>
+    <script src="javascripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="javascripts/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="javascripts/kylin.js"></script>
+    <script src="javascripts/jquery.dialog.js"></script>
+    <script src="javascripts/jquery.messager.js"></script>
+    <script src="javascripts/lib/users_index.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">集美家居专题报名管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Activity/api#section1" target="_blank">接口api</a></li>
+                <li><a href="http://www.jimei.com.cn" target="_blank">集美首页</a></li>
+                <li><a href="/2015/demo/form.html" target="_blank">报名示例</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-3 col-md-2 sidebar">
+
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">活动管理</a></li>
+                <li><a href="/Activity">活动列表</a></li>
+                <li><a href="/Users">报名列表</a></li>
+            </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <div class="alert alert-warning alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>温馨提示：</strong> <span class="msg"></span>
+            </div>
+            <div class="alert alert-success alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>提 示：</strong> <span class="msg"></span>
+            </div>
+            <div class="alert alert-danger alert-dismissible alert-msg" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>错误提示：</strong> <span class="msg"></span>
+            </div>
+
+            <div class="panel panel-default">
+
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        查询
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" role="form" id="searchForm">
+                        <div class="form-group">
+                            <label class="control-label" for="name">姓名:</label>
+                            <input type="text" class="form-control" name="name" placeholder="请输入名称">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">电话:</label>
+                            <input type="text" class="form-control" name="tel" placeholder="请输入电话">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">地址:</label>
+                            <input type="text" class="form-control" name="address" placeholder="请输入地址">
+                        </div>
+                        <button type="button" id="searchBtn" class="btn btn-primary">提交</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+
+                    <div class="table-responsive">
+                        <div id="custom-toolbar">
+                            <div class="form-inline" role="form">
+                                <div class="form-group">
+                                    <button type="button" id="editBtn" class="btn btn-default">修改</button>
+                                    <button type="button" id="delBtn"class="btn btn-default">删除</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <table id="table1" data-toolbar="#custom-toolbar">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" data-show="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    报名管理
+                </h4>
+            </div>
+            <form class="form-horizontal" id="form1">
+                <div class="modal-body">
+                    <input type="hidden" name="_id" value="" id="_id"/>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">活动名称</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control"  name="activity" readonly>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">姓名</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" required name="name" id="name" placeholder="姓名">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">电话</label>
+
+                        <div class="col-sm-10">
+
+                            <div class="">
+
+                                <input class="form-control" type="text" value="" name="tel" id="tel"
+                                       required="required" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">报名时间</label>
+
+                        <div class="col-sm-10">
+                            <input type="datetime" class="form-control" name="addTime" id="addTime" placeholder=""
+                                   required="required" readonly >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">金额</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="money" id="money" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">地址</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="address" id="address" placeholder="">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">状态</label>
+
+                        <div class="col-sm-10">
+                            <input type="radio"  checked  name="state"  value="1">通过
+                            <input type="radio" name="state"  value="0">未处理
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="saveUpdate">
+                        提交更改
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+.contenter{ font-size: 16px; font-family: "microsoft yahei",simsun; text-align: left; background: url(../images/bg.jpg) repeat; min-width: 1210px; overflow: hidden; padding-bottom: 100px;}
+.contenter .main{ width: 918px; height: 2551px; margin: 0 auto; background: url(../images/bg-main.jpg) no-repeat; position: relative; top: 12px; }
+.contenter .main .pa{position: absolute; }
+.contenter .main .top{ width: 918px; height: 480px; position: relative; top: -12px; }
+.contenter .main .top .yin-logo{ top: -75px; left: -80px; z-index: 10;}
+.contenter .main .top .img1{ top: 6px; left: 235px; z-index: 15;}
+.contenter .main .top .img2{ top: 50px; right: 66px; z-index: 0;}
+.contenter .main .form-wrap{ width: 900px; height: 277px; margin: 0 auto; background-color: #ffdf00; overflow: hidden; position:relative; z-index: 999;}
+.contenter .main .form-wrap .left{ float: left; width: 420px; color: #62006a; font-size: 18px; padding-left: 15px; padding-top: 20px;}
+.contenter .main .form-wrap .left p{ font-size: 16px; padding-top: 18px;}
+.contenter .main .form-wrap .left .img3{ padding-top: 15px; padding-left: 20px;}
+.contenter .main .form-wrap .right{ float: right; width: 430px; padding-right: 15px}
+.contenter .main .form-wrap .right form{ background: #ffae00; padding-left: 20px; padding-bottom: 20px;}
+.contenter .main .form-wrap .right h3{font-weight: bold; text-align: right; line-height: 40px;}
+.contenter .main .form-wrap .right form div{ padding-top: 13px;}
+.contenter .main .form-wrap .right form div input{ width: 210px; height: 34px; border: none; text-indent: 1em; line-height: 40px;}
+.contenter .main .form-wrap .right form div label.error{ color: #ff0000; font-size: 12px; font-family: simsun; padding-left: 15px; font-weight: normal;}
+.contenter .main .form-wrap .right form div label{ font-weight: normal;}
+.contenter .main .form-wrap .right form div input.yzm_btn{ background: none; border: none; width: 110px; text-align: center; font-size: 16px; color: #cc2a1e; cursor: pointer;}
+.contenter .main .form-wrap .right form .submit{ background: #cc2a1e; border: none; color: #ffffff; width: 153px; height: 34px; text-align: center; display: block; margin: 0 auto; font-family: "microsoft yahei"; cursor: pointer;}
+/*门票*/
+.contenter .main .menpiao{ width: 900px; height: 320px; margin: 0 auto; background: #cc2a1e; position: relative;}
+.contenter .main .menpiao .title{ top: 35px; left: 114px;}
+.contenter .main .menpiao p{ left: 18px; top: 140px; width: 460px; color: #ffffff; line-height: 36px; font-size: 17px;}
+.contenter .main .menpiao .mingxing{ left: 400px; top:-140px;}
+
+.contenter .main .wrap{ width: 900px; margin: 0 auto; color: #610f13; overflow: hidden; position: relative;}
+.contenter .main .wrap.t1{ height: 343px; margin-top: 50px;}
+.contenter .main .wrap .title{ margin-left: 26px;}
+.contenter .main .wrap span{ display: block; font-size: 16px; line-height: 22px;}
+.contenter .main .wrap p{ font-size: 18px; line-height: 30px;}
+.contenter .main .wrap.t1 span{ width: 795px; margin: 0 auto; margin-top: 26px;}
+.contenter .main .wrap.t1 p{ margin-left:100px; margin-top: 40px;}
+.contenter .main .wrap.t1 .img4{ bottom: 10px; right: 20px;}
+.contenter .main .wrap.t2{ height: 300px;}
+.contenter .main .wrap.t2 .img5{ top: 70px; left: 79px;}
+.contenter .main .wrap.t2 span{ width: 460px; top: 96px; left: 400px;}
+.contenter .main .wrap.t3{ height: 263px;}
+.contenter .main .wrap.t3 p{ width: 340px; top: 94px; left: 63px;}
+.contenter .main .wrap.t3 .img6{ float: right; margin-right: 80px;}
+.contenter .main .wrap.t4{ height: 256px;}
+.contenter .main .wrap.t4 span{ width: 795px; margin: 0 auto; padding-top: 24px;}
+.contenter .main .wrap.t5 span{ width: 330px; margin-top: 38px; margin-left: 90px; float: left;}
+.contenter .main .wrap.t5 .img7{ float: right; margin-right: 30px;}
+
+
+
+
+

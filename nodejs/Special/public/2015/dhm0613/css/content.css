@@ -1,0 +1,25 @@
+.contenter{ font-size: 16px; font-family: "microsoft yahei",simsun; text-align: left; background: url(../images/bg.jpg) repeat; min-width: 1210px; overflow: hidden; padding-bottom: 100px;}
+.contenter .main{ width: 1160px; margin: 0 auto; position: relative; top: -350px; }
+
+.contenter .main .form-wrap{ width: 900px; height: 277px; margin: 0 auto; background-color: #ffdf00; overflow: hidden; position:relative; z-index: 999;}
+.contenter .main .form-wrap .left{ float: left; width: 360px; color: #333333; font-size: 20px; padding-left: 60px; padding-top: 50px;}
+.contenter .main .form-wrap .left p{ font-size: 18px; color: #62006a; padding-bottom: 15px;}
+.contenter .main .form-wrap .left .img3{ padding-top: 15px; padding-left: 20px;}
+.contenter .main .form-wrap .right{ float: right; width: 430px; padding-right: 15px}
+.contenter .main .form-wrap .right form{ background: #ffae00; padding-left: 20px; padding-bottom: 20px;}
+.contenter .main .form-wrap .right h3{font-weight: bold; text-align: right; line-height: 40px;}
+.contenter .main .form-wrap .right form div{ padding-top: 13px;}
+.contenter .main .form-wrap .right form div input{ width: 210px; height: 34px; border: none; text-indent: 1em; line-height: 40px;}
+.contenter .main .form-wrap .right form div label.error{ color: #ff0000; font-size: 12px; font-family: simsun; padding-left: 15px; font-weight: normal;}
+.contenter .main .form-wrap .right form div label{ font-weight: normal;}
+.contenter .main .form-wrap .right form div input.yzm_btn{ background: none; border: none; width: 110px; text-align: center; font-size: 16px; color: #cc2a1e; cursor: pointer;}
+.contenter .main .form-wrap .right form .submit{ background: #cc2a1e; border: none; color: #ffffff; width: 153px; height: 34px; text-align: center; display: block; margin: 0 auto; font-family: "microsoft yahei"; cursor: pointer;}
+
+.top{ height: 712px; background: url(../images/top.jpg) no-repeat center top; }
+.img-01{ margin: 0 auto; width: 899px; height: 319px; position:relative;}
+.img-01 .mx{ top:-120px; right: -120px; position: absolute;}
+.img{ margin-top: 20px;}
+
+
+
+
