@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=""/>
+    <script src="./amazeui/assets/js/jquery.min.js"></script>
+    <script src="./javascripts/bootstrap.js"></script>
+    <script src="./javascripts/bootstrap-table.js"></script>
+    <script src="./javascripts/bootstrap-table-zh-CN.js"></script>
+    <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/bootstrap-table.css">
+    <script>
+        $(function () {
+            $('#table').bootstrapTable({
+                url: 'data1.json',
+                method: 'get',
+                cache: false,
+                height: 600,
+                striped: false,
+                pagination: true,
+                sidePagination: 'server',
+                pageList: [ 10, 15, 20, 25]
+            });
+        })
+    </script>
+</head>
+<body>
+<table id="table">
+    <thead>
+    <tr>
+        <th data-field="id">Item ID</th>
+        <th data-field="name">Item Name</th>
+        <th data-field="price">Item Price</th>
+    </tr>
+    </thead>
+
+</table>
+</body>
+</html>

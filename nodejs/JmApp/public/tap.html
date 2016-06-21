@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="javascripts/jqm-Events-1.4.5/jquery.mobile.custom.js"></script>
+
+</head>
+<body>
+<div><span>添加</span>  </div>
+<div> <p>默认的可以动态绑定</p> </div>
+<script>
+    $("div").on("tap", "span", function () {
+        $("body").append($("div").eq(1).clone());
+    });
+
+
+    $(document).on("tap", "p", function (e) {   // 在动态给p绑定事件 为什么无效？
+        console.log($(this).index());
+    });
+</script>
+</body>
+</html>

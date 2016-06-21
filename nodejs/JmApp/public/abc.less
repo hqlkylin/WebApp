@@ -1,0 +1,161 @@
+@height: 50px;
+@icon-font-path: 'http://cdn.bootcss.com/bootstrap/3.2.0/fonts/';
+@icon-font-name: 'glyphicons-halflings-regular';
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+  url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+  url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+  url('@{icon-font-path}@{icon-font-name}.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+  font-family: 'Glyphicons Halflings';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-film:before {
+  content: "\e009";
+}
+
+.glyphicon-qrcode:before {
+  content: "\e039";
+}
+
+.glyphicon-list:before {
+  content: "\e056";
+}
+
+.glyphicon-picture:before {
+  content: "\e060";
+}
+
+.glyphicon-chevron-left:before {
+  content: "\e079";
+}
+
+.glyphicon-calendar:before {
+  content: "\e109";
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+a {
+  color: #fff;
+}
+
+header, footer {
+  width: 100%;
+  height: @height;
+
+  .fixed {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: @height;
+
+    .wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &.float {
+
+        h1 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          font-size: 20px;
+          line-height: @height;
+          color: #fff;
+          text-align: center;
+        }
+
+        .glyphicon {
+          display: inline-block;
+          margin: 12px 10px;
+          color: #fff;
+        }
+
+        .left-icon {
+          float: left;
+        }
+
+        .right-icon {
+          float: right;
+        }
+
+        .clearfix();
+      }
+
+      &.flex {
+        display: -moz-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -ms-flex;
+        display: flex;
+
+        > a {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          display: block;
+          -webkit-box-flex: 1;
+          -moz-box-flex: 1;
+          -webkit-flex: 1 1 0;
+          -moz-flex: 1 1 0;
+          -ms-flex: 1 1 0;
+          flex: 1 1 0;
+          text-align: center;
+
+          .glyphicon {
+            vertical-align: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//顶部固定
+header .fixed {
+  top: 0;
+  background-color: #45b97c;
+}
+
+//尾部固定
+footer .fixed {
+  bottom: 0;
+  background-color: #464547;
+}
+
+.main {
+  margin: 15px 10px;
+}

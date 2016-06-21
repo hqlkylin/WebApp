@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>集美家居网,jimei.com.cn-家具,建材,家装,饰品一站式泛家居,买家具到集美,花钱不后悔</title>
+    <link rel="stylesheet" href="/amazeui/assets/css/amazeui.css"/>
+    <style>
+        html,
+        body,
+        .page {
+            height: 100%;
+        }
+
+        #wrapper {
+            position: absolute;
+            top: 49px;
+            bottom: 0;
+            overflow: hidden;
+            margin: 0;
+            width: 100%;
+            padding: 0 8px;
+            background-color: #f8f8f8;
+        }
+
+        .am-list {
+            margin: 0;
+        }
+
+        .am-list > li {
+            background: none;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        .pull-action {
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            color: #999;
+        }
+
+        .pull-action .am-icon-spin {
+            display: none;
+        }
+
+        .pull-action.loading .am-icon-spin {
+            display: block;
+        }
+
+        .pull-action.loading .pull-label {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="page">
+    <!-- Header -->
+    <% include header.html %>
+
+    <div id="wrapper" data-am-widget="list_news"
+         class="am-list-news am-list-news-default">
+        <div class="am-list-news-bd">
+            <div class="pull-action loading" id="pull-down">
+                <span class="am-icon-arrow-down pull-label" id="pull-down-label"> 下拉刷新</span>
+                <span class="am-icon-spinner am-icon-spin"></span>
+            </div>
+            <ul class="am-list" id="events-list">
+                   <li class="am-list-item-desced">
+                       <div class="am-list-item-text">
+                           正在加载内容...
+                       </div>
+                   </li>
+            </ul>
+            <div class="pull-action" id="pull-up">
+                <span class="am-icon-arrow-down pull-label"
+                      id="pull-up-label"> 上拉加载更多</span>
+                <span class="am-icon-spinner am-icon-spin"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/amazeui/assets/js/jquery.min.js"></script>
+<script src="/amazeui/assets/js/handlebars.min.js"></script>
+<script type="/amazeui/text/x-handlebars-template" id="tpi-list-item">
+    {{#each this}}
+    <!--缩略图在标题左边-->
+     <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" >
+         <div class="am-u-sm-4 am-list-thumb">
+             <a href="/news/item/{{_id}}" >
+                 <img src="/{{fristImgUrl}}" alt="我很囧，你保重....晒晒旅行中的那些囧！"
+                         />
+             </a>
+         </div>
+         <div class=" am-u-sm-8 am-list-main">
+             <h3 class="am-list-item-hd" style="max-height: 1.6em; overflow:hidden;">
+                 <a href="/news/item/{{_id}}">{{title}}</a>
+             </h3>
+           <!--  <div class="am-list-item-text"><span class="">2015-06-01</span><span class="am-fr am-icon-wechat">237</span> </div>-->
+             <div class="am-list-item-text" style="margin-top: 0.2rem;">{{information}}</div>
+             <small class="am-fr am-link-muted">{{addTime}}</small>
+         </div>
+     </li>
+    {{/each}}
+</script>
+<script src="/amazeui/assets/js/amazeui.min.js"></script>
+
+<script>
+    (function ($) {
+        var EventsList = function (element, options) {
+            var $main = $('#wrapper');
+            var $list = $main.find('#events-list');
+            var $pullDown = $main.find('#pull-down');
+            var $pullDownLabel = $main.find('#pull-down-label');
+            var $pullupLabel = $main.find('#pull-up-label');
+
+            var $pullUp = $main.find('#pull-up');
+            var topOffset = -$pullDown.outerHeight();
+
+            this.compiler = Handlebars.compile($('#tpi-list-item').html());
+            this.prev = this.next = this.start = options.params.start;
+            this.total = null;
+
+            this.getURL = function (params) {
+                var queries = [];
+                for (var key in  params) {
+                    if (key !== 'start') {
+                        queries.push(key + '=' + params[key]);
+                    }
+                }
+                queries.push('start=');
+                return options.api + '?' + queries.join('&');
+            };
+
+            this.renderList = function (start, type) {
+                var _this = this;
+                var $el = $pullDown;
+
+                if (type === 'load') {
+                    $el = $pullUp;
+                }
+
+                $.getJSON(this.URL + start).then(function (data) {
+                    console.log(data);
+                    _this.total = data.total;
+                    var html = _this.compiler(data.events);
+                    if (type === 'refresh') {
+                        $list.children('li').first().before(html);
+                    } else if (type === 'load') {
+                        $list.append(html);
+                    } else {
+                        $list.html(html);
+                    }
+
+                    // refresh iScroll
+                    setTimeout(function () {
+                        _this.iScroll.refresh();
+                    }, 100);
+                }, function () {
+                    console.log('Error...')
+                }).always(function () {
+                    _this.resetLoading($el);
+                    if (type !== 'load') {
+                        _this.iScroll.scrollTo(0, topOffset, 800, $.AMUI.iScroll.utils.circular);
+                    }
+                });
+            };
+
+            this.setLoading = function ($el) {
+                $el.addClass('loading');
+            };
+
+            this.resetLoading = function ($el) {
+                $el.removeClass('loading');
+            };
+
+            this.init = function () {
+                var myScroll = this.iScroll = new $.AMUI.iScroll('#wrapper', {
+                    click: true,
+                    tap:true
+                });
+                // myScroll.scrollTo(0, topOffset);
+                var _this = this;
+                var pullFormTop = false;
+                var pullStart;
+
+                this.URL = this.getURL(options.params);
+                this.renderList(options.params.start);
+
+                myScroll.on('scrollStart', function () {
+                    if (this.y >= topOffset) {
+                        pullFormTop = true;
+                    }
+
+                    pullStart = this.y;
+                    // console.log(this);
+                });
+
+                myScroll.on('scrollEnd', function () {
+                    if (pullFormTop && this.directionY === -1) {
+                        _this.handlePullDown();
+                    }
+                    pullFormTop = false;
+
+                    // pull up to load more
+                    if (pullStart === this.y && (this.directionY === 1)) {
+                        _this.handlePullUp();
+                    }
+                });
+            };
+
+            this.handlePullDown = function () {
+                var _this=this;
+                console.log('handle pull down');
+                if (this.prev > 0) {
+                    this.setLoading($pullDown);
+                    this.prev -= options.params.count;
+                    this.renderList(this.prev, 'refresh');
+                } else {
+                    $pullDownLabel.html("已经是最新了");
+                    console.info('别刷了，没有了');
+                    setTimeout(function () {
+                        _this.iScroll.scrollTo(0, topOffset, 800, $.AMUI.iScroll.utils.circular);
+                        $pullDownLabel.html("下拉刷新");
+                    },500)
+
+                }
+            };
+
+            this.handlePullUp = function () {
+
+                console.log('handle pull up');
+                if (this.next < this.total) {
+                    this.setLoading($pullUp);
+                    this.next += options.params.count;
+                    this.renderList(this.next, 'load');
+                } else {
+                    console.log(this.next);
+//                    this.iScroll.scrollTo(0, topOffset);
+                    $pullupLabel.html("已经是最后一页了");
+                }
+
+            }
+        };
+
+        $(function () {
+            var app = new EventsList(null, {
+                api: 'getData',
+                params: {
+                    start: 0,
+                    type: 'music',
+                    count: 10,
+                    loc: 'beijing'
+                }
+            });
+            app.init();
+        });
+
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+    })(window.jQuery);
+</script>
+
+
+
+</body>
+</html>
+<!--http://pnc.co.il/dev/iscroll-5-pull-to-refresh-and-infinite-demo.html-->

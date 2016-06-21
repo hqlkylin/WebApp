@@ -1,0 +1,461 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin table Examples</title>
+    <meta name="description" content="这是一个 table 页面">
+    <meta name="keywords" content="table">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/amazeui/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/amazeui/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-table.css">
+    <link rel="stylesheet" href="/amazeui/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/amazeui/assets/css/admin.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="/amazeui/assets/js/polyfill/rem.min.js"></script>
+    <script src="/amazeui/assets/js/polyfill/respond.min.js"></script>
+    <script src="/amazeui/assets/js/amazeui.legacy.js"></script>
+    <![endif]-->
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="/amazeui/assets/js/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-table.js"></script>
+    <script src="/javascripts/bootstrap-table-zh-CN.js"></script>
+    <script src="/amazeui/assets/js/amazeui.min.js"></script>
+    <!--<![endif]-->
+    <script src="/amazeui/assets/js/app.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="/javascripts/popwin.js"></script>
+    <script src="/javascripts/common.js"></script>
+    <script>
+        $(function () {
+            /*初始化表格*/
+            var $table = $('#table').bootstrapTable({
+                method: 'get',
+                url: '../../admin/news-data',
+                cache: false,
+                height: 600,
+                striped: false,
+                pagination: true,
+                sidePagination: 'server',
+                pageList: [2, 3, 4, 5],
+                showColumns: true,
+                showRefresh: true,
+                minimumCountColumns: 2,
+                pageSize: 5,
+                clickToSelect: true,
+                columns: [
+                    {checkbox: true},
+                    {
+                        field: '_id',
+                        title: '系统编号',
+                        align: 'right',
+                        valign: 'bottom'
+                        , visible: false
+                    },
+                    {
+                        field: 'title',
+                        title: '标题',
+                        align: 'left',
+                        valign: 'middle'
+                    },
+                    {
+                        field: 'category',
+                        title: '所属分类',
+                        align: 'left',
+                        valign: 'top',
+                        formatter: function (value) {
+                            return value.name;
+                        }
+                    },
+                    {
+                        field: 'addTime',
+                        title: '发布时间',
+                        align: 'left',
+                        valign: 'middle',
+                        formatter: function (value) {
+                            return new Date(value).format("yyyy-MM-dd");
+                        }
+                    },
+                    {
+                        field: 'sort',
+                        title: '排序',
+                        align: 'left',
+                        valign: 'middle'
+                    },
+                    {
+                        field: 'mark',
+                        title: '属性',
+                        align: 'left',
+                        valign: 'top'
+                    }
+                ]
+            });
+            var timer_popup;
+            var popup = function (msg, flag) {
+                var $popup = $(".am-popover");
+                !flag ? $popup.children().css("background-color", "#dd514c") : $popup.children().css("background-color", "#5eb95e")
+                clearTimeout(timer_popup);
+                $popup.addClass('am-active').find(".am-popover-inner").html(msg);
+                timer_popup = setTimeout(function () {
+                    $(".am-popover").removeClass('am-active');
+                }, 1500);
+            };
+
+            //点击查询数据
+            $("#searchBtn").click(function () {
+                $('#table').bootstrapTable('refresh', {
+                    url: '../../admin/news-data?' + $('#searchForm').serialize()
+                });
+            });
+            /*添加方法*/
+            $('#add').on('click', function () {
+                popWin.showWin($(window).width() * 0.7, $(window).height() * 0.8, '添加信息', '../admin/news-form');
+                /*iframe加载成功以后初始化form数据*/
+                $('#ifr').load(function () {
+                    $(this).contents().find(".am-form").attr("action", '../admin/news-add');
+                });
+            });
+            /* 修改方法*/
+            $("#edit").on('click', function () {
+                var row = $table.bootstrapTable('getSelections');
+                if (row.length != 1) {
+                    popup("请选择一行", false);
+                    return;
+                }
+                popWin.showWin($(window).width() * 0.7, $(window).height() * 0.8, '修改信息', '../admin/news-form?_id='+row[0]._id);
+                /*iframe加载成功以后初始化form数据*/
+                $('#ifr').load(function () {
+                    $(this).contents().find(".am-form").attr("action", '../admin/news-edit');
+                });
+            });
+
+            //删除操作
+            $("#del").click(function () {
+                var row = $table.bootstrapTable('getSelections');
+                if (row.length != 1) {
+                    popup("请选择一行", false);
+                    return;
+                }
+                if (window.confirm("确定要删除当前选中项吗？")) {
+                    $.AMUI.progress.start();
+                    console.log(row[0]._id);
+                    //删除数据
+                    $.ajax({
+                        url: '../admin/news-del',
+                        data: {_id: row[0]._id},
+                        dataType: 'json',
+                        type: 'post',
+                        success: function (data) {
+                            $.AMUI.progress.done();
+                            if (data.success) {
+                                //提示框
+                                popup(data.msg, data.success);
+                                $table.bootstrapTable('refresh');
+                            } else {
+                                popup(data.msg, data.success);
+                            }
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<!--
+<form class="am-form">
+    <div class="am-tabs am-margin" data-am-tabs>
+        <ul class="am-tabs-nav am-nav am-nav-tabs">
+            <li class="am-active"><a href="#tab1">基本信息</a></li>
+            <li><a href="#tab2">详细描述</a></li>
+            <li><a href="#tab3">SEO 选项</a></li>
+        </ul>
+
+        <div class="am-tabs-bd">
+            <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">所属类别</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <select data-am-selected="{btnSize: 'sm'}">
+                            <option value="option1">选项一...</option>
+                            <option value="option2">选项二.....</option>
+                            <option value="option3">选项三........</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">显示状态</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <div class="am-btn-group" data-am-button>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="radio" name="options" id="option1"> 正常
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="radio" name="options" id="option2"> 待审核
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="radio" name="options" id="option3"> 不显示
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">推荐类型</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <div class="am-btn-group" data-am-button>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 允许评论
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 置顶
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 推荐
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 热门
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 轮播图
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        发布时间
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="text" class="am-form-field am-input-sm" placeholder="时间">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="am-tab-panel am-fade" id="tab2">
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        文章标题
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm">
+                    </div>
+                    <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        文章作者
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+                        <input type="text" class="am-input-sm">
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        信息来源
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm">
+                    </div>
+                    <div class="am-hide-sm-only am-u-md-6">选填</div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        内容摘要
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm">
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6">不填写则自动截取内容前255字符</div>
+                </div>
+
+                <div class="am-g am-margin-top-sm">
+                    <div class="am-u-sm-12 am-u-md-2 am-text-right admin-form-text">
+                        内容描述
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-10">
+                        <textarea rows="10" placeholder="请使用富文本编辑插件"></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="am-tab-panel am-fade" id="tab3">
+                <form class="am-form">
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 标题
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                    </div>
+
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 关键字
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                    </div>
+
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 描述
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <textarea rows="4"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="am-margin">
+        <button type="button" class="am-btn am-btn-default am-btn-xs">提交保存</button>
+        <button type="button" class="am-btn am-btn-default am-btn-xs">放弃保存</button>
+    </div>
+</form>
+-->
+
+<!--dialog-->
+<div class="am-modal" tabindex="-1" id="formMoal">
+    <div class="am-modal-dialog" style="overflow: auto;">
+        <div class="am-modal-bd" style="border: 0px">
+        </div>
+    </div>
+</div>
+
+<!--提示框-->
+<div class="am-popover  am-popover-top"
+     style="display: block; top: 1%; left: 50%; z-index: 1200; border: none; width: 230px;text-align: center;transform: translateX(-50%);">
+    <div class="am-popover-inner"></div>
+</div>
+<!--confirm框-->
+<div class="am-modal am-modal-confirm" tabindex="-1" id="formConfirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">删除操作</div>
+        <div class="am-modal-bd">
+            你，确定要删除这条记录吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+<% include header.html %>
+
+<div class="am-cf admin-main">
+    <!-- sidebar start -->
+    <% include sidebar.html %>
+    <!-- sidebar end -->
+
+    <!-- content start -->
+    <div class="admin-content">
+
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">信息</strong> /
+                <small>Table</small>
+            </div>
+        </div>
+        <form class="form-inline" role="form" id="searchForm">
+            <div class="am-g">
+
+                <div class="am-u-sm-12 am-u-md-3">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default" id="add"><span
+                                    class="am-icon-plus"></span>
+                                新增
+                            </button>
+                            <!--<a class="am-btn am-btn-default" href="#" id="add">
+                                <i class="am-icon-plus"></i>
+                                新增
+                            </a>-->
+
+                            <button type="button" class="am-btn am-btn-default" id="edit"><span
+                                    class="am-icon-edit"></span>
+                                修改
+                            </button>
+
+                            <button type="button" class="am-btn am-btn-default" id="del"><span
+                                    class="am-icon-trash-o"></span> 删除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-u-sm-12 am-u-md-6 am-text-right">
+                    <div class="am-form-group">
+                        <select name="category" data-am-selected="{btnSize: 'sm'}">
+                            <option value="0">所属分类</option>
+                            <% for(var i=0; i
+                            <category.length ; i++) {%>
+                                <option value="<%=category[i]._id%>"><%=category[i].name%></option>
+                                <% } %>
+                        </select>
+                        <select name="mark" data-am-selected="{btnSize: 'sm'}">
+                            <option value="0">所属属性</option>
+                            <% for(var i=0; i
+                            <mark.length ; i++) {%>
+                                <option value="<%=mark[i].value%>"><%=mark[i].name%></option>
+                                <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-3">
+                    <div class="am-input-group am-input-group-sm">
+                        <input type="text" name="title" class="am-form-field">
+                      <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="button" id="searchBtn">搜索</button>
+                      </span>
+                    </div>
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table id="table" data-cache="false" data-height="299"></table>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- content end -->
+</div>
+
+<!-- footer start -->
+<% include footer.html %>
+<!-- footer end -->
+
+</body>
+</html>
+

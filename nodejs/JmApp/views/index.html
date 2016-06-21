@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>集美家居网,jimei.com.cn-家具,建材,家装,饰品一站式泛家居,买家具到集美,花钱不后悔</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/amazeui/assets/i/favicon.png">
+    <link rel="stylesheet" href="/amazeui/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="/amazeui/assets/css/app.css">
+    <script src="/amazeui/assets/js/jquery.min.js"></script>
+    <script src="/amazeui/assets/js/amazeui.min.js"></script>
+    <script src="/javascripts/jqm-Events-1.4.5/jquery.mobile.custom.js"></script>
+
+</head>
+<body>
+
+<!-- Header -->
+<% include header.html %>
+
+<!-- Slider -->
+<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
+    <ul class="am-slides">
+        <%for(var i=0;i
+        <slider.length
+                ;i++){%>
+            <li>
+                <img src="<%=slider[i].fristImgUrl%>">
+            </li>
+            <%}%>
+    </ul>
+</div>
+
+<!-- List -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+        <!--带更多链接-->
+        <a href="/news/list">
+            <h2>集团新闻</h2>
+            <span class="am-list-news-more am-fr">更多 &raquo;</span>
+        </a>
+    </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <!--缩略图在标题左边-->
+            <%for(var i=0;i
+            <list1.length
+                    ;i++){ if(list1.length-1!=i){%>
+                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+                    <div class="am-u-sm-4 am-list-thumb">
+                        <a href="news/item">
+                            <img src="<%=list1[i].fristImgUrl%>" alt="<%=list1[i].title%>"
+                                    />
+                        </a>
+                    </div>
+                    <div class="am-u-sm-8 am-list-main">
+                        <h3 class="am-list-item-hd">
+                            <a href="news/item/<%=list1[i]._id%>"><%=list1[i].title%></a>
+                        </h3>
+
+                        <div class="am-list-item-text"><%=list1[i].information%></div>
+                    </div>
+                </li>
+                <%}else{%>
+                <li class="am-g am-list-item-desced">
+                    <div class="am-list-main">
+                        <h3 class="am-list-item-hd">
+                            <a href="news/item/<%=list1[i]._id%>"><%=list1[i].title%></a>
+                        </h3>
+
+                        <div class="am-list-item-text"><%=list1[i].information%></div>
+                    </div>
+                </li>
+                <%}}%>
+
+
+        </ul>
+    </div>
+</div>
+
+
+<!-- Gallery -->
+<ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+  am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
+    <%for(var i=0;i
+    <list2.length
+            ;i++){%>
+        <li>
+            <div class="am-gallery-item">
+                <a href="###"
+                   class="">
+                    <img src="<%=list2[i].fristImgUrl%>"
+                         alt="<%=list2[i].title%>"/>
+                    <h3 class="am-gallery-title"><%=list2[i].title%></h3>
+                    <div class="am-gallery-desc"><%=list2[i].addTime.toLocaleDateString()%></div>
+                </a>
+            </div>
+        </li>
+        <%}%>
+
+</ul>
+
+<!-- List -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+        <!--带更多链接-->
+        <a href="###">
+            <h2>促销信息</h2>
+        </a>
+    </div>
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <%for(var i=0;i
+            <list3.length
+                    ;i++){%>
+                <li class="am-g">
+                    <a href="news/item/<%=list3[i]._id%>" class="am-list-item-hd"><%=list3[i].title%></a>
+                </li>
+                <%}%>
+
+        </ul>
+    </div>
+    <!--更多在底部-->
+    <div class="am-list-news-ft">
+        <a class="am-list-news-more am-btn am-btn-default" href="/news/list">查看更多 &raquo;</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+
+<form class="am-form">
+    <div class="am-tabs am-margin" id="formTabs">
+        <ul class="am-tabs-nav am-nav am-nav-tabs">
+            <li class="am-active"><a href="#tab1">基本信息</a></li>
+            <li><a href="#tab2">详细描述</a></li>
+            <li><a href="#tab3">SEO 选项</a></li>
+        </ul>
+
+        <div class="am-tabs-bd">
+            <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">所属类别</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <select>
+                            <% for(var i=0; i<category.length; i++) {%>
+                            <option value="<%=category[i]._id%>"><%=category[i].name%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">显示状态</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <div class="am-btn-group" data-am-button>
+                            <label class="am-btn am-btn-default am-btn-xs am-active">
+                                <input type="radio" name="options"> 正常
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="radio" name="options" > 不显示
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">推荐类型</div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <div class="am-btn-group" data-am-button>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 允许评论
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 置顶
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 推荐
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 热门
+                            </label>
+                            <label class="am-btn am-btn-default am-btn-xs">
+                                <input type="checkbox"> 轮播图
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        发布时间
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-10">
+                        <form action="" class="am-form am-form-inline">
+                            <div class="am-form-group am-form-icon">
+                                <i class="am-icon-calendar"></i>
+                                <input type="text" class="am-form-field am-input-sm" id="dateTime" placeholder="时间">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="am-tab-panel am-fade" id="tab2">
+                <form class="am-form">
+                    <div class="am-g am-margin-top">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            文章标题
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4">
+                            <input type="text" class="am-input-sm" required>
+                        </div>
+                        <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
+                    </div>
+
+                    <div class="am-g am-margin-top">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            文章作者
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                    </div>
+
+                    <div class="am-g am-margin-top">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            信息来源
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                        <div class="am-hide-sm-only am-u-md-6">选填</div>
+                    </div>
+
+                    <div class="am-g am-margin-top">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            内容摘要
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                        <div class="am-u-sm-12 am-u-md-6">不填写则自动截取内容前255字符</div>
+                    </div>
+
+                    <div class="am-g am-margin-top-sm">
+
+                        <div class="am-u-sm-12 am-u-md-12">
+                            <script id="editor" type="text/plain" style="width:980px;height:500px;"></script>
+                            <script type="text/javascript">
+                                //实例化编辑器
+                                //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                                var ue = UE.getEditor('editor');
+                            </script>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="am-tab-panel am-fade" id="tab3">
+                <form class="am-form">
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 标题
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                    </div>
+
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 关键字
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <input type="text" class="am-input-sm">
+                        </div>
+                    </div>
+
+                    <div class="am-g am-margin-top-sm">
+                        <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                            SEO 描述
+                        </div>
+                        <div class="am-u-sm-8 am-u-md-4 am-u-end">
+                            <textarea rows="4"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="am-g">
+
+    <div class="am-g am-g-collapse">
+        <div class="am-u-sm-6  am-text-center "><a class="am-btn am-btn-primary">取消</a></div>
+        <div class="am-u-sm-6  am-text-center"><a class="am-btn am-btn-primary">确定</a></div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="amazeui/assets/js/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+    <style>
+        .a{width: 200px;}
+        .b{
+            padding: 20px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="a"><div class="b"></div></div>
+
+    <div style="width: 200px;text-align: center;"><span style="border:1px solid #ccc;width: 100px;">a</span></div>
+
+    <ul>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul>
+    <script>
+        var aLi=document.getElementsByTagName("li");
+        var newLi= Array.prototype.slice.apply(aLi).slice(12,-1);
+        for(var i=0;i<newLi.length;i++){
+            newLi[i].children[0].style.display="block";
+            newLi[i].children[0].style.height="30px";
+            newLi[i].children[0].style.border="1px solid #ccc";
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            $('#add').on('click', function () {
+
+                $("#form1").attr("action","/activity/add").get(0).reset();
+                $('#myModal').modal('show');
+            });
+
+        })
+    </script>
+    <div id="add">jfjfjfj</div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" data-show="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        活动管理
+                    </h4>
+                </div>
+                <form class="form-horizontal" id="form1">
+                    <div class="modal-body">
+                        <input type="hidden" name="_id" value="" id="_id"/>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动名称</label>
+
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" required name="name" id="name" placeholder="活动名称">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">开始时间</label>
+
+                            <div class="col-sm-10">
+
+                                <div class="">
+
+                                    <input class="form-control" type="datetime" value="" name="startDate" id="startDate"
+                                           required="required"/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">结束时间</label>
+
+                            <div class="col-sm-10">
+                                <input type="datetime" class="form-control" name="endDate" id="endDate" placeholder=""
+                                       required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">市场</label>
+
+                            <div class="col-sm-10">
+                                <select name="market" id="market" class="form-control" required>
+                                    <option value=""></option>
+                                    <option value="大红门">大红门</option>
+                                    <option value="定慧桥">定慧桥</option>
+                                    <option value="水屯">水屯</option>
+                                    <option value="北苑">北苑</option>
+                                    <option value="天津">天津</option>
+                                    <option value="厦门">厦门</option>
+                                    <option value="廊坊">廊坊</option>
+                                    <option value="卢沟桥">卢沟桥</option>
+                                    <option value="唐山">唐山</option>
+                                    <option value="燕郊">燕郊</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">短信模板</label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="4" name="messageTemplate">您已成功预约【8折储值卡】，验证码[$yzm]请勿泄露。请凭此短信于5.1~5.3日营业期间到$market办理8折储值卡，预约金额$money元，储值卡有效期至2015年12月31日。</textarea>
+                                <span id="helpBlock" class="help-block">验证码=$yzm，金额=$money，市场=$market</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">点击 率</label>
+
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="clickCount" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">报名人数限制</label>
+
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="limitForm" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">状态</label>
+
+                            <div class="col-sm-10">
+                                <input type="radio" checked name="state" value="1">开启
+                                <input type="radio" name="state" value="0">关闭
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            关闭
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="saveUpdate">
+                            提交更改
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</body>
+</html>

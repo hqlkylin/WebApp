@@ -1,0 +1,298 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin table Examples</title>
+    <meta name="description" content="这是一个 table 页面">
+    <meta name="keywords" content="table">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/amazeui/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/amazeui/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-table.css">
+    <link rel="stylesheet" href="/amazeui/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/amazeui/assets/css/admin.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="/amazeui/assets/js/polyfill/rem.min.js"></script>
+    <script src="/amazeui/assets/js/polyfill/respond.min.js"></script>
+    <script src="/amazeui/assets/js/amazeui.legacy.js"></script>
+    <![endif]-->
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="/amazeui/assets/js/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-table.js"></script>
+    <script src="/javascripts/bootstrap-table-zh-CN.js"></script>
+    <script src="/amazeui/assets/js/amazeui.min.js"></script>
+    <!--<![endif]-->
+    <script src="/amazeui/assets/js/app.js"></script>
+
+    <script>
+        $(function () {
+            /*初始化表格*/
+            var $table = $('#table').bootstrapTable({
+                method: 'get',
+                url: '../../admin/category-data',
+                cache: false,
+                height: 600,
+                striped: false,
+                pagination: true,
+                sidePagination: 'server',
+                pageList: [10, 15, 20, 25],
+                showColumns: true,
+                showRefresh: true,
+                minimumCountColumns: 2,
+                pageSize: 10,
+                clickToSelect: true,
+                columns: [
+                    {checkbox: true},
+                    {
+                        field: '_id',
+                        title: '系统编号',
+                        align: 'right',
+                        valign: 'bottom'
+                      //  , visible: false
+                    },
+                    {
+                        field: 'name',
+                        title: '名称',
+                        align: 'center',
+                        valign: 'middle'
+                    },
+                    {
+                        field: 'sort',
+                        title: '排序',
+                        align: 'center',
+                        valign: 'middle'
+//                        ,sortable: true
+                    }, {
+                        field: 'type',
+                        title: '分类名称',
+                        align: 'left',
+                        valign: 'top'
+                    }
+                ]
+            });
+            /*form碎片*/
+            var formhtml = '<form action="" class="am-form">' +
+                    '<fieldset>' +
+                    '<div class="am-form-group">' +
+                    '<label for="doc-vld-name-2">名称：</label>' +
+                    '<input type="text" id="doc-vld-name-2" minlength="2" name="name"' +
+                    'placeholder="输入标题名称" required/>' +
+                    '</div>' +
+                    '<div class="am-form-group">' +
+                    '<label for="doc-vld-sort">排序：</label>' +
+                    '<input type="number" id="doc-vld-sort" placeholder="升序排序" name="sort"' +
+                    'min="1" max="100" required/>' +
+                    '<input type="hidden" name="_id"/>' +
+                    '</div>' +
+                    '</fieldset>' +
+                    '<div class="am-g">' +
+                    '<div class="am-g am-g-collapse">' +
+                    '<div class="am-u-sm-6  am-text-center "><a class="am-btn am-btn-default">取消</a></div>' +
+                    '<div class="am-u-sm-6  am-text-center"><a class="am-btn am-btn-default">确定</a></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</form>';
+            var timer_popup;
+            var popup = function (msg, flag) {
+                var $popup = $(".am-popover");
+                !flag ? $popup.children().css("background-color", "#dd514c") : $popup.children().css("background-color", "#5eb95e")
+                clearTimeout(timer_popup);
+                $popup.addClass('am-active').find(".am-popover-inner").html(msg);
+                timer_popup = setTimeout(function () {
+                    $(".am-popover").removeClass('am-active');
+                }, 1500);
+            };
+            /*添加方法*/
+            $('#add').on('click', function () {
+                if (!$(".am-form").size()) {
+                    $('#formMoal .am-modal-bd').append($(formhtml));
+                }
+                $('.am-form').validator();
+                $('#formMoal').modal();
+                $('.am-form').attr("action", '../admin/category-add');
+
+            });
+            /*修改方法*/
+            $("#edit").on('click', function () {
+                var row = $table.bootstrapTable('getSelections');
+                if (row.length != 1) {
+                    popup("请选择一行", false);
+                    return;
+                }
+                /*清空表单*/
+                $('.am-form').remove();
+                $('#formMoal .am-modal-bd').append($(formhtml));
+                $('.am-form').attr("action", '../admin/category-edit');
+                //获取数据
+                $.ajax({
+                    url: '../admin/category-edit',
+                    data: {_id: row[0]._id},
+                    dataType: 'json',
+                    type: 'get',
+                    success: function (data) {
+                        ///刷新当前table
+                        if (data) {
+                            $("input[name='name']").val(data.name);
+                            $("input[name='sort']").val(data.sort);
+                            $("input[name='_id']").val(data._id);
+                            //打开模态框
+                            $('#formMoal').modal();
+                        } else {
+                            popup('发生异常，请联系管理员', false);
+                            return;
+                        }
+                    }
+                })
+            });
+            //添加修改操作
+            $(document).on('click', '#formMoal .am-btn-default:last', function () {
+                if ($('.am-form').validator().data('amui.validator').isFormValid()) {
+                    $.AMUI.progress.start();
+                    $.ajax({
+                        url: $('.am-form').attr('action'),
+                        type: 'post',
+                        dataType: 'json',
+                        data: $('.am-form').serialize(),
+                        success: function (data) {
+                            $.AMUI.progress.done();
+                            if (data.success) {
+                                $('.am-form').remove();
+                                $('#formMoal').modal('close');
+                                $table.bootstrapTable('refresh');
+                                popup(data.msg, data.success);
+                            } else {
+                                popup(data.msg, data.success);
+                            }
+                        }
+                    })
+                }
+            });
+            //取消操作
+            $(document).on('click', '#formMoal .am-btn-default:first', function () {
+                $('#formMoal').modal('close');
+            });
+            //删除操作
+            $("#del").click(function () {
+                var row = $table.bootstrapTable('getSelections');
+                if (row.length != 1) {
+                    popup("请选择一行", false);
+                    return;
+                }
+                if (window.confirm("确定要删除当前选中项吗？")) {
+                    $.AMUI.progress.start();
+                    console.log(row[0]._id);
+                    //删除数据
+                    $.ajax({
+                        url: '../admin/category-del',
+                        data: {_id: row[0]._id},
+                        dataType: 'json',
+                        type: 'post',
+                        success: function (data) {
+                            $.AMUI.progress.done();
+                            if (data.success) {
+                                //提示框
+                                popup(data.msg, data.success);
+                                $table.bootstrapTable('refresh');
+                            } else {
+                                popup(data.msg, data.success);
+                            }
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+<!--dialog-->
+<div class="am-modal" tabindex="-1" id="formMoal">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">类别操作</div>
+        <div class="am-modal-bd">
+        </div>
+    </div>
+</div>
+
+<!--提示框-->
+<div class="am-popover  am-popover-top" style="display: block;z-index: 1200; border: none;position: fixed; left:50%;top:1%;transform: translateX(-50%);">
+    <div class="am-popover-inner"></div>
+</div>
+<!--confirm框-->
+<div class="am-modal am-modal-confirm" tabindex="-1" id="formConfirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">删除操作</div>
+        <div class="am-modal-bd">
+            你，确定要删除这条记录吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+<% include header.html %>
+
+<div class="am-cf admin-main">
+    <!-- sidebar start -->
+    <% include sidebar.html %>
+    <!-- sidebar end -->
+
+    <!-- content start -->
+    <div class="admin-content">
+
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">类别</strong> /
+                <small>Table</small>
+            </div>
+        </div>
+
+        <div class="am-g">
+
+            <div class="am-u-sm-12 am-u-md-6">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default" id="add"><span class="am-icon-plus"></span>
+                            新增
+                        </button>
+                        <button type="button" class="am-btn am-btn-default" id="edit"><span class="am-icon-edit"></span>
+                            修改
+                        </button>
+
+                        <button type="button" class="am-btn am-btn-default" id="del"><span
+                                class="am-icon-trash-o"></span> 删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <table id="table" data-cache="false" data-height="299"></table>
+            </div>
+        </div>
+
+    </div>
+    <!-- content end -->
+</div>
+
+<!-- footer start -->
+<% include footer.html %>
+<!-- footer end -->
+
+
+</body>
+</html>
+
