@@ -1,0 +1,19 @@
+{
+    "name": "weui.js",
+    "description": "JavaScript for WeUI",
+    "version": "0.2.1",
+    "main": "dist/weui.js",
+    "authors": [
+        "jf <xingzhewujiang1999@gmail.com>"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/progrape/weui.js",
+    "moduleType": [],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
