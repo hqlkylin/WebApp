@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue-dev/dist/vue.js"></script>
+    <link rel="stylesheet" href="../../jquery-weui-master/dist/lib/weui.css">
+    <link rel="stylesheet" href="../../jquery-weui-master_v2/style/weuix.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+<style>
+
+    .fade-transition {
+        transition: opacity .3s ease;
+    }
+
+    .fade-enter, .fade-leave {
+        opacity: 0;
+    }
+</style>
+
+<!-- 子组件模板 -->
+<template id="child-template">
+    <input v-model="name">
+    <button v-on:click="notify">Dispatch Event</button>
+    <slot></slot>
+</template>
+
+<template id="link">
+    <div>
+        <article class="weui_article">
+            <h1>大标题</h1>
+            <section>
+                <h2 class="title">章标题</h2>
+                <section>
+                    <h3>1.1 节标题</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute</p>
+
+                </section>
+                <section>
+                    <h3>1.2 节标题</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </section>
+            </section>
+        </article>
+    </div>
+</template>
+
+<template id="home" :view.sync="currentView">
+    <div>
+        <div class="bd">
+
+            <div class="weui_cells_title">带图标、说明的列表项</div>
+            <div class="weui_cells">
+                <div class="weui_cell" v-for="m in list">
+                    <div class="weui_cell_hd"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
+                            alt="" style="width:20px;margin-right:5px;display:block"></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>{{m.name}}</p>
+                    </div>
+                    <div class="weui_cell_ft">{{m.time}}</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="button_sp_area">
+            <a href="javascript:;" class="weui_btn bg-orange-b" v-on:click.prevent.stop="tab">go to link</a>
+        </div>
+    </div>
+</template>
+<div id="component">
+
+    <!-- <child :msg="pmsg">
+         field:{{pmsg}}
+     </child>-->
+
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>
+
+            <div class="weui-tabnav-red">
+                <a v-on:click.stop.prevent="currentView='home'" class="weui-tabnav-item"
+                   v-bind:class="{'weui-tabnav-red-current':currentView=='home'}">home</a>
+                <a v-on:click.stop.prevent="currentView='link'" class="weui-tabnav-item"
+                   v-bind:class="{'weui-tabnav-red-current':currentView=='link'}"> link </a>
+            </div>
+
+            </p>
+        </div>
+    </div>
+
+    <component
+            :is="currentView"
+            transition="fade"
+            transition-mode="out-in"
+            keep-alive>
+
+    </component>
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: "#component",
+        data: {
+            pmsg: 'hello word',
+            currentView: 'home'
+        },
+        events: {
+            'notify': function (view) {
+                console.log('父类notify事件');
+                this.currentView = view;
+            }
+        },
+        components: {
+            home: {
+                template: '#home',
+                props: ['view'],
+                data: function () {
+
+                    var arr = [];
+                    for (var i = 0; i < 30; i++) {
+                        arr.push({
+                            name: '时间机器',
+                            time: new Date().getTime()
+                        })
+                    }
+                    return {
+                        list: arr
+                    }
+                },
+                methods: {
+                    tab: function () {
+                        this.$dispatch("notify", 'link');
+                        /*this.$root.currentView='link'*/
+                    }
+                }
+            },
+            link: {
+                template: '#link'
+            }
+        }
+    })
+
+</script>
+
+
+</body>
+</html>

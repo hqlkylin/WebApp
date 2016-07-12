@@ -62,6 +62,7 @@
             @click="show(item,current)">
             <img v-bind:src="item.imgUrl" alt="">
             <span>{{item.title}} </span>
+
             <div v-text="item.intr"></div>
             <p>
                 <a href="javascript:;" @click="del(current)">删除</a>
@@ -75,12 +76,12 @@
 <div style="float: right;width: 60%">
 
     <div>标题:<input type="text" v-model="current.title"></div>
-<span v-text="titleLength"></span>/20
+    <span v-text="titleLength"></span>/20
     <div>缩略图:<img v-bind:src="current.imgUrl" alt="" width="150" height="100">
         <input type="hidden" v-model="current.imgUrl">
     </div>
     <div>介绍:<input type="text" v-model="current.intr"></div>
-    <div>居中显示: <input type="checkbox" v-model="current.isFristImg"> </div>
+    <div>居中显示: <input type="checkbox" v-model="current.isFristImg"></div>
     <div>
         内容:<textarea v-model="current.content" rows="10" cols="30"></textarea>
         <!-- 加载编辑器的容器 -->
@@ -102,28 +103,28 @@
                 title: "我的第一个标题",
                 content: "内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1",
                 intr: "简介1",
-                isFristImg:"true",
+                isFristImg: "true",
                 imgUrl: "../../../img/1.png"
             },
             {
                 title: "我的第二个标题",
                 content: "内容2",
                 intr: "简介2",
-                isFristImg:"true",
+                isFristImg: "true",
                 imgUrl: "../../../img/1.jpg"
             },
             {
                 title: "我的第三个标题",
                 content: "内容3",
                 intr: "简介3",
-                isFristImg:"",
+                isFristImg: "",
                 imgUrl: "../../../img/2.jpg"
             },
             {
                 title: "我的第四个标题",
                 content: "内容4",
                 intr: "简介4",
-                isFristImg:"",
+                isFristImg: "",
                 imgUrl: "../../../img/3.jpg"
             }
         ]
@@ -139,9 +140,12 @@
 
     var vm = new Vue({
         el: "#examplesDemo",
-        data: {
-            index: -1,
-            items: jsonData.items
+        data: function () {
+            return {
+
+                index: -1,
+                items: jsonData.items
+            }
         },
         created: function () {
             this.index = 0;
@@ -157,7 +161,7 @@
                     title: "",
                     content: "",
                     intr: "",
-                    isFristImg:"true",
+                    isFristImg: "true",
                     imgUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
                 });
                 this.index = this.items.length - 1;
