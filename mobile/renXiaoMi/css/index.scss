@@ -1,0 +1,150 @@
+@import "../../zjwk/public/css/func";
+
+body{
+  background-color: #fcf5e4;
+}
+.page {
+
+  background: url(../img/index-bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 568px;
+  .head {
+    background-color:rgba(255,255,255,0.2);
+    .headImg {
+      text-align: center;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #cbac8e;
+      }
+      padding-top: 10px;
+    }
+    .name {
+      @include flexbox();
+      @include justify-content();
+      font-size: 14px;
+      img {
+        width: 20px;
+        height: 22px;
+      }
+    }
+    .num {
+      position: relative;
+      width: 100%;
+      margin-top: 6px;
+      @include flexbox();
+      @include justify-content();
+      span {
+        @include flex(1);
+        text-align: center;
+        color: #b8b4ab;
+        font-size: 12px;
+      }
+
+    }
+    .level {
+      position: relative;
+      width: 100%;
+      margin-top: 4px;
+      height: 54px;
+      @include flexbox();
+      @include justify-content();
+      div {
+        @include flex(1);
+        text-align: center;
+        line-height: 1;
+        img {
+          width: 20px;
+          padding: 4px;
+          border-radius: 50%;
+          border: 1px solid #b2ddf1;
+          background-color: #f9f3e5;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    .weui_progress {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 100;
+      .weui_progress_bar {
+        background-color: #b2ddf1;
+        .weui_progress_inner_bar {
+          width: 0;
+          height: 100%;
+          background-color: #12a8eb;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: -5px;
+            right: -1px;
+            border: 3px solid #12a8eb;
+            background-color: #b2ddf1;
+            border-radius: 50%;
+          }
+          .current {
+            color: #129ddb;
+            position: absolute;
+            left: 101%;
+            top: -8px;
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+      }
+
+    }
+    .myWrap {
+      position: relative;
+      padding: 8px 0;
+      font-size: 14px;
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        border-bottom: 1px solid #d9d9d9;
+        @include transform(scaleY(0.5));
+      }
+      @include flexbox();
+      .point {
+        @include flex(1);
+        text-align: center;
+      }
+      .sign {
+        text-align: center;
+        @include flex(1)
+      }
+      .line {
+        position: absolute;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        background-color: #d9d9d9;
+        @include transform(scaleX(0.5));
+
+      }
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .weui_grids{
+    margin-top: 12px;
+    a{
+      background-color:rgba(255,255,255,0.5);
+    }
+    .weui_grid {
+      padding: 30px 10px;
+    }
+  }
+}

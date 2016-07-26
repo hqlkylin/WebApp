@@ -1,0 +1,81 @@
+<html data-use-rem="750" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>债券转让</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="google" value="notranslate">
+    <meta name="description" content=""/>
+    <meta name="author" content="Administrator"/>
+    <meta name="apple-itunes-app" content="app-id=123131232132"/>
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="x5-page-mode" content="default"/>
+    <script src="//cdn.bootcss.com/jquery/1.10.1/jquery.js"></script>
+    <link rel="stylesheet" href="css/comment.css">
+    <script>
+        $(function () {
+
+            $.ajax({
+                url:'http://192.168.1.27:8081/zjxaServers/f/zjxa/makeover/zjxaMakeOverF/get',
+                data:{
+                    id:'093e06c1d9bd4308ab1d613d3ec188e9'
+                },
+                dataType:'json',
+                success:function (json) {
+                    var details = json.data.details;
+                    $('#tit').html(details);
+
+                },
+                error:function () {
+                    //console.log('链接失败');
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="zqzr">
+        <img src="img/zqzr.jpg">
+        <div class="tit" id="tit">
+            <!--<p>债权转让是指中京信安公司将自有资金出借给通过严格审-->
+                <!--核的借款人，通过签订借款合同形成债权。当有财富增值意向-->
+                <!--的投资人出现时，中京信安平台在借款人的同意下，进行债权-->
+                <!--买卖，使得投资人得到债权权利，享受权力下的息费收益。同-->
+                <!--时中京信安负责在债务人还款期间进行跟踪，如发现问题，公-->
+                <!--司将先行垫付投资人的资金与息费，并将债权收回。</p>-->
+        </div>
+    </div>
+</body>
+
+<script src="js/rem.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

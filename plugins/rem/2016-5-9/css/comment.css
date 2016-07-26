@@ -1,0 +1,167 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.clearfix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.shrq {
+    width: 100%;
+    height: 3.4rem;
+}
+
+.slide-line {
+    width: 0.24rem;
+    height: 100%;
+    background: #00b38b;
+    display: block;
+    margin-right: 0.28rem;
+}
+
+.nnl .slide-line {
+    width: 0.24rem;
+    height: 100%;
+    background: #ff643e;
+    display: block;
+    margin-right: 0.28rem;
+}
+
+.yxt .slide-line {
+    width: 0.24rem;
+    height: 100%;
+    background: #3295f3;
+    display: block;
+    margin-right: 0.28rem;
+}
+
+.sjf .slide-line {
+    width: 0.24rem;
+    height: 100%;
+    background: #ffba0c;
+    display: block;
+    margin-right: 0.28rem;
+}
+
+.pie {
+    width: 2.56rem;
+    height: 2.56rem;
+    display: block;
+    margin-right: 0.28rem;
+    margin-top: 0.38rem;
+}
+
+.top-tit {
+    width: 3.73rem;
+    margin-top: 0.62rem;
+}
+
+.top-tit h6, .intro h6, .form h6 {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+    font-size: 0.24rem;
+}
+
+.intro h6, .form h6 {
+    margin-top: 0.24rem;
+}
+
+.top-tit p, .intro p {
+    line-height: 0.36rem;
+    color: #808080;
+    font-size: 0.24rem;
+}
+
+.space {
+    width: 100%;
+    height: 0.2rem;
+    background: #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+
+.intro, .form {
+    padding: 0.24rem 0.3rem 0.6rem 0.3rem;
+}
+
+.intro p {
+    text-indent: 0.2rem;
+}
+
+.form img {
+    width: 6.9rem;
+    display: block;
+}
+
+/*@债权转让*/
+.zqzr {
+    margin: 0.22rem;
+    background: #f2f2f2;
+}
+
+.zqzr img {
+    width: 100%;
+    height: 3rem;
+}
+
+.zqzr .tit{
+    width: 100%;
+    background: #FFF;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.zqzr .tit p{
+    padding: 0.26rem 0.29rem 1.23rem 0.29rem;
+    line-height: 0.37rem;
+    color: #a2a2a2;
+    font-size: 0.24rem;
+    text-indent: 0.4rem;
+    letter-spacing: 0.02rem;
+}
+
+
+
+/*@服务理念*/
+.fwln{
+    margin: 0.2rem 0.24rem 0.84rem 0.24rem;
+    background: #f2f2f2;
+
+}
+.fwln img{
+    width: 7.02rem;
+    height: 3rem;
+    display: block;
+}
+.fwln article{
+    background: #fff;
+    padding: 0.24rem 0.3rem 0.5rem 0.3rem;
+    font-size: 0.24rem;
+    color: #808080;
+    line-height: 0.36rem;
+    border-bottom: 1px solid #e4e4e4;
+    display: block;
+    text-indent: 0.4rem;
+}
+
+

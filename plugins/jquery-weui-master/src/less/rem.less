@@ -18,7 +18,7 @@ body {
   font-size: 16px;
 }
 
-@bps: 400px, 414px, 480px; 
+@bps: 400px, 414px, 480px;
 
 .loop(@i: 1) when (@i <= length(@bps)) {  //注意less数组是从1开始的
   @bp: extract(@bps, @i);

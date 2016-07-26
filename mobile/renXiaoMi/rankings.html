@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>环保卫士榜</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="dist-V0.7.1/lib/weui.min.css">
+    <link rel="stylesheet" href="dist-V0.7.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/rankings.css">
+
+</head>
+
+<body>
+
+<div class="page">
+    <div class="head">
+        <div class="headBg"><img src="img/rankings-bg.jpg" alt=""></div>
+
+        <div class="self">
+            <p class="headImg"><img src="img/hd.jpg" alt=""></p>
+
+            <p class="name">张东然</p>
+
+            <p class="name">水滴数: <span>90</span></p>
+
+            <p class="name">我的水滴:<span>20</span></p>
+        </div>
+
+    </div>
+
+    <div class="topTips">排行榜</div>
+
+    <div class="content">
+        <div class="weui_cells weui_cells_access">
+            <a class="weui_cell" href="javascript:;" v-for="item in list.data">
+                <div class="weui_cell_hd" v-text="$index>2?$index+1:''">
+
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+
+                    <img v-bind:src="item.headImg" alt="">
+
+                    <p v-text="item.nickName"></p>
+
+                </div>
+                <div class="weui_cell_ft_no"><span class="red" v-text="item.amtTotal"></span></div>
+            </a>
+        </div>
+        <div class="weui-infinite-scroll">
+            <div class="infinite-preloader"></div>
+            <div>正在加载</div>
+        </div>
+        <div class="noData">没有数据了!</div>
+    </div>
+</div>
+
+
+<script src="dist-V0.7.1/lib/jquery-2.1.4.js"></script>
+<script src="dist-V0.7.1/js/jquery-weui.js"></script>
+
+
+</body>
+
+
+</html>

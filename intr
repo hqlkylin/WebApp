@@ -1,0 +1,1 @@
+本人有6年开发经验，工作初期从事.net开发，可独立开发中小型网站,随后凭借对前端开发的浓厚兴趣投入其中，近几年专注于前端架构搭建，jquery插件编写，Ajax数据交互，css3动画特效，nodejs服务端开发，移动微网页开发，自适应div+css，并熟练使用webpack，Bower，sass，glup，git，webstorm，npm等前端自动化工具

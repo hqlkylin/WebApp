@@ -38,6 +38,11 @@ $blue: #63b7ff;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
+@mixin justify-space-around{
+
+  -webkit-justify-content:space-around;
+  justify-content:space-around;
+}
 
 @mixin align-items{
   -webkit-box-align: center;
