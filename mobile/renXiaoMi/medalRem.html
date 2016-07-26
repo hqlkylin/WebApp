@@ -32,14 +32,23 @@
     </div>
     <div class="medal">
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
+
         <p><img src="img/wather.png" alt=""></p>
 
     </div>
@@ -54,7 +63,17 @@
     <div class="btn"><span>邀请更多好友</span></div>
 </div>
 
+<div class="pop">
+    <div></div>
+</div>
 </body>
 
+<script>
+    document.querySelector(".btn span").addEventListener("click", function () {
+        var dom = document.querySelector(".pop");
+        dom.style.opacity = 1;
+        dom.style.visibility = "visible";
+    }, false);
+</script>
 
 </html>
