@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>h5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+
+    <!--<script src="js/rem.js"></script>-->
+
+    <link rel="stylesheet" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="swiper/css/animate.min.css">
+    <link rel="stylesheet" href="css/h5.css">
+
+
+</head>
+
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+
+
+        <!-------------slide1----------------->
+        <section class="swiper-slide bg1">
+
+
+        </section>
+        <!---------------slide2-------------->
+        <section class="swiper-slide bg2">
+
+            <img src="swiper/images/scene-2-1.png" class="ani resize"
+                 style="top:10%;left:20%;width:59.46%;height:27.06%;z-index: 4"
+                 data-slide-in="at 500 from zoomIn use swing during 500"
+                 data-slide-out="">
+            <img src="swiper/images/scene-2-2.jpg" class="ani resize"
+                 style="width:100%;height:100%;z-index: -13"
+                 data-slide-in="at 1500 from flash use swing during 500"
+                 data-slide-out="">
+
+        </section>
+
+
+        <!----------------slide3-------------->
+        <section class="swiper-slide bg3">
+            <img src="swiper/images/scene-3-1.png" class="ani resize"
+                 style="top:10%;left:7%;width:29.6%;height:16.61%;z-index: 1"
+                 data-slide-in="at 500 from flipInY use swing during 500"
+                 data-slide-out="">
+            <img src="swiper/images/scene-3-2.png" class="ani resize"
+                 style="top:21%;right:7%;width:29.6%;height:16.61%;z-index: 1"
+                 data-slide-in="at 1000 from flipInY use swing during 500"
+                 data-slide-out="">
+            <img src="swiper/images/scene-3-3.png" class="ani resize"
+                 style="top:41%;left:7%;width:29.6%;height:16.61%;z-index: 1"
+                 data-slide-in="at 1500 from flipInY use swing during 500"
+                 data-slide-out="">
+            <img src="swiper/images/scene-3-4.png" class="ani resize"
+                 style="top:58%;right:7%;width:29.6%;height:16.61%;z-index: 1"
+                 data-slide-in="at 2000 from flipInY use swing during 500"
+                 data-slide-out="">
+
+        </section>
+
+        <!-------------slide4----------------->
+        <section class="swiper-slide bg4">
+            <img src="swiper/images/scene-4-1.png" class="ani resize"
+                 style="top: 57.6%;left: 21.2%;width: 4.9%;height: 2.7%;"
+                 data-slide-in="at 500 from rubberBand use swing during 2000"
+                 data-slide-out="">
+            <img src="swiper/images/scene-4-2.png" class="ani resize"
+                 style="width: 52.8%;height: 13.39%; top: 80.6%;left: 8.2%"
+                 data-slide-in="at 1500 from bounceInDown use swing during 500"
+                 data-slide-out="">
+
+        </section>
+        <!-------------slide5----------------->
+        <section class="swiper-slide bg5 ">
+
+            <img src="swiper/images/hp5-1.png" class="ani resize"
+                 style="top:15%;left:8%;width:54.26%;height:30.50%"
+                 data-slide-in="at 500 from zoomIn use swing during 500"
+                 data-slide-out="">
+
+            <img src="swiper/images/hp5-2.png" class="ani resize"
+                 style="width:55.86%;height:13.04%;top:58%;left: 20%"
+                 data-slide-in="at 2000 from fadeIn  use swing during 1500"
+                 data-slide-out="">
+
+            <img src="swiper/images/hp5-3.png" class="ani resize"
+                 style="width:100%;height:41.67%;top:63%"
+                 data-slide-in="at 1000 from fadeOut  use swing during 1500"
+                 data-slide-out="">
+
+        </section>
+        <!-------------slide6----------------->
+        <section class="swiper-slide bg6">
+
+        </section>
+        <!-------------slide7----------------->
+        <section class="swiper-slide bg7">
+            <img src="swiper/images/scene-7-1.jpg" class="ani resize"
+                 style="width: 100%;height: 100%"
+                 data-slide-in="at 500 from flash use swing during 1500"
+                 data-slide-out="">
+
+        </section>
+        <!-------------slide8----------------->
+        <section class="swiper-slide bg8">
+            <img src="swiper/images/scene-8-1.jpg" class="ani resize"
+                 style="width: 100%;height: 100%"
+                 data-slide-in="at 500 from bounceInDown use swing during 500"
+                 data-slide-out="">
+            <img src="swiper/images/scene-8-2.png" class="ani resize"
+                 style="width: 24%;height: 4.7%;top:57%;left:42%"
+                 data-slide-in="at 500 from rubberBand use swing during 1000"
+                 data-slide-out="">
+
+        </section>
+
+    </div>
+
+    <img src="swiper/images/web-swipe-tip.png" id="array">
+
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="swiper/js/swiper.min.js"></script>
+<script src="swiper/js/swiper.animate-twice.min.js"></script>
+<script>
+
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        pagination: '.swiper-pagination',
+        mousewheelControl: true,
+        paginationClickable: true,
+        slidesPerView: 1,
+        onInit: function (swiper) {
+            swiperAnimateCache(swiper);
+            swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper);
+        }
+    })
+
+
+</script>
+</body>
+</html>
