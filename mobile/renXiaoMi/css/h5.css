@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  background: #fff; }
+
+img {
+  display: block; }
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  opacity: .4; }
+
+.swiper-pagination-bullet-active {
+  opacity: 1; }
+
+@-webkit-keyframes tipmove {
+  0% {
+    bottom: 10px;
+    opacity: 0; }
+  50% {
+    bottom: 15px;
+    opacity: 1; }
+  100% {
+    bottom: 20px;
+    opacity: 0; } }
+.ani {
+  position: absolute; }
+
+#array {
+  position: absolute;
+  z-index: 999;
+  -webkit-animation: tipmove 1.5s infinite ease-in-out;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translate(-50%); }
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  overflow: hidden; }
+
+.bg1 {
+  background-image: url("../swiper/images/scene-1-bg.jpg"); }
+
+.bg2 {
+  background-image: url("../swiper/images/scene-2-bg.jpg"); }
+
+.bg3 {
+  background-image: url("../swiper/images/scene-3-bg.jpg"); }
+
+.bg4 {
+  background-image: url("../swiper/images/scene-4-bg.jpg"); }
+
+.bg5 {
+  background-image: url("../swiper/images/hp5-bg.jpg"); }
+
+.bg6 {
+  background-image: url("../swiper/images/scene-6-bg.jpg"); }
+
+.bg7 {
+  background-image: url("../swiper/images/scene-7-bg.jpg"); }
+
+.bg8 {
+  background-image: url("../swiper/images/scene-8-bg.jpg"); }
+
+/*# sourceMappingURL=h5.css.map */

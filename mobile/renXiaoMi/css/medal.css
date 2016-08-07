@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+html, body {
+  height: 100%; }
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 17px !important; } }
+.page {
+  position: relative;
+  background: url(../img/medal-bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden; }
+  .page .title {
+    position: relative;
+    margin-top: 19%;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    padding-bottom: 2%; }
+    .page .title:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-radial-gradient(#f7c747, transparent, transparent);
+      height: 4px;
+      width: 90%;
+      margin: 0 auto; }
+  .page .name {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: .9rem;
+    top: 28%; }
+    .page .name:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      width: 44%;
+      background-size: 100% 100%;
+      height: 5px;
+      background-image: url(../img/medal-line.jpg);
+      margin: 0 auto; }
+  .page .tips1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    top: 37%; }
+  .page .tips2 {
+    position: absolute;
+    width: 100%;
+    bottom: 14%;
+    font-size: .7rem;
+    text-align: center; }
+  .page .btn {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    text-align: center; }
+    .page .btn span {
+      display: inline-block;
+      padding: 2px 30px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 0.9rem;
+      background-color: #ff7746;
+      -webkit-box-shadow: 3px 3px 3px #ccc;
+      box-shadow: 3px 3px 3px #ccc; }
+  .page .medal {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 52%;
+    left: 10%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+    .page .medal p {
+      width: 20%;
+      display: inline-block; }
+      .page .medal p img {
+        width: 90%;
+        padding: 2%;
+        display: inline-block; }
+
+/*# sourceMappingURL=medal.css.map */

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*一定要加lang不然无法编译*/
+/*测试一下对sass的编译*/
+body {
+  background-color: #098; }
+  body h1 {
+    background-color: #eee;
+    color: red;
+    transform: translate(10%, 10%);
+    /*测试自动添加前缀*/ }
+  body h1:hover {
+    height: 100px; }
+  body h2 {
+    background-color: #999; }
+
+/*# sourceMappingURL=app.css.map */

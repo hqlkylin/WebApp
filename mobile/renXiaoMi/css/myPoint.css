@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page .head {
+  position: relative; }
+  .page .head .headBg img {
+    width: 100%; }
+  .page .head .help {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 12px; }
+    .page .head .help span {
+      width: 20px;
+      display: inline-block;
+      border: 1px solid #fff;
+      border-radius: 50%; }
+  .page .head .self {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    text-align: center; }
+    .page .head .self p {
+      color: #fff; }
+    .page .head .self .headImg img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      max-width: 100%; }
+    .page .head .self .name {
+      font-size: 12px; }
+    .page .head .self .point {
+      font-size: 14px; }
+
+.weui_cells {
+  margin-top: 0; }
+  .weui_cells .time {
+    font-size: 14px; }
+  .weui_cells .red {
+    color: #f00b0d; }
+
+.more {
+  text-align: center;
+  margin: 15px;
+  font-size: 14px; }
+
+#full .weui-popup-modal.weui-popup-modal-visible {
+  background-color: rgba(0, 0, 0, 0.7); }
+#full .content {
+  position: absolute;
+  width: 65%;
+  top: 50%;
+  left: 50%;
+  padding: 0px 20px;
+  background: url("../img/index-bg.jpg") #ffe9b7 80%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  #full .content .close {
+    text-align: right;
+    margin-right: -20px; }
+    #full .content .close a {
+      display: inline-block;
+      width: 30px;
+      color: #0b0b0b;
+      text-align: center; }
+  #full .content p {
+    font-size: 13px;
+    color: #676664;
+    line-height: 1.6;
+    padding-left: 10px;
+    text-indent: -10px; }
+    #full .content p.bold {
+      font-weight: 800; }
+    #full .content p.tips {
+      font-size: 12px;
+      padding-bottom: 12px; }
+
+/*# sourceMappingURL=myPoint.css.map */

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <style>
+        .page-enter {
+            z-index: 2002;
+            -webkit-animation: pageFromRightToCenter 400ms forwards;
+            -o-animation: pageFromRightToCenter 400ms forwards;
+            animation: pageFromRightToCenter 400ms forwards;
+        }
+
+        .page-leave {
+            z-index: 2002;
+            -webkit-animation: pageFromCenterToRight 400ms forwards;
+            -o-animation: pageFromCenterToRight 400ms forwards;
+            animation: pageFromCenterToRight 400ms forwards
+        }
+
+        @-webkit-keyframes pageFromRightToCenter {
+            from {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+                opacity: .9
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+
+        @keyframes pageFromRightToCenter {
+            from {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+                opacity: .9
+            }
+
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes pageFromCenterToRight {
+            from {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+
+            to {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+                opacity: .9
+            }
+        }
+
+        @keyframes pageFromCenterToRight {
+            from {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+
+            to {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+                opacity: .9
+            }
+        }
+    
+        .v-link-active{
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .fade-transition {
+            transition: opacity .3s ease;
+        }
+        .fade-enter, .fade-leave {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+
+
+    <router-view transition="fade"
+                 transition-mode="out-in"></router-view>
+
+    <div style="position: fixed; z-index:100;bottom: 0;left: 0; height: 34px;  background-color: blue;width: 100%;">
+        <a href="###" v-link="'/a'">a</a>
+        <a href="###" v-link="'/b'">b</a>
+    </div>
+
+    <template id="a">
+        <div style="margin-bottom: 40px;">
+            <p><a href="" v-link="{path:'/a/q'}">行1</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行2</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行3</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行4</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行5</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行6</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行7</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行8</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行9</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行10</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行11</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行12</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行13</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行14</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行15</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行16</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行17</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行18</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行19</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行20</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行21</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行22</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行23</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行24</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行25</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行26</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行27</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行28</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行29</a></p>
+
+            <p><a href="" v-link="{path:'/a/q'}">行30</a></p>   
+            <router-view></router-view>
+        </div>
+    </template>
+    <template id="q">
+
+        <div transition="page" class="page page-current"
+             style="height: 100%;width: 100%;z-index:99;margin-bottom: 40px; position: fixed;top: 0;left: 0; background-color: #fff;overflow: auto; -webkit-overflow-scrolling: touch;">
+            <a v-link="{path:'/a'}">
+                返回
+            </a>
+
+            <h1 class="title">演示跳转一级页</h1>
+
+            <div>第1行</div>
+            <div>第2行</div>
+            <div>第3行</div>
+            <div>第4行</div>
+            <div>第5行</div>
+            <div>第6行</div>
+            <div>第7行</div>
+            <div>第8行</div>
+            <div>第9行</div>
+            <div>第10行</div>
+            <div>第11行</div>
+            <div>第12行</div>
+            <div>第13行</div>
+            <div>第14行</div>
+            <div>第15行</div>
+            <div>第16行</div>
+            <div>第17行</div>
+            <div>第18行</div>
+            <div>第19行</div>
+            <div>第20行</div>
+            <div>第21行</div>
+            <div>第22行</div>
+            <div>第23行</div>
+            <div>第24行</div>
+            <div>第25行</div>
+            <div>第26行</div>
+            <div>第27行</div>
+            <div>第28行</div>
+            <div>第29行</div>
+            <div>第30行</div>
+            <div>第31行</div>
+            <div>第32行</div>
+            <div>第33行</div>
+            <div>第34行</div>
+            <div>第35行</div>
+            <div>第36行</div>
+            <div>第37行</div>
+            <div>第38行</div>
+            <div>第39行</div>
+            <div>第40行</div>
+            <div>第41行</div>
+            <div>第42行</div>
+            <div>第43行</div>
+            <div>第44行</div>
+            <div>第45行</div>
+            <div>第46行</div>
+            <div>第47行</div>
+            <div>第48行</div>
+            <div>第49行</div>
+            <div>第50行</div>
+
+            <div>1再来</div>
+            <div>2再来</div>
+            <div>3再来</div>
+            <div>4再来</div>
+            <div>5再来</div>
+            <div>6再来</div>
+            <div>7再来</div>
+            <div>8再来</div>
+            <div>9再来</div>
+            <div>10再来</div>
+            <div>11再来</div>
+            <div>12再来</div>
+            <div>13再来</div>
+            <div>14再来</div>
+            <div>15再来</div>
+            <div>16再来</div>
+            <div>17再来</div>
+            <div>18再来</div>
+            <div>19再来</div>
+            <div>20再来</div>
+            <div>21再来</div>
+            <div>22再来</div>
+            <div>23再来</div>
+            <div>24再来</div>
+            <div>25再来</div>
+            <div>26再来</div>
+            <div>27再来</div>
+            <div>28再来</div>
+            <div>29再来</div>
+            <div>30再来</div>
+            <div>31再来</div>
+            <div>32再来</div>
+            <div>33再来</div>
+            <div>34再来</div>
+            <a v-link="{path:'/a'}">aaaaaaaa回去</a>
+            <div>35再来</div>
+            <div>36再来</div>
+            <div>37再来</div>
+            <div>38再来</div>
+            <div>39再来</div>
+            <div>40再来</div>
+
+
+
+            我是全屏
+
+        </div>
+    </template>
+</div>
+<script>
+
+
+    var App = Vue.extend({});
+    var router = new VueRouter({
+        saveScrollPosition: true
+    });
+
+    router.map({
+        "/a": {
+            component: {
+                template: '#a'
+            },
+            subRoutes: {
+                "/q": {
+                    component: {
+                        template: "#q"
+                    }
+                }
+            }
+        },
+        "/b": {
+            component: {
+                template: '<h2>hello b</h2>'
+            }
+        }
+    })
+    router.start(App, '#app')
+
+</script>
+
+</body>
+</html>
