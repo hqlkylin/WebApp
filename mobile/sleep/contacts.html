@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>会员人脉</title>
+
+    <link rel="stylesheet" href="jquery-weui/lib/weui.min.css">
+    <link rel="stylesheet" href="jquery-weui/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <script src="jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script src="jquery-weui/js/jquery-weui.min.js"></script>
+    <script>
+        var openId = '${openId}';
+    </script>
+</head>
+<body>
+
+<div class="page">
+
+    <div class="bar">
+        <img class="bar-img" src="img/contacts-bg.jpg" alt=""/>
+    </div>
+    <div class="bd">
+        <div class="tab">
+            <div class="tab-title">
+                <p>一级人脉 <span>(人脉数: <span v-text="jsonData.level_1.childTotalCount"></span>&nbsp;&nbsp;&nbsp;销售额: <span>&yen;2000</span> )</span>
+                </p>
+                <i class="ion-chevron-right"></i>
+            </div>
+            <div class="tab-content" id="scroll_1">
+                <div class="weui_cells">
+                    <div v-for="item in jsonData.level_1.list" class="weui_cell">
+                        <div class="weui_cell_hd">
+                            <img v-bind:src="item.imgUrl | imgSrcDefault" alt=""></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <h5 v-text="item.nickName | nameDefault"></h5>
+
+                            <p>
+                                <span>人脉数:{{item.follower}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tc m15" v-show="showPage1" @click="getData('level_1')"><a href="javascript:;">加载更多数据…</a></p>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="tab-title">
+                <p>二级人脉 <span>(人脉数:<span v-text="jsonData.level_2.childTotalCount"></span>&nbsp;&nbsp;&nbsp;销售额: <span>&yen;2000</span>)</span>
+                </p>
+                <i class="ion-chevron-right"></i>
+            </div>
+            <div class="tab-content" id="scroll_2">
+                <div class="weui_cells">
+                    <div v-for="item in jsonData.level_2.list" class="weui_cell">
+                        <div class="weui_cell_hd">
+                            <img v-bind:src="item.imgUrl | imgSrcDefault" alt=""></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <h5 v-text="item.nickName | nameDefault"></h5>
+
+                            <p>
+                                <span>人脉数:{{item.follower}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tc m15" v-show="showPage2" @click="getData('level_2')"><a href="javascript:;">加载更多数据…</a></p>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="tab-title">
+                <p>三级人脉 <span>(人脉数:<span v-text="jsonData.level_3.childTotalCount"></span>&nbsp;&nbsp;&nbsp;销售额: <span>&yen;2000</span>)</span>
+                </p>
+                <i class="ion-chevron-right"></i>
+            </div>
+            <div class="tab-content" id="scroll_3">
+                <div class="weui_cells">
+                    <div v-for="item in jsonData.level_3.list" class="weui_cell">
+                        <div class="weui_cell_hd">
+                            <img v-bind:src="item.imgUrl | imgSrcDefault" alt=""></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <h5 v-text="item.nickName | nameDefault"></h5>
+
+                            <p>
+                                <span>人脉数:{{item.follower}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tc m15" v-show="showPage3" @click="getData('level_3')"><a href="javascript:;">加载更多数据…</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<body>
+
+<script src="js/plugins/vue/vue.js"></script>
+<script src="js/plugins/xscroll/src/xscroll.js"></script>
+<script src="js/view/contacts.js"></script>
+</body>
+
+</body>
+</html>

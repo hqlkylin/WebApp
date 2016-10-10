@@ -1,0 +1,25 @@
+@import "func";
+
+
+
+.banner {
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.weui_btn_primary{
+  padding: 2px;
+  font-size: 14px;
+  background-color: #0f67b3;
+  border: none;
+
+}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+  background-color: #0c599b;
+}
+.weui_cells {
+  margin-top: 0;
+}

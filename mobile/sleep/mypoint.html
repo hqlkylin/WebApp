@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>我的积分</title>
+
+    <link rel="stylesheet" href="jquery-weui/lib/weui.min.css">
+    <link rel="stylesheet" href="jquery-weui/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/myPoint.css">
+    <script src="jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script src="jquery-weui/js/jquery-weui.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="page">
+    <div class="head">
+        <div class="headBg"><img src="img/rankings-bg.jpg" alt=""></div>
+
+
+        <div class="self">
+            <p class="headImg"><img src="img/temp/users.png" alt=""></p>
+
+            <p class="name">七厘米</p>
+
+            <p class="point">1400<span>积分</span></p>
+        </div>
+
+    </div>
+
+
+    <div class="weui_cells">
+
+        <div class="weui_cell" v-for="m in list">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p v-text="m.typeText"></p>
+
+                <p class="time" v-text="toDateString(m.record_time)"></p>
+            </div>
+            <div class="weui_cell_ft" v-bind:class="{'red':m.val>0}" v-text="m.val">
+
+            </div>
+
+        </div>
+    </div>
+
+    <p class="more" @click="next" v-if="list.length!=rowsCount"> 加载更多数据…</p>
+
+    <p class="more" v-if="list.length==rowsCount">没有数据</p>
+
+
+</div>
+
+<body>
+
+<script src="js/plugins/vue/vue.js"></script>
+<script src="js/view/myPoint.js"></script>
+</body>
+
+</body>
+</html>

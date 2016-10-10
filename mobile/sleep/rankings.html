@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>代言排行榜</title>
+
+    <link rel="stylesheet" href="jquery-weui/lib/weui.min.css">
+    <link rel="stylesheet" href="jquery-weui/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/rankings.css">
+    <script src="jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script src="jquery-weui/js/jquery-weui.min.js"></script>
+</head>
+<body>
+
+
+<body>
+<div class="page">
+    <div class="head">
+        <div class="headBg"><img src="img/rankings-bg.jpg" alt=""></div>
+
+        <div class="self">
+            <p class="headImg"><img v-bind:src="list.headImg" alt=""></p>
+
+            <p class="name" v-text="list.nickName"></p>
+
+            <p class="name" >关注数: <span v-text="list.amtTotal"></span></p>
+
+            <p class="name">当前排名第<span v-text="list.rankTotal"></span></p>
+        </div>
+
+    </div>
+
+    <div class="topTips">
+        <div class="left">关注数排行榜</div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div class="content">
+        <div class="weui_cells weui_cells_access">
+            <a class="weui_cell" href="javascript:;" v-for="item in list.data">
+                <div class="weui_cell_hd" v-text="$index>2?$index+1:''">
+
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+
+                    <img v-bind:src="item.headImg" alt="">
+
+                    <p v-text="item.nickName"></p>
+
+                </div>
+                <div class="weui_cell_ft_no"><span class="red" v-text="item.amtTotal"></span></div>
+            </a>
+        </div>
+        <div class="weui-infinite-scroll" v-if="pageCount!=list.data.length">
+            <div class="infinite-preloader"></div>
+            <div>正在加载</div>
+        </div>
+        <div class="noData" v-if="pageCount==list.data.length">没有数据了!</div>
+    </div>
+</div>
+<script src="js/plugins/vue/vue.js"></script>
+<script src="js/view/rankings.js"></script>
+
+
+</body>
+
+</body>
+</html>

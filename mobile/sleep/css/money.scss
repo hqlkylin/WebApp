@@ -1,0 +1,28 @@
+@import "func";
+
+html {
+  height: 100%
+}
+
+body {
+  height: 100%;
+  background: url("../img/ibg.png") no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+.page {
+  padding-top: 2rem;
+  text-align: center;
+  img {
+    width: 3.49rem;
+    height: 2.28rem;
+    display: inline-block;
+  }
+}
+.weui_btn_primary{
+  background-color: #0f67b3;
+}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+  background-color: #0c599b;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>会员信息</title>
+
+    <link rel="stylesheet" href="jquery-weui/lib/weui.min.css">
+    <link rel="stylesheet" href="jquery-weui/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/users.css">
+    <script src="jquery-weui/lib/jquery-2.1.4.js"></script>
+    <script src="jquery-weui/js/jquery-weui.min.js"></script>
+
+</head>
+<body>
+<div class="banner"><img src="img/ubg.jpg" alt=""></div>
+
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="tel" placeholder="请输入姓名">
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">联系方式</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="tel" placeholder="请输入手机号码">
+        </div>
+    </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label for="" class="weui_label">生日</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" type="date" value="" placeholder="请输入生日">
+        </div>
+    </div>
+
+    <div class="weui_cell weui_cell_select">
+        <div class="weui_cell_bd weui_cell_primary">
+            <select class="weui_select" name="select1">
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select>
+        </div>
+    </div>
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label for="name" class="weui_label">地区</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input class="weui_input" id="start" type="text" value="湖北省 武汉市 武昌区">
+        </div>
+    </div>
+</div>
+<div class="weui_btn_area">
+    <a href="javascript:;" class="weui_btn weui_btn_primary">保存</a>
+</div>
+
+<script src="jquery-weui/js/city-picker.js"></script>
+
+<script>
+    $("#start").cityPicker({
+        title: "选择地区",
+        onChange: function (picker, values, displayValues) {
+            console.log(values, displayValues);
+        }
+    });
+</script>
+</body>
+</html>

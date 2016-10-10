@@ -1,0 +1,40 @@
+@import "func";
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url("../img/wibg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.logo {
+
+  img {
+    margin: 0 auto;
+    display: block;
+    width: 2.4rem;
+    height: 1.65rem;
+    margin-top: .5rem;
+  }
+}
+.msg{
+
+  width: 5rem;
+  margin:0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  color: #a9a9a9;
+}
+.weui_btn_primary{
+  padding: 2px;
+  font-size: 14px;
+  background-color: #0f67b3;
+  border: none;
+
+}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+  background-color: #0c599b;
+}
+

@@ -1,0 +1,44 @@
+@import "func";
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url("../img/wibg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.logo {
+
+  img {
+    margin: 0 auto;
+    display: block;
+    width: 2.4rem;
+    height: 1.65rem;
+    margin-top: .5rem;
+  }
+}
+
+.link {
+  margin-top: .2rem;
+  li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    &:nth-child(odd) {
+      text-align: right;
+      padding-right: 10px;
+    }
+    &:nth-child(even) {
+      text-align: left;
+      padding-left: 10px;
+    }
+    list-style: none;
+    img {
+      display: inline-block;
+      width: 2.62rem;
+      height: 2.61rem;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* keyframes.scss */
+/* animation.scss */
+/*动画暂停*/
+.page .head {
+  position: relative; }
+  .page .head .headBg img {
+    width: 100%; }
+  .page .head .help {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 12px; }
+    .page .head .help span {
+      width: 20px;
+      display: inline-block;
+      border: 1px solid #fff;
+      border-radius: 50%; }
+  .page .head .self {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    text-align: center; }
+    .page .head .self p {
+      color: #fff; }
+    .page .head .self .headImg img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      max-width: 100%; }
+    .page .head .self .name {
+      font-size: 12px; }
+    .page .head .self .point {
+      font-size: 14px; }
+
+.weui_cells {
+  margin-top: 0; }
+  .weui_cells .time {
+    font-size: 14px; }
+  .weui_cells .red {
+    color: #f00b0d; }
+
+.more {
+  text-align: center;
+  margin: 15px;
+  font-size: 14px; }
+
+/*# sourceMappingURL=myPoint.css.map */
