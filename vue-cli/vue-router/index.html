@@ -99,9 +99,10 @@
     <router-view transition="fade"
                  transition-mode="out-in"></router-view>
 
-    <div style="position: fixed; z-index:100;bottom: 0;left: 0; height: 34px;  background-color: blue;width: 100%;">
-        <a href="###" v-link="'/a'">a</a>
-        <a href="###" v-link="'/b'">b</a>
+    <div style="position: fixed; z-index:100;bottom: 0;left: 0; height: 34px;  background-color: black;width: 100%;">
+        <a href="###" v-link="'/a'">avvvvvvvvvvvvvv</a>
+
+        <a href="###" v-link="'/b'">bddddddddddddddd</a>
     </div>
 
     <template id="a">
@@ -277,13 +278,15 @@
 
         </div>
     </template>
+
 </div>
 <script>
 
 
     var App = Vue.extend({});
     var router = new VueRouter({
-        saveScrollPosition: true
+
+
     });
 
     router.map({
