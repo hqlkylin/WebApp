@@ -22,7 +22,7 @@ var gulp    = require('gulp'),                 //基础库
 //    gulp.src(htmlSrc)
 //        .pipe(livereload(server))
 //        .pipe(gulp.dest(htmlDst))
-//});
+//});l
 
 // 样式处理
 //gulp.task('css', function () {
